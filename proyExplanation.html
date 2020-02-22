@@ -1,22 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
-
+  
     <head>
         <meta charset ="utf-8">
         <meta name ="equipo" content="Camila Rovirosa, Moises Torres, Alberto Pascal">
         <link rel="shortcut icon" href="images/favicon_0.ico" type="image/vnd.microsoft.icon" />
         <title>Proyect Explanation</title>
         <style>
+          body {
+              font-family: sans-serif;
+          }
+          header {
+              background:rgb(201, 172, 12);
+              height: 85px;
+              padding-top: 40px;
+          }
+          .inner {
+              max-width: 75%;
+              
+              padding: 0px 20px;
+
+          }
+          .logo {
+              text-decoration: none;
+              color: rgb(0, 0, 0);
+              font-size: 30px;
+          }
+          nav > ul {
+              float: right;
+          }
+          nav > ul > li {
+              text-align: center;
+              margin-left: 70px;
+          }
+          
+          nav ul li:hover {
+              cursor: pointer;
+
+          }
+          nav ul li:hover > a {
+              color: #777;
+          }
+          nav > ul > li > a {
+              cursor: pointer;
+              display: block;
+              outline: none;
+              width: 100%;
+              text-decoration: none;
+          }
+          nav > ul > li {
+              float: left;
+          }
+          nav a {
+              color: white;
+              text-decoration: none;
+          }
+          nav > ul li ul {
+              display: none;
+              position: absolute;
+              left: 0;
+              top: 100%;
+              width: 100%;
+              z-index: 2000;
+          }
+
             body{
                 margin-left : 40px;
                 margin-right : 40px;
-            }
-            h1{
-              margin-left: 1em;
-              margin-right: 1em;
-              margin-top: 1em;
-              margin-bottom: 1em;
-              color: Blue;
             }
             p{
             	font-size:20px;
@@ -31,8 +81,22 @@
     </head>
     
     <body>
-			
-    	<h1>Ultimate Budget</h1>
+			<header>
+        <div class="inner">
+            <nav a>
+                <a href="#" class="logo">All-Mighty Budget</a>
+                <ul>
+                    <li><a href="proyExplanation.html">Home</a></li>
+                    <li>
+                        <a href="Tabs/AboutUs.html">Sobre Nosotros</a>
+                    </li>
+                    <li><a href="Tabs/APIs.html">APIs</a></li>
+                    <li><a href="Tabs/UserStories.html">User Stories</a></li>
+                    <li><a href="Tabs/References.html">Referencias</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
       <hr>
         
       <h2>Sobre Nosotros</h2>
@@ -62,7 +126,7 @@
             La mayoría de los mexicanos, sobretodo aquellos en condiciones de pobreza, desconocen el cómo manejar sus fondos. Debido a esto, es común que las personas gasten de más o no puedan alcanzar a comprar todos los artículos que necesitan o que desean adquirir.  
             Adicionalmente, a falta de organización financiera, las personas se ven en situaciones complicadas al tratar de ahorrar para comprar objetos de mayor precio. Por ende, es necesario brindar recomendaciones sobre cómo ahorrar para lograr obtener un producto en un tiempo razonable.
         </p>
-        <img src ="images/money.jfif"width="450px"height="250px" title="money">
+        <img src ="images/money.jpg"width="450px"height="250px" title="money">
         
       <h2>Código del API de Amazon</h2>
       	
