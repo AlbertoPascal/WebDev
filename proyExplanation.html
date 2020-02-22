@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset ="utf-8">
+        <meta name ="equipo" content="Camila Rovirosa, Moises Torres, Alberto Pascal">
+        <link rel="shortcut icon" href="images/favicon_0.ico" type="image/vnd.microsoft.icon" />
+        <title>Proyect Explanation</title>
+        <style>
+            body{
+                margin-left : 40px;
+                margin-right : 40px;
+            }
+            h1{
+              margin-left: 1em;
+              margin-right: 1em;
+              margin-top: 1em;
+              margin-bottom: 1em;
+              color: Blue;
+            }
+            p{
+            	font-size:20px;
+            }
+            code{
+            	display: block;
+                color:Gray;
+                font-size:15px;
+            }
+              
+        </style>
+    </head>
+    
+    <body>
+			
+    	<h1>Ultimate Budget</h1>
+      <hr>
+        
+      <h2>Sobre Nosotros</h2>
+        <p>
+          Nuestro proyecto consistirá en una plataforma web para organizar finanzas personales. La plataforma será una que ayude a las personas a organizar y administrar sus finanzas personales. En esta página, cualquier persona podrá registrarse y llevar un registro de sus ganancias mensuales. En base a esto, la página deducirá la cantidad de dinero que puede gastar y el usuario podrá buscar objetos que quiera comprar, para que la página le recomiende las mejores opciones de compra.
+          Adicionalmente, las recomendaciones de la página se basarán en los mejores precios disponibles (o un promedio de éstos) para una lista de artículos dada y se calculará la mejor combinación de cantidad de objetos dentro del rango de gastos que tienes “permitidos”.  Finalmente, la página te recomendará los lugares más populares donde puedes obtener esos artículos.  
+        </p>
+        
+      <h2>Descripcion del Sistema</h2>
+        <p>
+          El sistema deberá permitir facilitar al usuario una organización de su budget personal. Es decir, al ingresar el sueldo con el que se cuenta y la lista de objetos que se desean adquirir, la plataforma calculará la cantidad aproximada que la persona podría gastar y realizará búsquedas para tratar de obtener la mayor cantidad de objetos de tu lista alcanzables con el presupuesto disponible. Alternativamente, se puede realizar un cálculo aproximado como plan de ahorros para poder comprar dichos objetos.
+          La plataforma se apoyará de una base de datos en conjunto con el API de pricing de amazon y el api de google maps para proveer de búsquedas de dónde comprar la mayor cantidad de objetos deseados según tu presupuesto y proporcionar la ubicación de las tiendas cercanas a ti que vendan dichos objetos. Por ende, los precios serán únicamente de referencia.
+        </p>
+        
+      <h2>Problematica a Resolver</h2>
+      <h3>Cita</h3>
+      	<blockquote cite="https://expansion.mx/mi-dinero/2014/01/08/4-pasos-para-hacer-tu-presupuesto">
+            <p>
+                <hr>
+                <cite><q>La gente tiende a sobreestimar sus ingresos y a subestimar sus deudas, lo que hace que la mayoría de las veces haya desequilibrios entre lo que gasta y lo que gana </q></cite>
+                <br>
+                -Luis Fabre vicepresidente técnico de la Condusef
+              <hr>
+            </p>
+        </blockquote>
+        <p>
+            La mayoría de los mexicanos, sobretodo aquellos en condiciones de pobreza, desconocen el cómo manejar sus fondos. Debido a esto, es común que las personas gasten de más o no puedan alcanzar a comprar todos los artículos que necesitan o que desean adquirir.  
+            Adicionalmente, a falta de organización financiera, las personas se ven en situaciones complicadas al tratar de ahorrar para comprar objetos de mayor precio. Por ende, es necesario brindar recomendaciones sobre cómo ahorrar para lograr obtener un producto en un tiempo razonable.
+        </p>
+        <img src ="images/money.jfif"width="450px"height="250px" title="money">
+        
+      <h2>Código del API de Amazon</h2>
+      	
+        <p>El siguiente código incorpora la búsqueda de amazon para buscar los libros de la serie Hunger Games.</p>
+        <p>La operación de <dfn>ItemSearch</dfn> Es la encargada de realizar la búsqueda.
+        <code> 
+         <br>
+          http://webservices.amazon.com/onca/xml? <br>
+          Service=AWSECommerceService& <br>
+          AWSAccessKeyId=[AWS Access Key ID]& <br>
+          AssociateTag=[Associate ID]& <br> 
+          Operation=ItemSearch& <br>
+          Keywords=the%20hunger%20games& <br>
+          SearchIndex=Books <br>
+          &Timestamp=[YYYY-MM-DDThh:mm:ssZ] <br>
+          &Signature=[Request Signature] <br>
+        </code>
+        
+				
+    </body>
+
+</html>
