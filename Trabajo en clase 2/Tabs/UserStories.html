@@ -23,8 +23,55 @@
           }
           .h1-title {
             background: beige;
-            overflow: hidden;
-           
+            overflow: hidden; 
+          }
+          .s1-title {
+            background: cyan;
+            overflow: hidden; 
+          }
+          .s2-title {
+            background: cyan;
+            overflow: hidden; 
+          }
+          .s3-title {
+            background: cyan;
+            overflow: hidden; 
+          }
+          .s4-title {
+            background: cyan;
+            overflow: hidden; 
+          }
+          .s5-title {
+            background: cyan;
+            overflow: hidden; 
+          }
+          .s6-title {
+            background: cyan;
+            overflow: hidden; 
+          }
+          .s7-title {
+            background: cyan;
+            overflow: hidden; 
+          }
+          .s8-title {
+            background: cyan;
+            overflow: hidden; 
+          }
+          .s9-title {
+            background: cyan;
+            overflow: hidden; 
+          }
+          .s10-title {
+            background: cyan;
+            overflow: hidden; 
+          }
+          .descr-text
+          {
+            font-size: 20px;
+          }
+          .story-text 
+          {
+            font-size : 14px;
           }
           body {
               font-family: sans-serif;
@@ -126,54 +173,28 @@
     </div>
       <div>
         <hr>
-        <div class ="h1-title container">
-          <H1><center>Organizaci&oacute;n como nunca antes</center></H1>
-        </div>
-        <h2>Sobre Nosotros</h2>
-        <p>
-          Nuestro proyecto consistirá en una plataforma web para organizar finanzas personales. La plataforma será una que ayude a las personas a organizar y administrar sus finanzas personales. En esta página, cualquier persona podrá registrarse y llevar un registro de sus ganancias mensuales. En base a esto, la página deducirá la cantidad de dinero que puede gastar y el usuario podrá buscar objetos que quiera comprar, para que la página le recomiende las mejores opciones de compra.
-          Adicionalmente, las recomendaciones de la página se basarán en los mejores precios disponibles (o un promedio de éstos) para una lista de artículos dada y se calculará la mejor combinación de cantidad de objetos dentro del rango de gastos que tienes “permitidos”.  Finalmente, la página te recomendará los lugares más populares donde puedes obtener esos artículos.  
+        <h2 class = "h1-title"><center>User Stories</center></h2>
+        <p class = "descr-text">
+          En esta secci&oacute;n se encuentran los distintas historias de usuario que se pueden presentar y se solucionan con el uso de nuestro proyecto:
         </p>
-        <h2>Descripci&oacute;n del Sistema</h2>
-          <p>
-            El sistema deber&aacute; permitir facilitar al usuario una organizaci&oacute;n de su budget personal. Es decir, al ingresar el sueldo con el que se cuenta y la lista de objetos que se desean adquirir, la plataforma calcular&aacute; la cantidad aproximada que la persona podr&iacute;a gastar y realizar&aacute; búsquedas para tratar de obtener la mayor cantidad de objetos de tu lista alcanzables con el presupuesto disponible. Alternativamente, se puede realizar un c&aacute;lculo aproximado como plan de ahorros para poder comprar dichos objetos.
-            La plataforma se apoyar&aacute; de una base de datos en conjunto con el API de pricing de amazon y el api de google maps para proveer de búsquedas de d&oacute;nde comprar la mayor cantidad de objetos deseados según tu presupuesto y proporcionar la ubicaci&oacute;n de las tiendas cercanas a ti que vendan dichos objetos. Por ende, los precios ser&aacute;n únicamente de referencia.
+        <hr>
+        <h3 class = "s1-title"><center>Story 1: </center></h2>
+        <p class = "story-text">
+          En esta secci&oacute;n se encuentran los distintas historias de usuario que se pueden presentar y se solucionan con el uso de nuestro proyecto:
+        </p>
+        <h3 class = "s2-title"><center>Story 1: </center></h2>
+          <p class = "story-text">
+            En esta secci&oacute;n se encuentran los distintas historias de usuario que se pueden presentar y se solucionan con el uso de nuestro proyecto:
           </p>
-          
-        <h2>Problematica a Resolver</h2>
-        <h3>Cita</h3>
-          <blockquote cite="https://expansion.mx/mi-dinero/2014/01/08/4-pasos-para-hacer-tu-presupuesto">
-              <p>
-                  <hr>
-                  <cite><q>La gente tiende a sobreestimar sus ingresos y a subestimar sus deudas, lo que hace que la mayor&iacute;a de las veces haya desequilibrios entre lo que gasta y lo que gana </q></cite>
-                  <br>
-                  -Luis Fabre vicepresidente t&eacute;cnico de la Condusef
-                <hr>
-              </p>
-          </blockquote>
-          <p>
-              La mayor&iacute;a de los mexicanos, sobretodo aquellos en condiciones de pobreza, desconocen el c&oacute;mo manejar sus fondos. Debido a esto, es común que las personas gasten de m&aacute;s o no puedan alcanzar a comprar todos los art&iacute;culos que necesitan o que desean adquirir.  
-              Adicionalmente, a falta de organizaci&oacute;n financiera, las personas se ven en situaciones complicadas al tratar de ahorrar para comprar objetos de mayor precio. Por ende, es necesario brindar recomendaciones sobre c&oacute;mo ahorrar para lograr obtener un producto en un tiempo razonable.
+        <h3 class = "s3-title"><center>Story 1: </center></h2>
+          <p class = "story-text">
+            En esta secci&oacute;n se encuentran los distintas historias de usuario que se pueden presentar y se solucionan con el uso de nuestro proyecto:
           </p>
-          <img src ="images/money.jpg"width="450px"height="250px" title="money">
-          
-        <h2>C&oacute;digo del API de Amazon</h2>
-          
-          <p>El siguiente c&oacute;digo incorpora la búsqueda de amazon para buscar los libros de la serie Hunger Games.</p>
-          <p>La operaci&oacute;n de <dfn>ItemSearch</dfn> Es la encargada de realizar la búsqueda.
-          <code> 
-          <br>
-            http://webservices.amazon.com/onca/xml? <br>
-            Service=AWSECommerceService& <br>
-            AWSAccessKeyId=[AWS Access Key ID]& <br>
-            AssociateTag=[Associate ID]& <br> 
-            Operation=ItemSearch& <br>
-            Keywords=the%20hunger%20games& <br>
-            SearchIndex=Books <br>
-            &Timestamp=[YYYY-MM-DDThh:mm:ssZ] <br>
-            &Signature=[Request Signature] <br>
-          </code>
-          
+        <h3 class = "s4-title"><center>Story 1: </center></h2>
+          <p class = "story-text">
+            En esta secci&oacute;n se encuentran los distintas historias de usuario que se pueden presentar y se solucionan con el uso de nuestro proyecto:
+          </p>
+        
       </div>		
     </body>
   
