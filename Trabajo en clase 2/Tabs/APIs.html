@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+  
+    <head>
+        <meta charset ="utf-8">
+        <meta name ="equipo" content="Camila Rovirosa, Moises Torres, Alberto Pascal">
+        <link rel="shortcut icon" href="images/favicon_0.ico" type="image/vnd.microsoft.icon" />
+        <title>Proyect Explanation</title>
+        <style>
+          .nav-option {
+            margin: 0 !important;
+            background:rgb(29, 29, 28);
+            padding: 10px 30px;
+            margin-bottom: 30px;
+            margin-top:30px;
+            max-width: 75%;
+            display:inline-block;
+            overflow: auto;
+          }
+          .nav-option:hover {
+            cursor: pointer;
+            color: #777;
+          }
+          .h1-title {
+            background: beige;
+            overflow: hidden;
+           
+          }
+          body {
+              font-family: sans-serif;
+              
+          }
+          header {
+              background:rgb(29, 29, 28);
+              margin-top: 20px;
+              line-height: 40px;
+          }
+          .inner {
+              max-width: 75%;
+              margin: 0 !important;
+              padding: 0px 20px;
+              margin-bottom: 20px;
+
+          }
+          .logo {
+              text-decoration: none;
+              color: rgb(255, 255, 255);
+              font-size: 30px;
+              margin-bottom: 30px;
+              margin-top:30px;
+              margin-left: 30px;
+              display:inline-block;
+          }
+          nav > ul {
+              float: right;
+          }
+
+          
+          nav ul li:hover {
+              cursor: pointer;
+
+          }
+          nav ul li:hover > a {
+              color: #777;
+          }
+          nav > ul > li > a {
+              cursor: pointer;
+              display: block;
+              outline: none;
+              width: 100%;
+              text-decoration: none;
+          }
+          nav > ul > li {
+              float: left;
+          }
+          nav a {
+              color: white;
+              text-decoration: none;
+          }
+          nav > ul li ul {
+              display: none;
+              position: absolute;
+              left: 0;
+              top: 100%;
+              width: 100%;
+              z-index: 2000;
+          }
+
+            body{
+                margin-left : 40px;
+                margin-right : 40px;
+            }
+            p{
+            	font-size:20px;
+            }
+            code{
+            	display: block;
+                color:Gray;
+                font-size:15px;
+            }
+            .nav-color {
+              background:rgb(29, 29, 28);
+            }
+              
+        </style>
+    </head>
+    
+    <body>
+      <div class = "container">
+        <header class = "nav-color">
+          <div style = "background: black;">
+            <nav class = "nav-color">
+                <h1 class="logo">All-Mighty Budget</h1>
+                <ul>
+                    <li class= "nav-option"><a href="../proyExplanation.html">Home</a></li>
+                    <li class= "nav-option">
+                        <a href="AboutUs.html">Sobre Nosotros</a>
+                    </li>
+                    <li class= "nav-option"><a href="APIs.html">APIs</a></li>
+                    <li class= "nav-option"><a href="UserStories.html">User Stories</a></li>
+                    <li class= "nav-option"><a href="References.html">Referencias</a></li>
+                </ul>
+            </nav>
+        </div>
+      </header>
+    </div>
+      <div>
+        <hr>
+        <h2 class = "h1-title"><center>C&oacute;digo del API de Amazon</center></h2>
+          
+          <p>El siguiente c&oacute;digo incorpora la búsqueda de amazon para buscar los libros de la serie Hunger Games.</p>
+          <p>La operaci&oacute;n de <dfn>ItemSearch</dfn> Es la encargada de realizar la búsqueda.
+          <hr>
+          <code> 
+            http://webservices.amazon.com/onca/xml? <br>
+            Service=AWSECommerceService& <br>
+            AWSAccessKeyId=[AWS Access Key ID]& <br>
+            AssociateTag=[Associate ID]& <br> 
+            Operation=ItemSearch& <br>
+            Keywords=the%20hunger%20games& <br>
+            SearchIndex=Books <br>
+            &Timestamp=[YYYY-MM-DDThh:mm:ssZ] <br>
+            &Signature=[Request Signature] <br>
+          </code>
+          <hr>
+      </div>		
+    </body>
+  
+</html>
