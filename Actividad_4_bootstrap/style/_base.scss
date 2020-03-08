@@ -5,8 +5,29 @@
     
 }
 
-.imgCarousel{
-    height: 32%;
-    width: 50%;
-    margin: auto;
+@media(max-width:700px) {
+    .imgCarousel{
+        height: 250px;
+        width: 80%;
+        margin: auto;
+        max-height: 480px;
+    }
+    
+}
+@media(min-width:700px) {
+    .imgCarousel{
+        height: 480px;
+        width: 60%;
+        margin: auto;
+        max-height: 480px;
+    }
+    
+}
+
+nav{
+    background-color: lightskyblue;
+    font-weight: bold;
+    a:hover{
+        background-color: whitesmoke;
+    }
 }
