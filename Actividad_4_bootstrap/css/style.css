@@ -1,0 +1,133 @@
+@charset "UTF-8";
+.listado ul {
+  color: green;
+}
+
+body {
+  color: red;
+  /*así se declara una variable */
+  font: Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+#contenedor {
+  width: 680px;
+}
+
+.clase {
+  color: blue;
+}
+
+.clase-anidada p {
+  text-decoration: underline;
+}
+.clase-anidada a {
+  font-size: 25px;
+}
+.clase-anidada a:visited {
+  color: gray;
+}
+
+.clase_1_loquesea {
+  font-size: 47px;
+}
+
+.clase_2_loquesea {
+  font-size: 44px;
+}
+
+.clase_3_loquesea {
+  font-size: 41px;
+}
+
+.clase_4_loquesea {
+  font-size: 38px;
+}
+
+.clase_5_loquesea {
+  font-size: 35px;
+}
+
+.clase_6_loquesea {
+  font-size: 32px;
+}
+
+/* para listas*/
+.juan-foto {
+  border-width: 50px;
+}
+
+/* para listas*/
+.pedro-foto {
+  border-width: 50px;
+}
+
+/* para listas*/
+.pablo-foto {
+  border-width: 50px;
+}
+
+/* para listas*/
+.luis-foto {
+  border-width: 50px;
+}
+
+img {
+  /*mezclas funciones y recibes parámetros. Para usarlo, abajo: */
+  border-width: 120px;
+  color: white;
+}
+
+.img2 {
+  /*mezclas funciones y recibes parámetros. Para usarlo, abajo: */
+  border-width: 240px;
+  color: white;
+}
+
+.clase_function {
+  font-size: 50px;
+}
+
+.mensaje2, .mensaje {
+  border: 1px solid red;
+  padding: 10px;
+  color: gray;
+}
+
+.mensaje2 {
+  /* Es con % para declarar una clase "fantasma" que sólo aparece cuando la extiendes. Es para herencias*/
+  border: 10px dotted cyan;
+}
+
+.mensaje2 {
+  /* No podría hacer este extend porque sobrescribe el anterior. No marca error pero haría cosas raras*/
+}
+
+.clase_mixin {
+  border: 10px dotted cyan;
+  border: 10px solid blue;
+  color: red;
+}
+
+.alumnos_1 {
+  color: #FF00FF;
+}
+
+.alumnos_2 {
+  color: #FF00FF;
+}
+
+/* la ',' es un or*/
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio_2), (min-width: 768px) and (min-resolution: 192dpi) {
+  body {
+    /*mezclas funciones y recibes parámetros. Para usarlo, abajo: */
+    border-width: 60px;
+    color: white;
+    color: gray;
+  }
+}
+.holamoi {
+  color: orange;
+}
+
+/*# sourceMappingURL=style.css.map */
