@@ -1,4 +1,5 @@
 @import 'base';
+@import 'About';
 $primer-color : red;
 $segundo-color:blue;
 $fuente: Helvetica, sans-serif;
@@ -9,35 +10,3 @@ body{
     font:$fuente;
     font-size: $tamano-fuente;
 }
-.navbar {
-    background-color: brown;
-    overflow: hidden;
-  }
-  
-
-  .navbar a {
-    float: right;
-    display: block;
-    color: lightcoral;
-    text-align: center;
-    padding: 14px 16px;
-    margin-top: 10px;
-    text-decoration: none;
-    font-size: 14px;
-    margin-right: 5px;
-  }
-  
-  .navbar a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  h1
-  {
-    display:inline-block;
-    padding: 0px;
-    margin-left: 30px;
-    
-    
-    color:orange
-  }
