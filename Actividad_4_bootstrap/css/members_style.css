@@ -1,0 +1,58 @@
+.listado ul {
+  color: green;
+}
+
+@media (max-width: 700px) {
+  .imgCarousel {
+    height: 250px;
+    width: 80%;
+    margin: auto;
+    max-height: 480px;
+  }
+}
+@media (min-width: 700px) {
+  .imgCarousel {
+    height: 480px;
+    width: 60%;
+    margin: auto;
+    max-height: 480px;
+  }
+}
+nav {
+  background-color: lightskyblue;
+  font-weight: bold;
+}
+nav a:hover {
+  background-color: whitesmoke;
+}
+
+.listado ul {
+  color: green;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  text-align: justify;
+}
+
+.Title {
+  background-color: lightcyan;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+nav {
+  background-color: lightskyblue;
+  font-weight: bold;
+}
+nav a:hover {
+  background-color: whitesmoke;
+  border-radius: 20px;
+}
+
+#description_table {
+  text-align: center;
+}
+
+/*# sourceMappingURL=members_style.css.map */

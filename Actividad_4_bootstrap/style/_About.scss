@@ -11,14 +11,16 @@ body{
 }
 .Title{
     background-color: lightcyan;
-    font-size:20px;
+    font-size:40px;
     font-weight: bold;
 }
 nav{
     background-color: lightskyblue;
     font-weight: bold;
+    
     a:hover{
         background-color: whitesmoke;
+        border-radius: 20px;
     }
 }
 #description_table{
