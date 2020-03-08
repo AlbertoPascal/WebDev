@@ -4,9 +4,10 @@
     }
     
 }
-.body{
+body{
     font-family: 'Times New Roman', Times, serif;
     font-size: 16px;
+    text-align: justify;
 }
 .Title{
     background-color: lightcyan;
@@ -18,4 +19,7 @@ nav{
     a:hover{
         background-color: whitesmoke;
     }
+}
+#description_table{
+    text-align: center;
 }
