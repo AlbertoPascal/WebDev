@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/about.css">
     <meta name ="equipo" content="Camila Rovirosa, Moises Torres, Alberto Pascal">
     <link rel="shortcut icon" href="https://img.icons8.com/cotton/64/000000/money-box.png" type="image/vnd.microsoft.icon" />
     <title>All-Mighty Budget: About Us</title>
@@ -15,15 +15,15 @@
   <body>
     <header id = "header">
         <nav class="navbar navbar-expand-md navbar-light nav-custom">
-            <a href="#" class="navbar-brand">All-Mighty Budget</a>
+            <a href="../index.html" class="navbar-brand">All-Mighty Budget</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
         
             <div class="collapse navbar-collapse " id="navbarCollapse">
                 <div class="navbar-nav ml-auto">
-                    <a href="#" class="nav-item nav-link">About</a>
-                    <a href="#" class="nav-item nav-link">Members</a>
+                    <a href="About.html" class="nav-item nav-link">About</a>
+                    <a href="Integrantes.html" class="nav-item nav-link">Members</a>
                     <a href="#" class="nav-item nav-link">Contact us</a>
                     <a href="#" class="nav-item nav-link">News Feed</a>
                 </div>
@@ -32,45 +32,38 @@
         </nav>
     </header>
     <div class = "container">
-        <h2 class = "Title"><center>Sobre Nosotros</center></h2>
-        <p>
-            Somos un grupo de estudiantes del Tecnológico de Monterrey. Nuestro proyecto consistirá en una plataforma web para organizar finanzas personales. La plataforma será una que ayude a las personas a organizar y administrar sus finanzas personales. En esta página, cualquier persona podrá registrarse y llevar un registro de sus ganancias mensuales. En base a esto, la página deducirá la cantidad de dinero que puede gastar y el usuario podrá buscar objetos que quiera comprar, para que la página le recomiende las mejores opciones de compra.
-            Adicionalmente, las recomendaciones de la página se basarán en los mejores precios disponibles (o un promedio de éstos) para una lista de artículos dada y se calculará la mejor combinación de cantidad de objetos dentro del rango de gastos que tienes “permitidos”.  Finalmente, la página te recomendará los lugares más populares donde puedes obtener esos artículos.  
-        </p>
-        <hr>
-        <div>
-            <img src="../images/Alberto.jpg" alt="Alberto" style="width:32%; margin-left: 1%;">
-            <img src="../images/Cami.jpg" alt="Camila" style="width:32%; float:right; margin-right: 1%;">
-            <img src="../images/Moi.jpg" alt="Mois&eacute;s" style="width:32%; float:right; margin-right: 1%;">
-            <table class="table" id = "description_table">
-                <thead>
-                  <tr>
-                    
-                    <th scope="col">Alberto Pascal</th>
-                    <th scope="col">Moisés Torres</th>
-                    <th scope="col">Camila Rovirosa</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>22 años</td>
-                    <td>22 años</td>
-                    <td>22 años</td>
-                  </tr>
-                  <tr>
-                    <td>Ingeniero en Tecnologías Computacionales</td>
-                    <td>Ingeniero en Tecnologías Computacionales</td>
-                    <td>Ingeniera en Tecnologías Computacionales</td>
-                  </tr>
-                  <tr>
-                    <td>Cursando octavo semestre</td>
-                    <td>Cursando s&eacute;ptimo semestre</td>
-                    <td>Cursando s&eacute;ptimo semestre</td>
-                  </tr>
-                </tbody>
-              </table>
-                
-        </div>
+        <div class ="h1-title container">
+            <H1 class = "Title"><center>Organizaci&oacute;n como nunca antes</center></H1>
+          </div>
+          
+          <h2>Descripci&oacute;n del Sistema</h2>
+            <p>
+              El sistema deber&aacute; permitir facilitar al usuario una organizaci&oacute;n de su budget personal. Es decir, al ingresar el sueldo con el que se cuenta y la lista de objetos que se desean adquirir, la plataforma calcular&aacute; la cantidad aproximada que la persona podr&iacute;a gastar y realizar&aacute; búsquedas para tratar de obtener la mayor cantidad de objetos de tu lista alcanzables con el presupuesto disponible. Alternativamente, se puede realizar un c&aacute;lculo aproximado como plan de ahorros para poder comprar dichos objetos.
+              La plataforma se apoyar&aacute; de una base de datos en conjunto con el API de pricing de amazon y el api de google maps para proveer de búsquedas de d&oacute;nde comprar la mayor cantidad de objetos deseados según tu presupuesto y proporcionar la ubicaci&oacute;n de las tiendas cercanas a ti que vendan dichos objetos. Por ende, los precios ser&aacute;n únicamente de referencia.
+            </p>
+            
+          <h2>Problematica a Resolver</h2>
+          <h3>Cita</h3>
+            <blockquote cite="https://expansion.mx/mi-dinero/2014/01/08/4-pasos-para-hacer-tu-presupuesto">
+                <p>
+                    <hr>
+                    <cite><q>La gente tiende a sobreestimar sus ingresos y a subestimar sus deudas, lo que hace que la mayor&iacute;a de las veces haya desequilibrios entre lo que gasta y lo que gana </q></cite>
+                    <br>
+                    -Luis Fabre vicepresidente t&eacute;cnico de la Condusef 
+                    </br>
+                    <i><a href = "https://expansion.mx/mi-dinero/2014/01/08/4-pasos-para-hacer-tu-presupuesto" target = "_blank">(4 pasos para hacer tu presupuesto, 2014)</a></i>
+                  <hr>
+                </p>
+            </blockquote>
+            <p>
+                La mayor&iacute;a de los mexicanos, sobretodo aquellos en condiciones de pobreza, desconocen el c&oacute;mo manejar sus fondos. Debido a esto, es común que las personas gasten de m&aacute;s o no puedan alcanzar a comprar todos los art&iacute;culos que necesitan o que desean adquirir.  
+                Adicionalmente, a falta de organizaci&oacute;n financiera, las personas se ven en situaciones complicadas al tratar de ahorrar para comprar objetos de mayor precio. Por ende, es necesario brindar recomendaciones sobre c&oacute;mo ahorrar para lograr obtener un producto en un tiempo razonable.
+            </p>
+            <img src ="images/money.jpg"width="450px"height="250px" title="money">
+            
+         
+            
+        </div>	
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

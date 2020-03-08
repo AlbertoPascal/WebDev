@@ -1,0 +1,19 @@
+/* Error: It's not clear which file to import. Found:
+ *   style/_About.scss
+ *   style/About.scss
+ *   ,
+ * 2 | @import 'About';
+ *   |         ^^^^^^^
+ *   '
+ *   style/members.scss 2:9  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: It's not clear which file to import. Found:\a   style/_About.scss\a   style/About.scss\a   \2577 \a 2 \2502  @import 'About';\d\a   \2502          ^^^^^^^\a   \2575 \a   style/members.scss 2:9  root stylesheet";
+}
