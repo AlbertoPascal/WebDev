@@ -1,12 +1,2 @@
 @import 'base';
 @import 'About';
-$primer-color : red;
-$segundo-color:blue;
-$fuente: Helvetica, sans-serif;
-$tamano-fuente: 18px;
-$ancho : 680px;
-body{
-    color: $primer-color; /*así se declara una variable */
-    font:$fuente;
-    font-size: $tamano-fuente;
-}
