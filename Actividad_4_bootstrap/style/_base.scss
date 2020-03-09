@@ -4,6 +4,11 @@
     }
     
 }
+.Title{
+    background-color: lightcyan;
+    font-size:40px;
+    font-weight: bold;
+}
 
 @media(max-width:700px) {
     .imgCarousel{
@@ -11,7 +16,18 @@
         width: 80%;
         margin: auto;
         max-height: 480px;
+        
+        
     }
+    .Title{
+        background-color: yellow;
+        font-size:40px;
+        font-weight: bold;
+    }
+    h4{
+        color:yellow;
+    }
+ 
     
 }
 @media(min-width:700px) {
@@ -21,27 +37,24 @@
         margin: auto;
         max-height: 480px;
     }
-    
+    .Title{
+        background-color:red;
+        font-size:40px;
+        font-weight: bold;
+    }
+    h4{
+        color:red;
+    }
 }
 
-.Title{
-    background-color: lightcyan;
-    font-size:40px;
-    font-weight: bold;
-}
+
 
 .Subtitle{
     font-size:30px;
     font-weight: bold;
 }
 
-body{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    text-align: justify;
-    font-style: bold;
-    color: black;
-}
+
 
 p{
     color: white;
