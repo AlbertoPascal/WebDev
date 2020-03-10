@@ -8,15 +8,6 @@ p {
   display: inline-flex;
 }
 
-nav {
-  background-color: lightskyblue;
-  font-weight: bold;
-}
-nav a:hover {
-  background-color: whitesmoke;
-  border-radius: 20px;
-}
-
 #description_table {
   text-align: center;
 }
