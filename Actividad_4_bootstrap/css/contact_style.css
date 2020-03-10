@@ -1,14 +1,3 @@
-.listado ul {
-  color: green;
-}
-
-body {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 16px;
-  text-align: justify;
-  text-shadow: 2px 2px 10px #666;
-}
-
 .Title {
   background-color: lightcyan;
   font-size: 40px;
@@ -44,12 +33,59 @@ nav a:hover {
   width: 50%;
 }
 
-@media (min-width: 301px) and (max-width: 500px) {
+@media (min-width: 300px) and (max-width: 700px) {
   body {
-    font-family: "Segoe UI", "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: "Courier New", Courier, monospace;
     font-size: 12px;
     text-align: center;
-    text-shadow: 2px 2px 10px #aa6b0c;
+    text-shadow: 2px 2px 10px #179bc4;
+  }
+
+  h1 {
+    color: blue;
+  }
+
+  nav {
+    background-color: salmon;
+    font-weight: bold;
+    font-style: italic;
+  }
+  nav a:hover {
+    background-color: #eb39c4;
+    border-radius: 20px;
+  }
+}
+@media (min-width: 701px) and (max-width: 1000px) {
+  body {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-size: 14px;
+    text-align: justify;
+    text-shadow: 2px 2px 10px #b3ee10;
+  }
+
+  h1 {
+    color: red;
+  }
+
+  nav {
+    background-color: #b13718;
+    font-weight: bold;
+  }
+  nav a:hover {
+    background-color: #b9a42d;
+    border-radius: 20px;
+  }
+}
+@media (min-width: 1001px) and (max-width: 1200px) {
+  body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    text-align: justify;
+    text-shadow: 2px 2px 10px #f1a413;
+  }
+
+  h1 {
+    color: brown;
   }
 
   nav {
@@ -57,77 +93,29 @@ nav a:hover {
     font-weight: bold;
   }
   nav a:hover {
-    background-color: #eb7c7c;
+    background-color: whitesmoke;
     border-radius: 20px;
   }
-
-  h2 {
-    color: #aa0ca2;
-  }
 }
-@media (min-width: 501px) and (max-width: 700px) {
+@media (min-width: 1201px) {
   body {
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    font-size: 12px;
-    text-align: end;
-    text-shadow: 4px 4px 10px #0caa14;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+    text-align: justify;
+    text-shadow: 2px 2px 10px #380ab6;
+  }
+
+  h1 {
+    color: darkblue;
   }
 
   nav {
-    background-color: lightpink;
-    font-weight: lighter;
+    background-color: lightskyblue;
+    font-weight: bold;
   }
   nav a:hover {
     background-color: whitesmoke;
-    border-radius: 30px;
-  }
-
-  h2 {
-    color: #861000;
-  }
-}
-@media (min-width: 701px) and (max-width: 1000px) {
-  body {
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    font-size: 18px;
-    text-align: justify;
-    font-weight: bold;
-    text-shadow: 2px 2px 10px #4f2a53;
-  }
-
-  nav {
-    background-color: #b6ffed;
-    font-weight: bold;
-  }
-  nav a:hover {
-    background-color: #a8a13f;
-    border-radius: 10px;
-  }
-
-  h2 {
-    color: #0e7068;
-  }
-}
-@media (min-width: 1001px) {
-  body {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-    font-size: 14px;
-    text-align: justify;
-    font-weight: lighter;
-    text-shadow: 2px 2px 10px #640431;
-  }
-
-  nav {
-    background-color: #dfdd70;
-    font-weight: bold;
-  }
-  nav a:hover {
-    background-color: #570885;
-    border-radius: 15px;
-  }
-
-  h2 {
-    color: #22700e;
+    border-radius: 20px;
   }
 }
 
