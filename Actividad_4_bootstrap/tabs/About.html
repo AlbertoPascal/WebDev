@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -23,10 +23,10 @@
         
             <div class="collapse navbar-collapse " id="navbarCollapse">
                 <div class="navbar-nav ml-auto">
-                    <a href="About.html" class="nav-item nav-link"><i class="fa fa-info-circle"></i></p>&nbspAbout</a>
-                    <a href="Integrantes.html" class="nav-item nav-link"><i class="fa fa-users"></i>&nbspMembers</a>
-                    <a href="Contact_us.html" class="nav-item nav-link"><i class="fa fa-envelope"></i>&nbspContact us</a>
-                    <a href="News.html" class="nav-item nav-link"><i class="fa fa-newspaper-o"></i>&nbspNews Feed</a>
+                    <a href="About.html" class="nav-item nav-link"><i class="fa fa-info-circle"></i>&nbsp;About</a>
+                    <a href="Integrantes.html" class="nav-item nav-link"><i class="fa fa-users"></i>&nbsp;Members</a>
+                    <a href="Contact_us.html" class="nav-item nav-link"><i class="fa fa-envelope"></i>&nbsp;Contact us</a>
+                    <a href="News.html" class="nav-item nav-link"><i class="fa fa-newspaper-o"></i>&nbsp;News Feed</a>
                 </div>
                 
             </div>
@@ -34,11 +34,11 @@
     </header>
     <div class = "container">
         <div class ="h1-title container">
-            <H1 class = "Title"><center>Organizaci&oacute;n como nunca antes</center></H1>
+            <H1 class = "Title" style="text-align: center;">Organizaci&oacute;n como nunca antes</H1>
           </div>
           <div>
             <hr>
-            <h2><center>Descripci&oacute;n del Sistema</center></h2>
+            <h2 style="text-align: center;">Descripci&oacute;n del Sistema</h2>
               <p>
                 El sistema deber&aacute; permitir facilitar al usuario una organizaci&oacute;n de su budget personal. Es decir, al ingresar el sueldo con el que se cuenta y la lista de objetos que se desean adquirir, la plataforma calcular&aacute; la cantidad aproximada que la persona podr&iacute;a gastar y realizar&aacute; búsquedas para tratar de obtener la mayor cantidad de objetos de tu lista alcanzables con el presupuesto disponible. Alternativamente, se puede realizar un c&aacute;lculo aproximado como plan de ahorros para poder comprar dichos objetos.
                 La plataforma se apoyar&aacute; de una base de datos en conjunto con el API de pricing de amazon y el api de google maps para proveer de búsquedas de d&oacute;nde comprar la mayor cantidad de objetos deseados según tu presupuesto y proporcionar la ubicaci&oacute;n de las tiendas cercanas a ti que vendan dichos objetos. Por ende, los precios ser&aacute;n únicamente de referencia.
@@ -47,31 +47,30 @@
           </div>  
           <div>
             <hr>
-          <h2><center>Problematica a Resolver</center></h2>
+          <h2 style="text-align: center;">Problematica a Resolver</h2>
             <blockquote cite="https://expansion.mx/mi-dinero/2014/01/08/4-pasos-para-hacer-tu-presupuesto">
-                <p>
-                    <hr>
-                    <cite><q>La gente tiende a sobreestimar sus ingresos y a subestimar sus deudas, lo que hace que la mayor&iacute;a de las veces haya desequilibrios entre lo que gasta y lo que gana </q></cite>
-                    <br>
-                    -Luis Fabre vicepresidente t&eacute;cnico de la Condusef 
-                    </br>
-                    <i><a href = "https://expansion.mx/mi-dinero/2014/01/08/4-pasos-para-hacer-tu-presupuesto" target = "_blank">(4 pasos para hacer tu presupuesto, 2014)</a></i>
+                
                   <hr>
-                </p>
+                    <cite><q>La gente tiende a sobreestimar sus ingresos y a subestimar sus deudas, lo que hace que la mayor&iacute;a de las veces haya desequilibrios entre lo que gasta y lo que gana </q></cite>
+                      <br>
+                        -Luis Fabre vicepresidente t&eacute;cnico de la Condusef 
+                        <i><a href = "https://expansion.mx/mi-dinero/2014/01/08/4-pasos-para-hacer-tu-presupuesto" target = "_blank">(4 pasos para hacer tu presupuesto, 2014)</a></i>
+                  <hr>
+                
             </blockquote>
             <p>
                 La mayor&iacute;a de los mexicanos, sobretodo aquellos en condiciones de pobreza, desconocen el c&oacute;mo manejar sus fondos. Debido a esto, es común que las personas gasten de m&aacute;s o no puedan alcanzar a comprar todos los art&iacute;culos que necesitan o que desean adquirir.  
                 Adicionalmente, a falta de organizaci&oacute;n financiera, las personas se ven en situaciones complicadas al tratar de ahorrar para comprar objetos de mayor precio. Por ende, es necesario brindar recomendaciones sobre c&oacute;mo ahorrar para lograr obtener un producto en un tiempo razonable.
             </p>
             <div class = "quote_image">
-              <img src ="../images/money.jpg"width="450px"height="250px" title="money" class = "quote_image">
+              <img src ="../images/money.jpg" width="450" height="250" title="money" class = "quote_image">
             </div>
             <hr>
           </div>
 
           <div>
             <hr>
-            <h2><center>C&oacute;digo del API de Amazon</center></h2>
+            <h2 style="text-align: center;">C&oacute;digo del API de Amazon</h2>
             
             <p>El siguiente c&oacute;digo incorpora la búsqueda de amazon para buscar los libros de la serie Hunger Games.</p>
             <p>La operaci&oacute;n de <dfn>ItemSearch</dfn> Es la encargada de realizar la búsqueda.
@@ -90,10 +89,6 @@
             <hr>
         </div>
       </div>		
-         
-            
-        </div>	
-    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
