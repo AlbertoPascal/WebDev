@@ -1,0 +1,47 @@
+.listado ul {
+  color: green;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  text-align: justify;
+  text-shadow: 2px 2px 10px #666;
+}
+
+.Title {
+  background-color: lightcyan;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+p {
+  display: inline-flex;
+}
+
+nav {
+  background-color: lightskyblue;
+  font-weight: bold;
+}
+nav a:hover {
+  background-color: whitesmoke;
+  border-radius: 20px;
+}
+
+#description_table {
+  text-align: center;
+}
+
+.quote_image {
+  text-align: center;
+  margin: auto;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/*# sourceMappingURL=contact_style.css.map */
