@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/editarP.css">
+    <title>Prototipo 1:ProfileUsers</title>
+  </head>
+  <body>
+    <header id = "header">
+        <nav class="navbar navbar-expand-md navbar-light navbar-custom">
+            <a href="../index.html" class="navbar-brand">All-Mighty Budget</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ml-auto navbar-light">
+                  <!--Important: data-toggle is what allows us to display the pop-up whenever we click on the login button"-->
+                  <!--Important: data-target is from bootstrap and allows us to point towards the element we want to add an action for"-->
+                  <a href="#" data-target="#login" data-toggle="modal" class="nav-item nav-link navbar-custom-button"><i class="fa fa-info-circle"></i>&nbsp;Log out</a>
+                </div>     
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="row my-2">
+            <div class="col-lg-4 order-lg-1 text-center">
+                <img src="../images/blank-profile-picture.png" class= "profilePic mx-auto img-fluid img-circle d-block" alt="avatar">
+                <h6 class="mt-3">Photo</h6>
+                <label class="custom-file">
+                    <input type="file" id="file" class="custom-file-input">
+                    <span class="custom-file-control">Choose file</span>
+                </label>
+            </div>
+            <div class="col-lg-8 order-lg-2">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a href="PerfilesU.html" data-target="#profile" data-toggle="tab" class="nav-link">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="editarP.html" data-target="#editar" data-toggle="tab" class="nav-link  active">Editar Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" data-target="#ahorros" data-toggle="tab" class="nav-link">Ahorros</a>
+                    </li>
+                </ul>
+                <div class="col-lg-4 ">
+                    <h2 class="text-center font-weight-light mt-3">User Profile</h2>
+                </div>
+                <div class="col-lg-8 order-lg-1 personal-info">
+                    <form role="form">
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Nombre</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="Jane" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Apellido</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="Apellido" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="email" value="email@ejemplo.com" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Ocupacion</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Username</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="Username" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Contraseña</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="password" value="Contraseña" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Confirmar Contraseña</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="password" value="Contraseña" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-9 ml-auto text-right">
+                                <input type="reset" class="btn btn-outline-secondary" value="Cancel" />
+                                <input type="button" class="btn btn-primary" value="Save Changes" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

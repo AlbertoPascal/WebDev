@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/profileu.css">
+    <title>Prototipo 1:ProfileUsers</title>
+  </head>
+  <body>
+    <header id = "header">
+        <nav class="navbar navbar-expand-md navbar-light navbar-custom">
+            <a href="../index.html" class="navbar-brand">All-Mighty Budget</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ml-auto navbar-light">
+                  <!--Important: data-toggle is what allows us to display the pop-up whenever we click on the login button"-->
+                  <!--Important: data-target is from bootstrap and allows us to point towards the element we want to add an action for"-->
+                  <a href="#" data-target="#login" data-toggle="modal" class="nav-item nav-link navbar-custom-button"><i class="fa fa-info-circle"></i>&nbsp;Log out</a>
+                </div>     
+            </div>
+        </nav>
+      </header>
+      <div class="container">
+        <div class="row my-2">
+            <div class="col-lg-4 order-lg-1 text-center">
+                <img src="../images/blank-profile-picture.png" class= "profilePic mx-auto img-fluid img-circle d-block" alt="avatar">
+                <h6 class="mt-3">User</h6>
+                <label class="custom-file">
+                    <input type="file" id="file" class="custom-file-input">
+                </label>
+                <div class= "mt-3">
+                    <h6>Balance Actual </h6>
+                    <p>
+                        $ 1500
+                    </p>
+                    <h6>Meta</h6>
+                    <p>
+                        $ 10,000
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-8 order-lg-2">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a href="PerfilesU.html" data-target="#profile" data-toggle="tab" class="nav-link active">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="editarP.html" data-target="#editar" data-toggle="tab" class="nav-link">Editar Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" data-target="#ahorros" data-toggle="tab" class="nav-link">Ahorros</a>
+                    </li>
+                </ul>
+                <div class="tab-content py-4">
+                    <div class="tab-pane active" id="profile">
+                        <h5 class="mb-3">Meta Actual</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped active" role="progressbar"
+                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                              40%
+                            </div>
+                          </div>
+                        </div>
+                        <div class="start">Start: $ 0</div>
+                        <div class="end">End: $5,000</div>
+                      </div> 
+                        <div class="row">                          
+                            <div class="col-md-12">
+                                <hr>
+                                <h5 class="mt-2"><span class="fa fa-clock-o ion-clock float-right"></span> Wish List</h5>
+                                <table class="table table-hover table-striped">
+                                    <tbody>                                    
+                                        <tr>
+                                            <td>
+                                               <span class="float-right font-weight-bold">$ 500</span> Pantalones skynny jeans Levis
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                               <span class="float-right font-weight-bold">$ 1,300</span> Animal Crossing Nintendo Switch
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                               <span class="float-right font-weight-bold">$ 200,000</span> Honda Fit 2015 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                               <span class="float-right font-weight-bold">$ 7,999</span> Nintendo Switch 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                               <span class="float-right font-weight-bold">$ 50</span> Peluche Axolotes 
+                                            </td>
+                                        </tr>
+                                    </tbody> 
+                                </table>
+                            </div>
+                        </div>
+                        <!--/row-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
