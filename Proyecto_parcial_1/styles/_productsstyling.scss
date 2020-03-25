@@ -1,6 +1,6 @@
 
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    
     max-width: 80%;
     max-height: 180px;
     margin: auto;
@@ -8,19 +8,28 @@
     font-family: arial;
     overflow: hidden;
 
-    img{
-        height: 20px;
-        width: 30px;
-    }
 }
 
-.left{
-    float: left;
+hr{
+    max-width: 80%;
+}
+
+.productImage{
+    height: 160px;
+    width: 200px;
+    float:left;
+}
+
+.ratingImage{
+    margin-top: -10px;
+    margin-bottom: 10px;
+    height: 15px;
+    width: 100px;
 }
 
 .price {
     color: grey;
-    font-size: 22px;
+    font-size: 16px;
     
 }
 
@@ -32,8 +41,8 @@
     background-color: #000;
     text-align: center;
     cursor: pointer;
-    width: 20%;
-    font-size: 18px;
+    width: 15%;
+    font-size: 16x;
 }
   
 .card button:hover {
