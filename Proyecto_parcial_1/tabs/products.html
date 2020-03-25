@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/products.css">
+    <title>Prototipo 1</title>
+  </head>
+  <body>
+    <header id = "header">
+      <nav class="navbar navbar-expand-md navbar-light navbar-custom">
+          <a href="index.html" class="navbar-brand">All-Mighty Budget</a>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+              <div class="navbar-nav ml-auto navbar-light">
+                <!--Important: data-toggle is what allows us to display the pop-up whenever we click on the login button"-->
+                <!--Important: data-target is from bootstrap and allows us to point towards the element we want to add an action for"-->
+                <a href="#" data-target="#login" data-toggle="modal" class="nav-item nav-link navbar-custom-button"><i class="fa fa-info-circle"></i>&nbsp;Log in</a>
+                <!-- this is from bootrstrap's Modal -->
+                <div id="login" class="modal fade">
+                    <div class="modal-dialog">
+                      <!-- This is where we modify the Modal content (login screen)-->
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          <!--This is the x to close the modal-->
+                          <button data-dismiss="modal" class="close">&times;</button>
+                          <!--regardin the login button: -->
+                          <h4>Login</h4>
+                          <form>
+                            <input type="text" name="username" class="form-control" placeholder="Username"/>
+                            <input type="password" name="password" class="form-control" placeholder="password"/>
+                            <input class="btn login" type="submit" value="Login" />
+                          </form>
+                        </div>
+                      </div>
+                    </div>  
+                  </div>
+                <a href="tabs/sign_up.html" class="nav-item nav-link navbar-custom-button"><i class="fa fa-users"></i>&nbsp;Sign Up</a>
+            </div>
+              
+          </div>
+      </nav>
+    </header>
+
+    <div class ="h1-title container">
+      <H1 class = "Title">Productos encontrados</H1>
+    </div>
+    <br>
+    
+    <div class="card">
+        <div class="left"><img src="../images/jeans.jpg" alt="Jeans"></div>
+        <div style="float: right;">
+            <h1>Tailored Jeans</h1>
+            <p class="price">$19.99</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
