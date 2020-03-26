@@ -9955,4 +9955,8 @@ body {
   word-break: break-word;
 }
 
+h1 {
+  font-size: 4vh;
+}
+
 /*# sourceMappingURL=index.css.map */
