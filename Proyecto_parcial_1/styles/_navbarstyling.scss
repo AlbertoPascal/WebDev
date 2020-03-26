@@ -55,6 +55,16 @@ body{
     transition: all .5s;
     margin-top: 1em;
   }
+  .signup {
+    padding: 6px 20px;
+    border-radius: 20px;
+    background: none;
+    border: 2px solid #FAB87F;
+    color: #FAB87F;
+    font-weight: bold;
+    transition: all .5s;
+    margin-top: 1em;
+  }
   .login:hover {
     background: #FAB87F;
     color: #fff;
