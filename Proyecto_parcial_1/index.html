@@ -23,7 +23,7 @@
               <div class="navbar-nav ml-auto navbar-light">
                 <!--Important: data-toggle is what allows us to display the pop-up whenever we click on the login button"-->
                 <!--Important: data-target is from bootstrap and allows us to point towards the element we want to add an action for"-->
-                <a href="tabs/PerfilesU.html" data-target="#login" data-toggle="modal" class="nav-item nav-link navbar-custom-button"><i class="fa fa-info-circle"></i>&nbsp;Log in</a>
+                <a href="" data-target="#login" data-toggle="modal" class="nav-item nav-link navbar-custom-button"><i class="fa fa-info-circle"></i>&nbsp;Log in</a>
                 <!-- this is from bootrstrap's Modal -->
                 <div id="login" class="modal fade">
                     <div class="modal-dialog">
@@ -34,7 +34,7 @@
                           <button data-dismiss="modal" class="close">&times;</button>
                           <!--regardin the login button: -->
                           <h4>Login</h4>
-                          <form>
+                          <form action = "tabs/PerfilesU.html">
                             <input type="text" name="username" class="form-control" placeholder="Username"/>
                             <input type="password" name="password" class="form-control" placeholder="password"/>
                             <input class="btn login" type="submit" value="Login" />
@@ -54,7 +54,7 @@
                         <button data-dismiss="modal" class="close">&times;</button>
                         <!--regardin the login button: -->
                         <h4>Sign Up</h4>
-                        <form>
+                        <form action = "tabs/PerfilesU.html">
                           <input type="text" name="username" class="form-control" placeholder="Username"/>
                           <input type="password" name="password" class="form-control" placeholder="password"/>
                           <input type="password" name="password_conf" class="form-control" placeholder="confirm password"/>
@@ -75,9 +75,9 @@
       <div class ="h1-title container p-5">
         <H1>¡Maneja tu presupuesto y compra lo que quieras!</H1>
         <br>
-        <ul class="smooth-scroll list-unstyled">
+        <ul>
           <li>
-            <h5><a href="#test1">¡Revisa los artículos más populares de la semana!</a></h5>
+            <h5><a href="#popular">¡Revisa los artículos más populares de la semana!</a></h5>
           </li>
           <br>
         </ul>
@@ -87,12 +87,12 @@
 
     <div class="bg-white rounded">
       <!-- Custom rounded search bars with input group -->
-      <form action="" class = "col-xs-12 col-sm-12 col-md-10 col-lg-8 col-xl-8 offset-auto mx-auto">
+      <form action="tabs/products.html" class = "col-xs-12 col-sm-12 col-md-10 col-lg-8 col-xl-8 offset-auto mx-auto">
         <div class=" bg-light rounded rounded-pill">
           <div class="input-group">
             <input type="search" placeholder="¿Qué artículos buscas?" aria-describedby="button-addon1" class="form-control border-0 bg-light">
             <div class="input-group-append">
-              <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+              <button id="button-addon1" type="submit"  class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
             </div>
           </div>
         </div>
@@ -100,9 +100,9 @@
       <!-- End -->
     </div>
     
-    <div class="bg-white rounded" id = "test1"> 
+    <div class="bg-white rounded" id = "popular"> 
       
-      <div class="bg-white p-5 rounded" id = "test1"> 
+      <div class="bg-white p-5 rounded"> 
         <h1>Artículos Populares</h1>
       </div>
       <div class="container text-center my-3">

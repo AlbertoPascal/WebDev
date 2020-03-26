@@ -9959,4 +9959,8 @@ h1 {
   font-size: 4vh;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /*# sourceMappingURL=index.css.map */
