@@ -9939,6 +9939,12 @@ h4 {
   color: #fff;
 }
 
+body {
+  height: 100%;
+  text-align: center;
+  word-break: break-all;
+}
+
 @media (min-width: 768px) {
   .custom-car-size {
     height: 300px;
