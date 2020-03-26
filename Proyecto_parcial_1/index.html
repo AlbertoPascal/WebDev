@@ -23,7 +23,7 @@
               <div class="navbar-nav ml-auto navbar-light">
                 <!--Important: data-toggle is what allows us to display the pop-up whenever we click on the login button"-->
                 <!--Important: data-target is from bootstrap and allows us to point towards the element we want to add an action for"-->
-                <a href="" data-target="#login" data-toggle="modal" class="nav-item nav-link navbar-custom-button"><i class="fa fa-info-circle"></i>&nbsp;Log in</a>
+                <a href="tabs/PerfilesU.html" data-target="#login" data-toggle="modal" class="nav-item nav-link navbar-custom-button"><i class="fa fa-info-circle"></i>&nbsp;Log in</a>
                 <!-- this is from bootrstrap's Modal -->
                 <div id="login" class="modal fade">
                     <div class="modal-dialog">
@@ -74,6 +74,13 @@
     
       <div class ="h1-title container p-5">
         <H1>¡Maneja tu presupuesto y compra lo que quieras!</H1>
+        <br>
+        <ul class="smooth-scroll list-unstyled">
+          <li>
+            <h5><a href="#test1">¡Revisa los artículos más populares de la semana!</a></h5>
+          </li>
+          <br>
+        </ul>
       </div>
    
     
@@ -93,7 +100,11 @@
       <!-- End -->
     </div>
     
-    <div class="bg-white rounded">
+    <div class="bg-white rounded" id = "test1"> 
+      
+      <div class="bg-white p-5 rounded" id = "test1"> 
+        <h1>Artículos Populares</h1>
+      </div>
       <div class="container text-center my-3">
         <div class="row mx-auto my-auto">
           <div id="myCarousel" class="carousel slide w-100" data-ride="carousel">
