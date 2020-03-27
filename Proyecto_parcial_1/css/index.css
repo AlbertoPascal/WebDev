@@ -3886,7 +3886,7 @@ input[type=button].btn-block {
 }
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: white;
+  color: #495057;
   background-color: #fff;
   border-color: #dee2e6 #dee2e6 #fff;
 }
@@ -9901,11 +9901,11 @@ footer {
   font-size: 14px;
 }
 
-a {
+footer a {
   color: white;
 }
 
-a:hover {
+footer a:hover {
   color: #2f4c8f;
   font-style: bold;
   background-color: white;
