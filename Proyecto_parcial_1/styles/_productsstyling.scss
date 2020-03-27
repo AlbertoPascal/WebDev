@@ -1,52 +1,53 @@
 
+
 body{
     word-break: break-word;
 }
 
 .card {
-    max-width: 80%;
-    max-height: 180px;
-    margin: auto;
-    text-align: left;
-    font-family: arial;
+    max-width: $card-width;
+    max-height: $card-height;
+    margin: $card-margin;
+    text-align: $card-text-align;
+    font-family: $card-font;
     overflow: hidden;
-    padding: 5px;
+    padding: $card-padding;
 }
 
 hr{
-    max-width: 80%;
+    max-width: $hr-width;
 }
 
 .productImage{
-    width: 180px;
-    height: 170px;
-    padding: 5px;
-    margin-left: 5px;
+    height: $product-image-height;
+    width: $product-image-width;
+    padding: $product-image-padding;
+    margin-left: $product-image-margin;
 }
 
 .card-block{
-    margin-left: 7px;
+    margin-left: $card-text-margin;
 }
 
 .ratingImage{
-    max-width: 75px;
-    max-height: 75px;
+    max-width: $rating-image-width;
+    max-height: $rating-image-height;
 }
 
 .price {
-    color: grey;
-    font-size: 24px;
+    color: $price-color;
+    font-size: $price-size;
 }
 
-@media (max-width:576px){
+@media (max-width:$media-max-width){
     .card {
-        max-width: 80%;
-        max-height: 350px;
+        max-width: $media-card-width;
+        max-height: $media-card-heigth;
     }
     .productImage{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+        display: $media-product-image-display;
+        margin-left: $media-product-image-margin-left;
+        margin-right: $media-product-image-margin-right;
     }
 }
 
