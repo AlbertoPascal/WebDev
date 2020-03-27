@@ -1,15 +1,15 @@
 .navbar-custom{
     @include hover-focus();
-    background-color: rgb(47, 76, 143);
+    background-color: $nav-bk-color-def;
 }
 .navbar-custom-button a li ul i {
-  color:white;
-  background-color: red($color: #000000);
+  color:$navbar-light-active-color;
+  background-color:$navbar-light-active-color ;
 }
 .navbar-custom-button:hover{
     @include hover-focus();
-    background-color: white;
-    color:black;
+    background-color: $navbar-light-color;
+    color:$navbar-dark-custom-color;
     border-radius: $button-radius;
 }
 
@@ -21,26 +21,26 @@ body{
   }
     /*Trigger Button*/
   .login-trigger {
-    font-weight: bold;
-    color: #fff;
-    background: linear-gradient(to bottom right,rgb(14, 96, 117),rgb(189, 9, 174));
-    padding: 15px 30px;
-    border-radius: 30px;
-    position: relative; 
-    top: 50%;
+    font-weight: $def-login-weight;
+    color: $trigger-button-color;
+    background: linear-gradient($def-gradient-dir,$def-gradient-first-color,$def-gradient-second-color);
+    padding: $def-log-trigger-padding;
+    border-radius: $def-button-login-radius;
+    position: $def-button-pos; 
+    top: $trigger-btn-top;
   }
   
   /*Modal*/
   h4 {
-    font-weight: bold;
-    color: #fff;
+    font-weight: $def-login-weight;
+    color: $navbar-light-color;
   }
   .close {
-    color: #fff;
+    color: $navbar-light-color;
     transform: scale(1.2)
   }
   .modal-content {
-    font-weight: bold;
+    font-weight: $def-login-weight;
     background: linear-gradient(to bottom right,rgb(50, 14, 117),rgb(189, 9, 174));
   }
   .form-control {

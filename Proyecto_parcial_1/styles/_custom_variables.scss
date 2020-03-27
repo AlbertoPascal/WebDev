@@ -1,6 +1,8 @@
  
  // -----------------variable -----------------
-//globales
+ /*******************************************************/
+ //globales
+  /*******************************************************/
 $default-margins: auto;
 $text-center: center;  
 $text-right: right; 
@@ -12,24 +14,35 @@ $hide_overflow:hidden;
 $default-scroll:smooth;
 $def-text-decoration:none;
 $default-display:block;
- //para editar y perfiles
-
+ /*******************************************************/ 
+//para editar y perfiles
+ /*******************************************************/
  $circle: 50%;
  $widthp: 200px;
  $max: 100%;
  $default-img: url(../images/blank-profile-picture.png);
  $button-font: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
  $nav-font: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-
+ /*******************************************************/
  // para ahorros
+ /*******************************************************/
 
+
+  /*******************************************************/
  //para productos
+ /*******************************************************/
 
- //para el index
+
+
+ /*******************************************************/
+ // index
+ /******************************************************/
  $title-h1-sizing: 4vh;
  $title-h4-sizing:2vh; //crear funciones para landscape
  $def-h-index-increase:3vh;
+  /*******************************************************/
 //index carousel
+ /*******************************************************/
 $carousel-max-size-h:100vh;
 $carousel-max-size-w:100vh;
 $def-img-sub-size:10vh;
@@ -39,7 +52,9 @@ $def-img-sub-size:10vh;
  $promotion-color:red;
  $promotion-color-visited:red;
  $default-list-style:none;
+  /*******************************************************/
  //ribbon
+  /*******************************************************/
  $shadow-ribbon: #888;
  $titles-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
  $def-white-space: nowrap;
@@ -54,11 +69,32 @@ $def-img-sub-size:10vh;
  $ribbon-margin:1px 0;
  $ribbon-padding: 10px 50px;
  $ribbon-shadow: 0 0 5px;
+  /*******************************************************/
  //index media orientation:
+  /*******************************************************/
+  
  $default-media-orientation:landscape;
- // para la navbar
+ 
+ 
+ /******************************************************/
+ //para la navbar
+ /******************************************************/
+
+ //navbar button color (menu)
  $navbar-light-active-color:white; //donde van?
  $navbar-light-color:white; //donde van?
  $navbar-light-disabled-color:white; //donde van?
  $button-radius : 10px;
  $navbar-font:'Times New Roman', Times, serif;;
+$trigger-button-color:white;
+$nav-bk-color-def:rgb(47, 76, 143);
+$navbar-dark-custom-color:black;
+$def-body-height:100vh;
+$def-gradient-dir: to buttom right;
+$def-gradient-first-color:rgb(14, 96, 117);
+$def-gradient-second-color:rgb(189, 9, 174);
+$def-log-trigger-padding:15px 30px;
+$def-button-login-radius:30px;
+$def-button-pos:relative;
+$trigger-btn-top:50%;
+$def-login-weight:bold;
