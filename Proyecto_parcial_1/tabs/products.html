@@ -15,6 +15,7 @@
   </head>
   <body>
     <header id = "header">
+      
       <nav class="navbar navbar-expand-md navbar-light navbar-custom">
           <a href="../index.html" class="navbar-brand">All-Mighty Budget</a>
           <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -25,7 +26,7 @@
               <div class="navbar-nav ml-auto navbar-light">
                 <!--Important: data-toggle is what allows us to display the pop-up whenever we click on the login button"-->
                 <!--Important: data-target is from bootstrap and allows us to point towards the element we want to add an action for"-->
-                <a href="#" data-target="#login" data-toggle="modal" class="nav-item nav-link navbar-custom-button"><i class="fa fa-info-circle"></i>&nbsp;Log in</a>
+                <a href="" data-target="#login" data-toggle="modal" class="nav-item nav-link navbar-custom-button"><i class="fa fa-info-circle"></i>&nbsp;Log in</a>
                 <!-- this is from bootrstrap's Modal -->
                 <div id="login" class="modal fade">
                     <div class="modal-dialog">
@@ -36,7 +37,7 @@
                           <button data-dismiss="modal" class="close">&times;</button>
                           <!--regardin the login button: -->
                           <h4>Login</h4>
-                          <form>
+                          <form action = "PerfilesU.html">
                             <input type="text" name="username" class="form-control" placeholder="Username"/>
                             <input type="password" name="password" class="form-control" placeholder="password"/>
                             <input class="btn login" type="submit" value="Login" />
@@ -45,8 +46,29 @@
                       </div>
                     </div>  
                   </div>
-                <a href="tabs/sign_up.html" class="nav-item nav-link navbar-custom-button"><i class="fa fa-users"></i>&nbsp;Sign Up</a>
-            </div>
+                <a href="" data-target="#signup" data-toggle="modal" class="nav-item nav-link navbar-custom-button"><i class="fa fa-users"></i>&nbsp;Sign Up</a>
+                <!-- this is from bootrstrap's Modal -->
+                <div id="signup" class="modal fade">
+                  <div class="modal-dialog">
+                    <!-- This is where we modify the Modal content (login screen)-->
+                    <div class="modal-content">
+                      <div class="modal-body">
+                        <!--This is the x to close the modal-->
+                        <button data-dismiss="modal" class="close">&times;</button>
+                        <!--regardin the login button: -->
+                        <h4>Sign Up</h4>
+                        <form action = "PerfilesU.html">
+                          <input type="text" name="username" class="form-control" placeholder="Username"/>
+                          <input type="password" name="password" class="form-control" placeholder="password"/>
+                          <input type="password" name="password_conf" class="form-control" placeholder="confirm password"/>
+                          <input type="email" name="email" class="form-control" placeholder="email"/>
+                          <input class="btn signup" type="submit" value="signup" />
+                        </form>
+                      </div>
+                    </div>
+                  </div>  
+                </div>
+              </div>
               
           </div>
       </nav>
@@ -142,4 +164,47 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
+
+
+  <!-- Footer -->
+<footer class="page-footer font-small indigo">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Columna  -->
+      <div class="col-md-7 col-lg-8 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Sobre nosotros</h5>
+
+      </div>
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-5 col-lg-4 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Contacto</h5>
+
+      </div>
+
+      <hr class="clearfix w-100 d-md-none">
+
+    </div>
+  </div>
+
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/" class="btn"> MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 </html>
