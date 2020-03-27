@@ -5,6 +5,24 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/******************************************************/
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/******************************************************/
+/******************************************************/
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -4293,6 +4311,7 @@ input[type=button].btn-block {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  height: 180px;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
@@ -9880,7 +9899,7 @@ h3 {
 }
 .navbar-custom-button a li ul i {
   color: white;
-  background-color: 0;
+  background-color: white;
 }
 
 .navbar-custom-button:hover {
@@ -9897,8 +9916,8 @@ body {
 /*Trigger Button*/
 .login-trigger {
   font-weight: bold;
-  color: #fff;
-  background: linear-gradient(to bottom right, #320e75, #bd09ae);
+  color: white;
+  background: linear-gradient(to buttom right, #0e6075, #bd09ae);
   padding: 15px 30px;
   border-radius: 30px;
   position: relative;
@@ -9908,11 +9927,11 @@ body {
 /*Modal*/
 h4 {
   font-weight: bold;
-  color: #fff;
+  color: white;
 }
 
 .close {
-  color: #fff;
+  color: white;
   transform: scale(1.2);
 }
 
@@ -9927,7 +9946,7 @@ h4 {
 
 .form-control:hover, .form-control:focus {
   box-shadow: none;
-  border-color: #fff;
+  border-color: white;
 }
 
 .login {
@@ -9942,7 +9961,7 @@ h4 {
 }
 
 .signup {
-  padding: 6px 20px;
+  padding: 15px 30px;
   border-radius: 20px;
   background: none;
   border: 2px solid #FAB87F;
@@ -9954,7 +9973,7 @@ h4 {
 
 .login:hover {
   background: #FAB87F;
-  color: #fff;
+  color: white;
 }
 
 .header_text {
@@ -9989,11 +10008,11 @@ h4 {
   @keyframes header_colors {
     from {
       color: #0fa03c;
-      font-size: 4vh;
+      font-size: 5vh;
     }
     to {
       color: #a00f73;
-      font-size: 6vh;
+      font-size: 5.9vh;
     }
   }
 }
@@ -10060,22 +10079,35 @@ footer a:hover {
   }
 }
 body {
-  height: 100vh;
+  height: 100%;
   text-align: center;
 }
 
 h6 {
   font-weight: bold;
   color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .profilePic {
   border-radius: 50%;
   width: 200px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+}
+
+.picUser {
+  background-image: url(../images/blank-profile-picture.png);
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  background-size: 100% 100%;
 }
 
 .start {
   float: left;
+  text-align: left;
 }
 
 .end {
@@ -10083,20 +10115,13 @@ h6 {
   text-align: right;
 }
 
-.pic {
-  width: 200px;
-}
-
 .flip-card {
   background-color: transparent;
-  width: 200px;
-  height: 200px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px;
-  /* Remove this if you don't want the 3D effect */
+  width: 150px;
+  height: 150px;
 }
 
-/* This container is needed to position the front and back side */
+/* permite que cambien las caras*/
 .flip-card-inner {
   position: relative;
   width: 100%;
@@ -10106,55 +10131,44 @@ h6 {
   transform-style: preserve-3d;
 }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
+/* la animacion de giro*/
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-/* Position the front and back side */
+/* establece la posicion de la parte de adelane y atras */
 .flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
-  /* Safari */
   backface-visibility: hidden;
 }
 
-/* Style the front side (fallback if image is missing) */
+/* estilo del frente*/
 .flip-card-front {
-  background-color: #bbb;
+  background-image: url(../images/blank-profile-picture.png);
+  background-size: 100% 100%;
+  background-color: gray;
   color: black;
 }
 
-/* Style the back side */
+.flip-card-front img {
+  height: 100%;
+  width: 100%;
+}
+
+/* estilo de la parte trasera */
 .flip-card-back {
   background-color: dodgerblue;
-  color: white;
+  color: #f1f1f1;
   transform: rotateY(180deg);
-}
-
-#box {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: #22199e;
-  background-color: lightgray;
-  border-radius: 5px;
-  width: 60%;
-  height: 30px;
-}
-
-.buscar {
-  background-color: #4d1b9e;
-  padding: 30px 40px;
-  color: white;
-  text-align: center;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
 .buscar2 {
   background-color: #4abe64;
-  padding: 30px 40px;
-  color: white;
+  padding: 40px 40px;
+  color: #f1f1f1;
   text-align: center;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
@@ -10170,6 +10184,11 @@ input[type=text] {
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
   width: 81%;
+}
+
+.estilo-link {
+  font-style: normal;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 /*# sourceMappingURL=profileu.css.map */

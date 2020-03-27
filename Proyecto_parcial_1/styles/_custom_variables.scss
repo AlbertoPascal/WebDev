@@ -104,7 +104,7 @@ $def-img-sub-size:10vh;
   /*******************************************************/
  //index media orientation:
   /*******************************************************/
-  
+
  $default-media-orientation:landscape;
  
  
@@ -130,3 +130,41 @@ $def-button-login-radius:30px;
 $def-button-pos:relative;
 $trigger-btn-top:50%;
 $def-login-weight:bold;
+$nav-form-control-margin: 1em 0;
+$def-login-box-shadows:none;
+$def-login-padding: 6px 20px;
+$def-login-border-radius-modal: 20px;
+$def-modal-background:none;
+$def-login-border-modal:2px solid #FAB87F;
+$def-login-color:#FAB87F;
+$def-login-transition: all .5s;
+$def-login-margintop:1em;
+
+//signup
+$def-signup-padding:$def-log-trigger-padding;
+$def-signup-border-radius:20px;
+$def-signup-border:$def-login-border-modal; 
+$def-signup-color:$def-login-color;
+$def-signup-weight:$def-login-weight;
+$def-signup-transition:$def-login-transition;
+$def-signup-margintop:$def-login-margintop;
+
+//header_text
+
+$default-text-anim-duration:5s;
+$default-text-anim-iteration:infinite;
+$default-text-anim-direction:alternate;
+
+//header_images
+$header_img_max_width:300px;
+$header_img_max_height:300px;
+$header_img_width:50%;
+$header_img_height:50%;
+
+//keyframe:
+$header_text_anim_name:header_colors;
+$header_text_anim_color_from: rgb(15, 160, 60);
+$header_text_anim_color_to: rgb(160, 15, 115);
+$header_text_anim_fontsize_from:3vh;
+$header_text_anim_fontsize_to:3.9vh;
+$header_text_anim_font_landscape_increase:2vh;

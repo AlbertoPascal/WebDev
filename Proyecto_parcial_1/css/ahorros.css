@@ -1,4 +1,22 @@
 @charset "UTF-8";
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/******************************************************/
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/*******************************************************/
+/******************************************************/
+/******************************************************/
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -4287,6 +4305,7 @@ input[type=button].btn-block {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  height: 180px;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
@@ -9874,7 +9893,7 @@ h3 {
 }
 .navbar-custom-button a li ul i {
   color: white;
-  background-color: 0;
+  background-color: white;
 }
 
 .navbar-custom-button:hover {
@@ -9891,8 +9910,8 @@ body {
 /*Trigger Button*/
 .login-trigger {
   font-weight: bold;
-  color: #fff;
-  background: linear-gradient(to bottom right, #0e6075, #bd09ae);
+  color: white;
+  background: linear-gradient(to buttom right, #0e6075, #bd09ae);
   padding: 15px 30px;
   border-radius: 30px;
   position: relative;
@@ -9902,11 +9921,11 @@ body {
 /*Modal*/
 h4 {
   font-weight: bold;
-  color: #fff;
+  color: white;
 }
 
 .close {
-  color: #fff;
+  color: white;
   transform: scale(1.2);
 }
 
@@ -9921,7 +9940,7 @@ h4 {
 
 .form-control:hover, .form-control:focus {
   box-shadow: none;
-  border-color: #fff;
+  border-color: white;
 }
 
 .login {
@@ -9936,7 +9955,7 @@ h4 {
 }
 
 .signup {
-  padding: 6px 20px;
+  padding: 15px 30px;
   border-radius: 20px;
   background: none;
   border: 2px solid #FAB87F;
@@ -9948,7 +9967,7 @@ h4 {
 
 .login:hover {
   background: #FAB87F;
-  color: #fff;
+  color: white;
 }
 
 .header_text {
@@ -9983,11 +10002,11 @@ h4 {
   @keyframes header_colors {
     from {
       color: #0fa03c;
-      font-size: 4vh;
+      font-size: 5vh;
     }
     to {
       color: #a00f73;
-      font-size: 6vh;
+      font-size: 5.9vh;
     }
   }
 }
@@ -9997,10 +10016,6 @@ footer {
   font-size: 2vh;
   word-break: break-word;
   overflow-x: hidden;
-  clear: both;
-  width: 100%;
-  position: absolute;
-  margin-top: 0px;
 }
 
 .footerbar {
