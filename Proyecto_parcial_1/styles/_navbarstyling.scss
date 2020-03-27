@@ -14,7 +14,6 @@ $button-radius : 10px;
     border-radius: $button-radius;
 }
 
-
 body{
     height: 100vh;
     text-align: center;
@@ -75,4 +74,36 @@ body{
   .login:hover {
     background: #FAB87F;
     color: #fff;
+  }
+  .header_text{
+    animation-name:header_colors;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .header_img{
+    max-width: 300px;
+    max-height: 300px;
+    width:50%;
+    height:50%;
+    margin:auto;
+  }
+  @keyframes header_colors {
+    from {color: rgb(15, 160, 60);
+          font-size: 3vh;}
+    to {color:rgb(160, 15, 115);
+        font-size: 3.9vh;}
+  }
+  @media (orientation:landscape)
+  {
+    @keyframes header_colors {
+      from {color: rgb(15, 160, 60);
+            font-size: 4vh;}
+      to {color:rgb(160, 15, 115);
+          font-size: 6vh;}
+    }
   }
