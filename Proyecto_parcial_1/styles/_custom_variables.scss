@@ -32,7 +32,39 @@ $default-display:block;
  //para productos
  /*******************************************************/
 
+ //Cards with the products
+$card-width: 80%;
+$card-height: 180px;
+$card-font: arial;
+$card-margin:auto;
+$card-padding:5px;
+$card-text-align:left;
+$card-text-margin: 7px;
 
+//hr between each card product
+$hr-width:80%;
+
+//Product images for each card
+$product-image-height: 170px;
+$product-image-width: 180px;
+$product-image-padding: 5px;
+$product-image-margin: 5px;
+
+//Image of the five stars
+$rating-image-width: 75px;
+$rating-image-height: 75px;
+
+//Price for each card product
+$price-color:grey;
+$price-size: 24px;
+
+//Media variables for mobile screens
+$media-max-width:576px;
+$media-card-width:80%;
+$media-card-heigth:350px;
+$media-product-image-display: block;
+$media-product-image-margin-left: auto;
+$media-product-image-margin-right: auto;
 
  /*******************************************************/
  // index
