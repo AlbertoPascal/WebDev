@@ -4,31 +4,40 @@ body{
     overflow-x: $hide_overflow;
 
 }
+@mixin set-font-size($size){
+  font-size:$size;
+}
+
 h1{
-    font-size: $title-h1-sizing;
+    @include set-font-size($title-h1-sizing);
     font-family: $titles-font;
 }
 h4{
-  font-size: $title-h4-sizing;
+  @include set-font-size($title-h4-sizing);
+}
+@mixin set_carousel_maxes($height, $width){
+  max-height: $height;
+  max-width:$width;
 }
 .imgCarousel{
-  max-height: $carousel-max-size-h;
-  max-width: $carousel-max-size-w;
+  @include set_carousel_maxes($carousel-max-size-h, $carousel-max-size-w);
   margin:$default-margins;
 }
 html {
     scroll-behavior: $default-scroll;
   }
+@mixin default_promotion_setup(){
+  text-decoration:$def-text-decoration;
+  list-style-type: $default-list-style;
+}
 
 .promotion{
-    text-decoration: $def-text-decoration;
+    @include default_promotion_setup();
     color:$promotion-color;
-    list-style-type: $default-list-style;
 }
 .promotion:visited, .promotion:target{
-    text-decoration: $def-text-decoration;
-    color:$promotion-color;
-    list-style-type: $default-list-style;
+    @include default_promotion_setup();
+    color:$promotion-color-visited;
 }
 .ribbon {
     background-color:$promotion-color;
@@ -79,9 +88,8 @@ html {
       font-size: media_h_size_calc($title-h4-sizing, $def-h-index-increase);
     }
     .imgCarousel{
-    max-height:media_imgCarousel_size_calc($carousel-max-size-h,$def-img-sub-size);
-    max-width: media_imgCarousel_size_calc($carousel-max-size-w,$def-img-sub-size);
-    margin:$default-margins;
+      @include set_carousel_maxes(media_imgCarousel_size_calc($carousel-max-size-h,$def-img-sub-size),media_imgCarousel_size_calc($carousel-max-size-w,$def-img-sub-size));
+      margin:$default-margins;
     }
   
   }
