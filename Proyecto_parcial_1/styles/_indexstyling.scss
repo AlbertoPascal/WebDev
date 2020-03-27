@@ -1,7 +1,7 @@
 body{
     margin:auto;
     word-break: break-word;
-    
+    overflow-x: hidden;
 }
 h1{
     font-size: 4vh;
@@ -53,3 +53,4 @@ html {
     /* for creating shadow */
     text-shadow: 0 0 5px #444;
   }
+  
