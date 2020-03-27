@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/profileu.css">
     <title>Prototipo 1:ProfileUsersAdmin</title>
+    <script async src="../js/paging.js"></script>
   </head>
   <body>
     <header id = "header">
@@ -37,13 +38,29 @@
                 <img src="../images/blank-profile-picture.png" class= "profilePic mx-auto img-fluid  d-block" alt="avatar">
                 <h6 class="mt-3">Admin</h6>
                 
-                <ul class="list-group mt-2">
+                <ul class="list-group mt-3">
                     <li class="list-group-item text-muted">Actividad reciente <i class="fa fa-dashboard fa-1x"></i></li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong>Balance</strong></span> $1500</li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong>Meta</strong></span> $10,000</li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong>Salario</strong></span>$ 200</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Limite Gato</strong></span>-</li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong>Familia</strong></span> Fam</li>
                   </ul> 
+                  <hr>
+                <div class = "mt-3">
+                    <div class="buscar">
+                        <h4> Buscar miembro</h4>
+                        <input type="text" name="search" placeholder=" Search.."> 
+                        <button id="button-addon1" type="submit"  class="btn btn-link text-primary  bg-light rounded rounded-pill"><i class="fa fa-search"></i></button>
+                      </div>
+                    <hr>
+                    <div class="buscar2">
+                        <h4> Agregar miembro</h4>
+                        <input type="text" name="search" placeholder=" Mail"> 
+                        <button id="button-addon1" type="submit"  class="btn btn-link text-primary  bg-light rounded rounded-pill"><i class="fa fa-search"></i></button>
+                      </div>
+                    <hr>
+                </div>
             </div>
             <div class="col-sm-12 col-lg-8 col-md-8 order-md-2 order-lg-2">
                 <ul class="nav nav-tabs mt-2">
@@ -71,7 +88,7 @@
                     <div class="col-md-12">
                         <hr>
                         <h5 class="mt-2"><span class="fa fa-bookmark  float-right"></span> Wish List</h5>
-                        <table class="table table-hover table-striped">
+                        <table id = "table"class="table table-hover table-striped">
                             <tbody>                                    
                                 <tr>
                                     <td>
@@ -100,6 +117,23 @@
                                 </tr>
                             </tbody> 
                         </table>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                              <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                  <span aria-hidden="true">&laquo;</span>
+                                </a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#">1</a></li>
+                              <li class="page-item"><a class="page-link" href="#">2</a></li>
+                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                              <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                  <span aria-hidden="true">&raquo;</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </nav>
                     </div>
                 </div>
                 <div class="row">
@@ -112,136 +146,49 @@
                                     </h3>
                             </div>
                             <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-xs-3 col-md-3">
-                                        <div class="card">
-                                            <img src="../images/blank-profile-picture.png" alt="Denim Jeans" class= "pic mx-auto img-fluid" >
-                                            <p class="nombre">Jane Doe</p>
-                                            <p>Studiante</p>
-                                            <p>Miembro desde: 01/03/2020</p>
-                                            <p><button>Ver</button></p>
-                                        </div> 
-                                    </div>
-                                    <div class="col-xs-3 col-md-3">
-                                        <div class="card">
-                                            <img src="../images/blank-profile-picture.png" alt="Denim Jeans" class= "pic mx-auto img-fluid" >
-                                            <p class="nombre">Jane Doe</p>
-                                            <p>Studiante</p>
-                                            <p>Miembro desde: 01/03/2020</p>
-                                            <p><button>Ver</button></p>
-                                        </div> 
-                                    </div>
-                                    <div class="col-xs-3 col-md-3">
-                                        <div class="card">
-                                            <img src="../images/blank-profile-picture.png" alt="Denim Jeans" class= "pic mx-auto img-fluid" >
-                                            <p class="nombre">Jane Doe</p>
-                                            <p>Studiante</p>
-                                            <p>Miembro desde: 01/03/2020</p>
-                                            <p><button>Ver</button></p>
-                                        </div> 
-                                    </div>
-                                    <div class="col-xs-3 col-md-3">
-                                        <div class="card">
-                                            <img src="../images/blank-profile-picture.png" alt="Denim Jeans" class= "pic mx-auto img-fluid" >
-                                            <p class="nombre">Jane Doe</p>
-                                            <p>Studiante</p>
-                                            <p>Miembro desde: 01/03/2020</p>
-                                            <p><button>Ver</button></p>
-                                        </div> 
-                                    </div>
-                                    <div class="col-xs-3 col-md-3"> 
-                                        <div class="flip-card">
-                                            <div class="flip-card-inner">
-                                              <div class="flip-card-front">
-                                                <img src="../images/blank-profile-picture.png" alt="Avatar" class= "pic mx-auto img-fluid">
-                                              </div>
-                                              <div class="flip-card-back">
-                                                <h1>John Doe</h1>
-                                                <p>Studiante</p>
-                                                <p>Miembro desde: 01/03/2020</p>
-                                              </div>
-                                            </div>
-                                          </div> 
-                                    </div>
-                                    <div class="col-xs-3 col-md-3"> 
-                                        <div class="flip-card">
-                                            <div class="flip-card-inner">
-                                              <div class="flip-card-front">
-                                                <img src="../images/blank-profile-picture.png" alt="Avatar" class= "pic mx-auto img-fluid">
-                                              </div>
-                                              <div class="flip-card-back">
-                                                <h1>John Doe</h1>
-                                                <p>Studiante</p>
-                                                <p>Miembro desde: 01/03/2020</p>
-                                              </div>
-                                            </div>
-                                          </div> 
-                                    </div>
-                                    <div class="col-xs-3 col-md-3"> 
-                                        <div class="flip-card">
-                                            <div class="flip-card-inner">
-                                              <div class="flip-card-front">
-                                                <img src="../images/blank-profile-picture.png" alt="Avatar" class= "pic mx-auto img-fluid">
-                                              </div>
-                                              <div class="flip-card-back">
-                                                <h1>John Doe</h1>
-                                                <p>Studiante</p>
-                                                <p>Miembro desde: 01/03/2020</p>
-                                              </div>
-                                            </div>
-                                          </div> 
-                                    </div>
-                                    <table class="table table-hover table-dark">
-                                        <thead>
-                                          <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Foto</th>
-                                            <th scope="col">Nombre</th>
-                                            <th scope="col">Apellido</th>
-                                            <th scope="col">Ocupacion</th>
-                                            <th scope="col">Miembro desde: </th>
-                                            <th scope="col"><i class="fa fa-pencil" aria-hidden="true"></i>
-                                            </th>
-                                            
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr>
-                                            <th scope="row">1</th>
-                                            <td><img src="../images/blank-profile-picture.png" alt="Avatar" class= "pic mx-auto img-fluid"></td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>flojo</td>
-                                            <td>01/03/2020</td>
-                                            <td><i class="fa fa-eye" aria-hidden="true"></i>
-                                                <i class="fa fa-trash" aria-hidden="true"></i>
-                                            </td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">2</th>
-                                           
-                                            <td><img src="../images/blank-profile-picture.png" alt="Avatar" class= "pic mx-auto img-fluid"></td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>flojo</td>
-                                            <td>01/03/2020</td>
-                                            <td><i class="fa fa-eye" aria-hidden="true"></i>
-                                                <i class="fa fa-trash" aria-hidden="true"></i>
-                                            </td>
-                                          </tr>
-                                          <tr>
-                                            <th scope="row">3</th>
-                                            <td><img src="../images/blank-profile-picture.png" alt="Avatar" class= "pic mx-auto img-fluid"></td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>flojo</td>
-                                            <td>01/03/2020</td>
-                                            <td><i class="fa fa-eye" aria-hidden="true"></i>
-                                                <i class="fa fa-trash" aria-hidden="true"></i>
-                                            </td>
-                                          </tr>
-                                        </tbody>
-                                      </table>  
+                                <table class="table table-hover table-dark">
+                                    <thead>
+                                        <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Perfil</th>
+                                        <th scope="col">Saldo </th>
+                                        <th scope="col">Limite Gasto </th>
+                                        <th scope="col"># Productos comprados</th>
+                                        <th scope="col"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                        </th>
+                                        
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <th scope="row">1</th>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-xs-3 col-md-3"> 
+                                                    <div class="flip-card">
+                                                        <div class="flip-card-inner">
+                                                          <div class="flip-card-front">
+                                                            <img src="../images/blank-profile-picture.png" alt="Avatar" class= "pic mx-auto img-fluid">
+                                                          </div>
+                                                          <div class="flip-card-back">
+                                                            <h1>John Doe</h1>
+                                                            <p>Studiante</p>
+                                                            <p>Miembro desde: 01/03/2020</p>
+                                                          </div>
+                                                        </div>
+                                                      </div> 
+                                                </div>
+                                        </td>
+                                        <td>$ 50</td>
+                                        <td>$ 1000</td>
+                                        <td>$ 5</td>
+                                        <td>
+                                            <a href="PerfilesU.html" data-toggle="control-sidebar"><i class="fa fa-eye"></i></a>
+                                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                    </table>  
 
                                 </div>
                             </div>
