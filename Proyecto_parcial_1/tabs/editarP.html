@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/editarP.css">
     <title>Prototipo 1:ProfileUsers</title>
+    <script async src="../js/snackbar.js"></script>
   </head>
   <body>
     <header id = "header">
@@ -116,8 +117,8 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-lg-9 ml-auto text-right">
-                                <input type="reset" class="btn btn-outline-secondary" value="Cancel" />
-                                <input type="button" class="btn btn-primary" value="Save Changes" />
+                                <input type="reset" class="btn btn-outline-secondary" value="Cancel " onclick="showSnackbar()" />
+                                <input type="button" class="btn btn-primary" value="Save Changes" onclick="showSnackbar()"/>
                             </div>
                         </div>
                     </form>
@@ -125,6 +126,9 @@
             </div>
         </div>
     </div>
+
+    <div id="snackbar">Cambios guardados exitosamente</div>
+
     <footer class="page-footer font-small footer">
 
         <div class="footerbar2 my-2"> 
@@ -204,7 +208,6 @@
               <br>
               <p class="pFooter">© 2020 Copyright</p>
             </div>
-      
       
       </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
