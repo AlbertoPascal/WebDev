@@ -15,8 +15,13 @@ html {
     color:red;
     list-style-type: none;
 }
+.promotion:visited, .promotion:target{
+    text-decoration: none;
+    color:red;
+    list-style-type: none;
+}
 .ribbon {
-    background-color:purple;
+    background-color:red;
     overflow: hidden;
     white-space: nowrap;
     /* top left corner */
@@ -38,7 +43,7 @@ html {
   }
   .ribbon a {
     border: 1px solid #faa;
-    color: #fff;
+    color: green;
     display: block;
     font: bold 100% 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 1px 0;
