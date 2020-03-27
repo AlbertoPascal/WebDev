@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/profileu.css">
+    <title>Prototipo 1:ProfileUsersAdmin</title>
+  </head>
+  <body>
+    <header id = "header">
+        <nav class="navbar navbar-expand-md navbar-light navbar-custom">
+            <a href="../index.html" class="navbar-brand">All-Mighty Budget</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ml-auto navbar-light">
+                  <!--Important: data-toggle is what allows us to display the pop-up whenever we click on the login button"-->
+                  <!--Important: data-target is from bootstrap and allows us to point towards the element we want to add an action for"-->
+                  <a href="../index.html" class="nav-item nav-link navbar-custom-button"><i class="fa fa-info-circle"></i>&nbsp;Logout</a>
+                  <!-- this is from bootrstrap's Modal -->
+                  <a href="tabs/sign_up.html" class="nav-item nav-link navbar-custom-button"><i class="fa fa-users"></i>&nbsp;Settings</a>
+                </div>
+                
+            </div>
+        </nav>
+      </header>
+      <div class="container">
+        <div class="row my-2">
+            <div class="col-sm-12 col-lg-4 col-md-4 order-lg-1 order-md-2 text-center">
+                <img src="../images/blank-profile-picture.png" class= "profilePic mx-auto img-fluid  d-block" alt="avatar">
+                <h6 class="mt-3">Admin</h6>
+                
+                <ul class="list-group mt-2">
+                    <li class="list-group-item text-muted">Actividad reciente <i class="fa fa-dashboard fa-1x"></i></li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Balance</strong></span> $1500</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Meta</strong></span> $10,000</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Salario</strong></span>$ 200</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Familia</strong></span> Fam</li>
+                  </ul> 
+            </div>
+            <div class="col-sm-12 col-lg-8 col-md-8 order-md-2 order-lg-2">
+                <ul class="nav nav-tabs mt-2">
+                    <li class="nav-item">
+                        <a href="perfilAdmin.html" class="nav-link active">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="editarAdmin.html" class="nav-link">Editar Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" data-target="#ahorros" data-toggle="tab" class="nav-link">Ahorros</a>
+                    </li>
+                </ul>
+                <div class="tab-content py-4">
+                    <div class="tab-pane active" id="profile">
+                        <h5 class="mb-3">Meta Actual</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%">40%</div>
+                          </div>
+                        </div>
+                        <div class="start">Start: $0</div>
+                        <div class="end">End: $5,000</div>
+                      </div> 
+                <div class="row">                          
+                    <div class="col-md-12">
+                        <hr>
+                        <h5 class="mt-2"><span class="fa fa-bookmark  float-right"></span> Wish List</h5>
+                        <table class="table table-hover table-striped">
+                            <tbody>                                    
+                                <tr>
+                                    <td>
+                                        <span class="float-right font-weight-bold">$ 500</span> Pantalones skynny jeans Levis
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="float-right font-weight-bold">$ 1,300</span> Animal Crossing Nintendo Switch
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="float-right font-weight-bold">$ 200,000</span> Honda Fit 2015 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="float-right font-weight-bold">$ 7,999</span> Nintendo Switch 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="float-right font-weight-bold">$ 50</span> Peluche Axolotes 
+                                    </td>
+                                </tr>
+                            </tbody> 
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <hr>
+                                     Miembros 
+                                    </h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-3 col-md-3">
+                                        <div class="card">
+                                            <img src="../images/blank-profile-picture.png" alt="Denim Jeans" class= "pic mx-auto img-fluid" >
+                                            <p class="nombre">Jane Doe</p>
+                                            <p>Studiante</p>
+                                            <p>Miembro desde: 01/03/2020</p>
+                                            <p><button>Ver</button></p>
+                                        </div> 
+                                    </div>
+                                    <div class="col-xs-3 col-md-3">
+                                        <div class="card">
+                                            <img src="../images/blank-profile-picture.png" alt="Denim Jeans" class= "pic mx-auto img-fluid" >
+                                            <p class="nombre">Jane Doe</p>
+                                            <p>Studiante</p>
+                                            <p>Miembro desde: 01/03/2020</p>
+                                            <p><button>Ver</button></p>
+                                        </div> 
+                                    </div>
+                                    <div class="col-xs-3 col-md-3">
+                                        <div class="card">
+                                            <img src="../images/blank-profile-picture.png" alt="Denim Jeans" class= "pic mx-auto img-fluid" >
+                                            <p class="nombre">Jane Doe</p>
+                                            <p>Studiante</p>
+                                            <p>Miembro desde: 01/03/2020</p>
+                                            <p><button>Ver</button></p>
+                                        </div> 
+                                    </div>
+                                    <div class="col-xs-3 col-md-3">
+                                        <div class="card">
+                                            <img src="../images/blank-profile-picture.png" alt="Denim Jeans" class= "pic mx-auto img-fluid" >
+                                            <p class="nombre">Jane Doe</p>
+                                            <p>Studiante</p>
+                                            <p>Miembro desde: 01/03/2020</p>
+                                            <p><button>Ver</button></p>
+                                        </div> 
+                                    </div>
+                                    <div class="col-xs-3 col-md-3"> 
+                                        <div class="flip-card">
+                                            <div class="flip-card-inner">
+                                              <div class="flip-card-front">
+                                                <img src="../images/blank-profile-picture.png" alt="Avatar" class= "pic mx-auto img-fluid">
+                                              </div>
+                                              <div class="flip-card-back">
+                                                <h1>John Doe</h1>
+                                                <p>Studiante</p>
+                                                <p>Miembro desde: 01/03/2020</p>
+                                              </div>
+                                            </div>
+                                          </div> 
+                                    </div>
+                                    <div class="col-xs-3 col-md-3"> 
+                                        <div class="flip-card">
+                                            <div class="flip-card-inner">
+                                              <div class="flip-card-front">
+                                                <img src="../images/blank-profile-picture.png" alt="Avatar" class= "pic mx-auto img-fluid">
+                                              </div>
+                                              <div class="flip-card-back">
+                                                <h1>John Doe</h1>
+                                                <p>Studiante</p>
+                                                <p>Miembro desde: 01/03/2020</p>
+                                              </div>
+                                            </div>
+                                          </div> 
+                                    </div>
+                                    <div class="col-xs-3 col-md-3"> 
+                                        <div class="flip-card">
+                                            <div class="flip-card-inner">
+                                              <div class="flip-card-front">
+                                                <img src="../images/blank-profile-picture.png" alt="Avatar" class= "pic mx-auto img-fluid">
+                                              </div>
+                                              <div class="flip-card-back">
+                                                <h1>John Doe</h1>
+                                                <p>Studiante</p>
+                                                <p>Miembro desde: 01/03/2020</p>
+                                              </div>
+                                            </div>
+                                          </div> 
+                                    </div>
+                                    <table class="table table-hover table-dark">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Foto</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Apellido</th>
+                                            <th scope="col">Ocupacion</th>
+                                            <th scope="col">Miembro desde: </th>
+                                            <th scope="col"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                            </th>
+                                            
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row">1</th>
+                                            <td><img src="../images/blank-profile-picture.png" alt="Avatar" class= "pic mx-auto img-fluid"></td>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>flojo</td>
+                                            <td>01/03/2020</td>
+                                            <td><i class="fa fa-eye" aria-hidden="true"></i>
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">2</th>
+                                           
+                                            <td><img src="../images/blank-profile-picture.png" alt="Avatar" class= "pic mx-auto img-fluid"></td>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>flojo</td>
+                                            <td>01/03/2020</td>
+                                            <td><i class="fa fa-eye" aria-hidden="true"></i>
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">3</th>
+                                            <td><img src="../images/blank-profile-picture.png" alt="Avatar" class= "pic mx-auto img-fluid"></td>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>flojo</td>
+                                            <td>01/03/2020</td>
+                                            <td><i class="fa fa-eye" aria-hidden="true"></i>
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>  
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                        <!--/row-->
+            </div>
+
+                </div>
+            </div>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
