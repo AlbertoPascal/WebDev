@@ -12,6 +12,7 @@
     <title>Prototipo 1:ProfileUsers</title>
 
     <script async src="../js/donutchart.js"></script>
+    <script async src="../js/snackbar.js"></script>
 
   </head>
   <body>
@@ -74,15 +75,21 @@
 
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     
-                                    <img class="objetivo" src="../images/switch.jpg" alt="Objetivo">
-                                    <p class="price">$5000</p>
+                                    <br>
+
+                                    <div class="polaroid">
+                                        <img src="../images/switch.jpg" class="polaroidImage" alt="Objetivo" style="width:100%">
+                                        <div class="container">
+                                            <p>$5000</p>
+                                        </div>
+                                    </div>
 
                                     <br>
 
                                     <form>
                                         <input type="text"><br>
                                         <div class="botton-change mt-3">
-                                            <button class="button">Añadir ahorros</button>
+                                            <a href="#" class="btn btn-primary" onclick="showSnackbar()">Añadir ahorros</a>
                                         </div>
                                     </form>
 
@@ -90,15 +97,15 @@
 
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
-                                    
-
                                     <div id="chartContainer"></div>
                                     
                                 </div>
                                        
                             </div>
 
-                            
+                            <div class="row">
+
+                            </div>
 
                         </div>
 
@@ -109,6 +116,8 @@
             </div>
         </div>
     </div> 
+
+    <div id="snackbar">Ahorros agregados exitosamente</div>
 
     <footer class="page-footer font-small footer">
 
