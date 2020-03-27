@@ -3886,7 +3886,7 @@ input[type=button].btn-block {
 }
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #495057;
+  color: white;
   background-color: #fff;
   border-color: #dee2e6 #dee2e6 #fff;
 }
@@ -4225,7 +4225,7 @@ input[type=button].btn-block {
   color: rgba(0, 0, 0, 0.7);
 }
 .navbar-light .navbar-nav .nav-link.disabled {
-  color: rgba(0, 0, 0, 0.3);
+  color: white;
 }
 .navbar-light .navbar-nav .show > .nav-link,
 .navbar-light .navbar-nav .active > .nav-link,
@@ -9885,6 +9885,7 @@ h3 {
 
 .navbar-custom-button:hover {
   background-color: white;
+  color: black;
   border-radius: 10px;
 }
 body {
@@ -9959,6 +9960,9 @@ h4 {
 footer {
   background-color: #2f4c8f;
   color: white;
+  font-size: 2vh;
+  word-break: break-word;
+  overflow-x: hidden;
 }
 
 .footerbar {
@@ -10015,6 +10019,10 @@ a:hover {
     margin: auto;
   }
 }
+body {
+  word-break: break-word;
+}
+
 .card {
   max-width: 80%;
   max-height: 180px;

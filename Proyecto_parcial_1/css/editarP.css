@@ -9876,15 +9876,22 @@ h3 {
   }
 }
 .navbar-custom {
-  background-color: red;
+  background-color: #2f4c8f;
 }
+.navbar-custom-button a li ul i {
+  color: white;
+  background-color: 0;
+}
+
 .navbar-custom-button:hover {
   background-color: white;
+  color: black;
   border-radius: 10px;
 }
 body {
   height: 100vh;
   text-align: center;
+  font-family: "Times New Roman", Times, serif;
 }
 
 /*Trigger Button*/
@@ -9924,6 +9931,17 @@ h4 {
 }
 
 .login {
+  padding: 6px 20px;
+  border-radius: 20px;
+  background: none;
+  border: 2px solid #FAB87F;
+  color: #FAB87F;
+  font-weight: bold;
+  transition: all 0.5s;
+  margin-top: 1em;
+}
+
+.signup {
   padding: 6px 20px;
   border-radius: 20px;
   background: none;
