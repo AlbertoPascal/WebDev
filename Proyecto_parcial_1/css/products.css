@@ -9957,6 +9957,46 @@ h4 {
   color: #fff;
 }
 
+.header_text {
+  animation-name: header_colors;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.header_img {
+  max-width: 300px;
+  max-height: 300px;
+  width: 50%;
+  height: 50%;
+  margin: auto;
+}
+
+@keyframes header_colors {
+  from {
+    color: #0fa03c;
+    font-size: 3vh;
+  }
+  to {
+    color: #a00f73;
+    font-size: 3.9vh;
+  }
+}
+@media (orientation: landscape) {
+  @keyframes header_colors {
+    from {
+      color: #0fa03c;
+      font-size: 4vh;
+    }
+    to {
+      color: #a00f73;
+      font-size: 6vh;
+    }
+  }
+}
 footer {
   background-color: #2f4c8f;
   color: white;
