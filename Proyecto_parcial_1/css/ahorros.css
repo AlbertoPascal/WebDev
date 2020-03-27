@@ -9892,7 +9892,7 @@ body {
 .login-trigger {
   font-weight: bold;
   color: #fff;
-  background: linear-gradient(to bottom right, #320e75, #bd09ae);
+  background: linear-gradient(to bottom right, #0e6075, #bd09ae);
   padding: 15px 30px;
   border-radius: 30px;
   position: relative;
@@ -10152,7 +10152,7 @@ footer a:hover {
 
 #chartContainer {
   display: block;
-  margin: 0 auto;
+  margin: 20px;
   width: 100%;
   height: 100%;
 }
@@ -10187,23 +10187,62 @@ div.container {
   width: 100%;
 }
 
+.tableTitle {
+  text-align: left;
+  font-style: bold;
+  font-size: 20px;
+  background-color: #3f5a99;
+}
+
+.tableCell {
+  background-color: #5973b1;
+}
+
+th, td, tr {
+  color: white;
+  border: solid white 1px;
+}
+
+th {
+  background-color: #2f4c8f;
+}
+
+.inputTable {
+  background-color: #5973b1;
+  border: solid #5973b1 1px;
+  width: 100%;
+}
+
 body {
-  height: 100vh;
+  height: 100%;
   text-align: center;
 }
 
 h6 {
   font-weight: bold;
   color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .profilePic {
   border-radius: 50%;
   width: 200px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+}
+
+.picUser {
+  background-image: url(../images/blank-profile-picture.png);
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  background-size: 100% 100%;
 }
 
 .start {
   float: left;
+  text-align: left;
 }
 
 .end {
@@ -10211,20 +10250,13 @@ h6 {
   text-align: right;
 }
 
-.pic {
-  width: 200px;
-}
-
 .flip-card {
   background-color: transparent;
   width: 150px;
   height: 150px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px;
-  /* Remove this if you don't want the 3D effect */
 }
 
-/* This container is needed to position the front and back side */
+/* permite que cambien las caras*/
 .flip-card-inner {
   position: relative;
   width: 100%;
@@ -10234,47 +10266,44 @@ h6 {
   transform-style: preserve-3d;
 }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
+/* la animacion de giro*/
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-/* Position the front and back side */
+/* establece la posicion de la parte de adelane y atras */
 .flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
-  /* Safari */
   backface-visibility: hidden;
 }
 
-/* Style the front side (fallback if image is missing) */
+/* estilo del frente*/
 .flip-card-front {
-  background-color: #bbb;
+  background-image: url(../images/blank-profile-picture.png);
+  background-size: 100% 100%;
+  background-color: gray;
   color: black;
 }
 
-/* Style the back side */
-.flip-card-back {
-  background-color: dodgerblue;
-  color: white;
-  transform: rotateY(180deg);
+.flip-card-front img {
+  height: 100%;
+  width: 100%;
 }
 
-#box {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: #22199e;
-  background-color: lightgray;
-  border-radius: 5px;
-  width: 60%;
-  height: 30px;
+/* estilo de la parte trasera */
+.flip-card-back {
+  background-color: dodgerblue;
+  color: #f1f1f1;
+  transform: rotateY(180deg);
 }
 
 .buscar2 {
   background-color: #4abe64;
-  padding: 30px 40px;
-  color: white;
+  padding: 40px 40px;
+  color: #f1f1f1;
   text-align: center;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
@@ -10290,6 +10319,11 @@ input[type=text] {
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
   width: 81%;
+}
+
+.estilo-link {
+  font-style: normal;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 /*# sourceMappingURL=ahorros.css.map */

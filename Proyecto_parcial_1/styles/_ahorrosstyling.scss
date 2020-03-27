@@ -16,7 +16,7 @@
 
 #chartContainer{
     display: block;
-    margin: 0 auto;
+    margin: 20px;
     width: 100%;
     height: 100%;
 }
@@ -44,5 +44,32 @@ div.container{
 }
 
 .polaroidImage{
+    width: 100%;
+}
+
+.tableTitle{
+    text-align: left;
+    font-style: bold;
+    font-size: 20px;
+    background-color:rgb(63, 90, 153);
+}
+
+.tableCell{
+    background-color:rgb(89, 115, 177);
+}
+
+th, td, tr {
+    color: white;
+    border: solid white 1px;
+}
+
+th{
+    background-color:rgb(47, 76, 143);
+    
+}
+
+.inputTable{
+    background-color:rgb(89, 115, 177);
+    border: solid rgb(89, 115, 177) 1px;
     width: 100%;
 }
