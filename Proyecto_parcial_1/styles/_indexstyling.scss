@@ -16,7 +16,7 @@ html {
     list-style-type: none;
 }
 .ribbon {
-    background-color: #a00;
+    background-color:purple;
     overflow: hidden;
     white-space: nowrap;
     /* top left corner */
@@ -34,6 +34,7 @@ html {
     -webkit-box-shadow: 0 0 10px #888;
        -moz-box-shadow: 0 0 10px #888;
             box-shadow: 0 0 10px #888;
+
   }
   .ribbon a {
     border: 1px solid #faa;

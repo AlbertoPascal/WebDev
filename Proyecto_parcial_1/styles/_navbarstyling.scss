@@ -1,7 +1,11 @@
 $button-radius : 10px;
 .navbar-custom{
     @include hover-focus();
-    background-color: red;
+    background-color: rgb(47, 76, 143);
+}
+.navbar-custom-button a li ul i {
+  color:white;
+  background-color: red($color: #000000);
 }
 .navbar-custom-button:hover{
     @include hover-focus();
@@ -12,6 +16,7 @@ $button-radius : 10px;
 body{
     height: 100vh;
     text-align: center;
+    font-family: 'Times New Roman', Times, serif;
   }
     /*Trigger Button*/
   .login-trigger {
