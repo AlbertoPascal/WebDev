@@ -10,8 +10,10 @@ $button-radius : 10px;
 .navbar-custom-button:hover{
     @include hover-focus();
     background-color: white;
+    color:black;
     border-radius: $button-radius;
 }
+
 
 body{
     height: 100vh;

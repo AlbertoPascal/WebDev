@@ -61,17 +61,19 @@ html {
     /* for creating shadow */
     text-shadow: 0 0 5px #444;
   }
+ 
   @media (orientation:landscape)
   {
     h1{
       font-size: 7vh;
   }
   h4{
-    font-size: 2vh;
+    font-size: 5vh;
   }
   .imgCarousel{
     max-height: 90vh;
     max-width: 90vh;
     margin:auto;
   }
+  
   }
