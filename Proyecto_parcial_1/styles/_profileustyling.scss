@@ -24,8 +24,8 @@
 
 .flip-card {
   background-color: transparent;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border: 1px solid #f1f1f1;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
@@ -75,13 +75,7 @@
   width:60%;
   height:30px;
 }
-.buscar {
-  background-color: #4d1b9e;
-  padding: 30px 40px;
-  color: white;
-  text-align: center;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+
 .buscar2 {
   background-color: #4abe64;
   padding: 30px 40px;
