@@ -1,4 +1,5 @@
-$button-radius : 10px;
+@import "variables";
+
 .navbar-custom{
     @include hover-focus();
     background-color: rgb(47, 76, 143);
@@ -17,14 +18,14 @@ $button-radius : 10px;
 
 body{
     height: 100vh;
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
+    text-align: $text-center;
+    font-family: $navbar-font;
   }
     /*Trigger Button*/
   .login-trigger {
     font-weight: bold;
     color: #fff;
-    background: linear-gradient(to bottom right,rgb(50, 14, 117),rgb(189, 9, 174));
+    background: linear-gradient(to bottom right,rgb(14, 96, 117),rgb(189, 9, 174));
     padding: 15px 30px;
     border-radius: 30px;
     position: relative; 

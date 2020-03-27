@@ -1,3 +1,5 @@
+@import "variables";
+
 body{
     margin:auto;
     word-break: break-word;
@@ -6,6 +8,7 @@ body{
 }
 h1{
     font-size: 4vh;
+    font-family: $titles-font;
 }
 h4{
   font-size: 2vh;
@@ -38,15 +41,15 @@ html {
     top: 40px;
     opacity: 0.75;
     /* for 45 deg rotation */
-    -webkit-transform: rotate(-45deg);
-       -moz-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-         -o-transform: rotate(-45deg);
-            transform: rotate(-45deg);
+    -webkit-transform: rotate($rotation-ribbon);
+       -moz-transform: rotate($rotation-ribbon);
+        -ms-transform: rotate($rotation-ribbon);
+         -o-transform: rotate($rotation-ribbon);
+            transform: rotate($rotation-ribbon);
     /* for creating shadow */
-    -webkit-box-shadow: 0 0 10px #888;
-       -moz-box-shadow: 0 0 10px #888;
-            box-shadow: 0 0 10px #888;
+    -webkit-box-shadow: 0 0 10px $shadow-ribbon;
+       -moz-box-shadow: 0 0 10px $shadow-ribbon;
+            box-shadow: 0 0 10px $shadow-ribbon;
 
   }
   .ribbon a {
@@ -59,7 +62,7 @@ html {
     text-align: center;
     text-decoration: none;
     /* for creating shadow */
-    text-shadow: 0 0 5px #444;
+    text-shadow: 0 0 5px $shadow-ribbon;
   }
  
 
