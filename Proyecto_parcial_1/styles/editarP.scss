@@ -43,16 +43,4 @@
  @import "bootstrap/utilities";
  @import "bootstrap/print";
  @import "navbarstyling";
-
- body{
-    height: 100vh;
-    text-align: center;
-  }
-  h6 {
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-  }
-  .profilePic {
-    border-radius: 50%;
-    width: 200px;
-  }
+ @import "editarPstyling";
