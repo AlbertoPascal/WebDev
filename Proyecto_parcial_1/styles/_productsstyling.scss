@@ -35,6 +35,7 @@ hr{
     @include set-height-and-width($product-image-height, $product-image-width);
     padding: $product-image-padding;
     margin-left: $product-image-margin;
+    opacity: $product-image-opacity;
 }
 
 .card-block{
