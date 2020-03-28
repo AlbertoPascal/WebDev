@@ -213,3 +213,29 @@ $header_text_anim_color_to: rgb(160, 15, 115);
 $header_text_anim_fontsize_from:3vh;
 $header_text_anim_fontsize_to:3.9vh;
 $header_text_anim_font_landscape_increase:2vh;
+
+/*************************************************************/
+//footer
+/*************************************************************/
+
+$footer_bk_color:$nav-bk-color-def;
+$footer_font_size:2vh;
+$footerbar_bk_color:rgb(33, 54, 102);
+$footerbar_bk_color2:rgb(63, 90, 153);
+$footer_margin:0;
+$footer_padding:0;
+$footer_start_fontsize:14px;
+$footer_hover_a_color:rgb(47, 76, 143);
+$footer_font_style:bold;
+$footer_float_lang:right;
+$footer_lang_margin:10px;
+
+$footer_vertical_hr_border: none;
+$footer_verticalhr_borderleft:1px solid hsla(200, 10%, 50%, 100);
+$footer_verticalhr_height:15vh;
+$footer_verticalhr_width:1px;
+$footer_verticalhr_margin:-30px;
+
+$footer_media_lang_displ:table;
+$footer_media_lang_float:initial;
+$footer_medial_lang_margin:auto;
