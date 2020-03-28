@@ -28,6 +28,50 @@ $default-display:block;
  // para ahorros
  /*******************************************************/
 
+ $title-font-size: 32px;
+ $title-font-style: bold;
+ $title-text-align: center;
+ $title-margin: 0;
+ 
+ $price-font-size: 20px;
+ $price-font-style: bold;
+ $price-text-align: center;
+ 
+ $btn-border-radius: 15px;
+ $btn-text-color: white;
+ $btn-padding: 12px 16px;
+ $btn-font-size: 16px;
+ 
+ $polaroid-width: 75%;
+ $polaroid-background-color: white;
+ $polaroid-margin-bottom: 25px;
+ $polaroid-image-width: 100%;
+ $polaroid-container-padding: 10px 20px;
+ 
+ $table-subheader-font-style: bold;
+ $table-subheader-text-align: left;
+ $table-subheader-font-size: 20px;
+ $table-header-background-color: rgb(47, 76, 143);
+ $table-subheader-background-color: rgb(63, 90, 153);
+ $table-cell-background-color: rgb(89, 115, 177);
+ $table-text-color: white;
+ $table-border: solid white 1px;
+
+  /*******************************************************/
+ //snackbar
+ /*******************************************************/
+
+ $snackbar-min-width: 250px;
+$snackbar-text-color: white;
+$snackbar-text-align: center;
+$snackbar-background-color: #333;
+$snackbar-padding: 16px;
+$snackbar-border-radius:2px;
+$snackbar-bottom: 30px;
+$snackbar-left: 50%;
+$snackbar-margin-left: -125px;
+$snackbar-z-index: 1;
+
 
   /*******************************************************/
  //para productos

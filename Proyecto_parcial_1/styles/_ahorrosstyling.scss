@@ -1,75 +1,69 @@
 
 
+
 .title{
-    font-size: 32px;
-    font-style: bold;
-    text-align: center;
-    margin: 0;
+    font-size: $title-font-size;
+    font-style: $title-font-style;
+    text-align: $title-text-align;
+    margin: $title-margin;
 }
 
 .price{
-    font-size: 20px;
-    font-style: bold;
-    text-align: center;
+    font-size: $price-font-size;
+    font-style: $price-font-style;
+    text-align: $price-text-align;
     margin: auto;
 }
 
-#chartContainer{
-    display: block;
-    margin: 20px;
-    width: 100%;
-    height: 100%;
-}
-
 .btn-primary{
-    border-radius: 15px;
-    color: white; /* White text */
-    padding: 12px 16px; /* Some padding */
-    font-size: 16px; /* Set a font size */
-    cursor: pointer; /* Mouse pointer on hover */
+    border-radius: $btn-border-radius;
+    color: $btn-text-color; 
+    padding: $btn-padding; 
+    font-size: $btn-font-size; 
+    cursor: pointer; 
 }
 
 div.polaroid {
     display: block;
     margin: auto;
-    width: 75%;
-    background-color: white;
+    width: $polaroid-width;
+    background-color: $polaroid-background-color;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 25px;
+    margin-bottom: $polaroid-margin-bottom;
 }
 
 div.container{
     text-align: center;
-    padding: 10px 20px;
+    padding: $polaroid-container-padding;
 }
 
 .polaroidImage{
-    width: 100%;
+    width: $polaroid-image-width;
 }
 
 .tableTitle{
-    text-align: left;
-    font-style: bold;
-    font-size: 20px;
-    background-color:rgb(63, 90, 153);
+    text-align: $table-subheader-text-align;
+    font-style: $table-subheader-font-style;
+    font-size: $table-subheader-font-size;
+    background-color:$table-subheader-background-color;
 }
 
 .tableCell{
-    background-color:rgb(89, 115, 177);
+    background-color:$table-cell-background-color;
 }
 
 th, td, tr {
-    color: white;
-    border: solid white 1px;
+    color: $table-text-color;
+    border: $table-border;
 }
 
 th{
-    background-color:rgb(47, 76, 143);
+    background-color:$table-header-background-color;
     
 }
 
 .inputTable{
-    background-color:rgb(89, 115, 177);
-    border: solid rgb(89, 115, 177) 1px;
+    background-color:$table-cell-background-color;
+    border: solid $table-cell-background-color 1px;
     width: 100%;
 }

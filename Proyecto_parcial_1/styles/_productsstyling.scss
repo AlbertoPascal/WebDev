@@ -1,11 +1,15 @@
 
+@mixin setmax-height-and-width($max-height, $max-width){
+    max-width: $max-width;
+    max-height: $max-height;
+}
+
 body{
     word-break: break-word;
 }
 
 .card {
-    max-width: $card-width;
-    max-height: $card-height;
+    @include setmax-height-and-width($card-height, $card-width);
     margin: $card-margin;
     text-align: $card-text-align;
     font-family: $card-font;
@@ -29,8 +33,7 @@ hr{
 }
 
 .ratingImage{
-    max-width: $rating-image-width;
-    max-height: $rating-image-height;
+    @include setmax-height-and-width($rating-image-height, $rating-image-width);
 }
 
 .price {
@@ -40,8 +43,7 @@ hr{
 
 @media (max-width:$media-max-width){
     .card {
-        max-width: $media-card-width;
-        max-height: $media-card-heigth;
+        @include setmax-height-and-width($media-card-heigth, $media-card-width);
     }
     .productImage{
         display: $media-product-image-display;
