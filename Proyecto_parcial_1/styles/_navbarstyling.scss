@@ -1,10 +1,28 @@
+@mixin set_default_animation_header() {
+  animation-name:$header_text_anim_name;
+  animation-duration: $default-text-anim-duration;
+  animation-iteration-count: $default-text-anim-iteration;
+  animation-direction: $default-text-anim-direction;    
+}
+@mixin set_color_and_bk($color, $background){
+  color:$color;
+  background:$background;
+}
+@mixin set_modal_basic_attributes($padding, $border-radius, $border, $font-weight, $transition, $margintop) {
+  padding: $padding;
+  border-radius: $border-radius;
+  border: $border;
+  font-weight: $font-weight;
+  transition: $transition;
+  margin-top:$margintop;
+}
+
 .navbar-custom{
     @include hover-focus();
     background-color: $nav-bk-color-def;
 }
 .navbar-custom-button a li ul i {
-  color:$navbar-light-active-color;
-  background-color:$navbar-light-active-color ;
+  @include set_color_and_bk($navbar-light-active-color,$navbar-light-active-color);
 }
 .navbar-custom-button:hover{
     @include hover-focus();
@@ -13,7 +31,7 @@
     border-radius: $button-radius;
 }
 
-
+  
 body{
     height: 100vh;
     text-align: $text-center;
@@ -21,9 +39,8 @@ body{
   }
     /*Trigger Button*/
   .login-trigger {
+    @include set_color_and_bk($trigger-button-color,linear-gradient($def-gradient-dir,$def-gradient-first-color,$def-gradient-second-color) );
     font-weight: $def-login-weight;
-    color: $trigger-button-color;
-    background: linear-gradient($def-gradient-dir,$def-gradient-first-color,$def-gradient-second-color);
     padding: $def-log-trigger-padding;
     border-radius: $def-button-login-radius;
     position: $def-button-pos; 
@@ -51,35 +68,22 @@ body{
     border-color: $navbar-light-color;
   }
 
+  
   .login {
-    padding: $def-login-padding;
-    border-radius: $def-login-border-radius-modal;
-    background: $def-modal-background;
-    border: $def-login-border-modal;
-    color: $def-login-color;
-    font-weight: $def-login-weight;
-    transition: $def-login-transition;
-    margin-top: $def-login-margintop;
+    @include set_modal_basic_attributes($def-login-padding, $def-login-border-radius-modal, $def-login-border-modal,$def-login-weight , $def-login-transition, $def-login-margintop );
+    @include set_color_and_bk($def-login-color, $def-modal-background)
   }
   .signup {
-    padding: $def-signup-padding;
-    border-radius: $def-signup-border-radius;
-    background: $def-modal-background;
-    border: $def-signup-border;
-    color: $def-signup-color;
-    font-weight: $def-signup-weight;
-    transition:$def-signup-transition;
-    margin-top: $def-signup-margintop;
+    @include set_modal_basic_attributes($def-signup-padding, $def-signup-border-radius, $def-signup-border,$def-signup-weight , $def-signup-transition, $def-signup-margintop );
+    @include set_color_and_bk($def-signup-color, $def-modal-background)
+
   }
   .login:hover {
-    background: $def-login-color;
-    color: $trigger-button-color;
+    @include set_color_and_bk($trigger-button-color,$def-login-color );
   }
+ 
   .header_text{
-    animation-name:$header_text_anim_name;
-    animation-duration: $default-text-anim-duration;
-    animation-iteration-count: $default-text-anim-iteration;
-    animation-direction: $default-text-anim-direction;
+    @include set_default_animation_header();
     text-align: $text-center;
     justify-content: $text-center;
     align-items: $text-center;
@@ -102,9 +106,9 @@ body{
     to {color:$header_text_anim_color_to;
         font-size: $header_text_anim_fontsize_to;}
   }
-  @media (orientation:landscape)
+  @media (orientation:$default-media-orientation)
   {
-    @keyframes header_colors {
+    @keyframes #{$header_text_anim_name} {
       from {color: $header_text_anim_color_from;
             font-size:set_def_landscape_textanim_fontsize($header_text_anim_fontsize_from, $header_text_anim_font_landscape_increase) ;}
       to {color:$header_text_anim_color_to;
