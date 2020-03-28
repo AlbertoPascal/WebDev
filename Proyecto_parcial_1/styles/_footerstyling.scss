@@ -1,7 +1,14 @@
+@mixin set_footer_color_font_size($color, $size){
+    color:$color;
+    font-size:$size;
+}
+@mixin set_footer_float_margin($float, $margin){
+    float:$float;
+    margin:$margin;
+}
 footer{
+    @include set_footer_color_font_size($navbar-light-color,$footer_font_size );
     background-color: $footer_bk_color;
-    color: $navbar-light-color;
-    font-size:$footer_font_size;
     word-break: $default-word-break;
     overflow-x: $hide_overflow;
 }
@@ -35,8 +42,7 @@ footer a:hover{
 }
 
 .languages{
-    float: $footer_float_lang;
-    margin: $footer_lang_margin; 
+    @include set_footer_float_margin($footer_float_lang,  $footer_lang_margin);
 }
 
 .pFooter{
@@ -53,11 +59,10 @@ footer a:hover{
     margin: $footer_verticalhr_margin;   
 }
 
-@media (max-width:576px){
+@media (max-width:$footer_media_screensize){
 
     .languages{
         display: $footer_media_lang_displ;
-        float: $footer_media_lang_float;
-        margin: $footer_medial_lang_margin;
+        @include set_footer_float_margin($footer_media_lang_float, $footer_medial_lang_margin);
     }
 }
