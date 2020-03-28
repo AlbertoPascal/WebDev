@@ -2,38 +2,55 @@
     height: 100%;
     text-align: $text-center;
   }
+  @mixin set-font-fam($fam) {
+    font-family: $fam;
+  }
   h6 {
     font-weight: bold;
     color: $color-black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    @include set-font-fam($title-h6-fam);
+    
   }
+  
+  @mixin set-background-img($image) {
+    background-image: $image;
+  }
+  @mixin set-border-color($white){
+    border: 1px solid $white;
+  }
+
+  @mixin set-border-radius($rad){
+    border-radius: $rad;
+  }
+
   .profilePic {
-    border-radius: $circle;
+    @include set-border-radius($circle);
     width:  $widthp;
-    height: $widthp;
-   
-    border: 1px solid $color-white ;
+    height: $widthp;  
   }
 
   .picUser{
-    background-image: $default-img;
-    border-radius: $circle;
+    @include set-background-img($default-img);
+    @include set-border-radius($circle);
     width:  $widthp;
     height: $widthp;
-    border: 1px solid $color-white;
+    @include set-border-color($color-white);
     background-size: $max $max;
 
   }
 
+  @mixin set-text-align($aligned){
+    float: $aligned;
+    text-align: $aligned;
+  }
 
 .start{
-  float: $text-left;
-  text-align: $text-left;
+  @include set-text-align($text-left);
 }
 .end {
-  float:$text-right; 
-  text-align: $text-right;
+  @include set-text-align($text-right);
 }
+
 
 .flip-card {
   background-color: transparent;
@@ -47,7 +64,7 @@
   position: relative;
   width: $max;
   height: $max;
-  text-align: center;
+  text-align: $text-center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
@@ -68,7 +85,7 @@
 
 /* estilo del frente*/
 .flip-card-front {
-  background-image: $default-img;
+  @include set-background-img($default-img);
   background-size: $max $max;
   background-color: gray;
   color: $color-black;
@@ -83,6 +100,7 @@
   background-color: dodgerblue;
   color: $color-white;
   transform: rotateY(180deg);
+  padding: 1px 2px;
 }
 
 
