@@ -1,31 +1,36 @@
 
-
+@mixin set-font-size($font-size, $font-style, $text-align){
+    font-size: $font-size;
+    font-style: $font-style;
+    text-align: $text-align;
+}
 
 .title{
-    font-size: $title-font-size;
-    font-style: $title-font-style;
-    text-align: $title-text-align;
+    @include set-font-size($title-font-size, $title-font-style, $title-text-align);
     margin: $title-margin;
 }
 
+@mixin set-auto-margin(){
+    margin:auto;
+}
+
 .price{
-    font-size: $price-font-size;
-    font-style: $price-font-style;
-    text-align: $price-text-align;
-    margin: auto;
+    @include set-font-size($price-font-size, $price-font-style, $price-text-align);
+    @include set-auto-margin();
 }
 
 .btn-primary{
     border-radius: $btn-border-radius;
     color: $btn-text-color; 
     padding: $btn-padding; 
-    font-size: $btn-font-size; 
+    @include set-font-size($btn-font-size, $price-font-style, $price-text-align);
     cursor: pointer; 
 }
 
 div.polaroid {
+    @include set-auto-margin();
+    
     display: block;
-    margin: auto;
     width: $polaroid-width;
     background-color: $polaroid-background-color;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -42,14 +47,17 @@ div.container{
 }
 
 .tableTitle{
-    text-align: $table-subheader-text-align;
-    font-style: $table-subheader-font-style;
+    @include set-font-size($table-subheader-font-style, $title-font-style, $table-subheader-text-align);
     font-size: $table-subheader-font-size;
     background-color:$table-subheader-background-color;
 }
 
-.tableCell{
+@mixin default-background-color(){
     background-color:$table-cell-background-color;
+}
+
+.tableCell{
+    @include default-background-color();
 }
 
 th, td, tr {
@@ -63,7 +71,7 @@ th{
 }
 
 .inputTable{
-    background-color:$table-cell-background-color;
+    @include default-background-color();
     border: solid $table-cell-background-color 1px;
     width: 100%;
 }
