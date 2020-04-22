@@ -1,0 +1,251 @@
+ 
+ // -----------------variable -----------------
+ /*******************************************************/
+ //globales
+  /*******************************************************/
+  $default-margins: auto;
+  $text-center: center;  
+  $text-right: right; 
+  $text-left: left;
+  $color-black:  rgb(0, 0, 0);
+  $color-white: #f1f1f1;
+  $default-word-break:break-word;
+  $hide_overflow:hidden;
+  $default-scroll:smooth;
+  $def-text-decoration:none;
+  $default-display:block;
+   /*******************************************************/ 
+  //para editar y perfiles
+   /*******************************************************/
+   $circle: 50%;
+   $widthp: 200px;
+   $max: 100%;
+   $default-img: url(../images/blank-profile-picture.png);
+   $button-font: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   $nav-font: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   $title-h6-fam: Verdana, Geneva, Tahoma, sans-serif;
+   $wish-font: 'Courier New', Courier, monospace;
+   /*******************************************************/
+   // para ahorros
+   /*******************************************************/
+  
+   $title-font-size: 32px;
+   $title-font-style: bold;
+   $title-text-align: center;
+   $title-margin: 0;
+   
+   $price-font-size: 20px;
+   $price-font-style: bold;
+   $price-text-align: center;
+   
+   $btn-border-radius: 15px;
+   $btn-text-color: white;
+   $btn-padding: 12px 16px;
+   $btn-font-size: 16px;
+   
+   $polaroid-width: 75%;
+   $polaroid-background-color: white;
+   $polaroid-margin-bottom: 25px;
+   $polaroid-image-width: 100%;
+   $polaroid-container-padding: 10px 20px;
+   
+   $table-subheader-font-style: bold;
+   $table-subheader-text-align: left;
+   $table-subheader-font-size: 20px;
+   $table-header-background-color: rgb(47, 76, 143);
+   $table-subheader-background-color: rgb(63, 90, 153);
+   $table-cell-background-color: rgb(89, 115, 177);
+   $table-text-color: white;
+   $table-border: solid white 1px;
+  
+    /*******************************************************/
+   //snackbar
+   /*******************************************************/
+  
+   $snackbar-min-width: 250px;
+  $snackbar-text-color: white;
+  $snackbar-text-align: center;
+  $snackbar-background-color: #333;
+  $snackbar-padding: 16px;
+  $snackbar-border-radius:2px;
+  $snackbar-bottom: 30px;
+  $snackbar-left: 50%;
+  $snackbar-margin-left: -125px;
+  $snackbar-z-index: 1;
+  
+  
+    /*******************************************************/
+   //para productos
+   /*******************************************************/
+  
+   //Cards with the products
+  $card-width: 80%;
+  $card-height: 180px;
+  $card-font: arial;
+  $card-margin:auto;
+  $card-padding:5px;
+  $card-text-align:left;
+  $card-text-margin: 7px;
+  
+  //Product images for each card
+  $product-image-height: 170px;
+  $product-image-width: 180px;
+  $product-image-padding: 5px;
+  $product-image-margin: 5px;
+  $product-image-opacity: 0.75;
+  
+  //Image of the five stars
+  $rating-image-width: 75px;
+  $rating-image-height: 75px;
+  
+  //Price for each card product
+  $price-color:grey;
+  $price-size: 24px;
+  
+  //Media variables for mobile screens
+  $media-max-width:576px;
+  $media-card-width:80%;
+  $media-card-heigth:350px;
+  $media-product-image-display: block;
+  $media-product-image-margin-left: auto;
+  $media-product-image-margin-right: auto;
+  
+   /*******************************************************/
+   // index
+   /******************************************************/
+   $title-h1-sizing: 4vh;
+   $title-h4-sizing:2vh; //crear funciones para landscape
+   $def-h-index-increase:3vh;
+    /*******************************************************/
+  //index carousel
+   /*******************************************************/
+  $carousel-max-size-h:100vh;
+  $carousel-max-size-w:100vh;
+  $def-img-sub-size:10vh;
+  $carousel-img-def-opacity:0.75;
+  $carousel-img-def-opacity-hover:1.0;
+  
+   $rotation-ribbon:-45deg;
+   $promotion-color:red;
+   $promotion-color-visited:red;
+   $default-list-style:none;
+    /*******************************************************/
+   //ribbon
+    /*******************************************************/
+   $shadow-ribbon: #888;
+   $titles-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   $def-white-space: nowrap;
+   $def-position:absolute;
+   $ribbon-left:-50px;
+   $ribbon-top:40px;
+   $ribbon-opacity:0.75;
+   $ribbon-border: 1px solid #faa;
+   $ribbon-letter-color: green;
+   $def-webkit-box: 0 0 10px;
+   $ribbon-font:bold 100% 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   $ribbon-margin:1px 0;
+   $ribbon-padding: 10px 50px;
+   $ribbon-shadow: 0 0 5px;
+    /*******************************************************/
+   //index media orientation:
+    /*******************************************************/
+  
+   $default-media-orientation:landscape;
+   
+   
+   /******************************************************/
+   //para la navbar
+   /******************************************************/
+  
+   //navbar button color (menu)
+   $navbar-light-active-color:white; //donde van?
+   $navbar-light-color:white; //donde van?
+   $navbar-light-disabled-color:white; //donde van?
+   $button-radius : 10px;
+   $navbar-font:'Times New Roman', Times, serif;;
+  $trigger-button-color:white;
+  $nav-bk-color-def:rgb(47, 76, 143);
+  $navbar-dark-custom-color:black;
+  $def-body-height:100vh;
+  $def-gradient-dir: to buttom right;
+  $def-gradient-first-color:rgb(14, 96, 117);
+  $def-gradient-second-color:rgb(189, 9, 174);
+  $def-log-trigger-padding:15px 30px;
+  $def-button-login-radius:30px;
+  $def-button-pos:relative;
+  $trigger-btn-top:50%;
+  $def-login-weight:bold;
+  $nav-form-control-margin: 1em 0;
+  $def-login-box-shadows:none;
+  $def-login-padding: 6px 20px;
+  $def-login-border-radius-modal: 20px;
+  $def-modal-background:none;
+  $def-login-border-modal:2px solid #FAB87F;
+  $def-login-color:#FAB87F;
+  $def-login-transition: all .5s;
+  $def-login-margintop:1em;
+  
+  //signup
+  $def-signup-padding:$def-log-trigger-padding;
+  $def-signup-border-radius:20px;
+  $def-signup-border:$def-login-border-modal; 
+  $def-signup-color:$def-login-color;
+  $def-signup-weight:$def-login-weight;
+  $def-signup-transition:$def-login-transition;
+  $def-signup-margintop:$def-login-margintop;
+  
+  //header_text
+  
+  $default-text-anim-duration:5s;
+  $default-text-anim-iteration:infinite;
+  $default-text-anim-direction:alternate;
+  
+  //header_images
+  $header_img_max_width:300px;
+  $header_img_max_height:300px;
+  $header_img_width:50%;
+  $header_img_height:50%;
+  
+  //keyframe:
+  $header_text_anim_name:header_colors;
+  $header_text_anim_color_from: rgb(15, 160, 60);
+  $header_text_anim_color_to: rgb(160, 15, 115);
+  $header_text_anim_fontsize_from:3vh;
+  $header_text_anim_fontsize_to:3.9vh;
+  $header_text_anim_font_landscape_increase:2vh;
+  
+  /*************************************************************/
+  //footer
+  /*************************************************************/
+  
+  $footer_bk_color:$nav-bk-color-def;
+  $footer_font_size:2vh;
+  $footerbar_bk_color:rgb(33, 54, 102);
+  $footerbar_bk_color2:rgb(63, 90, 153);
+  $footer_margin:0;
+  $footer_padding:0;
+  $footer_start_fontsize:14px;
+  $footer_hover_a_color:rgb(47, 76, 143);
+  $footer_font_style:bold;
+  $footer_float_lang:right;
+  $footer_lang_margin:10px;
+  
+  $footer_vertical_hr_border: none;
+  $footer_verticalhr_borderleft:1px solid hsla(200, 10%, 50%, 100);
+  $footer_verticalhr_height:15vh;
+  $footer_verticalhr_width:1px;
+  $footer_verticalhr_margin:-30px;
+  
+  $footer_media_lang_displ:table;
+  $footer_media_lang_float:initial;
+  $footer_medial_lang_margin:auto;
+  $footer_media_screensize:576px;
+  
+  //validaciones
+  $val_color_h1:red;
+  $val_color_h2:navy;
+  $val_color_h3:brown;
+  
+  $val_size_h1:5vh;
+  $val_size_h2:4vh;
+  $val_size_h3:3.5vh;

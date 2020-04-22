@@ -1,0 +1,119 @@
+@import '~src/custom_variables';
+
+@mixin set_default_animation_header() {
+    animation-name:$header_text_anim_name;
+    animation-duration: $default-text-anim-duration;
+    animation-iteration-count: $default-text-anim-iteration;
+    animation-direction: $default-text-anim-direction;    
+  }
+  @mixin set_color_and_bk($color, $background){
+    color:$color;
+    background:$background;
+  }
+  @mixin set_modal_basic_attributes($padding, $border-radius, $border, $font-weight, $transition, $margintop) {
+    padding: $padding;
+    border-radius: $border-radius;
+    border: $border;
+    font-weight: $font-weight;
+    transition: $transition;
+    margin-top:$margintop;
+  }
+  
+  .navbar-custom{
+      @include hover-focus();
+      background-color: $nav-bk-color-def;
+  }
+  .navbar-custom-button a li ul i {
+    @include set_color_and_bk($navbar-light-active-color,$navbar-light-active-color);
+  }
+  .navbar-custom-button:hover{
+      @include hover-focus();
+      background-color: $navbar-light-color;
+      color:$navbar-dark-custom-color;
+      border-radius: $button-radius;
+  }
+  
+    
+  body{
+      height: 100vh;
+      text-align: $text-center;
+      font-family: $navbar-font;
+    }
+      /*Trigger Button*/
+    .login-trigger {
+      @include set_color_and_bk($trigger-button-color,linear-gradient($def-gradient-dir,$def-gradient-first-color,$def-gradient-second-color) );
+      font-weight: $def-login-weight;
+      padding: $def-log-trigger-padding;
+      border-radius: $def-button-login-radius;
+      position: $def-button-pos; 
+      top: $trigger-btn-top;
+    }
+    
+    /*Modal*/
+    h4 {
+      font-weight: $def-login-weight;
+      color: $navbar-light-color;
+    }
+    .close {
+      color: $navbar-light-color;
+      transform: scale(1.2)
+    }
+    .modal-content {
+      font-weight: $def-login-weight;
+      background: linear-gradient(to bottom right,rgb(50, 14, 117),rgb(189, 9, 174));
+    }
+    .form-control {
+      margin: $nav-form-control-margin;
+    }
+    .form-control:hover, .form-control:focus {
+      box-shadow: $def-login-box-shadows;  
+      border-color: $navbar-light-color;
+    }
+  
+    
+    .login {
+      @include set_modal_basic_attributes($def-login-padding, $def-login-border-radius-modal, $def-login-border-modal,$def-login-weight , $def-login-transition, $def-login-margintop );
+      @include set_color_and_bk($def-login-color, $def-modal-background)
+    }
+    .signup {
+      @include set_modal_basic_attributes($def-signup-padding, $def-signup-border-radius, $def-signup-border,$def-signup-weight , $def-signup-transition, $def-signup-margintop );
+      @include set_color_and_bk($def-signup-color, $def-modal-background)
+  
+    }
+    .login:hover {
+      @include set_color_and_bk($trigger-button-color,$def-login-color );
+    }
+   
+    .header_text{
+      @include set_default_animation_header();
+      text-align: $text-center;
+      justify-content: $text-center;
+      align-items: $text-center;
+      
+    }
+    .header_img{
+      max-width: $header_img_max_width;
+      max-height: $header_img_max_height;
+      width:$header_img_width;
+      height:$header_img_height;
+      margin:$default-margins;
+    }
+    @function set_def_landscape_textanim_fontsize($size, $def-increase)
+    {
+      @return $size + $def-increase;
+    }
+    @keyframes #{$header_text_anim_name} {
+      from {color: $header_text_anim_color_from;
+            font-size: $header_text_anim_fontsize_from;}
+      to {color:$header_text_anim_color_to;
+          font-size: $header_text_anim_fontsize_to;}
+    }
+    @media (orientation:$default-media-orientation)
+    {
+      @keyframes #{$header_text_anim_name} {
+        from {color: $header_text_anim_color_from;
+              font-size:set_def_landscape_textanim_fontsize($header_text_anim_fontsize_from, $header_text_anim_font_landscape_increase) ;}
+        to {color:$header_text_anim_color_to;
+              font-size:set_def_landscape_textanim_fontsize($header_text_anim_fontsize_to, $header_text_anim_font_landscape_increase);}
+      }
+    }
