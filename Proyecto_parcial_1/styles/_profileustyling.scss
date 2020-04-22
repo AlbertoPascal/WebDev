@@ -11,6 +11,11 @@
     @include set-font-fam($title-h6-fam);
     
   }
+  h5{
+    font-family: $title-h6-fam;
+    font-style: oblique;
+    font-weight: bold;
+  }
   
   @mixin set-background-img($image) {
     background-image: $image;
@@ -127,4 +132,8 @@ input[type=text]:focus {
 .estilo-link{
   font-style: normal;
   font-family: $nav-font;
+}
+
+.estilowish{
+  font-family: $wish-font;
 }
