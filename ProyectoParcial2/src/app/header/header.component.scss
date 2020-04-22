@@ -1,4 +1,4 @@
-@import '~src/custom_variables';
+@import '~src/styles';
 
 @mixin set_default_animation_header() {
     animation-name:$header_text_anim_name;

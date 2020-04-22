@@ -1,18 +1,49 @@
-<header id = "header">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+  <!-- Bootstrap CSS -->
+  <link rel="shortcut icon" href="https://img.icons8.com/cotton/64/000000/money-box.png" type="image/vnd.microsoft.icon" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Prototipo 1:Home</title>
+</head>
+ <header id = "header">
+        
+      <nav class="navbar navbar-expand-md navbar-light navbar-custom">
+          <a href="index.html" class="navbar-brand">All-Mighty Budget</a>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+              <span class="navbar-toggler-icon"></span>
+          </button>
       
-    <nav class="navbar navbar-expand-md navbar-light navbar-custom">
-        <a href="index.html" class="navbar-brand">All-Mighty Budget</a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ml-auto navbar-light">
-              <!--Important: data-toggle is what allows us to display the pop-up whenever we click on the login button"-->
-              <!--Important: data-target is from bootstrap and allows us to point towards the element we want to add an action for"-->
-              <a href="" data-target="#login" data-toggle="modal" class="nav-item nav-link navbar-custom-button"><i class="fa fa-info-circle">&nbsp;Log in</i></a>
-              <!-- this is from bootrstrap's Modal -->
-              <div id="login" class="modal fade">
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+              <div class="navbar-nav ml-auto navbar-light">
+                <!--Important: data-toggle is what allows us to display the pop-up whenever we click on the login button"-->
+                <!--Important: data-target is from bootstrap and allows us to point towards the element we want to add an action for"-->
+                <a href="" data-target="#login" data-toggle="modal" class="nav-item nav-link navbar-custom-button"><i class="fa fa-info-circle">&nbsp;Log in</i></a>
+                <!-- this is from bootrstrap's Modal -->
+                <div id="login" class="modal fade">
+                    <div class="modal-dialog">
+                      <!-- This is where we modify the Modal content (login screen)-->
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          <!--This is the x to close the modal-->
+                          <button data-dismiss="modal" class="close">&times;</button>
+                          <!--regardin the login button: -->
+                          <h4>Login</h4>
+                          <form action = "tabs/PerfilesU.html">
+                            <input type="text" name="username" class="form-control" placeholder="Username"/>
+                            <input type="password" name="password" class="form-control" placeholder="password"/>
+                            <input class="btn login" type="submit" value="Login" />
+                          </form>
+                        </div>
+                      </div>
+                    </div>  
+                  </div>
+                <a href="" data-target="#signup" data-toggle="modal" class="nav-item nav-link navbar-custom-button"><i class="fa fa-users"></i>&nbsp;Sign Up</a>
+                <!-- this is from bootrstrap's Modal -->
+                <div id="signup" class="modal fade">
                   <div class="modal-dialog">
                     <!-- This is where we modify the Modal content (login screen)-->
                     <div class="modal-content">
@@ -20,50 +51,30 @@
                         <!--This is the x to close the modal-->
                         <button data-dismiss="modal" class="close">&times;</button>
                         <!--regardin the login button: -->
-                        <h4>Login</h4>
+                        <h4>Sign Up</h4>
                         <form action = "tabs/PerfilesU.html">
                           <input type="text" name="username" class="form-control" placeholder="Username"/>
                           <input type="password" name="password" class="form-control" placeholder="password"/>
-                          <input class="btn login" type="submit" value="Login" />
+                          <input type="password" name="password_conf" class="form-control" placeholder="confirm password"/>
+                          <input type="email" name="email" class="form-control" placeholder="email"/>
+                          <input class="btn signup" type="submit" value="signup" />
                         </form>
                       </div>
                     </div>
                   </div>  
                 </div>
-              <a href="" data-target="#signup" data-toggle="modal" class="nav-item nav-link navbar-custom-button"><i class="fa fa-users"></i>&nbsp;Sign Up</a>
-              <!-- this is from bootrstrap's Modal -->
-              <div id="signup" class="modal fade">
-                <div class="modal-dialog">
-                  <!-- This is where we modify the Modal content (login screen)-->
-                  <div class="modal-content">
-                    <div class="modal-body">
-                      <!--This is the x to close the modal-->
-                      <button data-dismiss="modal" class="close">&times;</button>
-                      <!--regardin the login button: -->
-                      <h4>Sign Up</h4>
-                      <form action = "tabs/PerfilesU.html">
-                        <input type="text" name="username" class="form-control" placeholder="Username"/>
-                        <input type="password" name="password" class="form-control" placeholder="password"/>
-                        <input type="password" name="password_conf" class="form-control" placeholder="confirm password"/>
-                        <input type="email" name="email" class="form-control" placeholder="email"/>
-                        <input class="btn signup" type="submit" value="signup" />
-                      </form>
-                    </div>
-                  </div>
-                </div>  
               </div>
-            </div>
-            
+              
+          </div>
+      </nav>
+      <div class = "bg-white  rounded shadow">
+        <div class = "container row">
+          <img src="../../assets/images/logo.png" class = "img-fluid rounded  header_img mx-auto col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+          <h3 class = "header_text text-center col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 my-auto">¡Obt&eacute;n m&aacute;s con menos!</h3>
+          
         </div>
-    </nav>
-    <div class = "bg-white  rounded shadow">
-      <div class = "container row">
-        <img src="images/logo.png" class = "img-fluid rounded  header_img mx-auto col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-        <h3 class = "header_text text-center col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 my-auto">¡Obt&eacute;n m&aacute;s con menos!</h3>
-        
       </div>
-    </div>
-    <div class="ribbon">
-      <a href="index.html">Versi&oacute;n Beta 1.0</a>
-    </div>
-  </header>
+      <div class="ribbon">
+        <a href="index.html">Versi&oacute;n Beta 1.0</a>
+      </div>
+    </header>
