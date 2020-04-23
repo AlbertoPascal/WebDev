@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { CarrouselHomeComponent } from './carrousel-home/carrousel-home.component';
+import { IntroBlockComponent } from './intro-block/intro-block.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { ProductCardComponent } from './product-card/product-card.component';
     HeaderComponent,
     FooterComponent,
     SearchbarComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    CarrouselHomeComponent,
+    IntroBlockComponent
   ],
   imports: [
     BrowserModule,
