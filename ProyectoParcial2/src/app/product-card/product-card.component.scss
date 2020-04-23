@@ -1,0 +1,65 @@
+@import '~src/styles';
+
+@mixin setmax-height-and-width($max-height, $max-width){
+    max-width: $max-width;
+    max-height: $max-height;
+}
+
+body{
+    word-break: $default-word-break;
+}
+
+@mixin set-default-width(){
+    width: $card-width;
+}
+
+.card {
+    @include set-default-width;
+    height: $card-height;
+    margin: $card-margin;
+    text-align: $card-text-align;
+    font-family: $card-font;
+    overflow: hidden;
+    padding: $card-padding;
+}
+
+hr{
+    @include set-default-width();
+}
+
+@mixin set-height-and-width($height, $width){
+    width: $width;
+    height: $height;
+}
+
+.productImage{
+    @include set-height-and-width($product-image-height, $product-image-width);
+    padding: $product-image-padding;
+    margin-left: $product-image-margin;
+}
+
+.card-block{
+    margin-left: $card-text-margin;
+}
+
+.ratingImage{
+    @include setmax-height-and-width($rating-image-height, $rating-image-width);
+}
+
+.price {
+    color: $price-color;
+    font-size: $price-size;
+}
+
+@media (max-width:$media-max-width){
+    .card {
+        height: $media-card-heigth;
+        width:$media-card-width;
+    }
+    .productImage{
+        display: $media-product-image-display;
+        margin-left: $media-product-image-margin-left;
+        margin-right: $media-product-image-margin-right;
+    }
+}
+
