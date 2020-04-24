@@ -1,0 +1,30 @@
+
+<div class="container">
+    <div class="row my-2">
+        <div class="col-lg-4 order-lg-1 text-center">
+            <app-profile-pic></app-profile-pic>
+            <h6 class="mt-3">Photo</h6>
+            <div class= "mt-3">
+                <label class="btn btn-default">
+                    <span class ="upload rounded px-auto py-auto">Choose Picture</span> <input type="file" hidden>
+                </label>
+            </div>
+            <div class="botton-change mt-3">
+                <button onclick="window.location.href='perfilAdmin.html'" class="button"><span>Become Admin</span></button>
+            </div>
+        </div>
+        <div class="col-lg-8 order-lg-2">
+            <app-user-edit-tabs></app-user-edit-tabs>
+
+            <div class="col-lg-4 " id = "editar">
+                <h2 class="text-center font-weight-light mt-3">User Profile</h2>
+            </div>
+            <div class="col-lg-8 order-lg-1 personal-info">
+                <app-data-form></app-data-form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="snackbar">Cambios guardados exitosamente</div>
+<app-footer></app-footer>

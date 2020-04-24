@@ -19,6 +19,10 @@ import { ProductosComponent } from './productos/productos.component';
 import { ProfileadminAddMemberComponent } from './profileadmin-add-member/profileadmin-add-member.component';
 import { ProfileadminMemberTableComponent } from './profileadmin-member-table/profileadmin-member-table.component';
 import { PerfilAdminComponent } from './perfil-admin/perfil-admin.component';
+import { DataFormComponent } from './data-form/data-form.component';
+import { UserEditTabsComponent } from './user-edit-tabs/user-edit-tabs.component';
+import { EditarPerfilUsrComponent } from './editar-perfil-usr/editar-perfil-usr.component';
+import { EditarPerfilAdminComponent } from './editar-perfil-admin/editar-perfil-admin.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,11 @@ import { PerfilAdminComponent } from './perfil-admin/perfil-admin.component';
     ProductosComponent,
     ProfileadminAddMemberComponent,
     ProfileadminMemberTableComponent,
-    PerfilAdminComponent
+    PerfilAdminComponent,
+    DataFormComponent,
+    UserEditTabsComponent,
+    EditarPerfilUsrComponent,
+    EditarPerfilAdminComponent
   ],
   imports: [
     BrowserModule,
