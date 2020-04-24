@@ -1,0 +1,28 @@
+@import '~src/styles';
+
+h4 {
+    font-weight: $def-login-weight;
+    color: $navbar-light-color;
+  }
+
+.buscar2 {
+    background-color: #4abe64;
+    padding: 40px 40px;
+    color: $color-white;
+    text-align: $text-center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    border-radius: 5px;
+    font-family: monospace;
+  }
+
+  /* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+    width: 81%;
+}
+

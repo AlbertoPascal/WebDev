@@ -18,6 +18,7 @@ import { ProfileProgressbarComponent } from './profile-progressbar/profile-progr
 import { ProductosComponent } from './productos/productos.component';
 import { ProfileadminAddMemberComponent } from './profileadmin-add-member/profileadmin-add-member.component';
 import { ProfileadminMemberTableComponent } from './profileadmin-member-table/profileadmin-member-table.component';
+import { PerfilAdminComponent } from './perfil-admin/perfil-admin.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ProfileadminMemberTableComponent } from './profileadmin-member-table/pr
     ProfileProgressbarComponent,
     ProductosComponent,
     ProfileadminAddMemberComponent,
-    ProfileadminMemberTableComponent
+    ProfileadminMemberTableComponent,
+    PerfilAdminComponent
   ],
   imports: [
     BrowserModule,
