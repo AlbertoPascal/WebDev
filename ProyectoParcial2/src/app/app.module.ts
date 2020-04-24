@@ -15,6 +15,9 @@ import { ProfileTabsComponent } from './profile-tabs/profile-tabs.component';
 import { ProfileRecentActivityComponent } from './profile-recent-activity/profile-recent-activity.component';
 import { ProfileWishlishtComponent } from './profile-wishlisht/profile-wishlisht.component';
 import { ProfileProgressbarComponent } from './profile-progressbar/profile-progressbar.component';
+import { ProductosComponent } from './productos/productos.component';
+import { ProfileadminAddMemberComponent } from './profileadmin-add-member/profileadmin-add-member.component';
+import { ProfileadminMemberTableComponent } from './profileadmin-member-table/profileadmin-member-table.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { ProfileProgressbarComponent } from './profile-progressbar/profile-progr
     ProfileTabsComponent,
     ProfileRecentActivityComponent,
     ProfileWishlishtComponent,
-    ProfileProgressbarComponent
+    ProfileProgressbarComponent,
+    ProductosComponent,
+    ProfileadminAddMemberComponent,
+    ProfileadminMemberTableComponent
   ],
   imports: [
     BrowserModule,

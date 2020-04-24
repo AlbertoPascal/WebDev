@@ -1,0 +1,10 @@
+@import '~src/styles';
+
+
+@mixin set-default-width(){
+    width: $card-width;
+}
+
+hr{
+    @include set-default-width();
+}

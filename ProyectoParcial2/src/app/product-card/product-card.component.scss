@@ -23,9 +23,7 @@ body{
     padding: $card-padding;
 }
 
-hr{
-    @include set-default-width();
-}
+
 
 @mixin set-height-and-width($height, $width){
     width: $width;
