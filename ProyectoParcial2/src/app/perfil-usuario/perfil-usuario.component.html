@@ -1,79 +1,38 @@
 <div class="container">
     <div class="row my-2">
         <div class="col-sm-12 col-lg-4 col-md-4 order-lg-1 order-md-2 text-center">
-          <div class="picUser mx-auto img-fluid  d-block">
-            <!--img src="../images/camila.jpeg" class= "profilePic mx-auto img-fluid  d-block" alt="avatar"-->
-          </div>
+
+            <app-profile-pic></app-profile-pic>
+
             <h6 class="mt-3">User</h6>
             
-            <ul class="list-group mt-3">
-                <li class="list-group-item text-muted">Actividad reciente <i class="fa fa-dashboard fa-1x"></i></li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Balance</strong></span> $1500</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Meta</strong></span> $10,000</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Salario</strong></span>$200</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Limite Gasto</strong></span>$500</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Familia</strong></span> Fam</li>
-              </ul> 
-        </div>
-        <div class="col-sm-12 col-lg-8 col-md-8 order-md-2 order-lg-2">
-            <ul class="nav nav-tabs mt-2">
-                <li class="nav-item">
-                    <a href="PerfilesU.html" class="nav-link estilo-link active">Perfil</a>
-                </li>
-                <li class="nav-item">
-                    <a href="editarP.html" class="nav-link estilo-link">Editar Perfil</a>
-                </li>
-                <li class="nav-item">
-                    <a href="ahorros.html" class="nav-link estilo-link">Ahorros</a>
-                </li>
-            </ul>
-            <div class="tab-content py-4">
-                <div class="tab-pane active" id="profile">
-                    <h5 class="mb-3">Meta Actual</h5>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%">40%</div>
-                      </div>
-                    </div>
-                    <div class="start">Start: $0</div>
-                    <div class="end">End: $5,000</div>
-                  </div> 
-                    <div class="row">                          
-                        <div class="col-md-12">
-                            <hr>
-                            <h5 class="mt-2"><span class="fa fa-bookmark float-right"></span> Wish List</h5>
-                            <table class="table table-hover table-striped estilowish">
-                                <tbody>                                    
-                                    <tr>
-                                        <td>
-                                           <span class="float-right font-weight-bold">$ 500</span> Pantalones skynny jeans Levis
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                           <span class="float-right font-weight-bold">$ 1,300</span> Animal Crossing Nintendo Switch
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                           <span class="float-right font-weight-bold">$ 200,000</span> Honda Fit 2015 
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                           <span class="float-right font-weight-bold">$ 7,999</span> Nintendo Switch 
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                           <span class="float-right font-weight-bold">$ 50</span> Peluche Axolotes 
-                                        </td>
-                                    </tr>
-                                </tbody> 
-                            </table>
-                        </div>
-                    </div>
-                    <!--/row-->
+            <app-profile-recent-activity></app-profile-recent-activity>
+
         </div>
 
+        <div class="col-sm-12 col-lg-8 col-md-8 order-md-2 order-lg-2">
+            
+            <app-profile-tabs></app-profile-tabs>
+            
+            <div class="tab-content py-4">
+                <div class="tab-pane active" id="profile">
+                  <h5 class="mb-3">Meta Actual</h5>
+
+                  <app-profile-progressbar></app-profile-progressbar>
+
+                </div>
+            </div> 
+
+            <div class="row">                          
+                <div class="col-md-12">
+                    <hr>
+                    <h5 class="mt-2"><span class="fa fa-bookmark float-right"></span> Wish List</h5>
+                    
+                    <app-profile-wishlisht></app-profile-wishlisht>
+
+                </div>
             </div>
+                    
         </div>
+    </div>
+</div>

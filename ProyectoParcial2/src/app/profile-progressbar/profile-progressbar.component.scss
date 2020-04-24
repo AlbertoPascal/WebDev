@@ -1,0 +1,14 @@
+@import '~src/styles';
+
+@mixin set-text-align($aligned){
+    float: $aligned;
+    text-align: $aligned;
+  }
+  
+.start{
+    @include set-text-align($text-left);
+  }
+  .end {
+    @include set-text-align($text-right);
+  }
+

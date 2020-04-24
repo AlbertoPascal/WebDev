@@ -1,0 +1,30 @@
+@import '~src/styles';
+
+
+
+@mixin set-background-img($image) {
+    background-image: $image;
+  }
+  @mixin set-border-color($white){
+    border: 1px solid $white;
+  }
+  
+@mixin set-border-radius($rad){
+    border-radius: $rad;
+  }
+
+.profilePic {
+    @include set-border-radius($circle);
+    width:  $widthp;
+    height: $widthp;  
+  }
+
+  .picUser{
+    @include set-background-img($default-img);
+    @include set-border-radius($circle);
+    width:  $widthp;
+    height: $widthp;
+    @include set-border-color($color-white);
+    background-size: $max $max;
+
+  }

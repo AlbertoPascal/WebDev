@@ -12,7 +12,9 @@ import { IntroBlockComponent } from './intro-block/intro-block.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { ProfilePicComponent } from './profile-pic/profile-pic.component';
 import { ProfileTabsComponent } from './profile-tabs/profile-tabs.component';
-import { ProfileBarraProgresoComponent } from './profile-barra-progreso/profile-barra-progreso.component';
+import { ProfileRecentActivityComponent } from './profile-recent-activity/profile-recent-activity.component';
+import { ProfileWishlishtComponent } from './profile-wishlisht/profile-wishlisht.component';
+import { ProfileProgressbarComponent } from './profile-progressbar/profile-progressbar.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ProfileBarraProgresoComponent } from './profile-barra-progreso/profile-
     PerfilUsuarioComponent,
     ProfilePicComponent,
     ProfileTabsComponent,
-    ProfileBarraProgresoComponent
+    ProfileRecentActivityComponent,
+    ProfileWishlishtComponent,
+    ProfileProgressbarComponent
   ],
   imports: [
     BrowserModule,
