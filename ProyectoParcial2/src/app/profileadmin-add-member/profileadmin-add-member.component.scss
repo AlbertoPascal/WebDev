@@ -19,10 +19,11 @@ h4 {
     transition: width 0.4s ease-in-out;
     border-radius: 5px;
     font-family: monospace;
+    border: 5px;
   }
 
   /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
     width: 81%;
-}
 
+}
