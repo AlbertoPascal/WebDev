@@ -27,6 +27,9 @@ import { AhorrosComponent } from './ahorros/ahorros.component';
 import { AhorrosObjComponent } from './ahorros-obj/ahorros-obj.component';
 import { AhorrosSavingsComponent } from './ahorros-savings/ahorros-savings.component';
 import { AhorrosPresupuestoComponent } from './ahorros-presupuesto/ahorros-presupuesto.component';
+import { ValidacionBlockComponent } from './validacion-block/validacion-block.component';
+import { ValidacionesComponent } from './validaciones/validaciones.component';
+import { ValidacionesCssComponent } from './validaciones-css/validaciones-css.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,10 @@ import { AhorrosPresupuestoComponent } from './ahorros-presupuesto/ahorros-presu
     AhorrosComponent,
     AhorrosObjComponent,
     AhorrosSavingsComponent,
-    AhorrosPresupuestoComponent
+    AhorrosPresupuestoComponent,
+    ValidacionBlockComponent,
+    ValidacionesComponent,
+    ValidacionesCssComponent
   ],
   imports: [
     BrowserModule,

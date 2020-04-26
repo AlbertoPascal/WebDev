@@ -16,7 +16,8 @@
 .profilePic {
     @include set-border-radius($circle);
     width:  $widthp;
-    height: $widthp;  
+    height: $widthp;
+    margin:auto;  
   }
 
   .picUser{
@@ -26,5 +27,6 @@
     height: $widthp;
     @include set-border-color($color-white);
     background-size: $max $max;
+    margin:auto;
 
   }

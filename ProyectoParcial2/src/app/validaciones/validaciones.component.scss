@@ -1,0 +1,23 @@
+@import '~src/styles';
+
+.img_validation:hover{
+    opacity:$carousel-img-def-opacity-hover;
+  }
+.img_validation{
+    opacity:$carousel-img-def-opacity;
+}
+
+@mixin set_h($color, $size){
+  color:$color;
+  font-size: $size;
+  text-align: center;
+}
+h1{
+  @include set_h($val_color_h1, $val_size_h1);
+}
+h2{
+  @include set_h($val_color_h2, $val_size_h2)
+}
+h3{
+  @include set_h($val_color_h3, $val_size_h3)
+}
