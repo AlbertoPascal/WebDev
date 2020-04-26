@@ -6,6 +6,12 @@
     text-align: $text-align;
 }
 
+h6 {
+    font-weight: bold;
+    color: $color-black;
+    font-family: $title-h6-fam;
+}
+
 .title{
     @include set-font-size($title-font-size, $title-font-style, $title-text-align);
     margin: $title-margin;
