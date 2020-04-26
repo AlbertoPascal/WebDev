@@ -23,6 +23,10 @@ import { DataFormComponent } from './data-form/data-form.component';
 import { UserEditTabsComponent } from './user-edit-tabs/user-edit-tabs.component';
 import { EditarPerfilUsrComponent } from './editar-perfil-usr/editar-perfil-usr.component';
 import { EditarPerfilAdminComponent } from './editar-perfil-admin/editar-perfil-admin.component';
+import { AhorrosComponent } from './ahorros/ahorros.component';
+import { AhorrosObjComponent } from './ahorros-obj/ahorros-obj.component';
+import { AhorrosSavingsComponent } from './ahorros-savings/ahorros-savings.component';
+import { AhorrosPresupuestoComponent } from './ahorros-presupuesto/ahorros-presupuesto.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +50,11 @@ import { EditarPerfilAdminComponent } from './editar-perfil-admin/editar-perfil-
     DataFormComponent,
     UserEditTabsComponent,
     EditarPerfilUsrComponent,
-    EditarPerfilAdminComponent
+    EditarPerfilAdminComponent,
+    AhorrosComponent,
+    AhorrosObjComponent,
+    AhorrosSavingsComponent,
+    AhorrosPresupuestoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row my-2">
+        <app-profile-pic></app-profile-pic>
+        <div class="col-sm-12 col-lg-8 col-md-8 order-md-2 order-lg-2">
+            <app-user-edit-tabs></app-user-edit-tabs>
+
+            <div class="tab-content py-4">
+                <div class="tab-pane active" id="savings">
+                    
+                    <div class="container">
+
+                        <p class="title">Objetivo</p>
+
+                        <!--Primera fila-->
+                        <div class="row">
+
+                            <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                
+                                <app-ahorros-obj></app-ahorros-obj>
+                                <app-ahorros-savings></app-ahorros-savings>
+                            </div>
+                                   
+                        </div>
+
+                        <br>
+                        <br>
+
+                        <app-ahorros-presupuesto></app-ahorros-presupuesto>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div> 
+
+<div id="snackbar">Ahorros agregados exitosamente</div>
