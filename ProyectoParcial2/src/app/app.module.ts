@@ -3,12 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { SearchbarComponent } from './searchbar/searchbar.component';
+import { HeaderComponent } from './main-components/header/header.component';
+import { FooterComponent } from './main-components/footer/footer.component';
+import { SearchbarComponent } from './main-components/searchbar/searchbar.component';
 import { ProductCardComponent } from './product-card/product-card.component';
-import { CarrouselHomeComponent } from './carrousel-home/carrousel-home.component';
-import { IntroBlockComponent } from './intro-block/intro-block.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { ProfilePicComponent } from './profile-pic/profile-pic.component';
 import { ProfileTabsComponent } from './profile-tabs/profile-tabs.component';
@@ -30,16 +28,17 @@ import { AhorrosPresupuestoComponent } from './ahorros-presupuesto/ahorros-presu
 import { ValidacionBlockComponent } from './validacion-block/validacion-block.component';
 import { ValidacionesComponent } from './validaciones/validaciones.component';
 import { ValidacionesCssComponent } from './validaciones-css/validaciones-css.component';
+import { AppRoutingModule} from './app-routing.module';
+import { HomeModule } from './modules/home/home.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    SearchbarComponent,
+    SearchbarComponent,    
     ProductCardComponent,
-    CarrouselHomeComponent,
-    IntroBlockComponent,
     PerfilUsuarioComponent,
     ProfilePicComponent,
     ProfileTabsComponent,
@@ -64,7 +63,9 @@ import { ValidacionesCssComponent } from './validaciones-css/validaciones-css.co
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
