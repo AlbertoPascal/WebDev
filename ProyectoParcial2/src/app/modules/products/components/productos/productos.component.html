@@ -9,7 +9,7 @@
 </div>
 <br>
 
-<app-product-card></app-product-card>
+<app-product-card *ngFor="let producto of productos" [curr_prod]=producto></app-product-card>
 <hr>
 
 <br>
