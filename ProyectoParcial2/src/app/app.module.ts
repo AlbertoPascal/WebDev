@@ -6,30 +6,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './main-components/header/header.component';
 import { FooterComponent } from './main-components/footer/footer.component';
 import { SearchbarComponent } from './main-components/searchbar/searchbar.component';
-import { ProductCardComponent } from './product-card/product-card.component';
-import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
-import { ProfilePicComponent } from './profile-pic/profile-pic.component';
-import { ProfileTabsComponent } from './profile-tabs/profile-tabs.component';
-import { ProfileRecentActivityComponent } from './profile-recent-activity/profile-recent-activity.component';
-import { ProfileWishlishtComponent } from './profile-wishlisht/profile-wishlisht.component';
-import { ProfileProgressbarComponent } from './profile-progressbar/profile-progressbar.component';
-import { ProductosComponent } from './productos/productos.component';
-import { ProfileadminAddMemberComponent } from './profileadmin-add-member/profileadmin-add-member.component';
-import { ProfileadminMemberTableComponent } from './profileadmin-member-table/profileadmin-member-table.component';
-import { PerfilAdminComponent } from './perfil-admin/perfil-admin.component';
-import { DataFormComponent } from './data-form/data-form.component';
-import { UserEditTabsComponent } from './user-edit-tabs/user-edit-tabs.component';
-import { EditarPerfilUsrComponent } from './editar-perfil-usr/editar-perfil-usr.component';
-import { EditarPerfilAdminComponent } from './editar-perfil-admin/editar-perfil-admin.component';
-import { AhorrosComponent } from './ahorros/ahorros.component';
-import { AhorrosObjComponent } from './ahorros-obj/ahorros-obj.component';
-import { AhorrosSavingsComponent } from './ahorros-savings/ahorros-savings.component';
-import { AhorrosPresupuestoComponent } from './ahorros-presupuesto/ahorros-presupuesto.component';
-import { ValidacionBlockComponent } from './validacion-block/validacion-block.component';
-import { ValidacionesComponent } from './validaciones/validaciones.component';
-import { ValidacionesCssComponent } from './validaciones-css/validaciones-css.component';
 import { AppRoutingModule} from './app-routing.module';
 import { HomeModule } from './modules/home/home.module';
+import { ProductsModule } from './modules/products/products.module';
+import { ProfileModule } from './modules/profile/profile.module';
 
 
 @NgModule({
@@ -37,36 +17,17 @@ import { HomeModule } from './modules/home/home.module';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    SearchbarComponent,    
-    ProductCardComponent,
-    PerfilUsuarioComponent,
-    ProfilePicComponent,
-    ProfileTabsComponent,
-    ProfileRecentActivityComponent,
-    ProfileWishlishtComponent,
-    ProfileProgressbarComponent,
-    ProductosComponent,
-    ProfileadminAddMemberComponent,
-    ProfileadminMemberTableComponent,
-    PerfilAdminComponent,
-    DataFormComponent,
-    UserEditTabsComponent,
-    EditarPerfilUsrComponent,
-    EditarPerfilAdminComponent,
-    AhorrosComponent,
-    AhorrosObjComponent,
-    AhorrosSavingsComponent,
-    AhorrosPresupuestoComponent,
-    ValidacionBlockComponent,
-    ValidacionesComponent,
-    ValidacionesCssComponent
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    ProductsModule,
+    ProfileModule
   ],
+  exports: [SearchbarComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
