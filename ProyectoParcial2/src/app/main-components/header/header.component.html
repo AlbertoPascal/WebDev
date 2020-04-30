@@ -9,8 +9,15 @@
 
   <title>Prototipo 1:Home</title>
 </head>
- <header id = "header">
-        
+ <header id = "header" >
+      <div>
+        <p *ngIf ="test_var">
+          My test_var is true
+        </p>
+        <p *ngIf = "!test_var">
+          My test_var is false
+        </p>
+      </div>
       <nav class="navbar navbar-expand-md navbar-light navbar-custom">
           <a href="index.html" class="navbar-brand">All-Mighty Budget</a>
           <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
