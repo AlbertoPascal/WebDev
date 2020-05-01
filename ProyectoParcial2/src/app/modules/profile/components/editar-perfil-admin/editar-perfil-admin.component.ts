@@ -11,7 +11,9 @@ export class EditarPerfilAdminComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  resetForms(){
+    
+  }
   showSnackbar() {
     // Get the snackbar DIV
     var x = document.getElementById("snackbar");

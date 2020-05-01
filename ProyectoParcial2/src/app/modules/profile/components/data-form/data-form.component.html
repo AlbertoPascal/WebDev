@@ -1,50 +1,44 @@
-<form >
-    <div class="form-group row">
+<form [formGroup] = "editprofileForm">
         <label class="col-lg-3 col-form-label form-control-label">Nombre</label>
-        <div class="col-lg-9">
-            <input class="form-control" type="text" placeholder="Nombre" />
+        <div class="col-lg-12">
+            <input class = "form-control" type="text" placeholder="Nombre" formControlName="name" />
         </div>
-    </div>
-    <div class="form-group row">
         <label class="col-lg-3 col-form-label form-control-label">Apellido</label>
-        <div class="col-lg-9">
-            <input class="form-control" type="text" placeholder="Apellido" />
+        <div class="col-lg-12">
+            <input class="form-control" type="text" placeholder="Apellido" formControlName="lastName" />
         </div>
-    </div>
-    <div class="form-group row">
+
         <label class="col-lg-3 col-form-label form-control-label">Email</label>
-        <div class="col-lg-9">
-            <input class="form-control" type="email" placeholder="email@ejemplo.com" />
+        <div class="col-lg-12">
+            <input class="form-control" type="email" placeholder="email@ejemplo.com" formControlName="email" />
         </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-lg-3 col-form-label form-control-label">Ocupacion</label>
-        <div class="col-lg-9">
-            <input class="form-control" type="text" placeholder="" />
+
+        <label class="col-lg-3 col-form-label form-control-label" >Ocupacion</label>
+        <div class="col-lg-12">
+            <input class="form-control" type="text" placeholder="Ocupación" formControlName="job"/>
         </div>
-    </div>
-    <div class="form-group row">
+
         <label class="col-lg-3 col-form-label form-control-label">Username</label>
-        <div class="col-lg-9">
-            <input class="form-control" type="text" placeholder="Username" />
+        <div class="col-lg-12">
+            <input class="form-control" type="text" placeholder="Username" formControlName="username"/>
         </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-lg-3 col-form-label form-control-label">Contraseña</label>
-        <div class="col-lg-9">
-            <input class="form-control" type="password" placeholder="Contraseña" />
+
+        <form formGroupName = "pass">
+            <label class="col-lg-3 col-form-label form-control-label">Contraseña</label>
+            <div class="col-lg-12">
+                <input class="form-control" type="text" placeholder="Password" formControlName="password"/>
+            </div>
+
+            <label class="col-lg-12 col-form-label form-control-label">Confirmar Contraseña</label>
+            <div class="col-lg-12">
+                <input class="form-control" type="text" placeholder="Confirm Password" formControlName="ConfirmPass"/>
+            </div>
+        </form>
+
+        <div class="form-group row">
+            <div class="col-lg-9 ml-auto text-right">
+                <button type="submit" class="btn btn-outline-secondary" placeholder="Cancel " (click)="onCancel()"></button>
+                <input type="button" class="btn btn-primary" placeholder="Save Changes" onclick="showSnackbar()"/>
+            </div>
         </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-lg-3 col-form-label form-control-label">Confirmar Contraseña</label>
-        <div class="col-lg-9">
-            <input class="form-control" type="password" placeholder="Contraseña" />
-        </div>
-    </div>
-    <div class="form-group row">
-        <div class="col-lg-9 ml-auto text-right">
-            <input type="reset" class="btn btn-outline-secondary" placeholder="Cancel " onclick="showSnackbar()"/>
-            <input type="button" class="btn btn-primary" placeholder="Save Changes" onclick="showSnackbar()"/>
-        </div>
-    </div>
 </form>

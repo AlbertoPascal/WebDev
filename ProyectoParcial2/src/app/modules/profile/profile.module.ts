@@ -20,7 +20,7 @@ import { DataFormComponent } from './components/data-form/data-form.component';
 import { AhorrosObjComponent } from './components/ahorros-obj/ahorros-obj.component';
 import { AhorrosSavingsComponent } from './components/ahorros-savings/ahorros-savings.component';
 import { AhorrosPresupuestoComponent } from './components/ahorros-presupuesto/ahorros-presupuesto.component';
-
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     PerfilUsuarioComponent,
@@ -42,7 +42,9 @@ import { AhorrosPresupuestoComponent } from './components/ahorros-presupuesto/ah
   ],
   imports: [
     CommonModule,
-    ProfileRoutingModule
+    ProfileRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class ProfileModule { }
