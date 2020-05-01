@@ -30,7 +30,9 @@ import { ProfileModule } from './modules/profile/profile.module';
   bootstrap: [AppComponent]
 })
 export class AppModule { 
-  test_var:string="yes";
+  
   //possibly need to add here an input variable. The idea is to call the app-component 
 
 }
+export var test_var:boolean=false;
+
