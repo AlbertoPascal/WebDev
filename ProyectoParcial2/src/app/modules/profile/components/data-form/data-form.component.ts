@@ -27,6 +27,12 @@ export class DataFormComponent implements OnInit {
   }
   onCancel(){
     this.editprofileForm.reset();
+    //falta agregar snackbar
+  }
+  onSave(){
+    //update information on our database
+    //igual falta agregar snackbar
+    alert("Debo actualizar en base");
   }
   showSnackbar() {
     // Get the snackbar DIV
