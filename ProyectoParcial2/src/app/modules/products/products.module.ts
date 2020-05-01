@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+//import {MatSnackBar} from '@angular/material';
 
 import { ProductsRoutingModule } from './products-routing.module';
 import { ProductosComponent } from './components/productos/productos.component';
