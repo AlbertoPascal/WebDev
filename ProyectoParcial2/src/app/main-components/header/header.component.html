@@ -11,12 +11,21 @@
 </head>
  <header id = "header" >
       <div>
-        <p *ngIf ="test_var">
-          My test_var is true
+        <p *ngIf="router.url === '/products/search'">
+          Pagina de productos
         </p>
-        <p *ngIf = "!test_var">
-          My test_var is false
+        <p *ngIf = "router.url === '/home/index'">
+          Pagina de index
         </p>
+        <!--
+          /home/index
+          /products/search
+          /profile/admin-profile
+          /profile/user-profile
+          /profile/edit-user-profile
+          /profile/edit-admin-profile
+          /profile/savings
+        -->
       </div>
       <nav class="navbar navbar-expand-md navbar-light navbar-custom">
           <a href="index.html" class="navbar-brand">All-Mighty Budget</a>
