@@ -9,7 +9,7 @@ const routes: Routes = [
     pathMatch: 'full'},
   {path:'home', loadChildren:"./modules/home/home.module#HomeModule"},
   {path:'products', loadChildren:"./modules/products/products.module#ProductsModule"},
-  {path:"PageNotFound", loadChildren:"./modules/home/home.module#HomeModule"},
+  {path:"PageNotFound", loadChildren:"./modules/not-found/not-found.module#NotFoundModule"},
   {path:'profile', loadChildren:"./modules/profile/profile.module#ProfileModule"},
   {path:'**',redirectTo: "/PageNotFound",  pathMatch: 'full'}
 ]

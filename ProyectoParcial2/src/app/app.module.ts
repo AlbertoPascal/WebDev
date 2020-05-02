@@ -9,7 +9,7 @@ import { AppRoutingModule} from './app-routing.module';
 import { HomeModule } from './modules/home/home.module';
 import { ProductsModule } from './modules/products/products.module';
 import { ProfileModule } from './modules/profile/profile.module';
-
+import {NotFoundModule} from './modules/not-found/not-found.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import { ProfileModule } from './modules/profile/profile.module';
     AppRoutingModule,
     HomeModule,
     ProductsModule,
-    ProfileModule
+    ProfileModule,
+    NotFoundModule
     
   ],
   exports: [],
