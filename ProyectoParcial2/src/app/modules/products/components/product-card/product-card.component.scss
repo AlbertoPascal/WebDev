@@ -1,4 +1,5 @@
-@import '~src/styles';
+@import "~src/styles/styles.scss";
+
 
 @mixin setmax-height-and-width($max-height, $max-width){
     max-width: $max-width;

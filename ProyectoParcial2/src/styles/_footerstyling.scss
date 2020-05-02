@@ -1,7 +1,3 @@
-@import "~src/styles/styles.scss";
-@import "~src/styles/footerstyling";
-
-/*
 @mixin set_footer_color_font_size($color, $size){
     color:$color;
     font-size:$size;
@@ -69,4 +65,4 @@ footer a:hover{
         display: $footer_media_lang_displ;
         @include set_footer_float_margin($footer_media_lang_float, $footer_medial_lang_margin);
     }
-}*/
+}

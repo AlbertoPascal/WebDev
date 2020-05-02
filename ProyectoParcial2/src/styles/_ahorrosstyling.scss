@@ -1,6 +1,4 @@
 
-@import "~src/styles/styles.scss";
-
 @mixin set-font-size($font-size, $font-style, $text-align){
     font-size: $font-size;
     font-style: $font-style;

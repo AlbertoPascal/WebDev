@@ -1,5 +1,6 @@
-@import "~src/styles.scss";
-
+@import "~src/styles/styles.scss";
+@import "~src/styles/indexstyling";
+/*
 body{
     margin:$default-margins;
     word-break: $default-word-break;
@@ -54,18 +55,18 @@ html {
     background-color:$promotion-color;
     overflow: $hide_overflow;
     white-space: $def-white-space;
-    /* top left corner */
+    // top left corner
     position: $def-position;
     left: $ribbon-left;
     top: $ribbon-top;
     opacity: $ribbon-opacity;
-    /* for 45 deg rotation */
+    // for 45 deg rotation 
     -webkit-transform: rotate($rotation-ribbon);
        -moz-transform: rotate($rotation-ribbon);
         -ms-transform: rotate($rotation-ribbon);
          -o-transform: rotate($rotation-ribbon);
             transform: rotate($rotation-ribbon);
-    /* for creating shadow */
+    // for creating shadow 
     -webkit-box-shadow: $def-webkit-box $shadow-ribbon;
        -moz-box-shadow: $def-webkit-box $shadow-ribbon;
             box-shadow: $def-webkit-box $shadow-ribbon;
@@ -80,7 +81,7 @@ html {
     padding: $ribbon-padding;
     text-align: $text-center;
     text-decoration: $def-text-decoration;
-    /* for creating shadow */
+    // for creating shadow 
     text-shadow: $ribbon-shadow $shadow-ribbon;
   }
   @function media_h_size_calc($index_size, $def-h-add-size){
@@ -103,4 +104,4 @@ html {
       margin:$default-margins;
     }
   
-  }
+  }*/
