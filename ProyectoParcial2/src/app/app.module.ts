@@ -9,8 +9,6 @@ import { AppRoutingModule} from './app-routing.module';
 import { HomeModule } from './modules/home/home.module';
 import { ProductsModule } from './modules/products/products.module';
 import { ProfileModule } from './modules/profile/profile.module';
-import { PageNoutFoundComponent } from './main-components/page-nout-found/page-nout-found.component';
-
 
 
 @NgModule({
@@ -18,7 +16,6 @@ import { PageNoutFoundComponent } from './main-components/page-nout-found/page-n
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    PageNoutFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +24,7 @@ import { PageNoutFoundComponent } from './main-components/page-nout-found/page-n
     HomeModule,
     ProductsModule,
     ProfileModule
+    
   ],
   exports: [],
   providers: [],
