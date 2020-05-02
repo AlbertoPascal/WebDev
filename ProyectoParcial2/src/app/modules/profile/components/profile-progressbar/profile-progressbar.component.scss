@@ -1,6 +1,7 @@
 @import "~src/styles/styles.scss";
+@import "~src/styles/profileustyling";
 
-
+/*
 @mixin set-text-align($aligned){
     float: $aligned;
     text-align: $aligned;
@@ -12,4 +13,5 @@
   .end {
     @include set-text-align($text-right);
   }
+  */
 

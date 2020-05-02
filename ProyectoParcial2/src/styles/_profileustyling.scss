@@ -15,6 +15,11 @@
     font-family: $title-h6-fam;
     font-style: oblique;
     font-weight: bold;
+    text-align: center;
+  }
+  
+  td{
+    text-align: center;
   }
   
   @mixin set-background-img($image) {

@@ -1,6 +1,7 @@
 
 @import "~src/styles/styles.scss";
-
+@import "~src/styles/ahorrosstyling";
+/*
 @mixin set-font-size($font-size, $font-style, $text-align){
     font-size: $font-size;
     font-style: $font-style;
@@ -76,4 +77,4 @@ th{
     @include default-background-color();
     border: solid $table-cell-background-color 1px;
     width: 100%;
-}
+}*/
