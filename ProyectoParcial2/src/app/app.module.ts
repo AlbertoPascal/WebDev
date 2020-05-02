@@ -31,6 +31,7 @@ import { ProfileModule } from './modules/profile/profile.module';
 })
 export class AppModule { 
   
+
   //possibly need to add here an input variable. The idea is to call the app-component 
 
 }
