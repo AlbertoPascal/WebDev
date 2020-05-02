@@ -19,7 +19,7 @@ export class DataFormComponent implements OnInit {
       console.log("La acción de la snackbar fue activada");
     })
   }
-  
+  ProfileInfo:{name:string, lastName:string, email:string, username:string, job:string, password:string}
   editprofileForm = new FormGroup({
     name: new FormControl(''),
     lastName: new FormControl(''),
@@ -42,7 +42,16 @@ export class DataFormComponent implements OnInit {
   onSave(){
     //update information on our database
     //igual falta agregar snackbar
-    alert("Debo actualizar en base");
+    this.ProfileInfo.name = "hola";
+    alert(this.editprofileForm.get('name').value);
+    /*this.ProfileInfo.name=this.editprofileForm.get('name').value;
+    this.ProfileInfo.lastName=this.editprofileForm.get('lastName').value;
+    this.ProfileInfo.email=this.editprofileForm.get('email').value;
+    this.ProfileInfo.username=this.editprofileForm.get('username').value;
+    this.ProfileInfo.job=this.editprofileForm.get('job').value;
+    this.ProfileInfo.password= this.editprofileForm.get('pass').get('password').value;
+    alert("Información de perfil: \n" + this.ProfileInfo.name + '\n' + this.ProfileInfo.lastName + '\n' + this.ProfileInfo.email + '\n' + this.ProfileInfo.password + '\n' + this.ProfileInfo.job);
+    */
   }
   showSnackbar() {
     // Get the snackbar DIV

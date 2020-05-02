@@ -4,9 +4,7 @@ import {Routes, RouterModule} from '@angular/router';
 
 
 const routes: Routes = [
-  {path: '',
-    redirectTo: "/home",
-    pathMatch: 'full'},
+  {path: '', redirectTo: "/home", pathMatch: 'full'},
   {path:'home', loadChildren:"./modules/home/home.module#HomeModule"},
   {path:'products', loadChildren:"./modules/products/products.module#ProductsModule"},
   {path:"PageNotFound", loadChildren:"./modules/not-found/not-found.module#NotFoundModule"},
