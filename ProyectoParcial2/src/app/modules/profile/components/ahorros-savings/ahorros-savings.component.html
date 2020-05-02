@@ -1,8 +1,8 @@
 
 <form>
-<input type="text"><br>
+<input type="text" formControlName="savings"><br>
 <div class="botton-change mt-3">
-    <a href="#" class="btn btn-primary" onclick="showSnackbar()">Añadir ahorros</a>
+    <button class="btn btn-primary" (click)="onAdd()" mat-button (click)="openSnackBar('Agregado exitosamente!', 'Deshacer')">Añadir ahorros</button>
 </div>
 </form>
 
