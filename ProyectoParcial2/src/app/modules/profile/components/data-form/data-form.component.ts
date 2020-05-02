@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
-
+import { MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-data-form',
@@ -9,7 +9,17 @@ import { FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 })
 export class DataFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(public snackBar: MatSnackBar) { }
+
+  openSnackBar(message, action){
+    let snackBarRef = this.snackBar.open(message, action, {duration: 3000});
+  
+    //Cuando el usuario de click en la acción de "deshacer" del snackbar
+    snackBarRef.onAction().subscribe(()=> {
+      console.log("La acción de la snackbar fue activada");
+    })
+  }
+  
   editprofileForm = new FormGroup({
     name: new FormControl(''),
     lastName: new FormControl(''),

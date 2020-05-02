@@ -37,7 +37,7 @@
 
 </form>
 <div class="align-center mr-3 mt-3 col-lg-9 ml-auto">
-    <button type="submit"  class="mr-1 btn btn-primary" (click)="onSave()">Save Changes</button> 
+    <button type="submit"  class="mr-1 btn btn-primary" (click)="onSave()" mat-button (click)="openSnackBar('Cambios guardados exitosamente!', 'Deshacer')">Save Changes</button> 
     <button type="submit"  class="mx-auto btn btn-primary"  (click)="onCancel()">Cancel</button>
     
     <!--falta agregar los snackbar a los buttons-->

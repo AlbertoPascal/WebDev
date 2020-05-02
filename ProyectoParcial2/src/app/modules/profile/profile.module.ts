@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatButtonModule} from '@angular/material/button';
 
 import { ProfileRoutingModule } from './profile-routing.module';
 
@@ -44,7 +46,9 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ProfileRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule,
+    MatSnackBarModule
   ]
 })
 export class ProfileModule { }
