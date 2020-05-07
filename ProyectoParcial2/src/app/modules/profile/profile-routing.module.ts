@@ -8,10 +8,10 @@ import { EditarPerfilAdminComponent } from './components/editar-perfil-admin/edi
 import { AhorrosComponent } from './components/ahorros/ahorros.component';
 
 const routes: Routes = [
-  {path: 'admin-profile', component : PerfilAdminComponent},
-  {path: 'user-profile', component : PerfilUsuarioComponent},
-  {path: 'edit-user-profile', component : EditarPerfilUsrComponent},
-  {path: 'edit-admin-profile', component : EditarPerfilAdminComponent},
+  {path: 'admin', component : PerfilAdminComponent},
+  {path: 'user', component : PerfilUsuarioComponent},
+  {path: 'edit-user', component : EditarPerfilUsrComponent},
+  {path: 'edit-admin', component : EditarPerfilAdminComponent},
   {path: 'savings', component : AhorrosComponent}
 ];
 

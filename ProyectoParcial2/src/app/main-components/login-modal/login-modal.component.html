@@ -1,0 +1,14 @@
+<div [@dialog] class="alert-box">
+    <div class="modal-body">
+        <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Log In</h4>
+        <form [formGroup] = "login" (ngSubmit)="onLogin()">
+            <input type="text" name="username" class="form-control" placeholder="Usuario"/>
+            <input type="password" name="password" class="form-control" placeholder="Contraseña"/>
+            <input class="btn login" type="submit" value="Inicia sesi&oacute;n!" />
+        </form> 
+    </div>
+</div>
+

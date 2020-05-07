@@ -11,11 +11,18 @@ import { ProductsModule } from './modules/products/products.module';
 import { ProfileModule } from './modules/profile/profile.module';
 import {NotFoundModule} from './modules/not-found/not-found.module';
 
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { SignupModalComponent } from './main-components/signup-modal/signup-modal.component';
+import { LoginModalComponent } from './main-components/login-modal/login-modal.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    SignupModalComponent,
+    LoginModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +31,10 @@ import {NotFoundModule} from './modules/not-found/not-found.module';
     HomeModule,
     ProductsModule,
     ProfileModule,
-    NotFoundModule
+    NotFoundModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ModalModule.forRoot()
     
   ],
   exports: [],

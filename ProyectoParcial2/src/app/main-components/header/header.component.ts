@@ -1,5 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router} from '@angular/router';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { SignupModalComponent} from '../signup-modal/signup-modal.component';
+import { LoginModalComponent} from '../login-modal/login-modal.component';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,15 +11,31 @@ import { Router} from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  //modal
+  modal : BsModalRef;
+
+  constructor(public router: Router, private modalService: BsModalService) { 
+
+  }
+
   @Input() navbar_type;
-  
-  test_var:boolean=true;
   
   ngOnInit(): void {
   }
-  public setTestVar(value:boolean){
-      this.test_var = value;
+
+  public openSignupModal() {
+    this.modal = this.modalService.show(SignupModalComponent);
   }
+
+  public openLoginModal() {
+    this.modal = this.modalService.show(LoginModalComponent);
+  }
+
+
+
+
+
+
+
 
 }

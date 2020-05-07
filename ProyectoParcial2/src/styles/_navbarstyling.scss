@@ -56,7 +56,7 @@ body{
     color: $navbar-light-color;
     transform: scale(1.2)
   }
-  .modal-content {
+  .modal-body, .modal-header {
     font-weight: $def-login-weight;
     background: linear-gradient(to bottom right,rgb(50, 14, 117),rgb(189, 9, 174));
   }
