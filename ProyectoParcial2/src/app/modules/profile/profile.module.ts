@@ -23,6 +23,9 @@ import { AhorrosObjComponent } from './components/ahorros-obj/ahorros-obj.compon
 import { AhorrosSavingsComponent } from './components/ahorros-savings/ahorros-savings.component';
 import { AhorrosPresupuestoComponent } from './components/ahorros-presupuesto/ahorros-presupuesto.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+
+import { ChartsModule } from 'ng2-charts';
+
 @NgModule({
   declarations: [
     PerfilUsuarioComponent,
@@ -48,7 +51,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormsModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ChartsModule
   ]
 })
 export class ProfileModule { }
