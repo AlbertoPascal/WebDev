@@ -87,7 +87,7 @@
           },
           "configurations": {
             "en": {
-              "browserTarget": "AngularInt:build:en"
+              "browserTarget": "ProyectoParcial2:build:en"
             },
             "production": {
               "browserTarget": "ProyectoParcial2:build:production"
