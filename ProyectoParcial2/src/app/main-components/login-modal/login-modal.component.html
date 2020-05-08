@@ -5,8 +5,8 @@
         </button>
         <h4 class="modal-title">Log In</h4>
         <form [formGroup] = "login" (ngSubmit)="onLogin()">
-            <input type="text" name="username" class="form-control" placeholder="Usuario"/>
-            <input type="password" name="password" class="form-control" placeholder="Contraseña"/>
+            <input type="text" name="username" class="form-control" placeholder="Usuario" formControlName = "username"/>
+            <input type="password" name="password" class="form-control" placeholder="Contraseña" formControlName= "password"/>
             <input class="btn login" type="submit" value="Inicia sesi&oacute;n!" />
         </form> 
     </div>
