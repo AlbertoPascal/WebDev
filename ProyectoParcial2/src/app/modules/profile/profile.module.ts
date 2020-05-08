@@ -26,6 +26,7 @@ import { AhorrosDoughnutchartComponent } from './components/ahorros-doughnutchar
 
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
+import { FlipCardComponent } from './components/flip-card/flip-card.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ChartsModule } from 'ng2-charts';
     AhorrosObjComponent,
     AhorrosSavingsComponent,
     AhorrosPresupuestoComponent,
-    AhorrosDoughnutchartComponent
+    AhorrosDoughnutchartComponent,
+    FlipCardComponent
   ],
   imports: [
     CommonModule,
