@@ -32,18 +32,35 @@ export class SignupModalComponent implements OnInit {
   }
   newUser = new SessionData;
   //Form group for sign up
-  signup = new FormGroup({
+ /* signup = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
     password_conf: new FormControl(''),
     email: new FormControl('')
+  });*/
+
+  signup = new FormGroup({
+    name: new FormControl(''),
+    lastName: new FormControl(''),
+    email: new FormControl(''),
+    username: new FormControl(''),
+    job: new FormControl(''),
+    pass: new FormGroup(
+      {
+        password: new FormControl(''),
+        ConfirmPass: new FormControl('')
+      }
+    )
   });
 
   //If the user clicks on sign up
   onSignUp(){
+    this.newUser.name = this.signup.get('name').value;
+    this.newUser.lastName = this.signup.get('lastName').value;
+    this.newUser.job = this.signup.get('job').value;
     this.newUser.username = this.signup.get('username').value;
-    this.newUser.password = this.signup.get('password').value;
-    let conf_pass = this.signup.get('password_conf').value;
+    this.newUser.password = this.signup.get('pass').get('password').value;
+    let conf_pass = this.signup.get('pass').get('ConfirmPass').value;
     this.newUser.email = this.signup.get('email').value;
 
     //Verify data before trying to sign up
@@ -58,15 +75,15 @@ export class SignupModalComponent implements OnInit {
         }
         else{
           alert("Error! There is already a user registered user with this information. Please try with a different user and/or email");
-          this.signup.get('password').reset();
-          this.signup.get('password_conf').reset();
+          this.signup.get('pass').reset();
+          //this.signup.get('password_conf').reset();
         }
     }
     else
     {
       alert("Passwords do not match! Please verify");
-      this.signup.get('password').reset();
-      this.signup.get('password_conf').reset();
+      this.signup.get('pass').reset();
+     // this.signup.get('password_conf').reset();
     }
     /*if (username === 'value' && password === ' value'){
       this.router.navigate(['profile/user']);

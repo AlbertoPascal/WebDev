@@ -1,15 +1,21 @@
-<div [@dialog] class="alert-box">
+<div [@dialog] class="alert-box text-center">
     <div class="modal-body">
         <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()">
             <span aria-hidden="true">&times;</span>
         </button>
         <h4 class="modal-title">Sign Up</h4>
-        <form [formGroup] = "signup" (ngSubmit)="onSignUp()">
+        <form [formGroup] = "signup" >
+            <input class = "form-control" type="text" placeholder="Nombre" formControlName="name" />
+            <input class = "form-control" type="text" placeholder="Apellido" formControlName="lastName" />
+            <input class="form-control" type="email" placeholder="email@ejemplo.com" formControlName="email" />
+            <input class="form-control" type="text" placeholder="Ocupación" formControlName="job"/>
             <input type="text" formControlName="username" class="form-control" placeholder="Usuario"/>
-            <input type="password" formControlName="password" class="form-control" placeholder="Contraseña"/>
-            <input type="password" formControlName="password_conf" class="form-control" placeholder="Confirmar contraseña"/>
+            <form formGroupName="pass">
+                <input type="password" formControlName="password" class="form-control" placeholder="Contraseña"/>
+                <input type="password" formControlName="ConfirmPass" class="form-control" placeholder="Confirmar contraseña"/>
+            </form>
             <input type="email" formControlName="email" class="form-control" placeholder="E-mail"/>
-            <input class="btn signup" type="submit" value="Registrate ahora!" />
+            <button class="btn signup mx-auto" type="submit" (click)="onSignUp()">Registrate ahora!</button>
         </form> 
     </div>
 </div>
