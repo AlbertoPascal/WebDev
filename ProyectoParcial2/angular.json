@@ -42,6 +42,14 @@
             "scripts": []
           },
           "configurations": {
+            "en": {
+              "aot": true,
+              "outputPath": "dist/ProyectoParcial2-en/",
+              "i18nFile": "src/locale/messages.en.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "fr",
+              "i18nMissingTranslation": "error"
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -78,6 +86,9 @@
             "browserTarget": "ProyectoParcial2:build"
           },
           "configurations": {
+            "en": {
+              "browserTarget": "AngularInt:build:en"
+            },
             "production": {
               "browserTarget": "ProyectoParcial2:build:production"
             }
