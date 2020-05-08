@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar} from '@angular/material/snack-bar';
 import { FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
-
+import {SaveDataModel} from '../../models/save-data-model.model';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 @Component({
   selector: 'app-ahorros-savings',
   templateUrl: './ahorros-savings.component.html',
@@ -19,12 +20,14 @@ export class AhorrosSavingsComponent implements OnInit {
       console.log("La acción de la snackbar fue activada");
     })
   }
-
+  prep_savings = new SaveDataModel;
   addSavings = new FormGroup({
     savings: new FormControl(''),
   });
 
   onAdd(){
+    this.prep_savings.AddSavings(this.addSavings.get('savings').value);
+    alert("Sent " + this.addSavings.get('savings').value + " to save");
     this.addSavings.reset();
   }
   
