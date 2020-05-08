@@ -1,42 +1,42 @@
 <form [formGroup] = "editprofileForm">
-        <label class="col-lg-3 col-form-label form-control-label">Nombre</label>
+        <label class="col-lg-3 col-form-label form-control-label" i18n>Nombre</label>
         <div class="col-lg-12">
             <input class = "form-control" type="text" placeholder="Nombre" formControlName="name" />
         </div>
-        <label class="col-lg-3 col-form-label form-control-label">Apellido</label>
+        <label class="col-lg-3 col-form-label form-control-label" i18n>Apellido</label>
         <div class="col-lg-12">
             <input class="form-control" type="text" placeholder="Apellido" formControlName="lastName" />
         </div>
 
-        <label class="col-lg-3 col-form-label form-control-label">Email</label>
+        <label class="col-lg-3 col-form-label form-control-label" i18n>Email</label>
         <div class="col-lg-12">
             <input class="form-control" type="email" placeholder="email@ejemplo.com" formControlName="email" />
         </div>
 
-        <label class="col-lg-3 col-form-label form-control-label" >Ocupacion</label>
+        <label class="col-lg-3 col-form-label form-control-label" i18n>Ocupacion</label>
         <div class="col-lg-12">
             <input class="form-control" type="text" placeholder="Ocupación" formControlName="job"/>
         </div>
 
-        <label class="col-lg-3 col-form-label form-control-label">Username</label>
+        <label class="col-lg-3 col-form-label form-control-label" i18n>Username</label>
         <div class="col-lg-12">
             <input class="form-control" type="text" placeholder="Username" formControlName="username"/>
         </div>
 
         <form formGroupName = "pass">
-            <label class="col-lg-3 col-form-label form-control-label">Contraseña</label>
+            <label class="col-lg-3 col-form-label form-control-label" i18n>Contraseña</label>
             <div class="col-lg-12">
                 <input class="form-control" type="text" placeholder="Password" formControlName="password"/>
             </div>
 
-            <label class="col-lg-12 col-form-label form-control-label">Confirmar Contraseña</label>
+            <label class="col-lg-12 col-form-label form-control-label" i18n>Confirmar Contraseña</label>
             <div class="col-lg-12">
                 <input class="form-control" type="text" placeholder="Confirm Password" formControlName="ConfirmPass"/>
             </div>
         </form>    
         <div class="align-center mr-3 mt-3 col-lg-9 ml-auto">
-            <button type="submit"  class="mr-1 btn btn-primary" (click)="onSave()" mat-button (click)="openSnackBar('Cambios guardados exitosamente!', 'Deshacer')">Save Changes</button> 
-            <button type="submit"  class="mx-auto btn btn-primary"  (click)="onCancel()">Cancel</button>
+            <button type="submit"  class="mr-1 btn btn-primary" (click)="onSave()" mat-button (click)="openSnackBar('Cambios guardados exitosamente!', 'Deshacer')" i18n>Guardar cambios</button> 
+            <button type="submit"  class="mx-auto btn btn-primary"  (click)="onCancel()" i18n>Cancelar</button>
             
             <!--falta agregar los snackbar a los buttons-->
         </div>
