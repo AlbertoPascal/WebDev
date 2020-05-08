@@ -1,17 +1,19 @@
 
-<form>
-<input type="text" formControlName="savings"><br>
-<div class="botton-change mt-3">
-    <button class="btn btn-primary" (click)="onAdd()" mat-button (click)="openSnackBar('Agregado exitosamente!', 'Deshacer')">Añadir ahorros</button>
-</div>
+<form [formGroup] = "addSavings">
+    <input type="text" formControlName="savings"><br>
+    <div class="botton-change mt-3">
+        <button class="btn btn-primary" (click)="onAdd()" mat-button (click)="openSnackBar('Agregado exitosamente!', 'Deshacer')">Añadir ahorros</button>
+    </div>
 </form>
 
 <br>
 <br>
 
-<div class="progress">
-<div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-<div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" style="width: 5%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
+
+<div style="display: block">
+<canvas baseChart
+    [data]="doughnutChartData"
+    [labels]="doughnutChartLabels"
+    [chartType]="doughnutChartType">
+</canvas>
 </div>
-<div class="start">Start: $0</div>
-<div class="end">End: $5,000</div>
