@@ -16,13 +16,14 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { SignupModalComponent } from './main-components/signup-modal/signup-modal.component';
 import { LoginModalComponent } from './main-components/login-modal/login-modal.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     SignupModalComponent,
-    LoginModalComponent,
+    LoginModalComponent
   ],
   imports: [
     BrowserModule,

@@ -22,8 +22,9 @@ import { DataFormComponent } from './components/data-form/data-form.component';
 import { AhorrosObjComponent } from './components/ahorros-obj/ahorros-obj.component';
 import { AhorrosSavingsComponent } from './components/ahorros-savings/ahorros-savings.component';
 import { AhorrosPresupuestoComponent } from './components/ahorros-presupuesto/ahorros-presupuesto.component';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { AhorrosDoughnutchartComponent } from './components/ahorros-doughnutchart/ahorros-doughnutchart.component';
 
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
@@ -43,7 +44,8 @@ import { ChartsModule } from 'ng2-charts';
     AhorrosComponent,
     AhorrosObjComponent,
     AhorrosSavingsComponent,
-    AhorrosPresupuestoComponent
+    AhorrosPresupuestoComponent,
+    AhorrosDoughnutchartComponent
   ],
   imports: [
     CommonModule,
