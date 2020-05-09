@@ -25,11 +25,13 @@ export class AhorrosPresupuestoComponent implements OnInit {
   prep_savings = new SaveDataModel;
   addCosts = new FormGroup({
     costs: new FormControl(''),
+    description: new FormControl('')
   });
 
   onCost(){
     this.prep_savings.addCosts(this.addCosts.get('costs').value);
-    alert("Sent " + this.addCosts.get('costs').value + " to save");
+    this.prep_savings.motif = this.addCosts.get('description').value;
+    alert("Sent " + this.addCosts.get('costs').value + " to add to costs with reason: \n" + this.prep_savings.motif);
     this.addCosts.reset();
   }
 

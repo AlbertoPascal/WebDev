@@ -2,7 +2,10 @@
 <div class="bg-white mt-3 p-5 rounded shadow">
     <h3 i18n>Gastos: </h3>
         <form [formGroup] = "addCosts">
-            <input type="text" formControlName="costs"><br>
+            <label class="col-12 col-form-label form-control-label" i18n>Cantidad</label>
+            <input type="number" formControlName="costs"><br>
+            <label class="col-12 col-form-label form-control-label" i18n>Motivo</label>
+            <input type="text" formControlName="description"><br>
             <div class="botton-change mt-3">
                 <button class="btn btn-primary" (click)="onCost()" mat-button (click)="openSnackBar('Agregado exitosamente!', 'Deshacer')" i18n>Añadir gastos</button>
             </div>

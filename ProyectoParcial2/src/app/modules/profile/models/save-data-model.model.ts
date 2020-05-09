@@ -1,7 +1,7 @@
 export class SaveDataModel {
     public user:string;
     public total_savings:number;
-    
+    public motif:string;
     private retrieveSavings(){
         //query to bring savings from database from the user
         let old_savings = 100;
