@@ -31,30 +31,28 @@ export class UserInfoService {
     }
     
 }
+public RegisterUser(username:string, password:string, job:string, email:string, name:string, lastname:string):Observable<SessionData>{
+  if(this.userSignUp())
+  {
+    this.User.setName(name, lastname);
+    this.User.setJob(job);
+    this.User.setUsername(username);
+    this.User.setPassword(password);
+  }
+  else{
+    this.User.setName('','');
+    this.User.setJob('');
+    this.User.setUsername('');
+    this.User.setPassword('');
+  }
+  
+  return of(this.User);
+}
 public ResetPassword():Observable<SessionData>{
   //We erase the previously stored password to prevent data theft.
   this.User.setPassword('');
   return of(this.User);
 }
-/*public validateSignIn(inputPassword:string){
-  if(this.retrievePassword())
-  {
-      //user exists and I got its password. I may proceed
-      alert("Dev note: my temporal password is always password. to log in enter password");
-      if(inputPassword == this.User.password)
-      {
-          return true; //passwords match
-      }
-      else{
-          return false;
-      }
-  }
-  else
-  {
-      return false;
-  }
-
-}*/
 
 public retrieveEmail(){
   //query from database in case we are trying to login according to the user and passwords given.
@@ -62,14 +60,17 @@ public retrieveEmail(){
 }
 public userSignUp(){
   //first validate that there are no users with that email
-  let temp_email_query:string='';
+  
+  let temp_email_query:string='select count(*) from users where username = "' + this.User.username + '"' + ' or email = "' + this.User.email + '";';
   let temp_username:string='';
-  if(temp_email_query != '' || temp_username!='')
+  if(temp_email_query == '' || temp_username!='')
   {
       return false; //this means there is already someone registered under that email or username and I can't insert.
   
   }
   else{
+      //we insert into database
+      alert("Values correctly inserted into database");
       return true; //this means I successfully inserted values into my db
   }
   

@@ -56,20 +56,21 @@ export class SignupModalComponent implements OnInit {
   //If the user clicks on sign up
   onSignUp(){
     let conf_pass = this.signup.get('pass').get('ConfirmPass').value;
-    let pass =this.signup.get('email').value;
-
+    let email =this.signup.get('email').value;
+    let name = this.signup.get('name').value;
+    let lastname = this.signup.get('lastName').value;
+    let job =this.signup.get('job').value;
+    let username = this.signup.get('username').value;
+    let pass = this.signup.get('pass').get('password').value;
     //Verify data before trying to sign up
-    if (this.newUser.User.password == conf_pass)
+    if (pass== conf_pass)
     {
 
         //means both passwords were typed in correctly. I can assign all data to my service
         alert("Both passwords match. Proceeding with sign up validation");
-        this.newUser.User.setName(this.signup.get('name').value, this.signup.get('lastName').value);
-        this.newUser.User.setJob(this.signup.get('job').value);
-        this.newUser.User.setUsername(this.signup.get('username').value);
-        this.newUser.User.setPassword(this.signup.get('pass').get('password').value);
-        this.newUser.User.setPassword(pass);
-        if(this.newUser.userSignUp()){
+        this.newUser.RegisterUser(username, pass, job, email, name, lastname);
+        alert("My user is: " + this.newUser.User.username + "\n" + this.newUser.User.password);
+        if(this.newUser.User.username!=''){
           alert("Successfully registered " + this.newUser.User.username + " as new user!");
           this.modalRef.hide();
           this.router.navigateByUrl('profile/user')

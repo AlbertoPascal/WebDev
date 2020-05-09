@@ -60,7 +60,7 @@ export class LoginModalComponent implements OnInit {
         this.router.navigateByUrl('profile/user')
       }
       else{
-        alert("Username or password is not correct. Please try again");
+        alert("Username or password is not correct. Please try again");   
         this.login.reset();
       }
       this.existingUser.ResetPassword();
