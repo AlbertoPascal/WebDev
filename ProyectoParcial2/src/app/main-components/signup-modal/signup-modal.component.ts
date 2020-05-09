@@ -3,9 +3,9 @@ import { trigger, animate, transition, style} from '@angular/animations';
 import { BsModalRef } from 'ngx-bootstrap/modal';  
 import { FormControl, FormGroup} from '@angular/forms';
 import { Router} from '@angular/router';
-import {SessionData} from '../models/session-data.model';
+//import {SessionData} from '../models/session-data.model';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-
+import {UserInfoService} from '../services/user-info.service';
 @Component({
   selector: 'app-signup-modal',
   templateUrl: './signup-modal.component.html',
@@ -30,7 +30,7 @@ export class SignupModalComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  newUser = new SessionData;
+  newUser = new UserInfoService;
   //Form group for sign up
  /* signup = new FormGroup({
     username: new FormControl(''),
@@ -55,21 +55,22 @@ export class SignupModalComponent implements OnInit {
 
   //If the user clicks on sign up
   onSignUp(){
-    this.newUser.name = this.signup.get('name').value;
-    this.newUser.lastName = this.signup.get('lastName').value;
-    this.newUser.job = this.signup.get('job').value;
-    this.newUser.username = this.signup.get('username').value;
-    this.newUser.password = this.signup.get('pass').get('password').value;
     let conf_pass = this.signup.get('pass').get('ConfirmPass').value;
-    this.newUser.email = this.signup.get('email').value;
+    let pass =this.signup.get('email').value;
 
     //Verify data before trying to sign up
-    if (this.newUser.password == conf_pass)
+    if (this.newUser.User.password == conf_pass)
     {
-        //means both passwords were typed in correctly
+
+        //means both passwords were typed in correctly. I can assign all data to my service
         alert("Both passwords match. Proceeding with sign up validation");
+        this.newUser.User.setName(this.signup.get('name').value, this.signup.get('lastName').value);
+        this.newUser.User.setJob(this.signup.get('job').value);
+        this.newUser.User.setUsername(this.signup.get('username').value);
+        this.newUser.User.setPassword(this.signup.get('pass').get('password').value);
+        this.newUser.User.setPassword(pass);
         if(this.newUser.userSignUp()){
-          alert("Successfully registered " + this.newUser.username + " as new user!");
+          alert("Successfully registered " + this.newUser.User.username + " as new user!");
           this.modalRef.hide();
           this.router.navigateByUrl('profile/user')
         }
