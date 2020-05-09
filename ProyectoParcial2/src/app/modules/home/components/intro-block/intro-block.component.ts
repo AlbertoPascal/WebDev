@@ -12,4 +12,5 @@ export class IntroBlockComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }

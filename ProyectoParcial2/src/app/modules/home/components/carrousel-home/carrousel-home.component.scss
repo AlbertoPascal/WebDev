@@ -1,6 +1,8 @@
 @import "~src/styles/styles.scss";
 @import "~src/styles/indexstyling";
-
+html {
+  scroll-behavior: smooth;
+}
 /*
 body{
     margin:$default-margins;
