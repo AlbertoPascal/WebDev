@@ -1,8 +1,16 @@
-<p class="title" i18n>Tabla de presupuesto</p>
-<br>
+
+<div class="bg-white mt-3 p-5 rounded shadow">
+    <h3 i18n>Gastos: </h3>
+        <form [formGroup] = "addCosts">
+            <input type="text" formControlName="costs"><br>
+            <div class="botton-change mt-3">
+                <button class="btn btn-primary" (click)="onCost()" mat-button (click)="openSnackBar('Agregado exitosamente!', 'Deshacer')" i18n>Añadir gastos</button>
+            </div>
+        </form>
+</div>
 
 <!--Segunda fila-->
-<div class="row">
+<!--div class="row">
     
     <div class="table-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <table class="table">
@@ -92,4 +100,4 @@
         <h5 i18n>Balance: $1000 a favor</h5>
     </div>
     
-</div>
+</div -->

@@ -1,10 +1,10 @@
-
-<form [formGroup] = "addSavings">
-    <input type="text" formControlName="savings"><br>
-    <div class="botton-change mt-3">
-        <button class="btn btn-primary" (click)="onAdd()" mat-button (click)="openSnackBar('Agregado exitosamente!', 'Deshacer')" i18n>Añadir ahorros</button>
-    </div>
-</form>
-
-
+<div class="bg-white mt-3 p-5 rounded shadow">
+    <h3>Ingresos: </h3>
+        <form [formGroup] = "addSavings">
+            <input type="text" formControlName="savings"><br>
+            <div class="botton-change mt-3">
+                <button class="btn btn-primary" (click)="onAdd()" mat-button (click)="openSnackBar('Agregado exitosamente!', 'Deshacer')" i18n>Añadir ahorros</button>
+            </div>
+        </form>
+</div>
 
