@@ -33,22 +33,20 @@
               <span class="navbar-toggler-icon"></span>
           </button>
       
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-              <div class="navbar-nav ml-auto navbar-light">
-                <!--Important: data-toggle is what allows us to display the pop-up whenever we click on the login button"-->
-                <!--Important: data-target is from bootstrap and allows us to point towards the element we want to add an action for"-->
-                <!--div *ngIf = "router.url === '/home/index'"-->
+          <div class="collapse navbar-collapse" id="navbarCollapse" >
+
+              <!--If the user is in the home or products page-->
+              <div class="navbar-nav ml-auto navbar-light" *ngIf = "router.url === '/home' || router.url === '/PageNotFound' || router.url === '/home#popular' || router.url === '/products/search'">
                   <a data-target="#login" data-toggle="modal" (click)="openLoginModal()" class="nav-item nav-link navbar-custom-button"><i class="fa fa-info-circle">&nbsp;Log in</i></a>
                   <a data-target="#signup" data-toggle="modal" (click)="openSignupModal()" class="nav-item nav-link navbar-custom-button"><i class="fa fa-users">&nbsp;Sign Up</i></a>
-                <!--/div-->
-                <!--div *ngIf = "router.url === '/profile/user-profile'"-->
-                  <!--a href="validaciones.html" class="nav-item nav-link navbar-custom-button"><i class="fa fa-check"></i>&nbsp;Validaciones</a-->
-                  <!--a href="/home/index" class="nav-item nav-link navbar-custom-button"><i class="fa fa-info-circle"></i>&nbsp;Log out</a>
-                  <a href="/profile/edit-user-profile" class="nav-item nav-link navbar-custom-button"><i class="fa fa-cog"></i>&nbsp;Ajustes Administrador</a>
-                  <a href="/profile/user-profile" class="nav-item nav-link navbar-custom-button"><i class="fa fa-cog"></i>&nbsp;Ajustes Usuario</a-->
-                <!--/div-->
               </div>
-              
+
+              <!--If the user is in any of the profile page-->
+              <div class="navbar-nav ml-auto navbar-light" *ngIf = "router.url === '/profile/user' || router.url === '/profile/admin' || router.url === '/profile/edit-user' || router.url === '/profile/edit-admin' || router.url === '/profile/savings'">
+                <a href="/profile/edit-admin" class="nav-item nav-link navbar-custom-button"><i class="fa fa-cog"></i>&nbsp;Ajustes Administrador</a>  
+                <a href="/home" class="nav-item nav-link navbar-custom-button"><i class="fa fa-info-circle"></i>&nbsp;Log out</a>
+              </div>
+            
           </div>
       </nav>
       <div class = "bg-white  rounded shadow">
