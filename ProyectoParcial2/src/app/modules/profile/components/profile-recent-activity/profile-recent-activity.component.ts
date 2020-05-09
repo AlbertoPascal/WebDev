@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RecentactivityData } from '../../models/recentactivity-data.model';
+import { RecentactivityService } from '../../services/recentactivity.service';
 
 @Component({
   selector: 'app-profile-recent-activity',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileRecentActivityComponent implements OnInit {
 
-  constructor() { }
+  recentActivity: RecentactivityData;
+
+  constructor(public recentActivityService:RecentactivityService) { }
 
   ngOnInit(): void {
+    this.getProductos();
+  }
+
+  getProductos(){
+    this.recentActivityService.getRecentActivity().subscribe((data)=>{
+      console.log(data);
+      this.recentActivity= data;
+   }) 
   }
 
 }

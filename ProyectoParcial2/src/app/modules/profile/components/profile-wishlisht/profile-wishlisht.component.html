@@ -1,28 +1,8 @@
 <table class="table table-hover table-striped estilowish">
     <tbody>                                    
-        <tr>
+        <tr *ngFor="let product of wishlistProducts">
             <td i18n>
-                <span class="float-right font-weight-bold">$ 500</span> Pantalones skynny jeans Levis
-            </td>
-        </tr>
-        <tr>
-            <td i18n>
-                <span class="float-right font-weight-bold">$ 1,300</span> Animal Crossing Nintendo Switch
-            </td>
-        </tr>
-        <tr>
-            <td i18n>
-                <span class="float-right font-weight-bold">$ 200,000</span> Honda Fit 2015 
-            </td>
-        </tr>
-        <tr>
-            <td i18n>
-                <span class="float-right font-weight-bold">$ 7,999</span> Nintendo Switch 
-            </td>
-        </tr>
-        <tr>
-            <td i18n>
-                <span class="float-right font-weight-bold">$ 50</span> Peluche Axolotes 
+                <span class="float-right font-weight-bold">$ {{product.precio}}</span> {{product.titulo}}
             </td>
         </tr>
     </tbody> 
