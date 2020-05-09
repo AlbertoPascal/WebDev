@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductoData } from '../../models/producto-data.model';
+import { ProductosService } from '../../services/productos.service';
 
 @Component({
   selector: 'app-productos',
@@ -8,15 +10,20 @@ import { Component, OnInit } from '@angular/core';
 
 export class ProductosComponent implements OnInit {
 
-  productos=[
-    {titulo:"Jeans", foto:"../../assets/images/jeans.jpg", price:400},
-    {titulo:"Camisa", foto:"../../assets/images/flannel.jpg", price:350},
-    {titulo:"Playera gris", foto:"../../assets/images/tshirt.jpg", price:250},
-    {titulo:"Playera negra", foto:"../../assets/images/black_tshirt.jpg", price:250}
-  ];
-  constructor() { }
+  productos: ProductoData[];
+
+  constructor(public productosService:ProductosService) { }
 
   ngOnInit(): void {
+    this.getProductos();
   }
+
+  getProductos(){
+    this.productosService.getProductos().subscribe((data)=>{
+      console.log(data);
+      this.productos= data;  
+   }) 
+  }
+
 
 }
