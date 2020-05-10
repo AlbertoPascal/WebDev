@@ -66,7 +66,7 @@ export class LoginModalComponent implements OnInit {
         
         window.location.reload()
         
-        this.router.navigate(['profile/user'])
+        //this.router.navigate(['profile/user'])
         
       }
       else{
