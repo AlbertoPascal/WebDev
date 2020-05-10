@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { UserNameService} from '../../services/user-name.service';
 @Component({
   selector: 'app-perfil-usuario',
   templateUrl: './perfil-usuario.component.html',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilUsuarioComponent implements OnInit {
 
+  showName = new UserNameService();
   constructor() { }
 
   ngOnInit(): void {
+    this.showName.fetchData();
+    
   }
 
 }
