@@ -320,8 +320,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="memberDate" datatype="html">
-        <source>Miembro desde: {{memb.fecha}}</source>
-        <target>Member from: {{memb.fecha}}</target>
+        <source>Miembro desde:</source>
+        <target>Member from:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/profile/components/profileadmin-member-table/profileadmin-member-table.component.html</context>
           <context context-type="linenumber">26</context>
@@ -692,6 +692,34 @@
       <trans-unit id="logIn" datatype="html">
         <source>Inicia sesión!</source>
         <target state="translated">Log In!</target>
+      </trans-unit>
+      <trans-unit id="MontoActual" datatype="html">
+        <source>Monto Actual</source>
+        <target>Current amount</target>
+      </trans-unit>
+      <trans-unit id="Final" datatype="html">
+        <source>Final</source>
+        <target>Final amount</target>
+      </trans-unit>
+      <trans-unit id="Ingresos" datatype="html">
+        <source>Ingresos:</source>
+        <target>Income:</target>
+      </trans-unit>
+      <trans-unit id="Gastos" datatype="html">
+        <source>Gastos:</source>
+        <target>Expenses:</target>
+      </trans-unit>
+      <trans-unit id="Cantidad" datatype="html">
+        <source>Cantidad</source>
+        <target>Amount</target>
+      </trans-unit>
+      <trans-unit id="Motivo" datatype="html">
+        <source>Motivo</source>
+        <target>Reason</target>
+      </trans-unit>
+      <trans-unit id="AnadirGastos" datatype="html">
+        <source>Añadir gastos</source>
+        <target>Add expenses</target>
       </trans-unit>
     </body>
   </file>
