@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { ProfileEditionService } from '../../services/profile-edition.service';
+
 @Component({
   selector: 'app-editar-perfil-admin',
   templateUrl: './editar-perfil-admin.component.html',
@@ -14,10 +16,11 @@ export class EditarPerfilAdminComponent implements OnInit {
   resetForms(){
     
   }
-  giveupAdmin(){
+ /* giveupAdmin(){
     localStorage.setItem('user_type','regular');
     this.router.navigateByUrl('profile/user');
-  }
+    this.defaultService.degradeUser();
+  }*/
   showSnackbar() {
     // Get the snackbar DIV
     var x = document.getElementById("snackbar");

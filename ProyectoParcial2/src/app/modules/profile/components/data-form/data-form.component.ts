@@ -39,7 +39,12 @@ export class DataFormComponent implements OnInit {
     )
   });
   ngOnInit(): void {
-    
+    this.retrieveUserData();
+    console.log("loading webpage... bringing user data" + this.DefaultData);
+  }
+  ngOnLoad(){
+    this.retrieveUserData();
+    console.log("loading webpage... bringing user data" + this.DefaultData);
   }
 
   retrieveUserData(){

@@ -45,5 +45,14 @@ export class ProfileEditionService {
     let picture = 'default picture';
     return of(this.UserEditData);
   }
-
+  public degradeUser(){
+    Object.assign(this.Curr_User, this.active_user_info);
+    this.UserEditData.username  =this.Curr_User.username;
+    let user_info = 'update users set user_type = "regular" where user_name = ' +  this.UserEditData.username + '";';
+  }
+  public upgradeUser(){
+    Object.assign(this.Curr_User, this.active_user_info);
+    this.UserEditData.username  =this.Curr_User.username;
+    let user_info = 'update users set user_type = "admin" where user_name = ' +  this.UserEditData.username + '";';
+  }
 }
