@@ -11,7 +11,7 @@ export class GoalService {
   getObj():Observable<GoalData>
   {
     let mainObj = "../../assets/images/switch.jpg";
-    let mainPrice = 5000;
+    let mainPrice = 6999;
 
     this.objective.setImg(mainObj);
     this.objective.setPrice(mainPrice);
