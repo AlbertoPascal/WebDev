@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartType } from 'chart.js';
 import { MultiDataSet, Label, Colors } from 'ng2-charts';
+import {DonutchartService} from '../../services/donutchart.service';
 
 @Component({
   selector: 'app-ahorros-doughnutchart',
@@ -9,16 +10,24 @@ import { MultiDataSet, Label, Colors } from 'ng2-charts';
 })
 export class AhorrosDoughnutchartComponent implements OnInit {
 
-  constructor() { }
+  constructor(private donutchartService:DonutchartService) { }
 
   ngOnInit(): void {
+    this.getDonutChartData();
   }
 
-  public doughnutChartLabels: Label[] = ['Renta', 'Electricidad', 'Gas', 'Internet + cable', 'Agua', 'Otros gastos', 'Dinero sobrante'];
-  public doughnutChartData: MultiDataSet = [
-    [2000, 500, 200, 500, 300, 1000, 3000],
-    [2500, 550, 220, 530, 350, 1150, 3000]
-  ];
+
+
+  public doughnutChartLabels: Label[] = ['Ingresos', 'Gastos'];
+  public doughnutChartData: number[]= [10,10];
+
+  getDonutChartData(){
+    this.donutchartService.getDonutChartData().subscribe((data)=>{
+      console.log(data);
+      this.doughnutChartData[0]=data.ingresos;  
+      this.doughnutChartData[1]=data.gastos;  
+   }) 
+  }
 
   /*public doughnutChartColors = [
     {
