@@ -9,7 +9,10 @@ import { Router} from '@angular/router';
 export class ProfileTabsComponent implements OnInit {
 
   constructor(public router: Router) { }
-
+  public user_type= localStorage.getItem('user_type');
+  ngOnLoad(){
+    
+  }
   ngOnInit(): void {
   }
 

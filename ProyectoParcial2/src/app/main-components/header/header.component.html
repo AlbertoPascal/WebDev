@@ -43,8 +43,8 @@
 
               <!--If the user is in any of the profile page-->
               <div class="navbar-nav ml-auto navbar-light" *ngIf = "active_user_info!==null">
-                <a *ngIf = "user_type==='regular'" href="/profile/edit-user" class="nav-item nav-link navbar-custom-button" (click)="logOut()"><i class="fa fa-cog"></i>&nbsp;Ajustes</a>
-                <a *ngIf = "user_type==='admin'" href="/profile/edit-user" class="nav-item nav-link navbar-custom-button" (click)="logOut()"><i class="fa fa-cog"></i>&nbsp;Ajustes</a>
+                <a *ngIf = "user_type==='regular'" href="/profile/edit-user" class="nav-item nav-link navbar-custom-button" ><i class="fa fa-cog"></i>&nbsp;Ajustes</a>
+                <a *ngIf = "user_type==='admin'" href="/profile/edit-admin" class="nav-item nav-link navbar-custom-button" ><i class="fa fa-cog"></i>&nbsp;Ajustes</a>
                 <a href="/home" class="nav-item nav-link navbar-custom-button" (click)="logOut()"><i class="fa fa-info-circle"></i>&nbsp;Log out</a>
                 
               </div>

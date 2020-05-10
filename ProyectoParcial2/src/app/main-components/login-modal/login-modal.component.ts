@@ -28,6 +28,7 @@ export class LoginModalComponent implements OnInit {
 
   constructor(public router: Router, public modalRef: BsModalRef) { }
   existingUser = new UserInfoService();
+  mySubscription: any;
   ngOnInit(): void {
   }
     //this.existingUser = new UserInfoService;
@@ -58,7 +59,7 @@ export class LoginModalComponent implements OnInit {
       
       if(pass == this.existingUser.User.password)
       {
-        alert("Credentials were entered correctly. Now logging in...");
+        alert("Credentials were entered correctly. Now logging in with..." + this.existingUser.User.username);
         localStorage.setItem('active_user', JSON.stringify(this.existingUser.User));
         if(this.existingUser.User.username == 'kamiloca')
         {
@@ -72,9 +73,12 @@ export class LoginModalComponent implements OnInit {
         
         this.modalRef.hide();
         
-        window.location.reload()
+        //window.location.reload()
         
-        //this.router.navigate(['profile/user'])
+        this.router.navigateByUrl('profile/user').then(()=>{
+          window.location.reload();
+        }
+        );
         
       }
       else{
