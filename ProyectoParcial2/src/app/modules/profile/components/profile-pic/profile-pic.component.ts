@@ -11,6 +11,7 @@ export class ProfilePicComponent implements OnInit {
   showPic = new UserNameService();
   ngOnInit(): void {
     this.showPic.fetchData();
+    
   }
 
 }
