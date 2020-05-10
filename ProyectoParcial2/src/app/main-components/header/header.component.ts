@@ -32,13 +32,20 @@ export class HeaderComponent implements OnInit {
   //modal
   modal : BsModalRef;
 
-  constructor(public router: Router, private modalService: BsModalService) { 
+  
+  public active_user_info = JSON.parse(localStorage.getItem('active_user'));
+  
 
-  }
+  constructor(public router: Router, private modalService: BsModalService) { }
 
   @Input() navbar_type;
   
   ngOnInit(): void {
+    console.log(this.active_user_info);
+  }
+
+  public logOut(){
+    localStorage.removeItem('active_user');
   }
 
   public openSignupModal() {

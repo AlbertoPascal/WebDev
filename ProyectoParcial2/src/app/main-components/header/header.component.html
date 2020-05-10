@@ -36,15 +36,14 @@
           <div class="collapse navbar-collapse" id="navbarCollapse" >
 
               <!--If the user is in the home or products page-->
-              <div class="navbar-nav ml-auto navbar-light" *ngIf = "router.url === '/home' || router.url === '/PageNotFound' || router.url === '/home#popular' || router.url === '/products/search'">
+              <div class="navbar-nav ml-auto navbar-light" *ngIf = "active_user_info===null">
                   <a data-target="#login" data-toggle="modal" (click)="openLoginModal()" class="nav-item nav-link navbar-custom-button"><i class="fa fa-info-circle">&nbsp;Log in</i></a>
                   <a data-target="#signup" data-toggle="modal" (click)="openSignupModal()" class="nav-item nav-link navbar-custom-button"><i class="fa fa-users">&nbsp;Sign Up</i></a>
               </div>
 
               <!--If the user is in any of the profile page-->
-              <div class="navbar-nav ml-auto navbar-light" *ngIf = "router.url === '/profile/user' || router.url === '/profile/admin' || router.url === '/profile/edit-user' || router.url === '/profile/edit-admin' || router.url === '/profile/savings'">
-                <a href="/profile/edit-admin" class="nav-item nav-link navbar-custom-button"><i class="fa fa-cog"></i>&nbsp;Ajustes Administrador</a>  
-                <a href="/home" class="nav-item nav-link navbar-custom-button"><i class="fa fa-info-circle"></i>&nbsp;Log out</a>
+              <div class="navbar-nav ml-auto navbar-light" *ngIf = "active_user_info!==null">
+                <a href="/home" class="nav-item nav-link navbar-custom-button" (click)="logOut()"><i class="fa fa-info-circle"></i>&nbsp;Log out</a>
               </div>
             
           </div>
