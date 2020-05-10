@@ -5,6 +5,8 @@ import { FormControl, FormGroup} from '@angular/forms';
 import { Router} from '@angular/router';
 //import {SessionData} from '../models/session-data.model';
 import {UserInfoService} from '../services/user-info.service';
+
+
 @Component({
   selector: 'app-login-modal',
   templateUrl: './login-modal.component.html',
@@ -21,13 +23,14 @@ import {UserInfoService} from '../services/user-info.service';
     ])
   ]
 })
+
 export class LoginModalComponent implements OnInit {
 
   constructor(public router: Router, public modalRef: BsModalRef) { }
-
+  existingUser = new UserInfoService();
   ngOnInit(): void {
   }
-    existingUser = new UserInfoService;
+    //this.existingUser = new UserInfoService;
     //Form group for sign up
     login = new FormGroup({
       username: new FormControl(''),
@@ -48,7 +51,7 @@ export class LoginModalComponent implements OnInit {
       
     }
     public ValidatePassword(pass:string){
-      //this.existingUser.User.setPassword('testing pass'); This was for testing purposes. Password should stay as read form TB
+      //this.this.existingUser.User.setPassword('testing pass'); This was for testing purposes. Password should stay as read form TB
       alert("my password was " + this.existingUser.User.password);
       this.existingUser.retrievePassword();
       alert("my password is now " + this.existingUser.User.password);
@@ -56,6 +59,8 @@ export class LoginModalComponent implements OnInit {
       if(pass == this.existingUser.User.password)
       {
         alert("Credentials were entered correctly. Now logging in...");
+        localStorage.setItem('active_user', JSON.stringify(this.existingUser.User));
+        
         this.modalRef.hide();
         this.router.navigateByUrl('profile/user')
       }
@@ -66,3 +71,4 @@ export class LoginModalComponent implements OnInit {
       this.existingUser.ResetPassword();
     }
 }
+
