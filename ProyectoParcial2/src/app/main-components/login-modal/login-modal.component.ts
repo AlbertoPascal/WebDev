@@ -60,7 +60,15 @@ export class LoginModalComponent implements OnInit {
       {
         alert("Credentials were entered correctly. Now logging in...");
         localStorage.setItem('active_user', JSON.stringify(this.existingUser.User));
-        localStorage.setItem('user_type', 'regular');
+        if(this.existingUser.User.username == 'kamiloca')
+        {
+          localStorage.setItem('user_type', 'admin');
+        }
+        else
+        {
+          localStorage.setItem('user_type', 'regular');
+        }
+        
         
         this.modalRef.hide();
         
