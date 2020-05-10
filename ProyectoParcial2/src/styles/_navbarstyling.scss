@@ -83,7 +83,7 @@ body{
   }
  
   .header_text{
-    @include set_default_animation_header();
+    //@include set_default_animation_header();
     text-align: $text-center;
     justify-content: $text-center;
     align-items: $text-center;
