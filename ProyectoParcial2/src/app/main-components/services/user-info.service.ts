@@ -9,7 +9,7 @@ export class UserInfoService {
   public User= new SessionData();
    
   
-  public retrievePassword():Observable<SessionData>{
+  public retrievePassword(){
     //Get password form database according to the user set. in case we want to log in
     //first we check if user exists. 
     let username = this.User.username;
@@ -20,14 +20,14 @@ export class UserInfoService {
         //user does not exist. Therefore I return an alert saying it doesnt exist and return false. 
         alert("Dev: user did not exist. returning no password");
         this.User.setPassword('');
-        return of(this.User);
+        return (this.User);
     }
     else{
         //we retrieve the password and assign it. 
         let temp_pass = 'query with temp user';
         alert("Found username. Retrieving password for comparison");
         this.User.setPassword('password');
-        return of(this.User);
+        return (this.User);
     }
     
 }
