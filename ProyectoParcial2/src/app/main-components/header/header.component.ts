@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
   //modal
   modal : BsModalRef;
 
-  
+  public user_type = localStorage.getItem('user_type');
   public active_user_info = JSON.parse(localStorage.getItem('active_user'));
   
 
@@ -42,10 +42,12 @@ export class HeaderComponent implements OnInit {
   
   ngOnInit(): void {
     console.log(this.active_user_info);
+    console.log("my user type is " + this.user_type);
   }
 
   public logOut(){
     localStorage.removeItem('active_user');
+    localStorage.removeItem('user_type');
   }
 
   public openSignupModal() {

@@ -42,7 +42,7 @@ export class LoginModalComponent implements OnInit {
       this.existingUser.User.setUsername(this.login.get('username').value);
       let password:string = this.login.get('password').value;
       this.ValidatePassword(password);
-  
+      
       //Verify username and password
       /*if (username === 'value' && password === ' value'){
         this.router.navigate(['profile/user']);
@@ -60,9 +60,14 @@ export class LoginModalComponent implements OnInit {
       {
         alert("Credentials were entered correctly. Now logging in...");
         localStorage.setItem('active_user', JSON.stringify(this.existingUser.User));
+        localStorage.setItem('user_type', 'regular');
         
         this.modalRef.hide();
-        this.router.navigateByUrl('profile/user')
+        
+        window.location.reload()
+        
+        this.router.navigate(['profile/user'])
+        
       }
       else{
         alert("Username or password is not correct. Please try again");   
