@@ -11,7 +11,9 @@ import { ProfileData } from '../../models/profile-data.model';
 })
 
 export class DataFormComponent implements OnInit {
-  DefaultData = new ProfileData();
+
+  DefaultData:ProfileData;
+
   constructor(public snackBar: MatSnackBar) { }
     openSnackBar(message, action){
     let snackBarRef = this.snackBar.open(message, action, {duration: 3000});
@@ -20,9 +22,6 @@ export class DataFormComponent implements OnInit {
     snackBarRef.onAction().subscribe(()=> {
       console.log("La acción de la snackbar fue activada");
     })
-
-
-
   }
 
   ProfileInfo = new ProfileEditionService();//{name:"Pedro", lastName:"Hernández", email:"pedrohdz@gmail.com", username:"PedroHdz", job:"Carpintero", password:"1234"}
@@ -40,23 +39,29 @@ export class DataFormComponent implements OnInit {
     )
   });
   ngOnInit(): void {
-  this.ProfileInfo.retrieveUserData().subscribe((data)=>{
+    
+  }
+
+  retrieveUserData(){
+    this.ProfileInfo.retrieveUserData().subscribe((data)=>{
       console.log("Data from my init");
       console.log(data);
-      this.DefaultData= data;  
-      this.editprofileForm.get('name').setValue(this.ProfileInfo.UserEditData.name);
-      this.editprofileForm.get('lastName').setValue(this.ProfileInfo.UserEditData.lastName);
-      this.editprofileForm.get('email').setValue(this.ProfileInfo.UserEditData.email);
+      this.DefaultData = data;  
+      this.editprofileForm.get('name').setValue(this.DefaultData.name);
+      this.editprofileForm.get('lastName').setValue(this.DefaultData.lastName);
+      this.editprofileForm.get('email').setValue(this.DefaultData.email);
       //this.editprofileForm.get('username').setValue(this.ProfileInfo.UserEditData.name);
-      this.editprofileForm.get('job').setValue(this.ProfileInfo.UserEditData.job);
-      this.editprofileForm.get('pass').setValue(this.ProfileInfo.UserEditData.password); 
-
+      this.editprofileForm.get('job').setValue(this.DefaultData.job);
+      this.editprofileForm.get('pass').get('password').setValue(this.DefaultData.password); 
+      console.log(this.editprofileForm.value);
    }) ;
   }
+
   onCancel(){
     this.editprofileForm.reset();
     //falta agregar snackbar
   }
+
   onSave(){
     //update information on our database
     //igual falta agregar snackbar
@@ -68,10 +73,12 @@ export class DataFormComponent implements OnInit {
     let password= this.editprofileForm.get('pass').get('password').value;
     let picture = '' //picture will be defined with the observable by the time they select a different picture (if any)
     //alert("Información de perfil para mandar a la base: \n" + this.ProfileInfo.name + '\n' + this.ProfileInfo.lastName + '\n' + this.ProfileInfo.email + '\n' + this.ProfileInfo.password + '\n' + this.ProfileInfo.job);
-    this.ProfileInfo.uploadToDatabase(name, lastname, email, username, job, password, picture).subscribe((data)=>{
+    this.ProfileInfo.uploadToDatabase(name, lastname, email, username, job, password, picture);
+    /*this.ProfileInfo.uploadToDatabase(name, lastname, email, username, job, password, picture).subscribe((data)=>{
       console.log(data);
       this.DefaultData= data;  
-   }) ;
+    });*/
+    this.retrieveUserData();
   }
   showSnackbar() {
     // Get the snackbar DIV

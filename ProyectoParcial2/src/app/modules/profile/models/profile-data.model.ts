@@ -8,6 +8,9 @@ export class ProfileData {
     password:string;
     foto:string;
 
+    constructor(){
+        
+    }
     public setInfo(nombre:string, apellido:string, correo:string, usuario:string, trabajo:string, contrasena:string, Ufoto:string){
         this.name=nombre;
         this.lastName=apellido;
