@@ -4,7 +4,12 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { SignupModalComponent} from '../signup-modal/signup-modal.component';
 import { LoginModalComponent} from '../login-modal/login-modal.component';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import * as Globals from '../../main-components/models/global-anims.model';
+var test_var = new Globals.GlobalAnims(1);
+var newvar = test_var.convertVHtoPX(0.2);
+var newvar2 = test_var.convertVHtoPX(0.3);
 @Component({
+ 
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
@@ -13,15 +18,15 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
       state('initial', style({
         //opacity: 0
         color:  'green',
-        transform: 'scale(1)',
+        transform: 'scale({{low_scale}})',
         
-      })),
+      }), {params: {low_scale: newvar}}), 
       state('final', style({
         //opacity: 1
         color: 'pink',
-        transform: 'scale(1.9)',
+        transform: 'scale({{high_scale}})',
         
-      })),
+      }), {params: {high_scale: newvar2}}),
       transition('initial=>final', animate('2500ms')),
       transition('final=>initial', animate('2000ms'))
     ]),
@@ -31,7 +36,6 @@ export class HeaderComponent implements OnInit {
 
   //modal
   modal : BsModalRef;
-
   public user_type = localStorage.getItem('user_type');
   public active_user_info = JSON.parse(localStorage.getItem('active_user'));
   
