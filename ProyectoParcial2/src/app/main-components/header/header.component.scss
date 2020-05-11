@@ -2,7 +2,9 @@
 @import "~src/styles/navbarstyling";
 @import "~src/styles/indexstyling";
 html{
-  position:sticky;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0; /* required */
 }
 /*
 @mixin set_default_animation_header() {

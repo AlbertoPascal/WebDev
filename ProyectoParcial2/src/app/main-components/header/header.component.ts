@@ -4,12 +4,9 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { SignupModalComponent} from '../signup-modal/signup-modal.component';
 import { LoginModalComponent} from '../login-modal/login-modal.component';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import {
-  BreakpointObserver,
-  Breakpoints,
-  BreakpointState
-} from '@angular/cdk/layout';
+
 @Component({
+ 
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
@@ -18,15 +15,16 @@ import {
       state('initial', style({
         //opacity: 0
         color:  'green',
-        transform: 'scale(1)',
+        transform: 'scale({{low_scale}})',
         
-      })),
+      }), {params: {low_scale: 1}}), 
       state('final', style({
         //opacity: 1
         color: 'pink',
-        transform: 'scale(1.5)',
+
+        transform: 'scale({{high_scale}})',
         
-      })),
+      }), {params: {high_scale: 1.5}}),
       transition('initial=>final', animate('2500ms')),
       transition('final=>initial', animate('2000ms'))
     ]),
@@ -36,7 +34,6 @@ export class HeaderComponent implements OnInit {
 
   //modal
   modal : BsModalRef;
-
   public user_type = localStorage.getItem('user_type');
   public active_user_info = JSON.parse(localStorage.getItem('active_user'));
   

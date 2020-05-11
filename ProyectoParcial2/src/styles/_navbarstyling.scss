@@ -20,6 +20,7 @@
 .navbar-custom{
     @include hover-focus();
     background-color: $nav-bk-color-def;
+
 }
 .navbar-custom-button a li ul i {
   @include set_color_and_bk($navbar-light-active-color,$navbar-light-active-color);
@@ -82,6 +83,13 @@ body{
     @include set_color_and_bk($trigger-button-color,$def-login-color );
   }
  
+  #header{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0; /* required */
+    overflow: hidden;
+    z-index: 100;
+  }
   .header_text{
     //@include set_default_animation_header();
     text-align: $text-center;
@@ -95,6 +103,10 @@ body{
     width:$header_img_width;
     height:$header_img_height;
     margin:$default-margins;
+  }
+  @function get-vw($target) { 
+    $vw-context: (100vh*.01) * 1px;
+    @return ($target/$vw-context) * 1vw;
   }
   @function set_def_landscape_textanim_fontsize($size, $def-increase)
   {
