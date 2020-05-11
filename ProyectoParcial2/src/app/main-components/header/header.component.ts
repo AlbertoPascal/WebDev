@@ -38,16 +38,14 @@ export class HeaderComponent implements OnInit {
   public active_user_info = JSON.parse(localStorage.getItem('active_user'));
   
 
-  constructor(public router: Router, private modalService: BsModalService, public breakpointObserver: BreakpointObserver) { }
+  constructor(public router: Router, private modalService: BsModalService) { }
 
   @Input() navbar_type;
   
   ngOnInit(): void {
     console.log(this.active_user_info);
     console.log("my user type is " + this.user_type);
-    if (this.breakpointObserver.isMatched('(min-height: q_auto)')) {
-      console.log('Enough room!');
-    }
+
   }
 
   public logOut(){
