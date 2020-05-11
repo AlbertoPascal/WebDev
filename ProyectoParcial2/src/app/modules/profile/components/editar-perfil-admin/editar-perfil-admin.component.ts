@@ -8,7 +8,7 @@ import { ProfileEditionService } from '../../services/profile-edition.service';
   styleUrls: ['./editar-perfil-admin.component.scss']
 })
 export class EditarPerfilAdminComponent implements OnInit {
-  
+  public defaultService:ProfileEditionService;
   constructor(public router: Router) { }
 
   ngOnInit(): void {
@@ -16,11 +16,11 @@ export class EditarPerfilAdminComponent implements OnInit {
   resetForms(){
     
   }
- /* giveupAdmin(){
+  giveupAdmin(){
     localStorage.setItem('user_type','regular');
     this.router.navigateByUrl('profile/user');
     this.defaultService.degradeUser();
-  }*/
+  }
   showSnackbar() {
     // Get the snackbar DIV
     var x = document.getElementById("snackbar");

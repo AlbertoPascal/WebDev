@@ -1,6 +1,9 @@
 @import "~src/styles/styles.scss";
 @import "~src/styles/navbarstyling";
 @import "~src/styles/indexstyling";
+html{
+  position:sticky;
+}
 /*
 @mixin set_default_animation_header() {
     animation-name:$header_text_anim_name;
