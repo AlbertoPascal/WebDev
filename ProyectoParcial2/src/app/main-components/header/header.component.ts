@@ -4,6 +4,11 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { SignupModalComponent} from '../signup-modal/signup-modal.component';
 import { LoginModalComponent} from '../login-modal/login-modal.component';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import {
+  BreakpointObserver,
+  Breakpoints,
+  BreakpointState
+} from '@angular/cdk/layout';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -19,7 +24,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
       state('final', style({
         //opacity: 1
         color: 'pink',
-        transform: 'scale(1.9)',
+        transform: 'scale(1.5)',
         
       })),
       transition('initial=>final', animate('2500ms')),
@@ -36,13 +41,16 @@ export class HeaderComponent implements OnInit {
   public active_user_info = JSON.parse(localStorage.getItem('active_user'));
   
 
-  constructor(public router: Router, private modalService: BsModalService) { }
+  constructor(public router: Router, private modalService: BsModalService, public breakpointObserver: BreakpointObserver) { }
 
   @Input() navbar_type;
   
   ngOnInit(): void {
     console.log(this.active_user_info);
     console.log("my user type is " + this.user_type);
+    if (this.breakpointObserver.isMatched('(min-height: q_auto)')) {
+      console.log('Enough room!');
+    }
   }
 
   public logOut(){
