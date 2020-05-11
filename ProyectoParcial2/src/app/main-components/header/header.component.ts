@@ -4,10 +4,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { SignupModalComponent} from '../signup-modal/signup-modal.component';
 import { LoginModalComponent} from '../login-modal/login-modal.component';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import * as Globals from '../../main-components/models/global-anims.model';
-var test_var = new Globals.GlobalAnims(1);
-var newvar = test_var.convertVHtoPX(0.2);
-var newvar2 = test_var.convertVHtoPX(0.3);
+
 @Component({
  
   selector: 'app-header',
@@ -20,13 +17,14 @@ var newvar2 = test_var.convertVHtoPX(0.3);
         color:  'green',
         transform: 'scale({{low_scale}})',
         
-      }), {params: {low_scale: newvar}}), 
+      }), {params: {low_scale: 1}}), 
       state('final', style({
         //opacity: 1
         color: 'pink',
+
         transform: 'scale({{high_scale}})',
         
-      }), {params: {high_scale: newvar2}}),
+      }), {params: {high_scale: 1.5}}),
       transition('initial=>final', animate('2500ms')),
       transition('final=>initial', animate('2000ms'))
     ]),
@@ -40,13 +38,16 @@ export class HeaderComponent implements OnInit {
   public active_user_info = JSON.parse(localStorage.getItem('active_user'));
   
 
-  constructor(public router: Router, private modalService: BsModalService) { }
+  constructor(public router: Router, private modalService: BsModalService, public breakpointObserver: BreakpointObserver) { }
 
   @Input() navbar_type;
   
   ngOnInit(): void {
     console.log(this.active_user_info);
     console.log("my user type is " + this.user_type);
+    if (this.breakpointObserver.isMatched('(min-height: q_auto)')) {
+      console.log('Enough room!');
+    }
   }
 
   public logOut(){
