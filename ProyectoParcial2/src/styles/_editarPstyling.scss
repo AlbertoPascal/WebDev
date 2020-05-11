@@ -44,7 +44,34 @@
     margin: 5px;
   }
   
-   
+  .colFormControl{
+    @extend .col-lg-5;
+    @extend .col-form-label ;
+  }
+
+  .colFormControl2{
+    @extend .col-lg-12;
+  }
+
+  .colInputs{
+    @extend .col-lg-9;
+    @extend .ml-auto;
+  }
+
+  .colProfilePic{
+    @extend .col-lg-4;
+    @extend .order-lg-1;
+  }
+
+  .colAdminInfo{
+    @extend .col-md-12;
+
+  }
+
+  .colTabs{
+    @extend .col-lg-8;
+  }
+
   // hace que se recorran las letras
   .button span {
     cursor: pointer;

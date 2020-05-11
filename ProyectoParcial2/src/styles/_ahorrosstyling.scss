@@ -5,6 +5,56 @@
     text-align: $text-align;
 }
 
+
+.colProfilePic{
+    @extend .col-sm-12;
+    @extend .col-lg-4 ;
+    @extend .col-md-4 ;
+    @extend .order-lg-1 ;
+    @extend .order-md-2;
+}
+.colProfilePic2{
+    @extend .col-lg-4;
+    @extend .order-lg-1;
+  }
+
+.colTabs{
+    @extend .col-sm-12;
+    @extend .col-lg-8 ;
+    @extend .col-md-8 ;
+    @extend .order-md-2 ;
+    @extend .order-lg-2;
+}
+
+.classRow{
+    @extend .row;
+}
+
+.colGoal{
+    @extend .col-sm-12;
+    @extend .col-lg-12 ;
+    @extend .col-md-12 ;
+    @extend .col-12;
+}
+
+.colForms{
+    @extend .col-sm-12;
+    @extend .col-lg-6 ;
+    @extend .col-md-12 ;
+    @extend .col-12;
+}
+
+.colPresupuesto{
+    @extend .col-12;
+    @extend .col-form-label;
+}
+
+.colAhorros{
+    @extend .mt-3 ;
+    @extend .p-5 ;
+    @extend .order-lg-2;
+}
+
 .title{
     @include set-font-size($title-font-size, $title-font-style, $title-text-align);
     margin: $title-margin;

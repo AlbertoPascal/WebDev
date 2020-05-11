@@ -12,6 +12,23 @@ body{
     width: $card-width;
 }
 
+
+.colProductImage{
+    @extend .col-md-4;
+    @extend .col-lg-2;
+    @extend .col-sm-5;
+}
+
+.colProductInfo{
+    @extend .col-md-8;
+    @extend .col-lg-10;
+    @extend .col-sm-7;
+}
+
+.paddingClass{
+    @extend .px-2;
+}
+
 .card {
     @include set-default-width;
     height: $card-height;

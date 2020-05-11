@@ -1,3 +1,5 @@
+
+
 body{
     margin:$default-margins;
     word-break: $default-word-break;
@@ -34,6 +36,24 @@ h4{
 html {
     scroll-behavior: $default-scroll;
   }
+
+.colClass{
+  @extend .col-md-8;
+  @extend .col-lg-5;
+  @extend .col-sm-10;
+  @extend .col-xl-5;
+  @extend .mx-auto;
+}
+
+.paddingClass{
+  @extend .py-5;
+}
+
+.margingClass{
+  @extend .mx-auto;
+  @extend .my-auto;
+}
+
 @mixin default_promotion_setup(){
   text-decoration:$def-text-decoration;
   list-style-type: $default-list-style;

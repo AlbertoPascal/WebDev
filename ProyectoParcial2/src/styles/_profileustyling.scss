@@ -11,6 +11,22 @@
     @include set-font-fam($title-h6-fam);
     
   }
+
+  .colFlipCard{
+    @extend .col-3 ;
+    @extend .col-md-3;
+  }
+
+  .colProfilePic{
+    @extend .col-lg-4;
+    @extend .order-lg-1;
+  }
+  
+  .margingClass{
+    @extend .mx-auto;
+    @extend .my-auto;
+  }
+
   h5{
     font-family: $title-h6-fam;
     font-style: oblique;

@@ -1,6 +1,13 @@
 
 @import "~src/styles/styles.scss";
 @import "~src/styles/ahorrosstyling";
+
+.colProfilePic{
+    @extend .col-md-4;
+    @extend .order-lg-1;
+    @extend .col-sm-12;
+    @extend .col-xl-5;
+}
 /*
 @mixin set-font-size($font-size, $font-style, $text-align){
     font-size: $font-size;
