@@ -24,7 +24,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 
         transform: 'scale({{high_scale}})',
         
-      }), {params: {high_scale: 1.5}}),
+      }), {params: {high_scale: 1.3}}),
       transition('initial=>final', animate('2500ms')),
       transition('final=>initial', animate('2000ms'))
     ]),

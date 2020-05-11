@@ -64,10 +64,18 @@ export class LoginModalComponent implements OnInit {
         if(this.existingUser.User.username == 'kamiloca')
         {
           localStorage.setItem('user_type', 'admin');
+          this.router.navigateByUrl('profile/admin').then(()=>{
+            window.location.reload();
+          }
+          );
         }
         else
         {
           localStorage.setItem('user_type', 'regular');
+          this.router.navigateByUrl('profile/user').then(()=>{
+            window.location.reload();
+          }
+          );
         }
         
         
@@ -75,10 +83,7 @@ export class LoginModalComponent implements OnInit {
         
         //window.location.reload()
         
-        this.router.navigateByUrl('profile/user').then(()=>{
-          window.location.reload();
-        }
-        );
+        
         
       }
       else{
