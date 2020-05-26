@@ -1,0 +1,103 @@
+@import "~src/styles/styles.scss";
+@import "~src/styles/profileustyling";
+ /*
+body{
+    height: 100%;
+    text-align: $text-center;
+  }
+  @mixin set-font-fam($fam) {
+    font-family: $fam;
+  }
+  h6 {
+    font-weight: bold;
+    color: $color-black;
+    @include set-font-fam($title-h6-fam);
+    
+  }
+  h5{
+    font-family: $title-h6-fam;
+    font-style: oblique;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  h3{
+    text-align: center;
+  }
+
+  @mixin set-background-img($image) {
+    background-image: $image;
+  }
+
+  @mixin set-text-align($aligned){
+    float: $aligned;
+    text-align: $aligned;
+  }
+
+.flip-card {
+  background-color: transparent;
+  width: 150px;
+  height: 150px;
+  
+}
+
+// permite que cambien las caras
+.flip-card-inner {
+  position: relative;
+  width: $max;
+  height: $max;
+  text-align: $text-center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+// la animacion de giro
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+// establece la posicion de la parte de adelane y atras 
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: $max;
+  height: $max;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+// estilo del frente
+.flip-card-front {
+  @include set-background-img($default-img);
+  background-size: $max $max;
+  background-color: gray;
+  color: $color-black;
+  
+}
+.flip-card-front img{
+  height: $max;
+  width: $max;
+}
+// estilo de la parte trasera 
+.flip-card-back {
+  background-color: dodgerblue;
+  color: $color-white;
+  transform: rotateY(180deg);
+  padding: 1px 2px;
+}
+
+input[type=text] {
+  width: 130px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  border-radius: 5px;
+  font-family: monospace;
+}
+
+// When the input field gets focus, change its width to 100% 
+input[type=text]:focus {
+  width: 81%;
+}
+
+.estilowish{
+  font-family: $wish-font;
+}*/

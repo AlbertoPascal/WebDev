@@ -1,0 +1,14 @@
+<div [@dialog] class="alert-box text-center">
+    <div class="modal-body">
+        <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Log In</h4>
+        <form [formGroup] = "login">
+            <input type="text" name="username" class="form-control" placeholder="Usuario" i18n-placeholder="@@username" formControlName = "username"/>
+            <input type="password" name="password" class="form-control" placeholder="Contraseña" i18n-placeholder="@@password" formControlName= "password"/>
+            <button class="btn login" type="submit" (click)="onLogin()" i18n="@@logIn">Inicia sesión!</button>
+        </form> 
+    </div>
+</div>
+

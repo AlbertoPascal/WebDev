@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row my-2">
+        <div class="colProfilePic text-center">
+
+            <app-profile-pic></app-profile-pic>            
+            <app-profile-recent-activity></app-profile-recent-activity>
+
+            <hr>
+            <div class = "mt-3">
+                <app-profileadmin-add-member></app-profileadmin-add-member>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-lg-8 col-md-8 order-md-2 order-lg-2">
+            
+            <app-profile-tabs></app-profile-tabs>
+            
+            <div class="tab-content py-4">
+                <div class="tab-pane active" id="profile">
+                  <h5 class="mb-3" i18n>Meta Actual</h5>
+
+                  <app-profile-progressbar></app-profile-progressbar>
+
+                </div>
+            </div> 
+
+            <div class="row">                          
+                <div class="col-md-12">
+                    <hr>
+                    <h5 class="mt-2" i18n><span class="fa fa-bookmark float-right"></span> Lista de deseados</h5>
+                    
+                    <app-profile-wishlisht></app-profile-wishlisht>
+
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <hr>
+                            <h3 class="panel-title" i18n>                                   
+                                 Miembros 
+                            </h3>
+                        </div>
+                        
+                        <app-profileadmin-member-table></app-profileadmin-member-table>
+
+                    </div>
+                </div>
+            </div>
+                
+        </div>
+    </div>
+</div>
+
+

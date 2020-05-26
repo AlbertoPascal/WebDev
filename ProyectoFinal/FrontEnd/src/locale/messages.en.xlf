@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="35b2c13ab7174dd03554dce4f83150bc1efdba45" datatype="html">
+        <source>Registrate ahora!</source>
+        <target>Register now</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main-components/signup-modal/signup-modal.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e00fde81f1d8d3a8585bc2e03445dd63ceeb3b55" datatype="html">
+        <source>Español</source>
+        <target>Spanish</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main-components/footer/footer.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="22240e2f30b2a8777b432aba8efb98ff333b25ad" datatype="html">
+        <source>Inglés</source>
+        <target>English</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main-components/footer/footer.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fd0e51e03855aa1575adedc4d8a7474098a8c870" datatype="html">
+        <source>
+              Nosotros somos un grupo de estudiantes que busca ayudar a las personas a administrar su presupuesto usando nuestra página
+          </source>
+          <target>We are a group of students that seek to help people by keeping track of their budget with our web page</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main-components/footer/footer.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="174aaea03d030588ca02b67d9586685361215369" datatype="html">
+        <source>Contacto</source>
+        <target>Contact</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main-components/footer/footer.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e2cc2bd4ed14647b23373be65fd125136e8d15a6" datatype="html">
+        <source>Teléfono: +52 5545316168</source>
+        <target>Phone number: +52 5545316168</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main-components/footer/footer.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bc62c00381a4cce4334c267368b859e637fade9d" datatype="html">
+        <source>Teléfono: +52 5611101018</source>
+        <target>Phone number: +52 5611101018</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main-components/footer/footer.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="20ce43e68cbf5ec1264aeaa3a9242db5922d4807" datatype="html">
+        <source>Teléfono: +52 5523239661</source>
+        <target>Phone number: +52 5523239661</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main-components/footer/footer.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bbffb80a0ea6e37764655bf7f4aa7416615d6465" datatype="html">
+        <source>Artículos Populares</source>
+        <target>Popular items</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/home/components/carrousel-home/carrousel-home.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e0a5b47a8c1fc0738bcbf4390c216ce2d2eba877" datatype="html">
+        <source>¡Maneja tu presupuesto y compra lo que quieras!</source>
+        <target>Manage yout budget and buy whatever you want!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/home/components/intro-block/intro-block.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2a530b981d364ff4cbb8af5b7a2fc822c1191157" datatype="html">
+        <source>¡Revisa los artículos más populares de la semana! Click Aquí</source>
+        <target>Check out the popular items of the week! Click here</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/home/components/intro-block/intro-block.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="543745c4c346ed9df2add43b0c4d7866221e1b7f" datatype="html">
+        <source>Productos encontrados</source>
+        <target>Items found</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/products/components/productos/productos.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="21d4d771013d7df3b1e36e8fad67f56be22ef837" datatype="html">
+        <source>
+                    Agregar a wishlist
+                </source>
+                <target>Add to wishlist</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/products/components/product-card/product-card.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9f2fa13d37e4d24b6f994a7dbde4a19a9b09c8f7" datatype="html">
+        <source>Usuario</source>
+        <target>User</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/perfil-usuario/perfil-usuario.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/perfil-admin/perfil-admin.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros/ahorros.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="07d0d86b82f051fd1777b531fa1638bd1d3b12d1" datatype="html">
+        <source>Meta Actual</source>
+        <target>Current Goal</target>
+      </trans-unit>
+      <trans-unit id="cd573980bf71cdf0dda196e9f90f789cb1048147" datatype="html">
+        <source><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Lista de deseados</source>
+        <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Wishlist</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/perfil-usuario/perfil-usuario.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/perfil-admin/perfil-admin.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="40474e657728c6946a751b2ac7d744d1d2b146c9" datatype="html">
+        <source>Perfil</source>
+        <target>Profile</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profile-tabs/profile-tabs.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profileadmin-member-table/profileadmin-member-table.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="522deee236aba83e56923134e0ac30b72b1fa797" datatype="html">
+        <source>Editar Perfil</source>
+        <target>Edit profile</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profile-tabs/profile-tabs.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7be7e55a5f09ed0177283ea7c4e3f8412108bcec" datatype="html">
+        <source>Ahorros</source>
+        <target>Savings</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profile-tabs/profile-tabs.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="70e697c4f8c9f54fe6270b99954381c9a3e74bf4" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Balance<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Balance<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profile-recent-activity/profile-recent-activity.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7f7c8c74c21eb3a32744420abdea9eaba0cbe5b4" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Meta<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Goal<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profile-recent-activity/profile-recent-activity.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c1fa86234808160c05b7d650350221af600b5177" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Salario<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Income<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profile-recent-activity/profile-recent-activity.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2517fdf50c2d384702c08194e17edddb28a759c2" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Limite Gasto<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Spending limit<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profile-recent-activity/profile-recent-activity.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f6162d994996982b4756573bc8eb40f40653c870" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Familia<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Family<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profile-recent-activity/profile-recent-activity.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="43c51ea523e09d3b6719105ccb7cda67340d3fe0" datatype="html">
+        <source>
+                <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>$ 500<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Pantalones skynny jeans Levis
+            </source>
+            <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>$ 500<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Skynny jeans Levis</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profile-wishlisht/profile-wishlisht.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d9169df29c05f8dde128bbc4754de22428a1f573" datatype="html">
+        <source>
+                <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>$ 1,300<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Animal Crossing Nintendo Switch
+            </source>
+            <target> <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>$ 1,300<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Animal Crossing Nintendo Switch</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profile-wishlisht/profile-wishlisht.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2ccc71d3b075cebbf50722e88b539c788e5ad514" datatype="html">
+        <source>
+                <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>$ 200,000<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Honda Fit 2015 
+            </source>
+            <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>$ 200,000<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Honda Fit 2015 
+            </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profile-wishlisht/profile-wishlisht.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="688d5bf47b6626399a1754fd99b3734f78251d4b" datatype="html">
+        <source>
+                <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>$ 7,999<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Nintendo Switch 
+            </source>
+            <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>$ 7,999<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Nintendo Switch 
+            </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profile-wishlisht/profile-wishlisht.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="68365ffbe298a135dac6bc772efb4eca8ecfa513" datatype="html">
+        <source>
+                <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>$ 50<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Peluche Axolotes 
+            </source>
+            <target><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>$ 50<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/> Axolotl plush toy 
+            </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profile-wishlisht/profile-wishlisht.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0b4ca82502e959f33d12bfeeccd0c0b3635b2b87" datatype="html">
+        <source>Inicio: $0</source>
+        <target>Start: $0</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profile-progressbar/profile-progressbar.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1f9e0f189e67beea34d1d50e04d210e30e997a0f" datatype="html">
+        <source>Final: $5,000</source>
+        <target>End: $5,000</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profile-progressbar/profile-progressbar.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c0987361901562bcf39354d3a28be57dcd700033" datatype="html">
+        <source> Agregar miembro</source>
+        <target> Add member</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profileadmin-add-member/profileadmin-add-member.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d16ce2d7d9a79894ea65aa42cf157bcd73fa44f4" datatype="html">
+        <source>Saldo </source>
+        <target>Balance </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profileadmin-member-table/profileadmin-member-table.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="383cb0410fd84d2b06883ee04a4f62a5c3734dcf" datatype="html">
+        <source>Limite Gasto </source>
+        <target>Spending limit </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profileadmin-member-table/profileadmin-member-table.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f50da21a7c254db0eca5a5297c36c43178a2e2e7" datatype="html">
+        <source># Productos comprados</source>
+        <target># Items bought</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profileadmin-member-table/profileadmin-member-table.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3556b6b2e6941d5142d0b2a7d47e01cbbed9b909" datatype="html">
+        <source>Estudiante</source>
+        <target>Student</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profileadmin-member-table/profileadmin-member-table.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="memberDate" datatype="html">
+        <source>Miembro desde:</source>
+        <target>Member from:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/profileadmin-member-table/profileadmin-member-table.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dbfa5a9cf08a6450e57b1534da17305a5bc35c26" datatype="html">
+        <source>                                   
+                                 Miembros 
+                            </source>
+                            <target> Members</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/perfil-admin/perfil-admin.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dd2a11ebc737589080ed400dacc33a8c8c84728b" datatype="html">
+        <source>Nombre</source>
+        <target>Name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/data-form/data-form.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d15e649b8eb1ba82aa0e7ea082a12901224b1c87" datatype="html">
+        <source>Apellido</source>
+        <target>Last name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/data-form/data-form.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="244aae9346da82b0922506c2d2581373a15641cc" datatype="html">
+        <source>Email</source>
+        <target>Email</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/data-form/data-form.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="439b507e6887ab36dcee0d5fea0fcb9c02d1abd8" datatype="html">
+        <source>Ocupacion</source>
+        <target>Job</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/data-form/data-form.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="08c74dc9762957593b91f6eb5d65efdfc975bf48" datatype="html">
+        <source>Username</source>
+        <target>Username</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/data-form/data-form.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e369e13629132e32dcd958b82261059243f21d58" datatype="html">
+        <source>Contraseña</source>
+        <target>Password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/data-form/data-form.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e9cc77c4fa98ba5c6ab46835cf4dec3f6b751ae7" datatype="html">
+        <source>Confirmar Contraseña</source>
+        <target>Confirm password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/data-form/data-form.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a213e86356c37e35f13fa4fb6aea485516696e7d" datatype="html">
+        <source>Guardar cambios</source>
+        <target>Save changes</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/data-form/data-form.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e8d22cdef9f5780e31395340125d873f9df518c3" datatype="html">
+        <source>Cancelar</source>
+        <target>Cancel</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/data-form/data-form.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="757d27eb3808b51f5aa7c3f67a0c57529f7102ed" datatype="html">
+        <source>Foto</source>
+        <target>Photo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/editar-perfil-usr/editar-perfil-usr.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/editar-perfil-admin/editar-perfil-admin.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1f7ed44568a9be6759478a24ef8683bd5798d0aa" datatype="html">
+        <source>Escoger foto</source>
+        <target>Choose photo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/editar-perfil-usr/editar-perfil-usr.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/editar-perfil-admin/editar-perfil-admin.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="673f8897aaa95cf8ea2c3b3ed27e4456e68217bf" datatype="html">
+        <source>Hacerse Admin</source>
+        <target>Become admin</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/editar-perfil-usr/editar-perfil-usr.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5c1f3ee51edec447eb49769afb8c2bd71e2bb08c" datatype="html">
+        <source>Perfil de usuario</source>
+        <target>User profile</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/editar-perfil-usr/editar-perfil-usr.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/editar-perfil-admin/editar-perfil-admin.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="547f920218571c1c6ff011d580994492595e8486" datatype="html">
+        <source>Eliminar Grupo</source>
+        <target>Delete group</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/editar-perfil-admin/editar-perfil-admin.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7308acbb6a98178c559bab49b30ce008c40f1e35" datatype="html">
+        <source>Objetivo</source>
+        <target>Goal</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros/ahorros.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="117637cf4fdc7c0bd7e3ac9acabf976f01484863" datatype="html">
+        <source>Añadir ahorros</source>
+        <target>Add savings</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros-savings/ahorros-savings.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f3b1b30b1a04aac690437af34d87f80dfe05797d" datatype="html">
+        <source>Tabla de presupuesto</source>
+        <target>Budget table</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros-presupuesto/ahorros-presupuesto.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4b5f105903814b81f61d1523ce08b1f1888641f0" datatype="html">
+        <source>Esperado</source>
+        <target>Expected</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros-presupuesto/ahorros-presupuesto.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1da6d9283e3222148d76c10c8e37abeeb66c93cb" datatype="html">
+        <source>Actual</source>
+        <target>Actual</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros-presupuesto/ahorros-presupuesto.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="73c12e9ef0d15d538db5159096bdb913972b812b" datatype="html">
+        <source>Diferencia</source>
+        <target>Difference</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros-presupuesto/ahorros-presupuesto.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="efe0d6f6e319e38303d86019f431201c3caacc31" datatype="html">
+        <source>Fuentes de ingreso</source>
+        <target>Source of income</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros-presupuesto/ahorros-presupuesto.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="80e1d3651b3aa877df93d21604e2155f9fce279c" datatype="html">
+        <source>Ingresos</source>
+        <target>Incomes</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros-presupuesto/ahorros-presupuesto.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e07ebe2e9df69a447bd4cfd4224461505ad0d377" datatype="html">
+        <source>Gastos de casa</source>
+        <target>Household spending</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros-presupuesto/ahorros-presupuesto.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="58c26797a16e24c166e8508616796a9a48eb37c0" datatype="html">
+        <source>Renta</source>
+        <target>Rent</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros-presupuesto/ahorros-presupuesto.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="016fed525c70cdfb9b93f3c81e49ebdbd7ca2ede" datatype="html">
+        <source>Electricidad</source>
+        <target>Electricity</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros-presupuesto/ahorros-presupuesto.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e4ef8de89ec37f583998cdc3af19f8d7d01d58b2" datatype="html">
+        <source>Gas</source>
+        <target>Gas</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros-presupuesto/ahorros-presupuesto.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b392375e3b56139f428015a13072be148f2b3fe5" datatype="html">
+        <source>Internet + cable</source>
+        <target>Internet and cable</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros-presupuesto/ahorros-presupuesto.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dcb2b96edf96689ff54ea9858c30ff24fd9fe26b" datatype="html">
+        <source>Agua</source>
+        <target>Water</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros-presupuesto/ahorros-presupuesto.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="80f3d00cbd7451d4f33a6a142ba351e95a92caa5" datatype="html">
+        <source>Otros gastos mensuales</source>
+        <target>Other monthly spendings</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros-presupuesto/ahorros-presupuesto.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6556a5477aa83e2997b9f46801ac93f7e52ffe47" datatype="html">
+        <source>Comida</source>
+        <target>Food</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros-presupuesto/ahorros-presupuesto.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ae8f34d9b64efc2c1efc92d5c87b616f57ac65c8" datatype="html">
+        <source>Celular/Teléfono</source>
+        <target>Cellphone</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros-presupuesto/ahorros-presupuesto.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c77675b6e3167182d9b6fbc60a40b56d29e44aaf" datatype="html">
+        <source>Ropa/Cosméticos</source>
+        <target>Clothing/Cosmetics</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros-presupuesto/ahorros-presupuesto.component.html</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a54a47b98d24b00af273bffbba9500e6bf79129d" datatype="html">
+        <source>Entretenimiento</source>
+        <target>Entertainment</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros-presupuesto/ahorros-presupuesto.component.html</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4f03a52ed9e677c6e6ee43b6decdeee1dc9ad8ac" datatype="html">
+        <source>Balance: $1000 a favor</source>
+        <target>Balance: $1000 in favor</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros-presupuesto/ahorros-presupuesto.component.html</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e87efca5175ab77ef22da474b1482995fb66153b" datatype="html">
+        <source>Gastos mensuales</source>
+        <target>Monthly spendings</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/profile/components/ahorros-doughnutchart/ahorros-doughnutchart.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="edbd66fef5ac735010326f8e45efca2c60e152c6" datatype="html">
+        <source>Oops! Parece que la página que estás buscando no existe!</source>
+        <target>Oops! It seems the page you are looking for does not exist!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/not-found/page404/page404.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6f9b94afbe894a8306ce5e0a12128eb0a4e216b6" datatype="html">
+        <source>Haz click <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>aquí<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> para regresar a la página principal:</source>
+        <target>Click <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>here<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> to return to the main page:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/not-found/page404/page404.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="actividadReciente" datatype="html">
+        <source>Actividad reciente</source>
+        <target>Recent activity</target>
+      </trans-unit>
+      <trans-unit id="sobreNosotros" datatype="html">
+        <source>Sobre nosotros</source>
+        <target>About us</target>
+      </trans-unit>
+      <trans-unit id="headerAnimacion" datatype="html">
+        <source>¡Obtén más con menos!</source>
+        <target>Get more with less!</target>
+      </trans-unit>
+      <trans-unit id="searchBar" datatype="html">
+        <source>¿Qué artículos buscas?</source>
+        <target state="translated">What items are you searching for?</target>
+      </trans-unit>
+      <trans-unit id="name" datatype="html">
+        <source>Nombre</source>
+        <target state="translated">Name</target>
+      </trans-unit>
+      <trans-unit id="lastName" datatype="html">
+        <source>Apellido</source>
+        <target state="translated">Last name</target>
+      </trans-unit>
+      <trans-unit id="job" datatype="html">
+        <source>Ocupación</source>
+        <target state="translated">Job</target>
+      </trans-unit>
+      <trans-unit id="username" datatype="html">
+        <source>Usuario</source>
+        <target state="translated">Username</target>
+      </trans-unit>
+      <trans-unit id="password" datatype="html">
+        <source>Contraseña</source>
+        <target state="translated">Password</target>
+      </trans-unit>
+      <trans-unit id="confirmPassword" datatype="html">
+        <source>Confirmar contraseña</source>
+        <target state="translated">Confirm password</target>
+      </trans-unit>
+      <trans-unit id="email" datatype="html">
+        <source>email@ejemplo.com</source>
+        <target state="translated">email@example.com</target>
+      </trans-unit>
+      <trans-unit id="logIn" datatype="html">
+        <source>Inicia sesión!</source>
+        <target state="translated">Log In!</target>
+      </trans-unit>
+      <trans-unit id="MontoActual" datatype="html">
+        <source>Monto Actual</source>
+        <target>Current amount</target>
+      </trans-unit>
+      <trans-unit id="Final" datatype="html">
+        <source>Final</source>
+        <target>Final amount</target>
+      </trans-unit>
+      <trans-unit id="Ingresos" datatype="html">
+        <source>Ingresos:</source>
+        <target>Income:</target>
+      </trans-unit>
+      <trans-unit id="Gastos" datatype="html">
+        <source>Gastos:</source>
+        <target>Expenses:</target>
+      </trans-unit>
+      <trans-unit id="Cantidad" datatype="html">
+        <source>Cantidad</source>
+        <target>Amount</target>
+      </trans-unit>
+      <trans-unit id="Motivo" datatype="html">
+        <source>Motivo</source>
+        <target>Reason</target>
+      </trans-unit>
+      <trans-unit id="AnadirGastos" datatype="html">
+        <source>Añadir gastos</source>
+        <target>Add expenses</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

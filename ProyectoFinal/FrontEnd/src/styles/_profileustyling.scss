@@ -1,0 +1,160 @@
+  body{
+    height: 100%;
+    text-align: $text-center;
+  }
+  @mixin set-font-fam($fam) {
+    font-family: $fam;
+  }
+  h6 {
+    font-weight: bold;
+    color: $color-black;
+    @include set-font-fam($title-h6-fam);
+    
+  }
+
+  .colFlipCard{
+    @extend .col-3 ;
+    @extend .col-md-3;
+  }
+
+  .colProfilePic{
+    @extend .col-lg-4;
+    @extend .order-lg-1;
+  }
+  
+  .margingClass{
+    @extend .mx-auto;
+    @extend .my-auto;
+  }
+
+  h5{
+    font-family: $title-h6-fam;
+    font-style: oblique;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  td{
+    text-align: center;
+  }
+  
+  @mixin set-background-img($image) {
+    background-image: $image;
+  }
+  @mixin set-border-color($white){
+    border: 1px solid $white;
+  }
+
+  @mixin set-border-radius($rad){
+    border-radius: $rad;
+  }
+
+  .profilePic {
+    @include set-border-radius($circle);
+    width:  $widthp;
+    height: $widthp;  
+  }
+
+  .picUser{
+    @include set-background-img($default-img);
+    @include set-border-radius($circle);
+    width:  $widthp;
+    height: $widthp;
+    @include set-border-color($color-white);
+    background-size: $max $max;
+
+  }
+
+  @mixin set-text-align($aligned){
+    float: $aligned;
+    text-align: $aligned;
+  }
+
+.start{
+  @include set-text-align($text-left);
+}
+.end {
+  @include set-text-align($text-right);
+}
+
+
+.flip-card {
+  background-color: transparent;
+  width: 150px;
+  height: 150px;
+  
+}
+
+/* permite que cambien las caras*/
+.flip-card-inner {
+  position: relative;
+  width: $max;
+  height: $max;
+  text-align: $text-center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* la animacion de giro*/
+//.flip-card:hover .flip-card-inner {
+  //transform: rotateY(180deg);
+//}
+
+/* establece la posicion de la parte de adelane y atras */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: $max;
+  height: $max;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* estilo del frente*/
+.flip-card-front {
+  @include set-background-img($default-img);
+  background-size: $max $max;
+  background-color: gray;
+  color: $color-black;
+  
+}
+.flip-card-front img{
+  height: $max;
+  width: $max;
+}
+/* estilo de la parte trasera */
+.flip-card-back {
+  background-color: dodgerblue;
+  color: $color-white;
+  transform: rotateY(180deg);
+  padding: 1px 2px;
+}
+
+
+.buscar2 {
+  background-color: #4abe64;
+  padding: 40px 40px;
+  color: $color-white;
+  text-align: $text-center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+input[type=text] {
+  width: 130px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  border-radius: 5px;
+  font-family: monospace;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+  width: 81%;
+}
+
+.estilo-link{
+  font-style: normal;
+  font-family: $nav-font;
+}
+
+.estilowish{
+  font-family: $wish-font;
+}

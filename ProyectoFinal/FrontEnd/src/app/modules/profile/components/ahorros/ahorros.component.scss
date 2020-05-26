@@ -1,0 +1,93 @@
+
+@import "~src/styles/styles.scss";
+@import "~src/styles/ahorrosstyling";
+
+.colProfilePic{
+    @extend .col-md-4;
+    @extend .order-lg-1;
+    @extend .col-sm-12;
+    @extend .col-xl-5;
+}
+/*
+@mixin set-font-size($font-size, $font-style, $text-align){
+    font-size: $font-size;
+    font-style: $font-style;
+    text-align: $text-align;
+}
+
+h6 {
+    font-weight: bold;
+    color: $color-black;
+    font-family: $title-h6-fam;
+}
+
+.title{
+    @include set-font-size($title-font-size, $title-font-style, $title-text-align);
+    margin: $title-margin;
+}
+
+@mixin set-auto-margin(){
+    margin:auto;
+}
+
+.price{
+    @include set-font-size($price-font-size, $price-font-style, $price-text-align);
+    @include set-auto-margin();
+}
+
+.btn-primary{
+    border-radius: $btn-border-radius;
+    color: $btn-text-color; 
+    padding: $btn-padding; 
+    @include set-font-size($btn-font-size, $price-font-style, $price-text-align);
+    cursor: pointer; 
+}
+
+div.polaroid {
+    @include set-auto-margin();
+    
+    display: block;
+    width: $polaroid-width;
+    background-color: $polaroid-background-color;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: $polaroid-margin-bottom;
+}
+
+div.container{
+    text-align: center;
+    padding: $polaroid-container-padding;
+}
+
+.polaroidImage{
+    width: $polaroid-image-width;
+}
+
+.tableTitle{
+    @include set-font-size($table-subheader-font-style, $title-font-style, $table-subheader-text-align);
+    font-size: $table-subheader-font-size;
+    background-color:$table-subheader-background-color;
+}
+
+@mixin default-background-color(){
+    background-color:$table-cell-background-color;
+}
+
+.tableCell{
+    @include default-background-color();
+}
+
+th, td, tr {
+    color: $table-text-color;
+    border: $table-border;
+}
+
+th{
+    background-color:$table-header-background-color;
+    
+}
+
+.inputTable{
+    @include default-background-color();
+    border: solid $table-cell-background-color 1px;
+    width: 100%;
+}*/

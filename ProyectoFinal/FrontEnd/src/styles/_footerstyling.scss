@@ -1,0 +1,68 @@
+@mixin set_footer_color_font_size($color, $size){
+    color:$color;
+    font-size:$size;
+}
+@mixin set_footer_float_margin($float, $margin){
+    float:$float;
+    margin:$margin;
+}
+footer{
+    @include set_footer_color_font_size($navbar-light-color,$footer_font_size );
+    background-color: $footer_bk_color;
+    word-break: $default-word-break;
+    overflow-x: $hide_overflow;
+}
+
+.footerbar{
+    background-color: $footerbar_bk_color;
+}
+
+.footerbar2{
+    background-color: $footerbar_bk_color2;
+}
+
+.footerTitle{
+    text-align: $text-center;
+    margin: $footer_margin;
+    padding: $footer_padding;
+}
+
+.footerInicio{
+    font-size: $footer_start_fontsize;
+}
+
+footer a{
+    color: $navbar-light-color;
+}
+
+footer a:hover{
+    color: $footer_hover_a_color;
+    font-style: $footer_font_style;
+    background-color: $navbar-light-color;
+}
+
+.languages{
+    @include set_footer_float_margin($footer_float_lang,  $footer_lang_margin);
+}
+
+.pFooter{
+    margin: $footer_margin;
+    padding: $footer_padding;
+    text-align: $text-center;
+}
+
+.verticalHr{ 
+    border: $footer_vertical_hr_border;
+    border-left: $footer_verticalhr_borderleft;
+    height: $footer_verticalhr_height;
+    width: $footer_verticalhr_width;    
+    margin: $footer_verticalhr_margin;   
+}
+
+@media (max-width:$footer_media_screensize){
+
+    .languages{
+        display: $footer_media_lang_displ;
+        @include set_footer_float_margin($footer_media_lang_float, $footer_medial_lang_margin);
+    }
+}

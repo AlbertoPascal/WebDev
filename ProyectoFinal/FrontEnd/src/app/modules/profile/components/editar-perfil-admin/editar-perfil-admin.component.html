@@ -1,0 +1,29 @@
+
+<div class="container">
+    <div class="row my-2">
+        <div class="colProfilePic text-center">
+            <app-profile-pic></app-profile-pic>
+            
+            <div class= "mt-3">
+                <label class="btn btn-default">
+                    <span class ="upload rounded px-auto py-auto" i18n>Escoger foto</span> <input type="file" hidden>
+                </label>
+            </div>
+            <div class="botton-change mt-3">
+                <button (click)="giveupAdmin()" class="button"><span i18n>Eliminar Grupo</span></button>
+            </div>
+        </div>
+        <div class="colTabs order-lg-2">
+            <app-profile-tabs></app-profile-tabs>
+
+            <div class="colTabs " id = "editar">
+                <h2 class="text-center font-weight-light mt-3" i18n>Perfil de usuario</h2>
+            </div>
+            <div class="colTabs order-lg-1 personal-info justify-content-center">
+                <app-data-form></app-data-form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

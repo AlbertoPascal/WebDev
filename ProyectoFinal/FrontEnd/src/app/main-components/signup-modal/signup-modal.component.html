@@ -1,0 +1,20 @@
+<div [@dialog] class="alert-box text-center">
+    <div class="modal-body">
+        <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Sign Up</h4>
+        <form [formGroup] = "signup" >
+            <input class = "form-control" type="text" placeholder="Nombre" i18n-placeholder="@@name" formControlName="name" />
+            <input class = "form-control" type="text" placeholder="Apellido" i18n-placeholder="@@lastName" formControlName="lastName" />
+            <input class="form-control" type="email" placeholder="email@ejemplo.com" i18n-placeholder="@@email" formControlName="email" />
+            <input class="form-control" type="text" placeholder="Ocupación" i18n-placeholder="@@job" formControlName="job"/>
+            <input type="text" formControlName="username" class="form-control" placeholder="Usuario" i18n-placeholder="@@username"/>
+            <form formGroupName="pass">
+                <input type="password" formControlName="password" class="form-control" placeholder="Contraseña" i18n-placeholder="@@password"/>
+                <input type="password" formControlName="ConfirmPass" class="form-control" placeholder="Confirmar contraseña" i18n-placeholder="@@confirmPassword"/>
+            </form>
+            <button class="btn signup mx-auto" type="submit" (click)="onSignUp()" i18n>Registrate ahora!</button>
+        </form> 
+    </div>
+</div>

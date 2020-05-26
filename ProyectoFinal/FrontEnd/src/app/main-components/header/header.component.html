@@ -1,0 +1,69 @@
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+  <!-- Bootstrap CSS -->
+  <link rel="shortcut icon" href="https://img.icons8.com/cotton/64/000000/money-box.png" type="image/vnd.microsoft.icon" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Prototipo 1:Home</title>
+</head>
+ <header  id = "header" >
+      <div>
+        <!--p *ngIf="router.url === '/products/search'">
+          Pagina de productos
+        </p>
+        <p *ngIf = "router.url === '/home/index'" >
+          Pagina de index
+        </p-->
+        <!--
+          /home/index
+          /products/search
+          /profile/admin
+          /profile/user
+          /profile/edit-user
+          /profile/edit-admin
+          /profile/savings
+        -->
+      </div>
+      <nav  class="navbar navbar-expand-md navbar-light navbar-custom">
+          <a href="/home" class="navbar-brand">All-Mighty Budget</a>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarCollapse" >
+
+              <!--If the user is in the home or products page-->
+              <div class="navbar-nav ml-auto navbar-light" *ngIf = "active_user_info===null">
+                  <a data-target="#login" data-toggle="modal" (click)="openLoginModal()" class="nav-item nav-link navbar-custom-button"><i class="fa fa-info-circle">&nbsp;Log in</i></a>
+                  <a data-target="#signup" data-toggle="modal" (click)="openSignupModal()" class="nav-item nav-link navbar-custom-button"><i class="fa fa-users">&nbsp;Sign Up</i></a>
+              </div>
+
+              <!--If the user is in any of the profile page-->
+              <div class="navbar-nav ml-auto navbar-light" *ngIf = "active_user_info!==null">
+                <a *ngIf = "user_type==='regular'" href="/profile/edit-user" class="nav-item nav-link navbar-custom-button" ><i class="fa fa-cog"></i>&nbsp;Ajustes</a>
+                <a *ngIf = "user_type==='admin'" href="/profile/edit-admin" class="nav-item nav-link navbar-custom-button" ><i class="fa fa-cog"></i>&nbsp;Ajustes</a>
+                <a href="/home" class="nav-item nav-link navbar-custom-button" (click)="logOut()"><i class="fa fa-info-circle"></i>&nbsp;Log out</a>
+                
+              </div>
+            
+          </div>
+      </nav>
+      <!---------------->
+      <div class = "bg-white  rounded shadow">
+        <div class = "container row">
+          <img src="../../assets/images/logo.png" class = "img-fluid rounded  header_img mx-auto col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+          <!--h3 class = "header_text text-center col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 my-auto" i18n="@@headerAnimacion">¡Obt&eacute;n m&aacute;s con menos!</h3-->
+          <div [@changeDivSize]="currentState" (@changeDivSize.done)="onDone($event)" class = "col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 my-auto">
+            <h3 class = "text-center" i18n="@@headerAnimacion">¡Obt&eacute;n m&aacute;s con menos!</h3>
+          </div>
+
+        </div>
+      </div>
+      <!------------------>
+      <div class="ribbon">
+        <a href="/home">Versi&oacute;n Beta 1.0</a>
+      </div>
+    </header>

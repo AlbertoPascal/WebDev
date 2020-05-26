@@ -1,0 +1,30 @@
+<div class="panel-body">
+    <table id="example" class="table table-striped dt-responsive table table-hover table-dark" style="width:100%">
+        <thead>
+            <tr>
+                <th scope="col" i18n>Perfil</th>
+                <th scope="col" i18n>Saldo </th>
+                <th scope="col" i18n>Limite Gasto </th>
+                <th scope="col" i18n># Productos comprados</th>
+                <th scope="col"><i class="fa fa-pencil" aria-hidden="true"></i>
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let member of Members">
+                <td>
+                    <app-flip-card [memb]=member></app-flip-card>
+                 </td>
+                  <td>$ {{member.saldo}}</td>
+                  <td>$ {{member.limite_gastos}}</td>
+                  <td>{{member.productos}}</td>
+                  <td>
+                      <a href="PerfilesU.html" data-toggle="control-sidebar"><i class="fa fa-eye"></i></a>
+                      <a href="#" data-toggle="control-sidebar"><i class="fa fa-trash"></i></a>
+                  </td>                                                 
+            </tr>
+            
+        </tbody>
+    </table>
+</div>

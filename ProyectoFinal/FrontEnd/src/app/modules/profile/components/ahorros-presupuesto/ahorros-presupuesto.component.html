@@ -1,0 +1,106 @@
+
+<div class="bg-white mt-3 p-5 order-lg-1 rounded shadow">
+    <h3 i18n="@@Gastos">Gastos:</h3>
+        <form [formGroup] = "addCosts">
+            <label class="colPresupuesto form-control-label" i18n="@@Cantidad">Cantidad</label>
+            <input type="number" formControlName="costs"><br>
+            <label class="colPresupuesto form-control-label" i18n="@@Motivo">Motivo</label>
+            <input type="text" formControlName="description"><br>
+            <div class="botton-change mt-3">
+                <button class="btn btn-primary" (click)="onCost()" mat-button (click)="openSnackBar('Agregado exitosamente!', 'Deshacer')" i18n="@@AnadirGastos">Añadir gastos</button>
+            </div>
+        </form>
+</div>
+
+<!--Segunda fila-->
+<!--div class="row">
+    
+    <div class="table-responsive col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <table class="table">
+            <thead class="black white-text">
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col" i18n>Esperado</th>
+                    <th scope="col" i18n>Actual</th>
+                    <th scope="col" i18n>Diferencia</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="4" class="tableTitle" i18n>Fuentes de ingreso</td>
+                </tr>
+                <tr>
+                    <td class="tableCell" i18n>Ingresos</td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="tableTitle" i18n>Gastos de casa</td>
+                </tr>
+                <tr>
+                    <td class="tableCell" i18n>Renta</td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                </tr>
+                <tr>
+                    <td class="tableCell" i18n>Electricidad</td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                </tr>
+                <tr>
+                    <td class="tableCell" i18n>Gas</td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                </tr>
+                <tr>
+                    <td class="tableCell" i18n>Internet + cable</td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                </tr>
+                <tr>
+                    <td class="tableCell" i18n>Agua</td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="tableTitle" i18n>Otros gastos mensuales</td>
+                </tr>
+                <tr>
+                    <td class="tableCell" i18n>Comida</td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                </tr>
+                <tr>
+                    <td class="tableCell" i18n>Celular/Tel&eacute;fono</td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                </tr>
+                <tr>
+                    <td class="tableCell" i18n>Ropa/Cosm&eacute;ticos</td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                </tr>
+                <tr>
+                    <td class="tableCell" i18n>Entretenimiento</td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                    <td class="tableCell"><input type="text" class="inputTable" /></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+
+        <h5 i18n>Balance: $1000 a favor</h5>
+    </div>
+    
+</div -->

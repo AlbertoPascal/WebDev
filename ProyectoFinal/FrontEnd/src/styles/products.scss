@@ -1,0 +1,35 @@
+/*!
+ * Bootstrap v4.4.1 (https://getbootstrap.com/)
+ * Copyright 2011-2019 The Bootstrap Authors
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+ @import "bootstrap/functions";
+ @import "custom_variables";
+ @import "bootstrap/variables";
+ @import "bootstrap/mixins";
+ @import "bootstrap/root";
+ @import "bootstrap/reboot";
+ @import "bootstrap/type";
+ @import "bootstrap/images";
+ @import "bootstrap/grid";
+ @import "bootstrap/forms";
+ @import "bootstrap/buttons";
+ @import "bootstrap/transitions";
+ @import "bootstrap/dropdown";
+ @import "bootstrap/button-group";
+ @import "bootstrap/input-group";
+ @import "bootstrap/nav";
+ @import "bootstrap/navbar";
+ @import "bootstrap/card";
+ @import "bootstrap/spinners";
+ @import "bootstrap/utilities";
+
+ @import "~bootstrap/scss/bootstrap.scss";
+ @import "navbarstyling";
+ @import "footerstyling";
+ @import "snackbar";
+ @import "productsstyling";
+
+ 

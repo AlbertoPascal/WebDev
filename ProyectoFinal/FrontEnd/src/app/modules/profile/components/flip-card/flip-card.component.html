@@ -1,0 +1,14 @@
+<div class="colFlipCard">
+    <div class="flip-card">
+        <div class="flip-card-inner" (mouseover)="toggleFlip()" [@flipState]="flip">
+            <div class="flip-card-front">
+                <img src="{{memb.foto}}" alt="Avatar" class= "pic margingClass img-fluid rounded">
+            </div>
+            <div class="flip-card-back">
+                <h4>{{memb.Nombre}}</h4>
+                <p>{{memb.about}}</p>
+                <p> <span i18n="@@memberDate">Miembro desde:</span> {{memb.fecha}}</p>
+            </div>
+        </div>
+    </div>
+</div>
