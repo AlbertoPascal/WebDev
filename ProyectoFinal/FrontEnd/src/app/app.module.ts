@@ -12,6 +12,7 @@ import { HomeModule } from './modules/home/home.module';
 import { ProductsModule } from './modules/products/products.module';
 import { ProfileModule } from './modules/profile/profile.module';
 import { NotFoundModule} from './modules/not-found/not-found.module';
+import { HttpClientModule} from '@angular/common/http';
 
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
@@ -38,6 +39,7 @@ registerLocaleData(localeEs, 'es');
     NotFoundModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     ModalModule.forRoot()
     
   ],

@@ -4,7 +4,17 @@ var app = express();
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
+const cors = require("cors");
 
+//Configurar el cors
+var corsOptions = {
+    origin: "*", //Wildcard
+    optionsSuccessStatus: 200,
+}
+app.use(cors(corsOptions));
+app.options("*", cors()); //Utiliza wildcard para todas las fuentes
+
+//Se agrega morgan al proyecto
 app.use(morgan('dev'));
 
 //Se configura el body parser
