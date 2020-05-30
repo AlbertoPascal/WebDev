@@ -4,6 +4,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { SignupModalComponent} from '../signup-modal/signup-modal.component';
 import { LoginModalComponent} from '../login-modal/login-modal.component';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { AuthService} from 'src/app/services/auth.service';
 
 @Component({
  
@@ -38,7 +39,7 @@ export class HeaderComponent implements OnInit {
   public active_user_info = JSON.parse(localStorage.getItem('active_user'));
   
 
-  constructor(public router: Router, private modalService: BsModalService) { }
+  constructor(public router: Router, private modalService: BsModalService, public auth: AuthService) { }
 
   @Input() navbar_type;
   
