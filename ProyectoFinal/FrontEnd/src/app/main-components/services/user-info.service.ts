@@ -1,6 +1,14 @@
 import { Injectable } from '@angular/core';
-import {Observable, of} from 'rxjs';
+import {Observable, of, throwError} from 'rxjs';
 import {SessionData} from '../models/session-data.model';
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpResponse,
+  HttpErrorResponse,
+} from '@angular/common/http';
+import { map, retry, catchError, tap } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +17,7 @@ export class UserInfoService {
   endpoint = 'http://localhost:8080/api/User';
 
   public User= new SessionData();
-   
+  constructor(private http: HttpClient) { } 
   
  /* public retrievePassword(){
     //Get password form database according to the user set. in case we want to log in
@@ -33,6 +41,42 @@ export class UserInfoService {
     }
     
 } */
+public testFunc(given_name:string, family_name:string, picture:string, sub:string, email:string)
+{
+  this.User.name = given_name;
+  this.User.lastName = family_name;
+  this.User.email=email;
+  this.User.user_auth_id = sub;
+  this.User.profilePic = picture;
+  console.log("Estoy en user info service y recibí a mi objeto: ");
+  console.log(this.User);
+  console.log("Primer intento de respuesta");
+  console.log(this.getUser());
+  console.log("regresé del request");
+  //console.log(a);
+}
+private extractData(res: Response) {
+  let body = res;
+  return body || {};
+}
+
+handleError(error: HttpErrorResponse) {
+  let errorMessage = 'Unknown error!';
+  if (error.error instanceof ErrorEvent) {
+    // Client-side errorsi
+    errorMessage = `Error: ${error.error.message}`;
+  } else {
+    // Server-side errors
+    errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+  }
+  window.alert(errorMessage);
+  return throwError(errorMessage);
+}
+getUser() {
+  console.log('estoy en el getUser');
+  console.log("Mi request es " + this.endpoint + "/1");
+  return this.http.get(this.endpoint + "/1" );
+}
 public RegisterUser(user_auth_id:string, password:string, job:string, email:string, name:string, lastname:string):Observable<SessionData>{
   console.log("Estoy en register Users")
   if(this.userSignUp())
@@ -81,5 +125,5 @@ public userSignUp(){
   userLogin():Observable<SessionData>{
     return of(this.User);
   }
-  constructor() { }
+  
 }

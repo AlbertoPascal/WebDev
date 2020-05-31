@@ -30,7 +30,7 @@ export class SignupModalComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  newUser = new UserInfoService;
+  //newUser = new UserInfoService;
   //Form group for sign up
  /* signup = new FormGroup({
     user_auth_id: new FormControl(''),
@@ -68,9 +68,9 @@ export class SignupModalComponent implements OnInit {
 
         //means both passwords were typed in correctly. I can assign all data to my service
         alert("Both passwords match. Proceeding with sign up validation");
-        this.newUser.RegisterUser(user_auth_id, pass, job, email, name, lastname);
+       // this.newUser.RegisterUser(user_auth_id, pass, job, email, name, lastname);
         //alert("My user is: " + this.newUser.User.user_auth_id + "\n" + this.newUser.User.password);
-        if(this.newUser.User.user_auth_id!=''){
+       /* if(this.newUser.User.user_auth_id!=''){
           alert("Successfully registered " + this.newUser.User.user_auth_id + " as new user!");
           this.modalRef.hide();
           this.router.navigateByUrl('profile/user')
@@ -79,7 +79,7 @@ export class SignupModalComponent implements OnInit {
           alert("Error! There is already a user registered user with this information. Please try with a different user and/or email");
           this.signup.get('pass').reset();
           //this.signup.get('password_conf').reset();
-        }
+        } */
     }
     else
     {

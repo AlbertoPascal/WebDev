@@ -5,7 +5,7 @@ import { SignupModalComponent} from '../signup-modal/signup-modal.component';
 import { LoginModalComponent} from '../login-modal/login-modal.component';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { AuthService} from 'src/app/services/auth.service';
-
+import {UserInfoService} from  '../services/user-info.service';
 @Component({
  
   selector: 'app-header',
@@ -34,12 +34,14 @@ import { AuthService} from 'src/app/services/auth.service';
 export class HeaderComponent implements OnInit {
 
   //modal
+  endpoint = 'http://localhost:8080/api/User';
+
   modal : BsModalRef;
   public user_type = localStorage.getItem('user_type');
   public active_user_info = JSON.parse(localStorage.getItem('active_user'));
   
 
-  constructor(public router: Router, private modalService: BsModalService, public auth: AuthService) { }
+  constructor(public router: Router, private modalService: BsModalService, public auth: AuthService, public db_user:UserInfoService) { }
 
   @Input() navbar_type;
   
@@ -48,12 +50,50 @@ export class HeaderComponent implements OnInit {
     console.log("my user type is " + this.user_type);
 
   }
-
+  public login(){
+    this.auth.login();
+  }
   public logOut(){
+    this.auth.logout();
     localStorage.removeItem('active_user');
     localStorage.removeItem('user_type');
   }
+  private extractJson(userinfo:JSON)
+  {
 
+  }
+  public check_admin(){
+  
+      //let user = new SessionData();
+      //let db_user = new UserInfoService();
+
+        this.auth.getUser$().subscribe((data)=>{
+          console.log("yo soy el data" + data.given_name);
+
+          this.db_user.testFunc(data.given_name, data.family_name, data.picture, data.sub, data.email);
+          /*user.name = data.given_name;
+          user.lastName = data.family_name;
+          user.profilePic = data.picture;
+          user.user_auth_id =data.sub;
+          user.email = data.email;*/
+        })
+        ;
+       /* console.log("yo soy el objeto");
+        console.log(user);
+        console.log("me voy del header");
+        db_user.testFunc(user);*/
+        //alert(authdata.given_name);
+        
+        
+      //this.extractJson(user_json.value);
+      //alert(user_json);
+      //console.log(JSON.stringify(user_json));
+      
+    
+    
+    
+    return true;
+  }
   public openSignupModal() {
     this.modal = this.modalService.show(SignupModalComponent);
   }

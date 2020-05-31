@@ -27,7 +27,7 @@ import {UserInfoService} from '../services/user-info.service';
 export class LoginModalComponent implements OnInit {
 
   constructor(public router: Router, public modalRef: BsModalRef) { }
-  existingUser = new UserInfoService();
+  //existingUser = new UserInfoService();
   mySubscription: any;
   ngOnInit(): void {
   }
@@ -40,7 +40,7 @@ export class LoginModalComponent implements OnInit {
   
     //If the user clicks on sign up
     onLogin(){
-      this.existingUser.User.setuserAuth(this.login.get('username').value);
+     // this.existingUser.User.setuserAuth(this.login.get('username').value);
       let password:string = this.login.get('password').value;
       this.ValidatePassword(password);
       

@@ -38,7 +38,7 @@
               <!-- *ngIf = "!auth.loggedIn" -->
               <!--If the user is in the home or products page-->
               <div class="navbar-nav ml-auto navbar-light" *ngIf = "!auth.loggedIn">
-                  <a data-target="#login" data-toggle="modal" (click)="auth.login()" class="nav-item nav-link navbar-custom-button"><i class="fa fa-info-circle">&nbsp;Log in</i></a>
+                  <a data-target="#login" data-toggle="modal" (click)="login()" class="nav-item nav-link navbar-custom-button"><i class="fa fa-info-circle">&nbsp;Log in</i></a>
                   <a data-target="#signup" data-toggle="modal" (click)="openSignupModal()" class="nav-item nav-link navbar-custom-button"><i class="fa fa-users">&nbsp;Sign Up</i></a>
               </div>
 
@@ -47,8 +47,8 @@
               <div class="navbar-nav ml-auto navbar-light" *ngIf = "auth.loggedIn">
                 <!--Cambiar if para administrador-->
                 <a *ngIf = "auth.loggedIn" href="/profile/edit-user" class="nav-item nav-link navbar-custom-button" ><i class="fa fa-cog"></i>&nbsp;Ajustes</a>
-                <a *ngIf = "auth.loggedIn" href="/profile/edit-admin" class="nav-item nav-link navbar-custom-button" ><i class="fa fa-cog"></i>&nbsp;Ajustes</a>
-                <a href="/home" class="nav-item nav-link navbar-custom-button" (click)="auth.logout()"><i class="fa fa-info-circle"></i>&nbsp;Log out</a>
+                <a *ngIf != "auth.loggedIn" href="/profile/edit-admin" class="nav-item nav-link navbar-custom-button" ><i class="fa fa-cog"></i>&nbsp;Ajustes</a>
+                <a class="nav-item nav-link navbar-custom-button" (click)="check_admin()"><i class="fa fa-info-circle"></i>&nbsp;Log out</a>
                 
               </div>
             

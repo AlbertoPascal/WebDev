@@ -6,7 +6,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { CarrouselHomeComponent } from './components/carrousel-home/carrousel-home.component';
 import { IntroBlockComponent } from './components/intro-block/intro-block.component';
 import { SearchbarComponent } from '../../main-components/searchbar/searchbar.component';
-
+import { HttpClientModule } from '@angular/common/http';
 //import { SearchbarComponent } from '../../main-components/searchbar/searchbar.component';
 
 @NgModule({

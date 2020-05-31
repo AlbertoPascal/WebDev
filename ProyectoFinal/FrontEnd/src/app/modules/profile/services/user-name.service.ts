@@ -17,7 +17,7 @@ export class UserNameService {
     let userName="default";
     let userLastName="default";
     let userEmail="@defaul";
-    let userUserName=this.Curr_User.username;
+    let userUserName=this.Curr_User.user_auth_id;
     let userJob="default";
     let userPassword="default";
     let userFoto="../../../../../assets/images/camila.jpeg";
