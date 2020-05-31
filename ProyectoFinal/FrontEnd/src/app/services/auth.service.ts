@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 
 export class AuthService {
 
+
   auth0Client$ = (from 
     (createAuth0Client({
     domain: 'a01021323.auth0.com',
@@ -43,7 +44,7 @@ export class AuthService {
       // Handle redirect from Auth0 login
       this.handleAuthCallback();
     }
-   
+    
     // When calling, options can be passed if desired
     // https://auth0.github.io/auth0-spa-js/classes/auth0client.html#getuser
     getUser$(options?): Observable<any> {
@@ -81,6 +82,7 @@ export class AuthService {
           appState: { target: redirectPath },
         });
       });
+      alert(`${window.location.origin}`);
     }
    
     private handleAuthCallback() {
