@@ -40,7 +40,7 @@ export class LoginModalComponent implements OnInit {
   
     //If the user clicks on sign up
     onLogin(){
-      this.existingUser.User.setUsername(this.login.get('username').value);
+      this.existingUser.User.setuserAuth(this.login.get('username').value);
       let password:string = this.login.get('password').value;
       this.ValidatePassword(password);
       
@@ -53,8 +53,8 @@ export class LoginModalComponent implements OnInit {
     }
     public ValidatePassword(pass:string){
       //this.this.existingUser.User.setPassword('testing pass'); This was for testing purposes. Password should stay as read form TB
-      alert("my password was " + this.existingUser.User.password);
-      this.existingUser.retrievePassword();
+  /*    alert("my password was " + this.existingUser.User.password);
+      //this.existingUser.retrievePassword();
       alert("my password is now " + this.existingUser.User.password);
       
       if(pass == this.existingUser.User.password)
@@ -79,18 +79,21 @@ export class LoginModalComponent implements OnInit {
         }
         
         
-        this.modalRef.hide();
+       
         
         //window.location.reload()
         
         
         
       }
+      
       else{
         alert("Username or password is not correct. Please try again");   
         this.login.reset();
       }
       this.existingUser.ResetPassword();
-    }
+    }*/
+    this.modalRef.hide();
+  }
 }
 

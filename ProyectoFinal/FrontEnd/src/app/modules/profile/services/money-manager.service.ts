@@ -17,12 +17,12 @@ export class MoneyManagerService {
   updateSavings(oper_type:string, quantity:number, description:string):Observable<SaveDataModel>{
     Object.assign(this.Curr_User, this.active_user_info);
     
-    this.Operation.user = this.Curr_User.username;
+    this.Operation.user = this.Curr_User.user_auth_id;
     this.Operation.motif=description;
     console.log("STARTINGS: " + this.Operation);
 
     //Now we extract my total savings: default 1000;
-    let get_user_savings = 'select savings from users where user_name = "' + this.Curr_User.username;
+    let get_user_savings = 'select savings from users where user_name = "' + this.Curr_User.user_auth_id;
     if(this.Operation.total_savings == undefined)
     {
       this.Operation.total_savings =+ 1000; //this value should always be retrieved from our database

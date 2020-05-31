@@ -2,7 +2,7 @@ var mongoose= require("mongoose");
 var Schema = mongoose.Schema;
 
 var UsersSchema = new Schema({
-    user_id:{
+    user_auth_id:{
         type:String,
         required:true,
     },
@@ -27,7 +27,8 @@ var UsersSchema = new Schema({
         type: String,
         required: true,
     },
-    Family_ids: []
+    Family_ids: [],
+    job:String,
 });
 
 //Aquí extendemos el módulo que hicimos a un modelo que sea de mongoose. 

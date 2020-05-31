@@ -6,13 +6,15 @@ import {SessionData} from '../models/session-data.model';
   providedIn: 'root'
 })
 export class UserInfoService {
+  endpoint = 'http://localhost:8080/api/User';
+
   public User= new SessionData();
    
   
-  public retrievePassword(){
+ /* public retrievePassword(){
     //Get password form database according to the user set. in case we want to log in
     //first we check if user exists. 
-    let username = this.User.username;
+    let user_auth_id = this.User.user_auth_id;
     let temp_user = 'query to see if user exists';
     //then we extract its password with a query. 
     if (temp_user == '')
@@ -25,32 +27,33 @@ export class UserInfoService {
     else{
         //we retrieve the password and assign it. 
         let temp_pass = 'query with temp user';
-        alert("Found username. Retrieving password for comparison");
+        alert("Found user_auth_id. Retrieving password for comparison");
         this.User.setPassword('password');
         return (this.User);
     }
     
-}
-public RegisterUser(username:string, password:string, job:string, email:string, name:string, lastname:string):Observable<SessionData>{
+} */
+public RegisterUser(user_auth_id:string, password:string, job:string, email:string, name:string, lastname:string):Observable<SessionData>{
+  console.log("Estoy en register Users")
   if(this.userSignUp())
   {
     this.User.setName(name, lastname);
     this.User.setJob(job);
-    this.User.setUsername(username);
-    this.User.setPassword(password);
+    this.User.setuserAuth(user_auth_id);
+    //this.User.setPassword(password);
   }
   else{
     this.User.setName('','');
     this.User.setJob('');
-    this.User.setUsername('');
-    this.User.setPassword('');
+    this.User.setuserAuth('');
+    //this.User.setPassword('');
   }
   
   return of(this.User);
 }
 public ResetPassword():Observable<SessionData>{
   //We erase the previously stored password to prevent data theft.
-  this.User.setPassword('');
+  //this.User.setPassword('');
   return of(this.User);
 }
 
@@ -60,12 +63,12 @@ public retrieveEmail(){
 }
 public userSignUp(){
   //first validate that there are no users with that email
-  
-  let temp_email_query:string='select count(*) from users where username = "' + this.User.username + '"' + ' or email = "' + this.User.email + '";';
-  let temp_username:string='';
-  if(temp_email_query == '' || temp_username!='')
+  console.log("Estoy en user sign up");
+  let temp_email_query:string='select count(*) from users where user_auth_id = "' + this.User.user_auth_id + '"' + ' or email = "' + this.User.email + '";';
+  let temp_user_auth_id:string='';
+  if(temp_email_query == '' || temp_user_auth_id!='')
   {
-      return false; //this means there is already someone registered under that email or username and I can't insert.
+      return false; //this means there is already someone registered under that email or user_auth_id and I can't insert.
   
   }
   else{

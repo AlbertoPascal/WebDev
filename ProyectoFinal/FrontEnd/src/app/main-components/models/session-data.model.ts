@@ -5,14 +5,18 @@ export class SessionData {
     username:string;
     job:string;
     password:string;*/
-    constructor(public username?:string, public password?:string, public job?:string, public name?:string, public lastName?:string, public email?:string ){
+    constructor(public user_auth_id?:string, public profilePic?:string, public isAdmin?:boolean ,public job?:string, public name?:string, public lastName?:string, public email?:string ){
 
     }
-    public setUsername(user:string){
-        this.username = user;
+    public setuserAuth(auth:string)
+    {
+        this.user_auth_id = auth;
     }
-    public setPassword(pass:string){
-        this.password=pass;
+    public setadmin(admin:boolean){
+        this.isAdmin = admin;
+    }
+    public setProfilePic(pic:string){
+        this.profilePic=pic;
     }
     public setJob(j:string){
         this.job=j;

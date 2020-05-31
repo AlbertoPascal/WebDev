@@ -62,17 +62,16 @@ router.post('/', function(req, res){
 var User = require("./app/models/Users");
 //Endpoints 
 router.route("/User").post(async function (req, res) {
-    
-    console.log("hola crayola antes del new_user");
     var new_user = new User();
-    console.log("hola crayola despues del new user");
+   
     new_user.nombre = req.body.nombre;
     new_user.apellido = req.body.apellido;
     new_user.profilePic = req.body.profilePic;
-    new_user.user_id = req.body.user_id;
+    new_user.user_auth_id = req.body.user_auth_id;
     new_user.email = req.body.email;
     new_user.isAdmin = req.body.isAdmin;
     new_user.Family_ids = req.body.Family_ids;
+    new_user.job = req.body.job;
 
     console.log(new_user);
     try {
@@ -95,7 +94,25 @@ router.route("/User").post(async function (req, res) {
       });
   });
 
+router.route('/User/:user_auth_id')
+.get(function(request, response){
+    User.find({user_auth_id: request.params.user_auth_id}, function(error, usuario){
+        console.log("Finding user_auth_id of " + request.params.user_auth_id);
 
+        console.log(request.params);
+        if(error)
+        {
+            response.status(404).send({message:"not found"});
+            return
+        }
+        if(usuario === null) //ayuda porque si pongo un id de algo que no es objeto, existe y no es error arriba pero entra aquí porque no es alumno
+        {
+            res.status(404).send({usuario:"not found"});
+            return
+        }
+        response.status(200).send(usuario);
+    });
+});
 app.use('/api', router); //url base de nuestro api que tiene las rutas en el routerglobal. fetch =require('node-fetch');
 
 app.listen(port); //Se abre el puerto del servidor

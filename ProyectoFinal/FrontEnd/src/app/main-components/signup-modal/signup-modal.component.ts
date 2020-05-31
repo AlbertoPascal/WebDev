@@ -33,7 +33,7 @@ export class SignupModalComponent implements OnInit {
   newUser = new UserInfoService;
   //Form group for sign up
  /* signup = new FormGroup({
-    username: new FormControl(''),
+    user_auth_id: new FormControl(''),
     password: new FormControl(''),
     password_conf: new FormControl(''),
     email: new FormControl('')
@@ -43,7 +43,7 @@ export class SignupModalComponent implements OnInit {
     name: new FormControl(''),
     lastName: new FormControl(''),
     email: new FormControl(''),
-    username: new FormControl(''),
+    user_auth_id: new FormControl(''),
     job: new FormControl(''),
     pass: new FormGroup(
       {
@@ -60,7 +60,7 @@ export class SignupModalComponent implements OnInit {
     let name = this.signup.get('name').value;
     let lastname = this.signup.get('lastName').value;
     let job =this.signup.get('job').value;
-    let username = this.signup.get('username').value;
+    let user_auth_id = this.signup.get('username').value;
     let pass = this.signup.get('pass').get('password').value;
     //Verify data before trying to sign up
     if (pass== conf_pass)
@@ -68,10 +68,10 @@ export class SignupModalComponent implements OnInit {
 
         //means both passwords were typed in correctly. I can assign all data to my service
         alert("Both passwords match. Proceeding with sign up validation");
-        this.newUser.RegisterUser(username, pass, job, email, name, lastname);
-        alert("My user is: " + this.newUser.User.username + "\n" + this.newUser.User.password);
-        if(this.newUser.User.username!=''){
-          alert("Successfully registered " + this.newUser.User.username + " as new user!");
+        this.newUser.RegisterUser(user_auth_id, pass, job, email, name, lastname);
+        //alert("My user is: " + this.newUser.User.user_auth_id + "\n" + this.newUser.User.password);
+        if(this.newUser.User.user_auth_id!=''){
+          alert("Successfully registered " + this.newUser.User.user_auth_id + " as new user!");
           this.modalRef.hide();
           this.router.navigateByUrl('profile/user')
         }
@@ -87,7 +87,7 @@ export class SignupModalComponent implements OnInit {
       this.signup.get('pass').reset();
      // this.signup.get('password_conf').reset();
     }
-    /*if (username === 'value' && password === ' value'){
+    /*if (user_auth_id === 'value' && password === ' value'){
       this.router.navigate(['profile/user']);
     }*/
 

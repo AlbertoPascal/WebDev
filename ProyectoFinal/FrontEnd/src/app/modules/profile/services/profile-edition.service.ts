@@ -20,7 +20,7 @@ export class ProfileEditionService {
   public uploadToDatabase(name:string, lastname:string, email:string, username:string, job:string, password:string, picture:string){
     //retrive the active user username
     Object.assign(this.Curr_User, this.active_user_info);
-    this.UserEditData.username  =this.Curr_User.username;
+    this.UserEditData.username  =this.Curr_User.user_auth_id;
     
    
     //update our object. 
@@ -34,7 +34,7 @@ export class ProfileEditionService {
 
   public retrieveUserData():Observable<ProfileData>{
     Object.assign(this.Curr_User, this.active_user_info);
-    this.UserEditData.username  =this.Curr_User.username;
+    this.UserEditData.username  =this.Curr_User.user_auth_id;
     let user_info = 'Select * from users where user_name = ' +  this.UserEditData.username + '";';
     let name = 'Default Name';
     let lastname = 'Default Lastname';
@@ -47,12 +47,12 @@ export class ProfileEditionService {
   }
   public degradeUser(){
     Object.assign(this.Curr_User, this.active_user_info);
-    this.UserEditData.username  =this.Curr_User.username;
+    this.UserEditData.username  =this.Curr_User.user_auth_id;
     let user_info = 'update users set user_type = "regular" where user_name = ' +  this.UserEditData.username + '";';
   }
   public upgradeUser(){
     Object.assign(this.Curr_User, this.active_user_info);
-    this.UserEditData.username  =this.Curr_User.username;
+    this.UserEditData.username  =this.Curr_User.user_auth_id;
     let user_info = 'update users set user_type = "admin" where user_name = ' +  this.UserEditData.username + '";';
   }
 }
