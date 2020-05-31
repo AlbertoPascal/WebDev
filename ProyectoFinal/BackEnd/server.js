@@ -25,7 +25,7 @@ var port = process.env.PORT || 8080;
 
 //URL de la base de datos
 //TEMPORAL
-var uri = "mongodb+srv://admin:admin@app-yj5wi.mongodb.net/test?retryWrites=true&w=majority";
+var uri = "mongodb+srv://user_web:AllMightyWeb2020.@webapp-7rzpk.mongodb.net/AllMightyBudget?retryWrites=true&w=majority";
 
 mongoose.connect(uri,{useNewUrlParser:true, useUnifiedTopology:true});
 
@@ -59,8 +59,43 @@ router.post('/', function(req, res){
 
 
 //Se declaran los modelos
-
+var User = require("./app/models/Users");
 //Endpoints 
+router.route("/User").post(async function (req, res) {
+    
+    console.log("hola crayola antes del new_user");
+    var new_user = new User();
+    console.log("hola crayola despues del new user");
+    new_user.nombre = req.body.nombre;
+    new_user.apellido = req.body.apellido;
+    new_user.profilePic = req.body.profilePic;
+    new_user.user_id = req.body.user_id;
+    new_user.email = req.body.email;
+    new_user.isAdmin = req.body.isAdmin;
+    new_user.Family_ids = req.body.Family_ids;
+
+    console.log(new_user);
+    try {
+      await new_user.save(function (err) {
+        if (err) {
+          console.log(err);
+          res.send(err);
+        }
+      });
+      res.json({ mensaje: "Usuario creado" });
+    } catch (error) {
+      res.status(500).send({ error: error });
+    }
+  }).get(function(request,response){
+      User.find(function(err,usuarios){
+          if(err){
+              response.send(err);
+          }
+          response.status(200).send(usuarios);
+      });
+  });
+
+
 app.use('/api', router); //url base de nuestro api que tiene las rutas en el routerglobal. fetch =require('node-fetch');
 
 app.listen(port); //Se abre el puerto del servidor
