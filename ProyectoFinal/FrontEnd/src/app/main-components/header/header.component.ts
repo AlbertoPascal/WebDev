@@ -41,7 +41,11 @@ export class HeaderComponent implements OnInit {
 
   @Input() navbar_type;
   
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+    this.register_user();
+    
+  }
 
   public check_admin(){
     return true;
@@ -50,7 +54,13 @@ export class HeaderComponent implements OnInit {
   public register_user(){
 
     this.auth.getUser$().subscribe((data)=>{
-      this.db_user.testFunc(data.given_name, data.family_name, data.picture, data.sub, data.email);
+
+      if(data)
+        this.db_user.registerUser(data.given_name, data.family_name, data.picture, data.sub, data.email);
+      
+      //Si no hay ninguna sesión activa, se termina la función
+      else
+        return;   
     });
 
   }

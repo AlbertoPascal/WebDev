@@ -6,11 +6,10 @@ var UsersSchema = new Schema({
         type:String,
         required:true,
     },
-    nombre:
-        {
+    nombre:{
             type:String,
             required:true,
-        },
+    },
     apellido: {
         type:String,
         required:true,

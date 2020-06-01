@@ -42,7 +42,7 @@ export class UserInfoService {
   }
 
   //Función para registrar un usuario en la base de datos
-  public testFunc(given_name:string, family_name:string, picture:string, sub:string, email:string) {
+  public registerUser(given_name:string, family_name:string, picture:string, sub:string, email:string) {
     
     this.getUser(sub).subscribe((data) => {
 
@@ -75,14 +75,16 @@ export class UserInfoService {
           email: email
         };
 
+        //Post
         this.http.post(this.endpoint, requestOptions).subscribe({
           next: data => console.log(data),
-          error: error => console.error('There was an error!', error)
+          error: error => this.handleError(error),
         });
       }
     });
   }
 
+  //Función para obtener un solo usuario de la base de datos con el auth id
   getUser(user_auth_id:string): Observable<any> {
     console.log("Mi request es " + this.endpoint + "/" + user_auth_id);
     return this.http.get(this.endpoint + "/" + user_auth_id );

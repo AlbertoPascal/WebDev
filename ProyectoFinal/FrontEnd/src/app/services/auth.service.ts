@@ -80,8 +80,9 @@ export class AuthService {
           redirect_uri: `${window.location.origin}`,
           appState: { target: redirectPath },
         });
+        this.router.navigate(['/home'])
       });
-
+      
     }
    
     private handleAuthCallback() {
