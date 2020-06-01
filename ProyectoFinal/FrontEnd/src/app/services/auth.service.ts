@@ -5,7 +5,6 @@ import { from, of, Observable, BehaviorSubject, combineLatest, throwError } from
 import { tap, catchError, concatMap, shareReplay } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -82,7 +81,7 @@ export class AuthService {
           appState: { target: redirectPath },
         });
       });
-      alert(`${window.location.origin}`);
+
     }
    
     private handleAuthCallback() {

@@ -5,7 +5,7 @@ export class SessionData {
     username:string;
     job:string;
     password:string;*/
-    constructor(public user_auth_id?:string, public profilePic?:string, public isAdmin?:boolean ,public job?:string, public name?:string, public lastName?:string, public email?:string ){
+    constructor(public user_auth_id?:string, public nombre?:string, public apellido?:string, public profilePic?:string, public isAdmin?:boolean ,public job?:string,  public email?:string ){
 
     }
     public setuserAuth(auth:string)
@@ -25,8 +25,8 @@ export class SessionData {
         this.email=mail;
     }
     public setName(firstname:string, last:string){
-        this.name=firstname;
-        this.lastName=last;
+        this.nombre=firstname;
+        this.apellido=last;
     }
     
 }

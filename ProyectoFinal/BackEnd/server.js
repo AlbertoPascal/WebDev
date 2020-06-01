@@ -61,7 +61,7 @@ router.post('/', function(req, res){
 //Se declaran los modelos
 var User = require("./app/models/Users");
 //Endpoints 
-router.route("/User").post(async function (req, res) {
+router.route("/user").post(async function (req, res) {
     var new_user = new User();
    
     new_user.nombre = req.body.nombre;
@@ -94,7 +94,7 @@ router.route("/User").post(async function (req, res) {
       });
   });
 
-router.route('/User/:user_auth_id')
+router.route('/user/:user_auth_id')
 .get(function(request, response){
     User.find({user_auth_id: request.params.user_auth_id}, function(error, usuario){
         console.log("Finding user_auth_id of " + request.params.user_auth_id);
