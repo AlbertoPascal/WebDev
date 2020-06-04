@@ -18,7 +18,7 @@ import { MAT_SNACK_BAR_DEFAULT_OPTIONS_FACTORY } from '@angular/material/snack-b
 export class UserInfoService {
 
   endpoint = 'http://localhost:8080/api/user';
-  wishlist_endpoint = "'http://localhost:8080/api/Wishlist";
+  wishlist_endpoint = 'http://localhost:8080/api/Wishlist';
   //Modelo para el usuario
   user: SessionData;
 
@@ -81,7 +81,8 @@ export class UserInfoService {
           apellido: family_name, 
           profilePic: picture,  
           email: email,
-          wishlist_id : sub
+          wishlist_id : sub,
+          isAdmin:false,
         };
 
         //Post

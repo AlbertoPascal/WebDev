@@ -109,9 +109,9 @@ router.route("/Wishlist").post(async function (req, res) {
       });
   });
 
-router.route("/user").post(checkJwt, async function (req, res) {
+router.route("/user").post(/*checkJwt,*/ async function (req, res) {
     var new_user = new User();
-   
+    
     new_user.nombre = req.body.nombre;
     new_user.apellido = req.body.apellido;
     new_user.profilePic = req.body.profilePic;
@@ -120,6 +120,7 @@ router.route("/user").post(checkJwt, async function (req, res) {
     new_user.isAdmin = req.body.isAdmin;
     new_user.Family_ids = req.body.Family_ids;
     new_user.job = req.body.job;
+    new_user.wishlist_id = req.body.wishlist_id;
 
     console.log(new_user);
     try {
@@ -143,7 +144,7 @@ router.route("/user").post(checkJwt, async function (req, res) {
   });
 
 router.route('/user/:user_auth_id')
-.get(checkJwt, function(request, response){
+.get(/*checkJwt,*/ function(request, response){
     User.find({user_auth_id: request.params.user_auth_id}, function(error, usuario){
         console.log("Finding user_auth_id of " + request.params.user_auth_id);
 
