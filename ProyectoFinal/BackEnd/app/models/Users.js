@@ -28,6 +28,10 @@ var UsersSchema = new Schema({
     },
     Family_ids: [],
     job:String,
+    wishlist_id:{
+        type:String,
+        required:true,
+    }
 });
 
 //Aquí extendemos el módulo que hicimos a un modelo que sea de mongoose. 

@@ -18,7 +18,7 @@ import { MAT_SNACK_BAR_DEFAULT_OPTIONS_FACTORY } from '@angular/material/snack-b
 export class UserInfoService {
 
   endpoint = 'http://localhost:8080/api/user';
-
+  wishlist_endpoint = "'http://localhost:8080/api/Wishlist";
   //Modelo para el usuario
   user: SessionData;
 
@@ -62,7 +62,14 @@ export class UserInfoService {
           Accept: '*/*',
           'Access-Control-Allow-Origin': '*',
         };
-
+        const wishlistRequestOptions = {
+          headers: new HttpHeaders(headerDict),
+          wishlist_id:sub
+        }
+        this.http.post(this.wishlist_endpoint, wishlistRequestOptions).subscribe({
+          next:data =>console.log(data),
+          error: error=> this.handleError(error),
+        });
         const requestOptions = {
 
           //Se agregan los headers
@@ -73,7 +80,8 @@ export class UserInfoService {
           nombre: given_name, 
           apellido: family_name, 
           profilePic: picture,  
-          email: email
+          email: email,
+          wishlist_id : sub
         };
 
         //Post
