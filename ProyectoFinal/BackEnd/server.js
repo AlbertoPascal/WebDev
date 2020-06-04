@@ -80,7 +80,35 @@ router.post('/', function(req, res){
 
 //Se declaran los modelos
 var User = require("./app/models/Users");
+var Wishlist = require ("./app/models/Wishlist");
+
 //Endpoints 
+router.route("/Wishlist").post(async function (req, res) {
+    var user_wishlist = new Wishlist();
+    user_wishlist.wishlist_id = req.body.wishlist_id;
+    user_wishlist.Objects = req.body.Objects;
+    
+    console.log(user_wishlist);
+    try {
+      await user_wishlist.save(function (err) {
+        if (err) {
+          console.log(err);
+          res.send(err);
+        }
+      });
+      res.json({ mensaje: "Wishlist creada" });
+    } catch (error) {
+      res.status(500).send({ error: error });
+    }
+  }).get(function(request,response){
+      Wishlist.find(function(err,lista){
+          if(err){
+              response.send(err);
+          }
+          response.status(200).send(lista);
+      });
+  });
+
 router.route("/user").post(checkJwt, async function (req, res) {
     var new_user = new User();
    
