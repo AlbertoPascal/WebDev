@@ -41,11 +41,6 @@ db.once('open', function(){
     console.log("Me conecté a MongoDb")
 });
 
-//Configuración de Auth0
-const authConfig = {
-    domain: "a01021323.auth0.com",
-    audience: "https://a01021323.auth0.com/api/v2/"
-};
 
 // Define middleware that validates incoming bearer tokens
 // using JWKS from YOUR_DOMAIN
@@ -54,11 +49,11 @@ const checkJwt = jwt({
       cache: true,
       rateLimit: true,
       jwksRequestsPerMinute: 5,
-      jwksUri: `https://${authConfig.domain}/.well-known/jwks.json`
+      jwksUri: 'https://a01021323.auth0.com/.well-known/jwks.json'
     }),
   
-    audience: authConfig.audience,
-    issuer: `https://${authConfig.domain}/`,
+    audience: 'https://allmighty.com/api',
+    issuer: 'https://a01021323.auth0.com/',
     algorithm: ["RS256"]
   });
 
