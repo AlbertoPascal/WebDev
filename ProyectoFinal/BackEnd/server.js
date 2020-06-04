@@ -5,8 +5,11 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
 const cors = require("cors");
+//Librerias de JWT
+const jwt = require("express-jwt");
+const jwksRsa = require("jwks-rsa");
 
-//Configurar el cors
+//Configuración de cors
 var corsOptions = {
     origin: "*", //Wildcard
     optionsSuccessStatus: 200,
@@ -21,12 +24,13 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
+//Se define el puerto
 var port = process.env.PORT || 8080;
 
 //URL de la base de datos
-//TEMPORAL
 var uri = "mongodb+srv://user_web:AllMightyWeb2020.@webapp-7rzpk.mongodb.net/AllMightyBudget?retryWrites=true&w=majority";
 
+//Se conecta el backend a la base de datos mediante mongoose
 mongoose.connect(uri,{useNewUrlParser:true, useUnifiedTopology:true});
 
 var db = mongoose.connection;
@@ -36,6 +40,27 @@ db.on('error', console.error.bind(console, 'Error de conexión'));
 db.once('open', function(){
     console.log("Me conecté a MongoDb")
 });
+
+//Configuración de Auth0
+const authConfig = {
+    domain: "a01021323.auth0.com",
+    audience: "9ibhFlKoCDUXYABtvUmEUbPymvMqAkGU"
+};
+
+// Define middleware that validates incoming bearer tokens
+// using JWKS from YOUR_DOMAIN
+const checkJwt = jwt({
+    secret: jwksRsa.expressJwtSecret({
+      cache: true,
+      rateLimit: true,
+      jwksRequestsPerMinute: 5,
+      jwksUri: `https://${authConfig.domain}/.well-known/jwks.json`
+    }),
+  
+    audience: authConfig.audience,
+    issuer: `https://${authConfig.domain}/`,
+    algorithm: ["RS256"]
+  });
 
 //Middleware
 var router = express.Router();
@@ -61,7 +86,7 @@ router.post('/', function(req, res){
 //Se declaran los modelos
 var User = require("./app/models/Users");
 //Endpoints 
-router.route("/user").post(async function (req, res) {
+router.route("/user").post(checkJwt, async function (req, res) {
     var new_user = new User();
    
     new_user.nombre = req.body.nombre;
@@ -85,7 +110,7 @@ router.route("/user").post(async function (req, res) {
     } catch (error) {
       res.status(500).send({ error: error });
     }
-  }).get(function(request,response){
+  }).get(checkJwt, function(request,response){
       User.find(function(err,usuarios){
           if(err){
               response.send(err);
@@ -95,7 +120,7 @@ router.route("/user").post(async function (req, res) {
   });
 
 router.route('/user/:user_auth_id')
-.get(function(request, response){
+.get(checkJwt, function(request, response){
     User.find({user_auth_id: request.params.user_auth_id}, function(error, usuario){
         console.log("Finding user_auth_id of " + request.params.user_auth_id);
 
