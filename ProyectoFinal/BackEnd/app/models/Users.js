@@ -22,6 +22,11 @@ var UsersSchema = new Schema({
         type:Boolean,
         default:false,
     },
+    savings:{
+        type:Number,
+        required:true,
+        default:0.00,
+    },
     email: {
         type: String,
         required: true,

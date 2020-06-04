@@ -83,6 +83,7 @@ export class UserInfoService {
           email: email,
           wishlist_id : sub,
           isAdmin:false,
+          savings:0,
         };
 
         //Post

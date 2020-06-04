@@ -121,7 +121,7 @@ router.route("/user").post(checkJwt, async function (req, res) {
     new_user.Family_ids = req.body.Family_ids;
     new_user.job = req.body.job;
     new_user.wishlist_id = req.body.wishlist_id;
-
+    new_user.savings = req.body.savings;
     console.log(new_user);
     try {
       await new_user.save(function (err) {

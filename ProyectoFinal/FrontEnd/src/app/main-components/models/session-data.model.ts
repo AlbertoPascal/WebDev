@@ -7,7 +7,7 @@ export class SessionData {
     username:string;
     job:string;
     password:string;*/
-    constructor(public user_auth_id?:string, public nombre?:string, public apellido?:string, public profilePic?:string, public isAdmin?:boolean ,public job?:string,  public email?:string, public wishlist_id?:string){
+    constructor(public user_auth_id?:string, public nombre?:string, public apellido?:string, public profilePic?:string, public isAdmin?:boolean ,public job?:string,  public email?:string, public wishlist_id?:string, public savings?:number){
 
     }
     public setuserAuth(auth:string)
@@ -33,6 +33,9 @@ export class SessionData {
     public setwishlist_id(list_id:string)
     {
         this.wishlist_id = list_id;
+    }
+    public addSavings(money:number){
+        this.savings = this.savings + money;
     }
     
 }
