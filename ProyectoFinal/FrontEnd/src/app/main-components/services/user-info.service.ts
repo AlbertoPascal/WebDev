@@ -9,6 +9,7 @@ import {
 } from '@angular/common/http';
 import { map, retry, catchError, tap } from 'rxjs/operators';
 import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
+import { MAT_SNACK_BAR_DEFAULT_OPTIONS_FACTORY } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
@@ -90,7 +91,15 @@ export class UserInfoService {
     return this.http.get(this.endpoint + "/" + user_auth_id );
   }
 
+  //Función para saber si un usuario es admin
+  public isAdmin(user_auth_id:string): boolean{
 
+    this.getUser(user_auth_id).subscribe((data) => {
+      console.log(data.isAdmin);
+    });
+
+    return true;
+  }
 
   /*
   public RegisterUser(user_auth_id:string, password:string, job:string, email:string, name:string, lastname:string):Observable<SessionData>{

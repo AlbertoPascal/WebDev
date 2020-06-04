@@ -1,11 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router} from '@angular/router';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { SignupModalComponent} from '../signup-modal/signup-modal.component';
-import { LoginModalComponent} from '../login-modal/login-modal.component';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { AuthService} from 'src/app/services/auth.service';
 import {UserInfoService} from  '../services/user-info.service';
+import { SelectMultipleControlValueAccessor } from '@angular/forms';
 
 @Component({
  
@@ -35,42 +33,48 @@ import {UserInfoService} from  '../services/user-info.service';
 
 export class HeaderComponent implements OnInit {
 
-  modal : BsModalRef;
-  
-  constructor(public router: Router, private modalService: BsModalService, public auth: AuthService, public db_user:UserInfoService) { }
+  constructor(public router: Router, public auth: AuthService, public db_user:UserInfoService) { }
+
+  isAdmin: boolean = false;
 
   @Input() navbar_type;
   
   ngOnInit(): void {
 
-    this.register_user();
-    
   }
 
+  ngAfterViewInit(){
+    this.register_user();
+    console.log(this.isAdmin)
+  }
+  
   public check_admin(){
-    return true;
+
+    let _isAdmin = false;
+
+    if(this.auth.loggedIn){
+      let subscription = this.auth.getUser$().subscribe((data)=>{
+        _isAdmin = this.db_user.isAdmin(data.sub);
+        console.log("User admin: "+_isAdmin)
+        subscription.unsubscribe();
+      });
+    }
+
+    console.log(_isAdmin);
+    return _isAdmin;    
   }
 
   public register_user(){
 
-    this.auth.getUser$().subscribe((data)=>{
+    let subscription = this.auth.getUser$().subscribe((data)=>{
 
       if(data)
         this.db_user.registerUser(data.given_name, data.family_name, data.picture, data.sub, data.email);
       
       //Si no hay ninguna sesión activa, se termina la función
-      else
-        return;   
-    });
-
-  }
-
-  public openSignupModal() {
-    this.modal = this.modalService.show(SignupModalComponent);
-  }
-
-  public openLoginModal() {
-    this.modal = this.modalService.show(LoginModalComponent);
+      subscription.unsubscribe();
+      return;
+    });   
   }
 
   currentState = 'initial';
