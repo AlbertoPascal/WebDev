@@ -54,7 +54,7 @@ const checkJwt = jwt({
   
     audience: 'https://allmighty.com/api',
     issuer: 'https://a01021323.auth0.com/',
-    algorithm: ["RS256"]
+    algorithm: ['RS256']
   });
 
 //Middleware

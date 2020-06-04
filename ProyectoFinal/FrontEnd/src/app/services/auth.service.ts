@@ -16,7 +16,7 @@ export class AuthService {
     (createAuth0Client({
     domain: 'a01021323.auth0.com',
     client_id: '9ibhFlKoCDUXYABtvUmEUbPymvMqAkGU',
-    audience: 'https://a01021323.auth0.com/api/v2/',
+    audience: 'https://allmighty.com/api',
     redirect_uri: `${window.location.origin}`,
     })
     ) as Observable<Auth0Client>).pipe(
@@ -124,7 +124,7 @@ export class AuthService {
         });
       });
     }
-    
+
     getTokenSilently$(options?): Observable<string> {
       return this.auth0Client$.pipe(
         concatMap((client: Auth0Client) => from(client.getTokenSilently(options)))
