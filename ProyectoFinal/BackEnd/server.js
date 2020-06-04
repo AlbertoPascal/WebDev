@@ -44,7 +44,7 @@ db.once('open', function(){
 //Configuración de Auth0
 const authConfig = {
     domain: "a01021323.auth0.com",
-    audience: "9ibhFlKoCDUXYABtvUmEUbPymvMqAkGU"
+    audience: "https://a01021323.auth0.com/api/v2/"
 };
 
 // Define middleware that validates incoming bearer tokens
