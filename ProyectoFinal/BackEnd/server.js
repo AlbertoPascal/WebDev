@@ -82,8 +82,9 @@ router.post('/', function(req, res){
 var User = require("./app/models/Users");
 var Wishlist = require ("./app/models/Wishlist");
 var Transaction = require ("./app/models/Transactions");
+//var Products = require ("./app/models/Products");
 //Endpoints 
-router.route("/Transaction").post(async function (req, res) {
+router.route("/Transaction").post(checkJwt, async function (req, res) {
     var user_transaction = new Transaction();
     //Para ligarlo a las cuentas del usuario usarán el identificador del usuario
     user_transaction.user_sid = req.body.user_id;
@@ -197,6 +198,11 @@ router.route('/user/:user_auth_id')
         response.status(200).send(usuario);
     });
 });
+
+/*router.route("/products").post(checkJwt, async function (req, res){
+
+})*/
+
 app.use('/api', router); //url base de nuestro api que tiene las rutas en el routerglobal. fetch =require('node-fetch');
 
 app.listen(port); //Se abre el puerto del servidor

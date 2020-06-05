@@ -8,6 +8,7 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 //import { SearchbarComponent } from '../home/components/searchbar/searchbar.component';
 import { HomeModule } from '../home/home.module';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [ProductosComponent, ProductCardComponent],
@@ -16,8 +17,8 @@ import { HomeModule } from '../home/home.module';
     ProductsRoutingModule,
     HomeModule,
     MatButtonModule,
-    MatSnackBarModule
-    
+    MatSnackBarModule,
+    HttpClientModule
   ]
 })
 export class ProductsModule { 

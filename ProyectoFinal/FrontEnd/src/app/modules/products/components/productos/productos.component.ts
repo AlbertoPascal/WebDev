@@ -18,8 +18,8 @@ export class ProductosComponent implements OnInit {
     this.getProductos();
   }
 
-  getProductos(){
-    this.productosService.getProductos().subscribe((data)=>{
+  async getProductos(){
+    this.productosService.getProductos("libros").subscribe((data)=>{
       console.log(data);
       this.productos= data;  
    }) 
