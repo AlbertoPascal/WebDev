@@ -11,7 +11,7 @@ import {MoneyManagerService} from '../../services/money-manager.service';
 export class AhorrosPresupuestoComponent implements OnInit {
 
   constructor(public snackBar: MatSnackBar, public prep_savings:MoneyManagerService) { }
-
+  transactions = ['Expense','Saving']
   ngOnInit(): void {
   }
   openSnackBar(message, action){
@@ -24,16 +24,24 @@ export class AhorrosPresupuestoComponent implements OnInit {
   }
   //prep_savings = new MoneyManagerService;
   addCosts = new FormGroup({
-    costs: new FormControl(''),
-    description: new FormControl('')
+    transaction_type: new FormControl(''),
+    quantity: new FormControl(''),
+    description: new FormControl(''),
+
   });
 
+  changeTransaction(e) {
+    this.addCosts.get('transaction_type').setValue(e.target.value, {
+      onlySelf: true
+    })
+  }
+
   onCost(){
-    this.prep_savings.updateSavings('cost', this.addCosts.get('costs').value,this.addCosts.get('description').value );
+    this.prep_savings.updateSavings(/*'Cost'*/this.addCosts.get('transaction_type').value, this.addCosts.get('quantity').value,this.addCosts.get('description').value  );
     
     //this.prep_savings.Operation.addCosts(this.addCosts.get('costs').value);
     //this.prep_savings.Operation.motif = this.addCosts.get('description').value;
-    alert("Sent " + this.addCosts.get('costs').value + " to add to costs with reason: \n" + this.prep_savings.Operation.motif);
+    alert("Sent " + this.addCosts.get('quantity').value + " to add to costs with reason: \n" + this.prep_savings.Operation.motif);
     this.addCosts.reset();
   }
 

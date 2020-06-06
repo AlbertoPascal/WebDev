@@ -53,7 +53,7 @@ export class MoneyManagerService {
           user_sid: curr_user_sub, 
           quantity: quantity, 
           direction: oper_type, 
-          comment: "test insertion", 
+          comment: description, 
           currency:'MXN', 
           
         };
