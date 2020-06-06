@@ -20,7 +20,6 @@ import { ProfileadminAddMemberComponent } from './components/profileadmin-add-me
 import { ProfileadminMemberTableComponent } from './components/profileadmin-member-table/profileadmin-member-table.component';
 import { DataFormComponent } from './components/data-form/data-form.component';
 import { AhorrosObjComponent } from './components/ahorros-obj/ahorros-obj.component';
-import { AhorrosSavingsComponent } from './components/ahorros-savings/ahorros-savings.component';
 import { AhorrosPresupuestoComponent } from './components/ahorros-presupuesto/ahorros-presupuesto.component';
 import { AhorrosDoughnutchartComponent } from './components/ahorros-doughnutchart/ahorros-doughnutchart.component';
 
@@ -44,7 +43,6 @@ import { FlipCardComponent } from './components/flip-card/flip-card.component';
     EditarPerfilAdminComponent,
     AhorrosComponent,
     AhorrosObjComponent,
-    AhorrosSavingsComponent,
     AhorrosPresupuestoComponent,
     AhorrosDoughnutchartComponent,
     FlipCardComponent
