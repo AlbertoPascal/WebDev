@@ -11,7 +11,7 @@ import { MoneyManagerService } from '../../services/money-manager.service';
 })
 export class AhorrosSavingsComponent implements OnInit {
 
-  constructor(public snackBar: MatSnackBar) { }
+  constructor(public snackBar: MatSnackBar, public prep_savings:MoneyManagerService) { }
 
   openSnackBar(message, action){
     let snackBarRef = this.snackBar.open(message, action, {duration: 3000});
@@ -21,7 +21,7 @@ export class AhorrosSavingsComponent implements OnInit {
       console.log("La acción de la snackbar fue activada");
     })
   }
-  prep_savings = new MoneyManagerService;
+  //prep_savings = new MoneyManagerService;
   addSavings = new FormGroup({
     savings: new FormControl(''),
   });

@@ -10,7 +10,7 @@ import {MoneyManagerService} from '../../services/money-manager.service';
 })
 export class AhorrosPresupuestoComponent implements OnInit {
 
-  constructor(public snackBar: MatSnackBar) { }
+  constructor(public snackBar: MatSnackBar, public prep_savings:MoneyManagerService) { }
 
   ngOnInit(): void {
   }
@@ -22,7 +22,7 @@ export class AhorrosPresupuestoComponent implements OnInit {
       console.log("La acción de la snackbar fue activada");
     })
   }
-  prep_savings = new MoneyManagerService;
+  //prep_savings = new MoneyManagerService;
   addCosts = new FormGroup({
     costs: new FormControl(''),
     description: new FormControl('')
