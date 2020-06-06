@@ -85,9 +85,10 @@ var Transaction = require ("./app/models/Transactions");
 //var Products = require ("./app/models/Products");
 //Endpoints 
 router.route("/Transaction").post(checkJwt, async function (req, res) {
+    console.log("Received a new post for transaction");
     var user_transaction = new Transaction();
     //Para ligarlo a las cuentas del usuario usarán el identificador del usuario
-    user_transaction.user_sid = req.body.user_id;
+    user_transaction.user_sid = req.body.user_sid;
     //Aquí registraremos la cantidad de la operación. 
     user_transaction.quantity = req.body.quantity;
     //Con este campo se registra el motivo de la operación. Por ahora es obligatorio.
@@ -96,7 +97,7 @@ router.route("/Transaction").post(checkJwt, async function (req, res) {
     user_transaction.currency = req.body.currency;
     //Con este campo registramos la dirección de la transacción. Es Saving? o es Cost?
     user_transaction.direction = req.body.direction;
-
+    console.log("My new transaction should be ");
     console.log(user_transaction);
     try {
       await user_transaction.save(function (err) {

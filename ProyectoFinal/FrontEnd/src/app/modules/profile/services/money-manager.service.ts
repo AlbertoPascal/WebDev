@@ -11,46 +11,69 @@ import {
   HttpResponse,
   HttpErrorResponse,
 } from '@angular/common/http';
+import { resolve } from 'dns';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MoneyManagerService {
-
+  
   active_user_info = JSON.parse(localStorage.getItem('active_user'));
   Operation = new SaveDataModel();
   Curr_User = new SessionData();
   endpoint = 'http://localhost:8080/api/user';
   wishlist_endpoint = 'http://localhost:8080/api/Wishlist';
+  transaction_endpoint = 'http://localhost:8080/api/Transaction';
 
-  updateSavings(oper_type:string, quantity:number, description:string):Observable<SaveDataModel>{
+
+
+  async updateSavings(oper_type:string, quantity:number, description:string){
     if (this.auth.loggedIn)
     {
       let curr_user_sub:string;
-      let subscription = this.auth.getUser$().subscribe((data)=>{
-        curr_user_sub = data.sub;
-        console.log("Logged User Sub: "+curr_user_sub)
-        subscription.unsubscribe();
-      });
-      let user_data = this.http.get(this.endpoint + "/" + curr_user_sub )
-      console.log(user_data);
+      await this.auth.getUser$().subscribe(function(data){
+        
+            curr_user_sub = data.sub;
+            console.log("Logged User Sub: "+curr_user_sub)
+            //subscription.unsubscribe();
+           
+          });
+        console.log(curr_user_sub);
+        var headerDict = {
+          'Content-Type': 'application/json',
+          Accept: '*/*',
+          'Access-Control-Allow-Origin': '*',
+        }
+        const requestOptions = {
 
-    }
+          //Se agregan los headers
+          headers: new HttpHeaders(headerDict),
+          
+          //Se agregan los datos del usuario al body para hace el post
+          user_sid: curr_user_sub, 
+          quantity: quantity, 
+          direction: oper_type, 
+          comment: "test insertion", 
+          currency:'MXN', 
+          
+        };
+        console.log(requestOptions);
+        this.http.post(this.transaction_endpoint, requestOptions).subscribe({
+          next: data => console.log(data),
+          error: error => this.handleError(error),
+        });
+
+      }
+     /* a fin de cuentas esto no sirve pero lo dejo porque se me hizo curioso que aquí no regrese nada pero arriba sí
+     Podríamos tener algo mal en el servicio maybe...
+      this.test_usr.getUser(curr_user_sub).subscribe((usr_data) => {
+        console.log(usr_data);
+      })
+      */
+
     
-    var headerDict = {
-      'Content-Type': 'application/json',
-      Accept: '*/*',
-      'Access-Control-Allow-Origin': '*',
-    };
-    const requestOptions = {
-
-      //Se agregan los headers
-      headers: new HttpHeaders(headerDict),
-      
-      //Se agregan los datos del usuario al body para hace el post
-      isAdmin:false,
-      savings:0,
-    };
+    
+    
 
     /*Object.assign(this.Curr_User, this.active_user_info);
     
@@ -97,5 +120,5 @@ export class MoneyManagerService {
     return throwError(errorMessage);
   }
  
-  constructor(private http: HttpClient, public auth: AuthService) { }
+  constructor(private http: HttpClient, public auth: AuthService, public test_usr:UserInfoService) { }
 }
