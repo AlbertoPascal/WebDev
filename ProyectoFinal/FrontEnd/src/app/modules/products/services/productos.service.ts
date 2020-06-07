@@ -14,7 +14,7 @@ import {
 export class ProductosService {
   endpoint= 'https://api.rainforestapi.com/request';
 
-  getProductos(search_term:string):Observable<ProductoData[]>{
+  getProductos(search_term:string):Observable<any>{
     var productos:ProductoData[];
     var productest = new ProductoData();
     const params = {
@@ -25,9 +25,9 @@ export class ProductosService {
       associate_id: "amazon0d0663-20",
       include_html: "false",
       output: "json",
-      amazon_domain: "amazon.com",
+      amazon_domain: "amazon.com.mx",
       search_term: search_term,
-      page: "2",
+      page: "1",
       sort_by: "featured"
     }
 
@@ -46,11 +46,8 @@ export class ProductosService {
       params: params,
     };
   
-    this.http.get(this.endpoint, requestOptions).subscribe({
-      next: data => console.log(data),
-      error: error => this.handleError(error),
-    });
-    return of(productos);
+    return this.http.get(this.endpoint, requestOptions);
+    
   }
 
     /*{titulo:"Jeans", foto:"../../assets/images/jeans.jpg", price:400},

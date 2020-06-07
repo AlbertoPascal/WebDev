@@ -3,15 +3,22 @@
 
 <div class="bg-white rounded">
     <!-- Custom rounded search bars with input group -->
-    <form action="products/search" class = "col-xs-12 col-sm-12 col-md-10 col-lg-8 col-xl-8 offset-auto mx-auto">
+    <div class = "col-xs-12 col-sm-12 col-md-10 col-lg-8 col-xl-8 offset-auto mx-auto">
       <div class=" bg-light rounded rounded-pill">
-        <div class="input-group">
-          <input type="search" placeholder="¿Qué artículos buscas?" i18n-placeholder="@@searchBar" aria-describedby="button-addon1" class="form-control border-0 bg-light">
-          <div class="input-group-append">
-            <button id="button-addon1" type="submit"  class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+        
+        <form [formGroup] = "ProductSearch">
+          <div class="input-group">
+            <input type="text" class="form-control border-0 bg-light" name="search" formControlName="search" placeholder="¿Qué artículos buscas?" i18n-placeholder="@@searchBar">
+            <div class="input-group-append">
+              <button id="button-addon1" type="submit" (click)="onSearch() " class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+            </div>
           </div>
-        </div>
+
+          
+        </form>
+
+        
       </div>
-    </form>
+    </div>
     <!-- End -->
   </div>

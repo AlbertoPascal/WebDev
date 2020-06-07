@@ -7,13 +7,16 @@ import { CarrouselHomeComponent } from './components/carrousel-home/carrousel-ho
 import { IntroBlockComponent } from './components/intro-block/intro-block.component';
 import { SearchbarComponent } from '../../main-components/searchbar/searchbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 //import { SearchbarComponent } from '../../main-components/searchbar/searchbar.component';
 
 @NgModule({
   declarations: [HomepageComponent, CarrouselHomeComponent, IntroBlockComponent, SearchbarComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[SearchbarComponent]
 })

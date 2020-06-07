@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoData } from '../../models/producto-data.model';
 import { ProductosService } from '../../services/productos.service';
+import {SearchService} from '../../../../services/search.service'
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-productos',
@@ -11,17 +13,26 @@ import { ProductosService } from '../../services/productos.service';
 export class ProductosComponent implements OnInit {
 
   productos: ProductoData[];
+  subscription: Subscription;
 
-  constructor(public productosService:ProductosService) { }
+  constructor(public productosService:ProductosService, private searchService: SearchService) { 
 
-  ngOnInit(): void {
-    this.getProductos();
   }
 
-  async getProductos(){
-    this.productosService.getProductos("libros").subscribe((data)=>{
+  ngOnInit(): void {
+    this.subscription = this.searchService.getSearch().subscribe(search => {
+      if (search) {
+        this.getProductos(search.text);
+        this.searchService.clearSearch();
+      } 
+    });
+  }
+
+  async getProductos(search: string){
+    this.productosService.getProductos(search).subscribe((data)=>{
       console.log(data);
-      this.productos= data;  
+      console.log(data.search_results[0].title);
+      console.log(data.search_results[0].prices[0].value);
    }) 
   }
 
