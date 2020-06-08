@@ -12,6 +12,9 @@ body{
     width: $card-width;
 }
 
+.Title{
+    text-align: center;
+}
 
 .colProductImage{
     @extend .col-md-4;

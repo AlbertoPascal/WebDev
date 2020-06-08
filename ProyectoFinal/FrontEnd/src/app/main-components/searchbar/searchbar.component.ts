@@ -23,7 +23,7 @@ export class SearchbarComponent implements OnInit {
   onSearch(){
     let search:string = this.ProductSearch.get('search').value;
     this.searchService.sendSearch(search);
-    //window.location.href = "products/search";
+    window.location.href = "products/search?s="+search;
   }
 
 }

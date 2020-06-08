@@ -5,6 +5,7 @@ import {SearchService} from '../../../../services/search.service'
 import { Subscription } from 'rxjs';
 import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
 import { JsonPipe } from '@angular/common';
+import {Router, ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-productos',
@@ -16,20 +17,25 @@ export class ProductosComponent implements OnInit {
 
   productos: ProductoData[] =[];
   unico : ProductoData;
+  isSearched: boolean = false;
 
   //var productos = new ProductoData();
   subscription: Subscription;
 
-  constructor(public productosService:ProductosService, public searchService: SearchService) { 
-    
+  constructor(public productosService:ProductosService, public searchService: SearchService, private activatedRoute: ActivatedRoute) { 
+
   }
 
   ngOnInit(): void {
-    this.subscription = this.searchService.getSearch().subscribe(search => {
-      if (search) {
-        this.getProductos(search.text);
-        this.searchService.clearSearch();
-      } 
+    let search:string; 
+    //Se consiguen los parametros de la página para obtener la busqueda deseada
+    this.activatedRoute.queryParams.subscribe(params => {
+      if(params['s']){
+        search = params['s'];
+        this.isSearched = true;
+        //Con la busqueda se manda a llamar a la funcion getProductos()
+        this.getProductos(search);
+      }
     });
   }
 
