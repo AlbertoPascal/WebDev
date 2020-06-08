@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
-import { SearchService} from '../../services/search.service'
 import { Router} from '@angular/router';
 
 @Component({
@@ -11,7 +10,7 @@ import { Router} from '@angular/router';
 
 export class SearchbarComponent implements OnInit {
 
-  constructor(private searchService: SearchService, private router:Router) { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -22,7 +21,6 @@ export class SearchbarComponent implements OnInit {
 
   onSearch(){
     let search:string = this.ProductSearch.get('search').value;
-    this.searchService.sendSearch(search);
     window.location.href = "products/search?s="+search;
   }
 
