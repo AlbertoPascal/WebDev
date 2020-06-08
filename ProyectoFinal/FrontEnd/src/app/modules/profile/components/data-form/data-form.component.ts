@@ -47,12 +47,16 @@ export class DataFormComponent implements OnInit {
     console.log("loading webpage... bringing user data" + this.DefaultData);
   }
 
-  public retrieveUserData(){
+  public async retrieveUserData(){
     var profile_user =  new ProfileData();
-    (this.ProfileInfo.retrieveUserData()).then((data)=>{
-      console.log("Ya estoy en el componente");
-      console.log(data);
+    let promesa = await (this.ProfileInfo.retrieveUserData());
+    let promesa2 = new Promise((resolve, reject)=>{
+      promesa.subscribe((data)=>{
+        console.log("Ya estoy en el componente");
+        console.log(data);
+      })
     });
+    
     /*this.ProfileInfo.retrieveUserData().subscribe((data)=>{
       console.log("from dataform component retrieve test4");
       console.log(data);
