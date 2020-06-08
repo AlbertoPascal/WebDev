@@ -7,13 +7,33 @@ import {
   HttpResponse,
   HttpErrorResponse,
 } from '@angular/common/http';
-
+import { map, retry, catchError, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
 export class ProductosService {
   endpoint= 'https://api.rainforestapi.com/request';
+  constructor(private http: HttpClient) { }
 
+  private extractData(res: Response) {
+    let body = res;
+    return body || {};
+  }
+
+  handleError(error: HttpErrorResponse) {
+    let errorMessage = 'Unknown error!';
+    if (error.error instanceof ErrorEvent) {
+      // Client-side errorsi
+      errorMessage = `Error: ${error.error.message}`;
+    } else {
+      // Server-side errors
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    window.alert(errorMessage);
+    return throwError(errorMessage);
+  }
+
+  //funcion para obtener los valores de productos de la API
   getProductos(search_term:string):Observable<any>{
     var productos:ProductoData[];
     var productest = new ProductoData();
@@ -46,34 +66,17 @@ export class ProductosService {
       params: params,
     };
   
+    /*this.http.get(this.endpoint, requestOptions).subscribe({
+      next: data => console.log(data),
+      error: error => this.handleError(error),
+    });*/
+    //var parseData=JSON.parse(data);
+
+    //console.log(productos);
+    //return (this.productos = this.http.get('data'));
+    //return this.http.get(this.endpoint).pipe(map(res => res = res.data));
+    //return of(productos);
     return this.http.get(this.endpoint, requestOptions);
-    
   }
-
-    /*{titulo:"Jeans", foto:"../../assets/images/jeans.jpg", price:400},
-    {titulo:"Camisa", foto:"../../assets/images/flannel.jpg", price:350},
-    {titulo:"Playera gris", foto:"../../assets/images/tshirt.jpg", price:250},
-    {titulo:"Playera negra", foto:"../../assets/images/black_tshirt.jpg", price:250}*/
-    
-  constructor(private http: HttpClient) { }
-
-  private extractData(res: Response) {
-    let body = res;
-    return body || {};
-  }
-
-  handleError(error: HttpErrorResponse) {
-    let errorMessage = 'Unknown error!';
-    if (error.error instanceof ErrorEvent) {
-      // Client-side errorsi
-      errorMessage = `Error: ${error.error.message}`;
-    } else {
-      // Server-side errors
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    window.alert(errorMessage);
-    return throwError(errorMessage);
-  }
-
   
 }

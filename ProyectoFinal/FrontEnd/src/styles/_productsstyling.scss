@@ -15,14 +15,14 @@ body{
 
 .colProductImage{
     @extend .col-md-4;
-    @extend .col-lg-2;
-    @extend .col-sm-5;
+    @extend .col-lg-3;
+    @extend .col-sm-12;
 }
 
 .colProductInfo{
     @extend .col-md-8;
-    @extend .col-lg-10;
-    @extend .col-sm-7;
+    @extend .col-lg-9;
+    @extend .col-sm-12;
 }
 
 .paddingClass{
@@ -79,3 +79,6 @@ hr{
     }
 }
 
+h3{
+    font-size: medium;
+}
