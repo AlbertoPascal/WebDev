@@ -14,7 +14,7 @@ export class DataFormComponent implements OnInit {
 
   DefaultData:ProfileData;
 
-  constructor(public snackBar: MatSnackBar) { }
+  constructor(public snackBar: MatSnackBar, public ProfileInfo:ProfileEditionService) { }
     openSnackBar(message, action){
     let snackBarRef = this.snackBar.open(message, action, {duration: 3000});
   
@@ -24,7 +24,7 @@ export class DataFormComponent implements OnInit {
     })
   }
 
-  ProfileInfo = new ProfileEditionService();//{name:"Pedro", lastName:"Hernández", email:"pedrohdz@gmail.com", username:"PedroHdz", job:"Carpintero", password:"1234"}
+  //ProfileInfo = new ProfileEditionService();//{name:"Pedro", lastName:"Hernández", email:"pedrohdz@gmail.com", username:"PedroHdz", job:"Carpintero", password:"1234"}
   editprofileForm = new FormGroup({
     name: new FormControl(''),
     lastName: new FormControl(''),
@@ -47,8 +47,28 @@ export class DataFormComponent implements OnInit {
     console.log("loading webpage... bringing user data" + this.DefaultData);
   }
 
-  retrieveUserData(){
-    this.ProfileInfo.retrieveUserData().subscribe((data)=>{
+  public retrieveUserData(){
+    var profile_user =  new ProfileData();
+    (this.ProfileInfo.retrieveUserData()).then((data)=>{
+      console.log("Ya estoy en el componente");
+      console.log(data);
+    });
+    /*this.ProfileInfo.retrieveUserData().subscribe((data)=>{
+      console.log("from dataform component retrieve test4");
+      console.log(data);
+    })*/
+   /* let a = (await this.ProfileInfo.retrieveUserData()).toPromise().then((data) =>{
+      console.log("I am the new test in retrieveUserData from data.form");
+      console.log(data);
+      profile_user.foto = data.foto;
+      profile_user.name = data.name;
+      profile_user.lastName = data.lastName;
+      return profile_user;
+    });
+    console.log("profile user vale ");
+    console.log(await a);*/
+
+    /*this.ProfileInfo.retrieveUserData().subscribe((data)=>{
       console.log("Data from my init");
       console.log(data);
       this.DefaultData = data;  
@@ -59,7 +79,7 @@ export class DataFormComponent implements OnInit {
       this.editprofileForm.get('job').setValue(this.DefaultData.job);
       this.editprofileForm.get('pass').get('password').setValue(this.DefaultData.password); 
       console.log(this.editprofileForm.value);
-   }) ;
+   }) ;*/
   }
 
   onCancel(){
