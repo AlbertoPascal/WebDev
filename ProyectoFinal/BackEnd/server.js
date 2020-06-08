@@ -82,6 +82,7 @@ router.post('/', function(req, res){
 var User = require("./app/models/Users");
 var Wishlist = require ("./app/models/Wishlist");
 var Transaction = require ("./app/models/Transactions");
+const { response } = require('express');
 //var Products = require ("./app/models/Products");
 //Endpoints 
 router.route("/Transaction").post(checkJwt, async function (req, res) {
@@ -146,6 +147,63 @@ router.route("/Wishlist").post(checkJwt, async function (req, res) {
       });
   });
 
+router.route("/updateUser")
+.get(async function(request, response){
+  updated_user = new User();
+  const params = {
+    user_auth_id : request.body.user_auth_id,
+  }
+  updated_user.user_auth_id = request.body.user_auth_id;
+  updated_user.nombre = request.body.nombre;
+  updated_user.apellido = request.body.apellido;
+  updated_user.job = request.body.job;
+  updated_user.email = request.body.email;
+  updated_user.profilePic = request.body.profilePic;
+  updated_user.savings = request.body.savings;
+  updated_user.isAdmin = request.body.isAdmin;
+  updated_user.wishlist_id = request.body.wishlist_id;
+  updated_user.Family_ids = request.body.Family_ids;
+
+  console.log("Ill update to " + JSON.stringify(updated_user));
+  User.findOne(params, async function(error, usuario){
+    try {  
+      console.log("Finding user_auth_id of " + request.body.user_auth_id);
+        console.log("Antes de update: ");
+        console.log(usuario);
+        if(error)
+        {
+            response.status(404).send({message:"not found"});
+            return
+        }
+        if(usuario === null) //ayuda porque si pongo un id de algo que no es objeto, existe y no es error arriba pero entra aquí porque no es alumno
+        {
+            response.status(404).send({usuario:"not found"});
+            return
+        }
+        usuario.user_auth_id = updated_user.user_auth_id ;
+        usuario.nombre = updated_user.nombre;
+        usuario.apellido = updated_user.apellido;
+        usuario.job =  updated_user.job;
+        usuario.email =   updated_user.email;
+        usuario.profilePic =   updated_user.profilePic;
+        usuario.savings =   updated_user.savings;
+        usuario.isAdmin =    updated_user.isAdmin;
+        usuario.wishlist_id =    updated_user.wishlist_id;
+        usuario.Family_ids =  updated_user.Family_ids;
+        usuario.save();
+        console.log("Después de update: ");
+        console.log(usuario);
+        
+          response.status(200).send(usuario);
+      } 
+      catch (error) {
+        response.status(500).send({ error: error });
+      }
+      
+  });
+  //let res = User.findOneAndUpdate(params, {nombre:'Federico'});
+  //console.log(res);
+});
 router.route("/user").post(checkJwt, async function (req, res) {
     var new_user = new User();
     
