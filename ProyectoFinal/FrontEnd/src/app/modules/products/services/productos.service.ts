@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError} from 'rxjs';
 import { ProductoData } from '../models/producto-data.model';
+import { AuthService} from 'src/app/services/auth.service';
+
 import {
   HttpClient,
   HttpHeaders,
@@ -13,7 +15,9 @@ import { map, retry, catchError, tap } from 'rxjs/operators';
 })
 export class ProductosService {
   endpoint= 'https://api.rainforestapi.com/request';
-  constructor(private http: HttpClient) { }
+  endpoint_wishlist= 'http://localhost:8080/api/Wishlist/addItem';
+
+  constructor(private http: HttpClient, public auth: AuthService) { }
 
   private extractData(res: Response) {
     let body = res;
@@ -66,17 +70,49 @@ export class ProductosService {
       params: params,
     };
   
-    /*this.http.get(this.endpoint, requestOptions).subscribe({
-      next: data => console.log(data),
-      error: error => this.handleError(error),
-    });*/
-    //var parseData=JSON.parse(data);
-
-    //console.log(productos);
-    //return (this.productos = this.http.get('data'));
-    //return this.http.get(this.endpoint).pipe(map(res => res = res.data));
-    //return of(productos);
     return this.http.get(this.endpoint, requestOptions);
   }
   
+  //Funcion para agregar un producto a la wishlist del usuario
+  addToWishlist(titulo:string, foto: string, precio:number){
+
+    var user_auth_id;
+
+    let subscription = this.auth.getUser$().subscribe((data)=>{
+
+      if(data){
+        user_auth_id = data.sub;
+
+        var headerDict = {
+          'Content-Type': 'application/json',
+          Accept: '*/*',
+          'Access-Control-Allow-Origin': '*',
+        };
+
+        const requestOptions = {
+
+          //Se agregan los headers
+          headers: new HttpHeaders(headerDict),
+          
+          //Se agregan los datos del producto al body para hace el post
+          titulo: titulo, 
+          foto: foto, 
+          precio: precio, 
+        };
+
+        //Post
+        this.http.post(this.endpoint_wishlist +'/'+ user_auth_id, requestOptions).subscribe({
+          next: data => console.log(data),
+          error: error => this.handleError(error),
+        });
+      }      
+
+      else{
+        alert("Inicia sesión para agregar productos a la wishlist");
+      }
+      //Si no hay ninguna sesión activa, se termina la función
+      subscription.unsubscribe();
+      return;
+    });   
+  }
 }
