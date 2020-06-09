@@ -116,7 +116,7 @@ router.route("/user").post(checkJwt, async function (req, res) {
     res.status(500).send({ error: error });
   }
 //Obtener todos los usuarios
-}).get( function(request,response){
+}).get(checkJwt, function(request,response){
     User.find(function(err,usuarios){
         if(err){
             response.send(err);
@@ -173,7 +173,7 @@ router.route("/Transaction").post(checkJwt, async function (req, res) {
     } catch (error) {
       res.status(500).send({ error: error });
     }
-  }).get(function(request,response){
+  }).get(checkJwt, function(request,response){
       Transaction.find(function(err,lista){
           if(err){
               response.send(err);
@@ -183,7 +183,7 @@ router.route("/Transaction").post(checkJwt, async function (req, res) {
   });
 
 //Crear una wishlist
-router.route("/Wishlist").post( async function (req, res) {
+router.route("/Wishlist").post(checkJwt, async function (req, res) {
     var user_wishlist = new Wishlist();
     user_wishlist.wishlist_id = req.body.wishlist_id;
     user_wishlist.Objects = [];
@@ -201,7 +201,7 @@ router.route("/Wishlist").post( async function (req, res) {
       res.status(500).send({ error: error });
     }
     //Obtener todas las wishlist
-  }).get(function(request,response){  
+  }).get(checkJwt, function(request,response){  
       Wishlist.find(function(err,lista){
           if(err){
               response.send(err);
@@ -211,7 +211,7 @@ router.route("/Wishlist").post( async function (req, res) {
   });
 
 //Agregar un producto a una wishlist
-router.route("/Wishlist/addItem/:wishlist_id").post(function (request, response) {
+router.route("/Wishlist/addItem/:wishlist_id").post(checkJwt, function (request, response) {
 
   Wishlist.find({wishlist_id: request.params.wishlist_id}, function(error, wishlist){
   
@@ -226,12 +226,14 @@ router.route("/Wishlist/addItem/:wishlist_id").post(function (request, response)
         return
     }
     try {  
+      
       new_product = new Product();
       new_product.titulo = request.body.titulo;
       new_product.foto = request.body.foto;
       new_product.precio = request.body.precio;
 
-      wishlist.Objects.push(new_product);
+      wishlist[0].Objects.push(new_product);
+      wishlist[0].save();
 
       response.status(200).json({ mensaje: "Producto agregado" });
     }
@@ -242,7 +244,7 @@ router.route("/Wishlist/addItem/:wishlist_id").post(function (request, response)
 });
 
 //Obtener una wishlist por id
-router.route("/Wishlist/:wishlist_id").get(function (request, response) {
+router.route("/Wishlist/:wishlist_id").get(checkJwt, function (request, response) {
 
   Wishlist.find({wishlist_id: request.params.wishlist_id}, function(error, wishlist){
   
@@ -263,7 +265,7 @@ router.route("/Wishlist/:wishlist_id").get(function (request, response) {
 
 //Actualizar un usuario
 router.route("/updateUser")
-.get(async function(request, response){
+.get(checkJwt, async function(request, response){
   updated_user = new User();
   const params = {
     user_auth_id : request.body.user_auth_id,
