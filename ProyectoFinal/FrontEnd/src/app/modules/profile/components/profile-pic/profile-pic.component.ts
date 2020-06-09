@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserNameService} from '../../services/user-name.service';
+import {AuthService} from '../../../../services/auth.service'
+
 @Component({
   selector: 'app-profile-pic',
   templateUrl: './profile-pic.component.html',
@@ -7,11 +9,16 @@ import { UserNameService} from '../../services/user-name.service';
 })
 export class ProfilePicComponent implements OnInit {
 
-  constructor() { }
-  showPic = new UserNameService();
+  foto:string;
+  usuario:string;
+
+  constructor(private auth:AuthService) { }
+  
   ngOnInit(): void {
-    this.showPic.fetchData();
-    
+    let subscription = this.auth.getUser$().subscribe((data)=>{
+      this.foto = data.picture;
+      this.usuario = data.given_name + " " + data.family_name;
+    });
   }
 
 }

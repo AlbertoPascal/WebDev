@@ -15,19 +15,33 @@ export class ProductCardComponent implements OnInit {
  
   constructor(public snackBar: MatSnackBar, public productosService: ProductosService){}
 
-  //Snackbar que se activa cuando el usuario da click en "Agregar a la wishlist"
-  snackbarWishlist(message, action){
+  resolveAfter2Seconds() {
+    return new Promise(resolve => {
+      setTimeout(() => {
+      }, 2000);
+    });
+  }
 
-    let snackBarRef = this.snackBar.open(message, action, {duration: 3000});
+  //Snackbar que se activa cuando el usuario da click en "Agregar a la wishlist"
+  async snackbarWishlist(message, action){
+
+    var add = true;
+
+    let snackBarRef = this.snackBar.open(message, action, {duration: 2000});
   
     //Cuando el usuario de click en la acción de "deshacer" del snackbar
     snackBarRef.onAction().subscribe(()=> {
       console.log("Acción cancelada con éxito");
+      add=false;
       return;
     })
 
-    //El producto se agrega a la wishlist del usuario
-    this.productosService.addToWishlist(this.curr_prod.titulo, this.curr_prod.foto, this.curr_prod.precio);
+    snackBarRef.afterDismissed().subscribe(()=>{
+      if(add){
+        //El producto se agrega a la wishlist del usuario
+        this.productosService.addToWishlist(this.curr_prod.titulo, this.curr_prod.foto, this.curr_prod.precio);
+      }
+    });
   }
 
   ngOnInit(): void {
