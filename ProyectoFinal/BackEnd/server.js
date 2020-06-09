@@ -82,9 +82,71 @@ router.post('/', function(req, res){
 var User = require("./app/models/Users");
 var Wishlist = require ("./app/models/Wishlist");
 var Transaction = require ("./app/models/Transactions");
+var Product = require('./app/models/Products');
 const { response } = require('express');
+
 //var Products = require ("./app/models/Products");
 //Endpoints 
+
+
+//Crear un usuario
+router.route("/user").post(checkJwt, async function (req, res) {
+  var new_user = new User();
+  
+  new_user.nombre = req.body.nombre;
+  new_user.apellido = req.body.apellido;
+  new_user.profilePic = req.body.profilePic;
+  new_user.user_auth_id = req.body.user_auth_id;
+  new_user.email = req.body.email;
+  new_user.isAdmin = req.body.isAdmin;
+  new_user.Family_ids = req.body.Family_ids;
+  new_user.job = req.body.job;
+  new_user.wishlist_id = req.body.wishlist_id;
+  new_user.savings = req.body.savings;
+  console.log(new_user);
+  try {
+    await new_user.save(function (err) {
+      if (err) {
+        console.log(err);
+        res.send(err);
+      }
+    });
+    res.json({ mensaje: "Usuario creado" });
+  } catch (error) {
+    res.status(500).send({ error: error });
+  }
+//Obtener todos los usuarios
+}).get( function(request,response){
+    User.find(function(err,usuarios){
+        if(err){
+            response.send(err);
+        }
+        response.status(200).send(usuarios);
+    });
+});
+
+//Obtener un usuario por id
+router.route('/user/:user_auth_id')
+.get(checkJwt, function(request, response){
+  User.find({user_auth_id: request.params.user_auth_id}, function(error, usuario){
+      console.log("Finding user_auth_id of " + request.params.user_auth_id);
+
+      console.log(request.params);
+      if(error)
+      {
+          response.status(404).send({message:"not found"});
+          return
+      }
+      if(usuario === null) //ayuda porque si pongo un id de algo que no es objeto, existe y no es error arriba pero entra aquí porque no es alumno
+      {
+          response.status(404).send({usuario:"not found"});
+          return
+      }
+      response.status(200).send(usuario);
+  });
+});
+
+//Crear una transaccion
 router.route("/Transaction").post(checkJwt, async function (req, res) {
     console.log("Received a new post for transaction");
     var user_transaction = new Transaction();
@@ -120,11 +182,11 @@ router.route("/Transaction").post(checkJwt, async function (req, res) {
       });
   });
 
-
-router.route("/Wishlist").post(checkJwt, async function (req, res) {
+//Crear una wishlist
+router.route("/Wishlist").post( async function (req, res) {
     var user_wishlist = new Wishlist();
     user_wishlist.wishlist_id = req.body.wishlist_id;
-    user_wishlist.Objects = req.body.Objects;
+    user_wishlist.Objects = [];
     
     console.log(user_wishlist);
     try {
@@ -138,7 +200,8 @@ router.route("/Wishlist").post(checkJwt, async function (req, res) {
     } catch (error) {
       res.status(500).send({ error: error });
     }
-  }).get(function(request,response){
+    //Obtener todas las wishlist
+  }).get(function(request,response){  
       Wishlist.find(function(err,lista){
           if(err){
               response.send(err);
@@ -147,6 +210,58 @@ router.route("/Wishlist").post(checkJwt, async function (req, res) {
       });
   });
 
+//Agregar un producto a una wishlist
+router.route("/Wishlist/addItem/:wishlist_id").post(function (request, response) {
+
+  Wishlist.find({wishlist_id: request.params.wishlist_id}, function(error, wishlist){
+  
+    if(error)
+    {
+        response.status(404).send({message:"not found"});
+        return
+    }
+    else if(wishlist === null) //ayuda porque si pongo un id de algo que no es objeto, existe y no es error arriba pero entra aquí porque no es alumno
+    {
+        res.status(404).send({wishlist:"not found"});
+        return
+    }
+    try {  
+      new_product = new Product();
+      new_product.titulo = request.body.titulo;
+      new_product.foto = request.body.foto;
+      new_product.precio = request.body.precio;
+
+      wishlist.Objects.push(new_product);
+
+      response.status(200).json({ mensaje: "Producto agregado" });
+    }
+    catch (error) {
+      response.status(500).send({ error: error });
+    }
+  });
+});
+
+//Obtener una wishlist por id
+router.route("/Wishlist/:wishlist_id").get(function (request, response) {
+
+  Wishlist.find({wishlist_id: request.params.wishlist_id}, function(error, wishlist){
+  
+    if(error)
+    {
+        response.status(404).send({message:"not found"});
+        return
+    }
+    else if(wishlist === null) //ayuda porque si pongo un id de algo que no es objeto, existe y no es error arriba pero entra aquí porque no es alumno
+    {
+        response.status(404).send({wishlist:"not found"});
+        return
+    }
+    
+    response.status(200).send(wishlist);
+  });
+});
+
+//Actualizar un usuario
 router.route("/updateUser")
 .get(async function(request, response){
   updated_user = new User();
@@ -204,63 +319,7 @@ router.route("/updateUser")
   //let res = User.findOneAndUpdate(params, {nombre:'Federico'});
   //console.log(res);
 });
-router.route("/user").post(checkJwt, async function (req, res) {
-    var new_user = new User();
-    
-    new_user.nombre = req.body.nombre;
-    new_user.apellido = req.body.apellido;
-    new_user.profilePic = req.body.profilePic;
-    new_user.user_auth_id = req.body.user_auth_id;
-    new_user.email = req.body.email;
-    new_user.isAdmin = req.body.isAdmin;
-    new_user.Family_ids = req.body.Family_ids;
-    new_user.job = req.body.job;
-    new_user.wishlist_id = req.body.wishlist_id;
-    new_user.savings = req.body.savings;
-    console.log(new_user);
-    try {
-      await new_user.save(function (err) {
-        if (err) {
-          console.log(err);
-          res.send(err);
-        }
-      });
-      res.json({ mensaje: "Usuario creado" });
-    } catch (error) {
-      res.status(500).send({ error: error });
-    }
-  }).get(checkJwt, function(request,response){
-      User.find(function(err,usuarios){
-          if(err){
-              response.send(err);
-          }
-          response.status(200).send(usuarios);
-      });
-  });
 
-router.route('/user/:user_auth_id')
-.get(checkJwt, function(request, response){
-    User.find({user_auth_id: request.params.user_auth_id}, function(error, usuario){
-        console.log("Finding user_auth_id of " + request.params.user_auth_id);
-
-        console.log(request.params);
-        if(error)
-        {
-            response.status(404).send({message:"not found"});
-            return
-        }
-        if(usuario === null) //ayuda porque si pongo un id de algo que no es objeto, existe y no es error arriba pero entra aquí porque no es alumno
-        {
-            res.status(404).send({usuario:"not found"});
-            return
-        }
-        response.status(200).send(usuario);
-    });
-});
-
-/*router.route("/products").post(checkJwt, async function (req, res){
-
-})*/
 
 app.use('/api', router); //url base de nuestro api que tiene las rutas en el routerglobal. fetch =require('node-fetch');
 

@@ -38,7 +38,7 @@ export class ProductosService {
     var productos:ProductoData[];
     var productest = new ProductoData();
     const params = {
-      api_key: "86B6800CF3654E8CBFDDE8E768B887FF",
+      api_key: "11B43D7286984C879C3EA2EE498F50E0",
       type: "search",
       language: "es_ES",
       customer_location: "mx",
