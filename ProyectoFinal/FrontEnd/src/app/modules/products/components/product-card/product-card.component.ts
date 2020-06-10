@@ -27,7 +27,7 @@ export class ProductCardComponent implements OnInit {
 
     var add = true;
 
-    let snackBarRef = this.snackBar.open(message, action, {duration: 2000});
+    let snackBarRef = this.snackBar.open(message, action, {duration: 1000});
   
     //Cuando el usuario de click en la acción de "deshacer" del snackbar
     snackBarRef.onAction().subscribe(()=> {

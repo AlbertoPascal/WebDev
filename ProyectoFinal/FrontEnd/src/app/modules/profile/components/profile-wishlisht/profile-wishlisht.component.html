@@ -2,13 +2,27 @@
     <tbody>                      
         <tr *ngFor="let product of wishlistProducts">
             <td>
-                <span class="float-right font-weight-bold price">$ {{product.precio}}</span> {{product.titulo}}
+                <!--Botón para eliminar de wishlist-->
+                <div class="float-right">
+                    <button type="button" class="btn btn-close">X</button> 
+                </div>
+                
+                <!--Titulo del producto-->
+                {{product.titulo}}
+                <br>
+                <!--Precio del producto-->
+                <span class="font-weight-bold price">$ {{product.precio}}</span>
+                <br>
+                <!--Botón para convertir en meta actual-->
+                <button type="button" class="btn-meta">Convertir a meta actual</button>
             </td>
         </tr>
+
         <tr *ngIf="empty===true">
             <td class="font-weight-bold">
                 Agrega un producto a tu wishlist!
             </td> 
         </tr>
+
     </tbody> 
 </table>

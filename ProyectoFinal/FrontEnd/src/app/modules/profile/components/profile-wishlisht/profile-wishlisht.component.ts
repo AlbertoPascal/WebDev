@@ -37,7 +37,7 @@ export class ProfileWishlishtComponent implements OnInit {
           }
 
           for(var i = 0; i<len; i++ ){
-            this.product = new WishlistProductData(wishlist[0].Objects[i].titulo, wishlist[0].Objects[i].foto, wishlist[0].Objects[i].precio);
+            this.product = new WishlistProductData(wishlist[0].Objects[i].titulo, wishlist[0].Objects[i].foto, wishlist[0].Objects[i].precio, i);
             this.wishlistProducts.push(this.product);
           }
 
@@ -46,7 +46,10 @@ export class ProfileWishlishtComponent implements OnInit {
       }
       else{
         alert("Error 403");
+        window.location.href = "/home";
       }
+
+      subscription.unsubscribe();
     });
   }
 
