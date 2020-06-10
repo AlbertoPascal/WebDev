@@ -32,12 +32,6 @@ export class DataFormComponent implements OnInit {
     email: new FormControl(''),
     username: new FormControl(''),
     job: new FormControl(''),
-    pass: new FormGroup(
-      {
-        password: new FormControl(''),
-        ConfirmPass: new FormControl('')
-      }
-    )
   });
   ngOnInit(): void {
     this.retrieveUserData();
@@ -61,6 +55,12 @@ export class DataFormComponent implements OnInit {
         profile_user.job = data.job;
         profile_user.email = data.email;
       })
+      this.editprofileForm.get('name').setValue(profile_user.name);
+      this.editprofileForm.get('lastName').setValue(profile_user.lastName);
+      this.editprofileForm.get('email').setValue(profile_user.email);
+      this.editprofileForm.get('job').setValue(profile_user.job);
+      this.editprofileForm.get('username').setValue(profile_user.username);
+
     });
     
     /*this.ProfileInfo.retrieveUserData().subscribe((data)=>{
@@ -97,7 +97,7 @@ export class DataFormComponent implements OnInit {
     //falta agregar snackbar
   }
 
-  onSave(){
+  public async onSave(){
     //update information on our database
     //igual falta agregar snackbar
     let name = this.editprofileForm.get('name').value;
@@ -105,15 +105,15 @@ export class DataFormComponent implements OnInit {
     let email = this.editprofileForm.get('email').value;
     let username = this.editprofileForm.get('username').value;
     let job=this.editprofileForm.get('job').value;
-    let password= this.editprofileForm.get('pass').get('password').value;
-    let picture = '' //picture will be defined with the observable by the time they select a different picture (if any)
+    //let password= this.editprofileForm.get('pass').get('password').value;
+    //let picture = '' //picture will be defined with the observable by the time they select a different picture (if any)
     //alert("Información de perfil para mandar a la base: \n" + this.ProfileInfo.name + '\n' + this.ProfileInfo.lastName + '\n' + this.ProfileInfo.email + '\n' + this.ProfileInfo.password + '\n' + this.ProfileInfo.job);
-    this.ProfileInfo.uploadToDatabase(name, lastname, email, username, job, password, picture);
+    await this.ProfileInfo.uploadToDatabase(name, lastname, email, username, job);
     /*this.ProfileInfo.uploadToDatabase(name, lastname, email, username, job, password, picture).subscribe((data)=>{
       console.log(data);
       this.DefaultData= data;  
     });*/
-    this.retrieveUserData();
+   
   }
   showSnackbar() {
     // Get the snackbar DIV

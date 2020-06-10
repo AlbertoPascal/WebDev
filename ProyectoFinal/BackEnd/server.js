@@ -103,8 +103,16 @@ router.route("/user").post(checkJwt, async function (req, res) {
   new_user.job = req.body.job;
   new_user.wishlist_id = req.body.wishlist_id;
   new_user.savings = req.body.savings;
+  new_user.username = req.body.username;
+
   console.log(new_user);
   try {
+    if(new_user.job = undefined)
+      new_user.job = "";
+    if (new_user.isAdmin == undefined)
+      new_user.isAdmin = false;
+    if (new_user.savings == undefined)
+      new_user.savings = 0;
     await new_user.save(function (err) {
       if (err) {
         console.log(err);
@@ -265,7 +273,7 @@ router.route("/Wishlist/:wishlist_id").get(checkJwt, function (request, response
 
 //Actualizar un usuario
 router.route("/updateUser")
-.get(checkJwt, async function(request, response){
+.post(checkJwt, async function(request, response){
   updated_user = new User();
   const params = {
     user_auth_id : request.body.user_auth_id,
@@ -284,6 +292,7 @@ router.route("/updateUser")
   console.log("Ill update to " + JSON.stringify(updated_user));
   User.findOne(params, async function(error, usuario){
     try {  
+      
       console.log("Finding user_auth_id of " + request.body.user_auth_id);
         console.log("Antes de update: ");
         console.log(usuario);
@@ -297,16 +306,47 @@ router.route("/updateUser")
             response.status(404).send({usuario:"not found"});
             return
         }
-        usuario.user_auth_id = updated_user.user_auth_id ;
-        usuario.nombre = updated_user.nombre;
-        usuario.apellido = updated_user.apellido;
-        usuario.job =  updated_user.job;
-        usuario.email =   updated_user.email;
-        usuario.profilePic =   updated_user.profilePic;
-        usuario.savings =   updated_user.savings;
-        usuario.isAdmin =    updated_user.isAdmin;
-        usuario.wishlist_id =    updated_user.wishlist_id;
-        usuario.Family_ids =  updated_user.Family_ids;
+        if(updated_user.user_auth_id != usuario.user_auth_id && updated_user.user_auth_id != undefined && updated_user.user_auth_id != ""){
+          usuario.user_auth_id = updated_user.user_auth_id ;
+          console.log("about to update user_id");
+        }
+        if(updated_user.nombre != usuario.nombre && updated_user.nombre != undefined && updated_user.nombre != ""){
+          usuario.nombre = updated_user.nombre ;
+          console.log("about to update name");
+        }
+        if(updated_user.apellido != usuario.apellido && updated_user.apellido != undefined && updated_user.apellido != ""){
+          usuario.apellido = updated_user.apellido ;
+          console.log("about to update lastname");
+        }
+        if(updated_user.job != usuario.job && updated_user.job != undefined && updated_user.job != ""){
+          usuario.job = updated_user.job ;
+          console.log("about to update job");
+        }
+        if(updated_user.email != usuario.email && updated_user.email != undefined && updated_user.email != ""){
+          usuario.email = updated_user.email ;
+          console.log("about to update email");
+        }
+        if(updated_user.profilePic != usuario.profilePic && updated_user.profilePic != undefined && updated_user.profilePic != ""){
+          usuario.profilePic = updated_user.profilePic ;
+          console.log("about to update pic");
+        }
+        if(updated_user.savings != usuario.savings && updated_user.savings != undefined){
+          usuario.savings = updated_user.savings ;
+          console.log("about to update savings");
+        }
+        if(updated_user.isAdmin != usuario.isAdmin && updated_user.isAdmin != undefined && updated_user.isAdmin != ""){
+          usuario.isAdmin = updated_user.isAdmin ;
+          console.log("about to update admin status");
+        }
+        if(updated_user.wishlist_id != undefined){
+          usuario.wishlist_id =   updated_user.wishlist_id;
+          console.log("about to update wishlist");
+        }
+        if(updated_user.Family_ids != undefined)
+        {
+          usuario.Family_ids =  updated_user.Family_ids;
+        }
+        
         usuario.save();
         console.log("Después de update: ");
         console.log(usuario);

@@ -29,22 +29,46 @@ export class ProfileEditionService {
   endpoint = 'http://localhost:8080/api/user';
   wishlist_endpoint = 'http://localhost:8080/api/Wishlist';
   transaction_endpoint = 'http://localhost:8080/api/Transaction';
+  update_endpoint = 'http://localhost:8080/api/updateUser';
 
-  public uploadToDatabase(name:string, lastname:string, email:string, username:string, job:string, password:string, picture:string){
+  public async uploadToDatabase(name:string, lastname:string, email:string, username:string, job:string){
     
     
-    //retrive the active user username
-    Object.assign(this.Curr_User, this.active_user_info);
-    this.UserEditData.username  =this.Curr_User.user_auth_id;
+    let curr_user_sub:string;
+
+    await this.auth.getUser$().subscribe(data=>{
+      curr_user_sub = data.sub;
+      console.log("Logged User Sub: " + curr_user_sub);
+    });
     
-   
+    console.log("Obtained user id: " + curr_user_sub);
+
+    
     //update our object. 
-    this.UserEditData.setInfo(name, lastname, email, username, job, password, picture);
-     //we update in database.
-     let user_info = 'Update users set name =' + name + ', lastname = ' + lastname + ', email = ' + email + 'job = ' + job + ', password = ' + password + ', pic = ' + picture + ' where user_name = "' + this.UserEditData.username + '";';
-    
-    alert("Values sent to database");
-    return of(this.UserEditData);
+    var headerDict = {
+      'Content-Type': 'application/json',
+      Accept: '*/*',
+      'Access-Control-Allow-Origin': '*',
+    }
+    const requestOptions = {
+
+      //Se agregan los headers
+      headers: new HttpHeaders(headerDict),
+      
+      //Se agregan los datos del usuario al body para hace el post
+      user_auth_id:curr_user_sub,
+      nombre:name,
+      apellido: lastname,
+      job:job,
+      email:email,      
+    };
+    console.log(requestOptions);
+    this.http.post(this.update_endpoint, requestOptions).subscribe({
+      next: data => console.log(data),
+      error: error => this.handleError(error),
+    });
+
+    return of(await this.UserEditData);
   }
   public async get_user_info(){
     var assignable_user = new ProfileData();
@@ -67,7 +91,7 @@ export class ProfileEditionService {
             assignable_user.lastName = data[0].apellido;
             assignable_user.email = data[0].email;
             assignable_user.job = data[0].job;
-            //assignable_user.username = data[0].username;
+            assignable_user.username = data[0].username;
             console.log("My assignable user is");
             console.log(assignable_user);
             resolve(assignable_user);
@@ -110,28 +134,7 @@ export class ProfileEditionService {
     });
     
     console.log(await prom);
-    
-
-    //return await test;
-    //console.log("ya terminando, este es el resultado : " + JSON.stringify(await resultado));
-    
-    
-    /*let a = (await this.get_user_info()).subscribe((data) =>{
-      console.log("I am the new test in retrieveUserData");
-      let nombre:string;
-      nombre = data.name;
-      console.log(data);
-      console.log("regresando afuera " + data.name);
-      test_var = nombre;*/
-      //alert(test2.name);
-     /* test.foto = data.;
-      test.name = data.name;
-      test.lastName = data.lastName;*/
-      //return test;
-    //});
-    //alert("afuera de mi promesa que tiene al suscribe " +test2.name);
-    //console.log("Afuera de mi await to promise ");
-    //alert("regresando hasta afuera" + test_var);
+  
     return of(test);
     //return of(this.get_current_user());
     /*( this.get_current_user()).subscribe(await (data)=>

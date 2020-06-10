@@ -21,19 +21,7 @@
         <label class="colFormControl form-control-label" i18n>Username</label>
         <div class="colFormControl2">
             <input class="form-control" type="text" placeholder="Username" formControlName="username"/>
-        </div>
-
-        <form formGroupName = "pass">
-            <label class="colFormControl form-control-label" i18n>Contraseña</label>
-            <div class="colFormControl2">
-                <input class="form-control" type="password" placeholder="Password" formControlName="password"/>
-            </div>
-
-            <label class="colFormControl form-control-label" i18n>Confirmar Contraseña</label>
-            <div class="colFormControl2">
-                <input class="form-control" type="password" placeholder="Confirm Password" formControlName="ConfirmPass"/>
-            </div>
-        </form>    
+        </div>    
         <div class="align-center mr-3 mt-3 colInputs">
             <button type="submit"  class="mr-1 btn btn-primary" (click)="onSave()" mat-button (click)="openSnackBar('Cambios guardados exitosamente!', 'Deshacer')" i18n>Guardar cambios</button> 
             <button type="submit"  class="mx-auto btn btn-primary"  (click)="onCancel()" i18n>Cancelar</button>

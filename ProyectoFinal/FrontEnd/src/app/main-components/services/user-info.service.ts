@@ -56,7 +56,8 @@ export class UserInfoService {
       else{
 
         console.log("El usuario no está registrado en la db");
-
+        var username = given_name + " " + family_name;
+        username = username.replace(/\s+/g, '_');
         var headerDict = {
           'Content-Type': 'application/json',
           Accept: '*/*',
@@ -81,9 +82,11 @@ export class UserInfoService {
           apellido: family_name, 
           profilePic: picture,  
           email: email,
+          job:"",
           wishlist_id : sub,
           isAdmin:false,
           savings:0,
+          username: username,
         };
 
         //Post
