@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router} from '@angular/router';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { AuthService} from 'src/app/services/auth.service';
-import {UserInfoService} from  '../services/user-info.service';
+import {UserInfoService} from  '../../services/user-info.service'
 import { SelectMultipleControlValueAccessor } from '@angular/forms';
 
 @Component({
@@ -45,24 +45,26 @@ export class HeaderComponent implements OnInit {
 
   ngAfterViewInit(){
     this.register_user();
-    console.log(this.isAdmin)
+    this.check_admin();
   }
   
   public check_admin(){
 
-    let _isAdmin = false;
+    let subscription = this.auth.getUser$().subscribe((data)=>{
 
-    if(this.auth.loggedIn){
-      let subscription = this.auth.getUser$().subscribe((data)=>{
-        _isAdmin = this.db_user.isAdmin(data.sub);
-        console.log("User admin: "+_isAdmin)
-        subscription.unsubscribe();
-      });
-    }
+      if(data){
+        let subscription2 = this.db_user.getUser(data.sub).subscribe((data2)=>{
+          this.isAdmin = data2[0].isAdmin;
+          console.log("User admin: "+ this.isAdmin);
+          subscription2.unsubscribe();
+        })
+      }
 
-    console.log(_isAdmin);
-    return _isAdmin;    
+      subscription.unsubscribe();
+      return;
+    });
   }
+
 
   public register_user(){
 

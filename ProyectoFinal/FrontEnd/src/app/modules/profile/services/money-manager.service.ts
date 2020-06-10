@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { SaveDataModel } from '../models/save-data-model.model';
-import {UserInfoService} from '../../../main-components/services/user-info.service';
+import {UserInfoService} from '../../../services/user-info.service';
 import { of, Observable, throwError} from 'rxjs';
 import {SessionData} from '../../../main-components/models/session-data.model';
 import { AuthService} from 'src/app/services/auth.service';

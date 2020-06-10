@@ -4,7 +4,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 import { FormControl, FormGroup} from '@angular/forms';
 import { Router} from '@angular/router';
 //import {SessionData} from '../models/session-data.model';
-import {UserInfoService} from '../services/user-info.service';
+import {UserInfoService} from '../../services/user-info.service';
 
 
 @Component({

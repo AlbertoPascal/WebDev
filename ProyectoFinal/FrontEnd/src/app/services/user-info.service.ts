@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable, of, throwError} from 'rxjs';
-import {SessionData} from '../models/session-data.model';
+import {SessionData} from '../main-components/models/session-data.model'
 import {
   HttpClient,
   HttpHeaders,
@@ -104,15 +104,20 @@ export class UserInfoService {
     return this.http.get(this.endpoint + "/" + user_auth_id );
   }
 
-  //Función para saber si un usuario es admin
+  /*Función para saber si un usuario es admin
   public isAdmin(user_auth_id:string): boolean{
 
-    this.getUser(user_auth_id).subscribe((data) => {
-      console.log(data.isAdmin);
+    var isAdmin;
+
+    let subscription = this.getUser(user_auth_id).subscribe((data) => {
+      console.log("Isadmin del usuario "+ data[0].isAdmin);
+      isAdmin = data.isAdmin;
+      return isAdmin;
+      subscription.unsubscribe();
     });
 
-    return true;
-  }
+    
+  }*/
 
   /*
   public RegisterUser(user_auth_id:string, password:string, job:string, email:string, name:string, lastname:string):Observable<SessionData>{
