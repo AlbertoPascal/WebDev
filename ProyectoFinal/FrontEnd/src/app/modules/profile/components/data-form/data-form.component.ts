@@ -4,6 +4,7 @@ import { MatSnackBar} from '@angular/material/snack-bar';
 import { ProfileEditionService } from '../../services/profile-edition.service';
 import { ProfileData } from '../../models/profile-data.model';
 
+
 @Component({
   selector: 'app-data-form',
   templateUrl: './data-form.component.html',
@@ -54,6 +55,11 @@ export class DataFormComponent implements OnInit {
       promesa.subscribe((data)=>{
         console.log("Ya estoy en el componente");
         console.log(data);
+        profile_user.name = data.name;
+        profile_user.lastName = data.lastName;
+        profile_user.username = data.username;
+        profile_user.job = data.job;
+        profile_user.email = data.email;
       })
     });
     
