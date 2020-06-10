@@ -27,7 +27,6 @@ export class ProfileWishlishtComponent implements OnInit {
       if(data){
 
         this.wishlistService.getWishlistProducts(data.sub).subscribe((wishlist)=>{
-          console.log(wishlist);
 
           //Longitud del arreglo de resultados
           var len = Object.keys(wishlist[0].Objects).length;

@@ -55,7 +55,6 @@ export class HeaderComponent implements OnInit {
       if(data){
         let subscription2 = this.db_user.getUser(data.sub).subscribe((data2)=>{
           this.isAdmin = data2[0].isAdmin;
-          console.log("User admin: "+ this.isAdmin);
           subscription2.unsubscribe();
         })
       }
