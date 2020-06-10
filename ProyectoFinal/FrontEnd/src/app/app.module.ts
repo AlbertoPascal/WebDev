@@ -19,6 +19,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { SignupModalComponent } from './main-components/signup-modal/signup-modal.component';
 import { LoginModalComponent } from './main-components/login-modal/login-modal.component';
 
+
 registerLocaleData(localeEs, 'es');
 
 @NgModule({

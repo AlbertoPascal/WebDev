@@ -55,7 +55,7 @@
           </div>
       </nav>
       <!---------------->
-      <div class = "bg-white  rounded shadow">
+      <div class = "bg-white  rounded shadow" *ngIf = "this.router.url === '/home'">
         <div class = "container row">
           <img src="../../assets/images/logo.png" class = "img-fluid rounded  header_img mx-auto col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
           <!--h3 class = "header_text text-center col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 my-auto" i18n="@@headerAnimacion">¡Obt&eacute;n m&aacute;s con menos!</h3-->

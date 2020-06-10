@@ -5,6 +5,7 @@ import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
 import { JsonPipe } from '@angular/common';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 
+
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
@@ -16,6 +17,7 @@ export class ProductosComponent implements OnInit {
   productos: ProductoData[] =[];
   unico : ProductoData;
   isSearched: boolean = false;
+  loading:boolean = true;
 
   constructor(public productosService:ProductosService, private activatedRoute: ActivatedRoute) { 
 
@@ -49,6 +51,8 @@ export class ProductosComponent implements OnInit {
           this.productos.push(this.unico);
         }
       }
+
+      this.loading = false;
 
    }) 
   }

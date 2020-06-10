@@ -1,4 +1,5 @@
 
+
 <br>
 <app-searchbar></app-searchbar>
 <br>
@@ -11,8 +12,17 @@
 <br>
 
 <app-product-card *ngFor="let producto of productos" [curr_prod]=producto></app-product-card>
+
 <hr>
 
+<br>
+
+<app-spinner *ngIf = "loading"></app-spinner>
+
+<br>
+<br>
+<br>
+<br>
 <br>
 
 

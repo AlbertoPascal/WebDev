@@ -6,12 +6,14 @@ import {MatButtonModule} from '@angular/material/button';
 import { ProductsRoutingModule } from './products-routing.module';
 import { ProductosComponent } from './components/productos/productos.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 //import { SearchbarComponent } from '../home/components/searchbar/searchbar.component';
 import { HomeModule } from '../home/home.module';
 import { HttpClientModule} from '@angular/common/http';
 
+
 @NgModule({
-  declarations: [ProductosComponent, ProductCardComponent],
+  declarations: [ProductosComponent, ProductCardComponent, SpinnerComponent],
   imports: [
     CommonModule,
     ProductsRoutingModule,
