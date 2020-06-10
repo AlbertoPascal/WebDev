@@ -1,9 +1,14 @@
 <table class="table table-hover table-striped estilowish">
-    <tbody>                                    
+    <tbody>                      
         <tr *ngFor="let product of wishlistProducts">
             <td>
                 <span class="float-right font-weight-bold price">$ {{product.precio}}</span> {{product.titulo}}
             </td>
+        </tr>
+        <tr *ngIf="empty===true">
+            <td class="font-weight-bold">
+                Agrega un producto a tu wishlist!
+            </td> 
         </tr>
     </tbody> 
 </table>

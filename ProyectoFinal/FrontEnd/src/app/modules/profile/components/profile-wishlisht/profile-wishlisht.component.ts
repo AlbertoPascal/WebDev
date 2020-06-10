@@ -12,6 +12,7 @@ export class ProfileWishlishtComponent implements OnInit {
 
   wishlistProducts: WishlistProductData[] = [];
   product: WishlistProductData;
+  empty=false;
 
   constructor(public wishlistService:WishlistService, public auth: AuthService) { }
 
@@ -30,6 +31,11 @@ export class ProfileWishlishtComponent implements OnInit {
 
           //Longitud del arreglo de resultados
           var len = Object.keys(wishlist[0].Objects).length;
+          
+          //Si la wishlist está vacía 
+          if(len<=0){
+            this.empty=true;
+          }
 
           for(var i = 0; i<len; i++ ){
             this.product = new WishlistProductData(wishlist[0].Objects[i].titulo, wishlist[0].Objects[i].foto, wishlist[0].Objects[i].precio);
