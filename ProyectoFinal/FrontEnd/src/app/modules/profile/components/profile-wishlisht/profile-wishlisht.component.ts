@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WishlistProductData } from '../../models/wishlist-product-data.model';
 import { WishlistService } from '../../services/wishlist.service';
+import { AuthService} from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-profile-wishlisht',
@@ -9,18 +10,40 @@ import { WishlistService } from '../../services/wishlist.service';
 })
 export class ProfileWishlishtComponent implements OnInit {
 
-  wishlistProducts: WishlistProductData[];
+  wishlistProducts: WishlistProductData[] = [];
+  product: WishlistProductData;
 
-  constructor(public wishlistService:WishlistService) { }
+  constructor(public wishlistService:WishlistService, public auth: AuthService) { }
 
   ngOnInit(): void {
     this.getProductos();
   }
 
   getProductos(){
-      this.wishlistService.getWishlistProducts().subscribe((data)=>{
-        console.log(data);
-        this.wishlistProducts= data;  
-    }) 
+
+    let subscription = this.auth.getUser$().subscribe((data)=>{
+
+      if(data){
+
+        this.wishlistService.getWishlistProducts(data.sub).subscribe((wishlist)=>{
+          console.log(wishlist);
+
+          //Longitud del arreglo de resultados
+          var len = Object.keys(wishlist[0].Objects).length;
+
+          for(var i = 0; i<len; i++ ){
+            this.product = new WishlistProductData(wishlist[0].Objects[i].titulo, wishlist[0].Objects[i].foto, wishlist[0].Objects[i].precio);
+            this.wishlistProducts.push(this.product);
+          }
+
+        }) 
+
+      }
+      else{
+        alert("Error 403");
+      }
+    });
   }
+
+
 }

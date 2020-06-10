@@ -39,8 +39,7 @@ export class ProductosService {
 
   //funcion para obtener los valores de productos de la API
   getProductos(search_term:string):Observable<any>{
-    var productos:ProductoData[];
-    var productest = new ProductoData();
+
     const params = {
       api_key: "11B43D7286984C879C3EA2EE498F50E0",
       type: "search",
