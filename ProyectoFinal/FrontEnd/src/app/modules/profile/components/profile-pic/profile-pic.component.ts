@@ -20,7 +20,7 @@ export class ProfilePicComponent implements OnInit {
 
       let subscription2 = this.userInfoService.getUser(dataAuth.sub).subscribe((dataDB)=>{
         this.foto = dataDB[0].profilePic;
-        this.usuario = dataDB[0].nombre + " " + dataDB[0].apellido;
+        this.usuario = dataDB[0].username;
         subscription2.unsubscribe();
       });
 
