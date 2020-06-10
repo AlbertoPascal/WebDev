@@ -65,6 +65,9 @@ export class ProfileEditionService {
             assignable_user.name = data[0].nombre;
             assignable_user.foto = data[0].profilePic;
             assignable_user.lastName = data[0].apellido;
+            assignable_user.email = data[0].email;
+            assignable_user.job = data[0].job;
+            //assignable_user.username = data[0].username;
             console.log("My assignable user is");
             console.log(assignable_user);
             resolve(assignable_user);
