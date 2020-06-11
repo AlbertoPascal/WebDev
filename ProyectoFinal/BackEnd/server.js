@@ -252,7 +252,28 @@ router.route("/Wishlist/addItem/:wishlist_id").post(checkJwt, function (request,
 });
 
 //Obtener una wishlist por id
-router.route("/Wishlist/:wishlist_id").get(checkJwt, function (request, response) {
+router.route("/Wishlist/:wishlist_id").get(function (request, response) {
+
+  Wishlist.find({wishlist_id: request.params.wishlist_id}, function(error, wishlist){
+  
+    if(error)
+    {
+        response.status(404).send({message:"not found"});
+        return
+    }
+    else if(wishlist === null) //ayuda porque si pongo un id de algo que no es objeto, existe y no es error arriba pero entra aquí porque no es alumno
+    {
+        response.status(404).send({wishlist:"not found"});
+        return
+    }
+
+    response.status(200).send(wishlist);
+
+  });
+});
+
+//Borrar un producto de la wishlist mandandole su posicion en el body
+router.route("/Wishlist/deleteItem/:wishlist_id").delete(function (request, response) {
 
   Wishlist.find({wishlist_id: request.params.wishlist_id}, function(error, wishlist){
   
@@ -267,7 +288,16 @@ router.route("/Wishlist/:wishlist_id").get(checkJwt, function (request, response
         return
     }
     
-    response.status(200).send(wishlist);
+    try{
+      posicion = request.body.posicion;
+      wishlist[0].Objects.splice(posicion,1);
+      wishlist[0].save();
+      response.status(200).send({mensaje: "Producto borrado con exito"});
+    }
+    catch (error) {
+      response.status(500).send({ error: error });
+    }
+
   });
 });
 

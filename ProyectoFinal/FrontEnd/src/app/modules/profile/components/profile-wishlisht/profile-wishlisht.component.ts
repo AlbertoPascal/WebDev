@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { WishlistProductData } from '../../models/wishlist-product-data.model';
 import { WishlistService } from '../../services/wishlist.service';
 import { AuthService} from 'src/app/services/auth.service';
+import { MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-profile-wishlisht',
@@ -14,7 +15,7 @@ export class ProfileWishlishtComponent implements OnInit {
   product: WishlistProductData;
   empty=false;
 
-  constructor(public wishlistService:WishlistService, public auth: AuthService) { }
+  constructor(public wishlistService:WishlistService, public auth: AuthService, public snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getProductos();
@@ -53,5 +54,24 @@ export class ProfileWishlishtComponent implements OnInit {
     });
   }
 
+  async deleteItem(prod:WishlistProductData){
+    
+    var deleteItem = true;
+
+    let snackBarRef = this.snackBar.open("Producto borrado de la wishlist", "Deshacer", {duration: 1000});
+    
+    //Cuando el usuario de click en la acción de "deshacer" del snackbar
+    snackBarRef.onAction().subscribe(()=> {
+      console.log("Acción cancelada con éxito");
+      deleteItem=false;
+      return;
+    })
+
+    snackBarRef.afterDismissed().subscribe(()=>{
+      if(deleteItem){
+
+      }
+    });
+  }
 
 }
