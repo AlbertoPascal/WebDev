@@ -103,6 +103,7 @@ router.route("/user").post(checkJwt, async function (req, res) {
   new_user.job = req.body.job;
   new_user.wishlist_id = req.body.wishlist_id;
   new_user.savings = req.body.savings;
+  new_user.expenses = req.body.expenses;
   new_user.username = req.body.username;
 
   console.log(new_user);
@@ -113,6 +114,8 @@ router.route("/user").post(checkJwt, async function (req, res) {
       new_user.isAdmin = false;
     if (new_user.savings == undefined)
       new_user.savings = 0;
+      if (new_user.expenses == undefined)
+      new_user.expenses = 0;
     await new_user.save(function (err) {
       if (err) {
         console.log(err);
@@ -350,6 +353,7 @@ router.route("/updateUser")
   updated_user.email = request.body.email;
   updated_user.profilePic = request.body.profilePic;
   updated_user.savings = request.body.savings;
+  updated_user.expenses = request.body.expenses;
   updated_user.isAdmin = request.body.isAdmin;
   updated_user.wishlist_id = request.body.wishlist_id;
   updated_user.Family_ids = request.body.Family_ids;
@@ -395,8 +399,12 @@ router.route("/updateUser")
           usuario.profilePic = updated_user.profilePic ;
           console.log("about to update pic");
         }
-        if(updated_user.savings != usuario.savings && updated_user.savings != undefined){
-          usuario.savings = updated_user.savings ;
+        if(updated_user.savings != undefined){
+          usuario.savings = usuario.savings + updated_user.savings ;
+          console.log("about to update savings");
+        }
+        if(updated_user.expenses != undefined){
+          usuario.expenses = usuario.expenses + updated_user.expenses ;
           console.log("about to update savings");
         }
         if(updated_user.isAdmin != usuario.isAdmin && updated_user.isAdmin != undefined && updated_user.isAdmin != ""){

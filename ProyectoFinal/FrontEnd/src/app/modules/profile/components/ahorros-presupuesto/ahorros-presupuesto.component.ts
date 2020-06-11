@@ -37,11 +37,14 @@ export class AhorrosPresupuestoComponent implements OnInit {
   }
 
   onCost(){
+
     this.prep_savings.updateSavings(/*'Cost'*/this.addCosts.get('transaction_type').value, this.addCosts.get('quantity').value,this.addCosts.get('description').value  );
-    
+  
     //this.prep_savings.Operation.addCosts(this.addCosts.get('costs').value);
     //this.prep_savings.Operation.motif = this.addCosts.get('description').value;
-    alert("Sent " + this.addCosts.get('quantity').value + " to add to costs with reason: \n" + this.prep_savings.Operation.motif);
+    console.log("Sent " + this.addCosts.get('quantity').value + " to add to costs with reason: \n" + this.addCosts.get('description').value);
+  
+
     this.addCosts.reset();
   }
 
