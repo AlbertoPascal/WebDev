@@ -22,4 +22,5 @@ describe('ProfileProgressbarComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });

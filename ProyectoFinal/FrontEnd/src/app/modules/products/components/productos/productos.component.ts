@@ -33,6 +33,9 @@ export class ProductosComponent implements OnInit {
         //Con la busqueda se manda a llamar a la funcion getProductos()
         this.getProductos(search);
       }
+      else{
+        this.loading = false;
+      }
     });
   }
 

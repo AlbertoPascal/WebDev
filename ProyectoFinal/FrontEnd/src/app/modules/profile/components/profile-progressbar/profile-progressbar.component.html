@@ -1,7 +1,10 @@
+
 <div *ngIf="isThereGoal">
+  <p style="text-align: center;">{{meta}}</p>
+
   <div class="progress">
-    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%">40%</div>
+    <div class="progress-bar progress-bar-striped progress-bar-animated" [style.width.%] = "porcentaje"> {{porcentaje}}%</div>
   </div>
-  <div class="start"> <span i18n="@@MontoActual">Monto Actual</span>: ${{currentSavings.savings.currentSavings}}</div>
-  <div class="end" > <span i18n="@@Final">Final</span>: ${{precio}}</div>  
+  <div class="start"> <span i18n="@@MontoActual">Monto ahorrado</span>: ${{ahorros}}</div>
+  <div class="end" > <span i18n="@@Final">Meta</span>: ${{precio}}</div>  
 </div>
