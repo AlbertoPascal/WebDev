@@ -377,6 +377,7 @@ router.route("/updateUser")
   updated_user.isAdmin = request.body.isAdmin;
   updated_user.wishlist_id = request.body.wishlist_id;
   updated_user.Family_ids = request.body.Family_ids;
+  updated_user.username = request.body.username;
 
   console.log("Ill update to " + JSON.stringify(updated_user));
   User.findOne(params, async function(error, usuario){
@@ -438,6 +439,11 @@ router.route("/updateUser")
         if(updated_user.Family_ids != undefined)
         {
           usuario.Family_ids =  updated_user.Family_ids;
+        }
+        if(updated_user.username != usuario.username && updated_user.username != undefined && updated_user.username != "")
+        {
+          usuario.username = updated_user.username;
+          console.log("about to update username");
         }
         
         usuario.save();
