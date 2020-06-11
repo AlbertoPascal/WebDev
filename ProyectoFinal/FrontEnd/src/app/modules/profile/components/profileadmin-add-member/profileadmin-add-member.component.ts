@@ -21,12 +21,19 @@ export class ProfileadminAddMemberComponent implements OnInit {
   wishlist_endpoint = 'http://localhost:8080/api/Wishlist';
   transaction_endpoint = 'http://localhost:8080/api/Transaction';
   update_endpoint = 'http://localhost:8080/api/updateUser';
+  member_endpoint = 'http://localhost:8080/api/finduser';
+
+
   Current_user = new ProfileData();
   ngOnInit(): void {
   }
   getUser(user_auth_id:string): Observable<any> {
     console.log("Mi request es " + this.endpoint + "/" + user_auth_id);
     return this.http.get(this.endpoint + "/" + user_auth_id );
+  }
+  searchUser(user_email:string):Observable<any>{
+    console.log("Mi request es " + this.member_endpoint + "/" + user_email);
+    return this.http.get(this.member_endpoint + "/" + user_email);
   }
   public async addMember(){
     let curr_user_sub:string;
@@ -53,7 +60,12 @@ export class ProfileadminAddMemberComponent implements OnInit {
       });
     });
     let Userinfo = await promesa2;
-
+    let promesa3 = new Promise((resolve,reject)=>{
+        this.searchUser(this.Current_user.email).subscribe(data=>{
+          console.log("I found the next user:" );
+          console.log(data);
+        });
+    })
     //Now we know the current user's information. I need to do a search of the user by its email:
     
 

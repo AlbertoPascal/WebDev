@@ -156,6 +156,26 @@ router.route('/user/:user_auth_id')
       response.status(200).send(usuario);
   });
 });
+router.route('/finduser/:email')
+.get(/*checkJwt,*/ function(request, response){
+  console.log("searching for email");
+  User.find({email: request.params.email}, function(error, usuario){
+      console.log("Finding email of " + request.params.email);
+
+      console.log(request.params);
+      if(error)
+      {
+          response.status(404).send({message:"not found"});
+          return
+      }
+      if(usuario === null) //ayuda porque si pongo un id de algo que no es objeto, existe y no es error arriba pero entra aquí porque no es alumno
+      {
+          response.status(404).send({usuario:"not found"});
+          return
+      }
+      response.status(200).send(usuario);
+  });
+});
 
 //Crear una transaccion
 router.route("/Transaction").post(checkJwt, async function (req, res) {
