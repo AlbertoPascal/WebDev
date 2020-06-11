@@ -1,15 +1,42 @@
 import { Injectable } from '@angular/core';
 import { Observable, of} from 'rxjs';
 import { MemberTableData } from '../models/member-table-data.model';
+import { AuthService} from 'src/app/services/auth.service';
+
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpResponse,
+  HttpErrorResponse,
+} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MemberTableServiceService {
 
-  constructor() { }
+  constructor(private http: HttpClient, public auth: AuthService) { }
+  endpoint = 'http://localhost:8080/api/user';
+  wishlist_endpoint = 'http://localhost:8080/api/Wishlist';
+  transaction_endpoint = 'http://localhost:8080/api/Transaction';
+  update_endpoint = 'http://localhost:8080/api/updateUser';
 
-  getMembers():Observable<MemberTableData[]>{
+  getUser(user_auth_id:string): Observable<any> {
+    console.log("Mi request es " + this.endpoint + "/" + user_auth_id);
+    return this.http.get(this.endpoint + "/" + user_auth_id );
+  }
+
+  public getMembers():Observable<MemberTableData[]>{
+    /*let curr_user_sub:string;
+
+    await this.auth.getUser$().subscribe(data=>{
+      curr_user_sub = data.sub;
+      console.log("Logged User Sub: " + curr_user_sub);
+    });
+    this.getUser(curr_user_sub).subscribe(data=>{
+
+    })*/
+
     let members:MemberTableData[] = [
       new MemberTableData("Moises Torres", "../../assets/images/moi.jpeg", "Estudiante", "27/03/2020", 5000, 1000, 5),
       new MemberTableData("Alberto Pascal", "../../assets/images/alberto.jpeg", "Estudiante", "26/03/2020", 3300, 1250, 3),
