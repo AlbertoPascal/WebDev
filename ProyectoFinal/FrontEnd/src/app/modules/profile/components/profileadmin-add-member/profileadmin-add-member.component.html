@@ -1,7 +1,11 @@
 
 <div class="buscar2">
     <h4 i18n> Agregar miembro</h4>
-    <input type="text" name="search" placeholder=" Mail"> 
+    <form [formGroup] = "MemberEmail">
+        <div class="colFormControl2">
+            <input class = "form-control" type="email" placeholder="Mail" formControlName="email" />
+        </div>
+    </form>
     <button id="button-addon1" type="submit"  (click) = "addMember()" class="btn rounded-pill btn-link text-primary bg-light"><i class="fa fa-search"></i></button>
 </div>
 <hr>

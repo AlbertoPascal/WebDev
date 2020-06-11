@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService} from 'src/app/services/auth.service';
-import { Observable, of} from 'rxjs';
-import {ProfileData} from '../../models/profile-data.model';
+import { Observable, of, throwError} from 'rxjs';
+import {SessionData} from '../../../../main-components/models/session-data.model';
 import {
   HttpClient,
   HttpHeaders,
   HttpResponse,
   HttpErrorResponse,
 }from '@angular/common/http';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-profileadmin-add-member',
@@ -23,9 +24,23 @@ export class ProfileadminAddMemberComponent implements OnInit {
   update_endpoint = 'http://localhost:8080/api/updateUser';
   member_endpoint = 'http://localhost:8080/api/finduser';
 
-
-  Current_user = new ProfileData();
+  MemberEmail  = new FormGroup({
+    email: new FormControl(''),
+  });
+  Current_user = new SessionData();
   ngOnInit(): void {
+  }
+  handleError(error: HttpErrorResponse) {
+    let errorMessage = 'Unknown error!';
+    if (error.error instanceof ErrorEvent) {
+      // Client-side errorsi
+      errorMessage = `Error: ${error.error.message}`;
+    } else {
+      // Server-side errors
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    window.alert(errorMessage);
+    return throwError(errorMessage);
   }
   getUser(user_auth_id:string): Observable<any> {
     console.log("Mi request es " + this.endpoint + "/" + user_auth_id);
@@ -55,26 +70,61 @@ export class ProfileadminAddMemberComponent implements OnInit {
         this.getUser(curr_user_sub).subscribe(data=>{
         console.log("I'm inside AddMember and my value is ");
         console.log(data);
+        console.log("pushing a family tesT");
         this.Current_user = data[0];
+        console.log("my arr length : " + this.Current_user.Family_ids.length);
+        console.log(this.Current_user.Family_ids);
+        
         resolve(this.Current_user);
       });
+      
     });
     let Userinfo = await promesa2;
-    let promesa3 = new Promise((resolve,reject)=>{
-        this.searchUser(this.Current_user.email).subscribe(data=>{
-          console.log("I found the next user:" );
-          console.log(data);
-        });
-    })
-    //Now we know the current user's information. I need to do a search of the user by its email:
     
+    let User_to_add = new SessionData();
+    let promesa3 = new Promise((resolve,reject)=>{
+        this.searchUser(this.MemberEmail.get('email').value).subscribe(data=>{
+          console.log("I found the next user:" );
+          console.log(data[0]);
+          User_to_add = data[0];
+          console.log("after assinging");
+          console.log(User_to_add);
+          resolve(User_to_add);
+        });
+    });
+    let Addinfo = await promesa3;
+    if(!this.Current_user.Family_ids.includes(User_to_add.user_auth_id))
+    {
+      this.Current_user.Family_ids.push(User_to_add.user_auth_id);
+    }
+    //this.Current_user.Family.push(User_to_add.user_auth_id);
+    console.log("I want to add user_sid "  + User_to_add.user_auth_id + " to user_sid " + this.Current_user.user_auth_id);
+    console.log("Current family: ");
+    console.log(await this.Current_user.Family_ids);
+ 
+    //User was properly added to family. Need to update db
 
-    //now I need to add that user_id to my user's person array in case it is not there.
+    //update our object. 
+    var headerDict = {
+      'Content-Type': 'application/json',
+      Accept: '*/*',
+      'Access-Control-Allow-Origin': '*',
+    };
+    const requestOptions = {
 
+      //Se agregan los headers
+      headers: new HttpHeaders(headerDict),
+      
+      //Se agregan los datos del usuario al body para hace el post
+      user_auth_id:this.Current_user.user_auth_id,
+      Family_ids:this.Current_user.Family_ids,
+    };
+    console.log(requestOptions);
+    this.http.post(this.update_endpoint, requestOptions).subscribe({
+      next: data => console.log(data),
+      error: error => this.handleError(error),
+    });
 
-    console.log("outside of suscribe: ");
-    console.log(await this.Current_user);
-
-
+    return of (this.Current_user);
   }
 }

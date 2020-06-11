@@ -99,7 +99,7 @@ router.route("/user").post(checkJwt, async function (req, res) {
   new_user.user_auth_id = req.body.user_auth_id;
   new_user.email = req.body.email;
   new_user.isAdmin = req.body.isAdmin;
-  new_user.Family_ids = req.body.Family_ids;
+  new_user.Family_ids = [];
   new_user.job = req.body.job;
   new_user.wishlist_id = req.body.wishlist_id;
   new_user.savings = req.body.savings;
@@ -436,7 +436,7 @@ router.route("/updateUser")
           usuario.wishlist_id =   updated_user.wishlist_id;
           console.log("about to update wishlist");
         }
-        if(updated_user.Family_ids != undefined)
+        if(updated_user.Family_ids != undefined && updated_user.Family_ids.length != usuario.Family_ids.length)
         {
           usuario.Family_ids =  updated_user.Family_ids;
         }
