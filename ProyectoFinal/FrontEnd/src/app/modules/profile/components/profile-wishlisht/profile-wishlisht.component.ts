@@ -21,13 +21,14 @@ export class ProfileWishlishtComponent implements OnInit {
     this.getProductos();
   }
 
+  //Obtener los productos de la wishlist del usuario
   getProductos(){
 
     let subscription = this.auth.getUser$().subscribe((data)=>{
 
       if(data){
 
-        this.wishlistService.getWishlistProducts(data.sub).subscribe((wishlist)=>{
+        this.wishlistService.getWishlist(data.sub).subscribe((wishlist)=>{
 
           //Longitud del arreglo de resultados
           var len = Object.keys(wishlist[0].Objects).length;
@@ -54,6 +55,7 @@ export class ProfileWishlishtComponent implements OnInit {
     });
   }
 
+  //Borrar un producto de la wishlist
   async deleteItem(prod:WishlistProductData){
     
     var deleteItem = true;
@@ -73,8 +75,8 @@ export class ProfileWishlishtComponent implements OnInit {
         let subscription = this.auth.getUser$().subscribe((data)=>{
 
           if(data){
-            this.wishlistService.deleteItem(data.sub, prod.posicion).subscribe((wishlist)=>{
-              console.log(wishlist);
+            this.wishlistService.deleteItem(data.sub, prod.posicion).subscribe((message)=>{
+              console.log(message);
               window.location.href = window.location.href;
             }) 
           }
@@ -88,7 +90,8 @@ export class ProfileWishlishtComponent implements OnInit {
     });
   }
 
-  async addGoal(prod:WishlistProductData){
+  //Actualizar meta del usuario
+  async updateGoal(prod:WishlistProductData){
     var addedItem = true;
 
     let snackBarRef = this.snackBar.open("Producto agregado exitosamente!", "Deshacer", {duration: 1000});
@@ -106,7 +109,10 @@ export class ProfileWishlishtComponent implements OnInit {
         let subscription = this.auth.getUser$().subscribe((data)=>{
 
           if(data){
-            
+            this.wishlistService.updateGoal(data.sub, prod).subscribe((message)=>{
+              console.log(message);
+              window.location.href = window.location.href;
+            }) 
           }
           else{
             alert("Error: Los datos del usuario no fueron encontrados")

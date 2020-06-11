@@ -1,11 +1,16 @@
 <br>
 
-<div class="polaroid">
-    <img src="{{currentObj.objective.img}}" class="polaroidImage" alt="Objetivo" style="width:100%">
-<div class="container">
-    <h3>${{currentObj.objective.price}}</h3>
+<div *ngIf="isThereGoal">
+    <div class="polaroid">
+        <img src="{{goal.foto}}" class="polaroidImage" alt="Objetivo" style="width:auto; height:auto">
+    <div class="container">
+        <h3>${{goal.precio}}</h3>
+    </div>
+    </div>
 </div>
 
+<div *ngIf="!isThereGoal">
+    <h3>Selecciona un producto de tu wishlist para que sea tu meta!</h3>
 </div>
 
 <br>

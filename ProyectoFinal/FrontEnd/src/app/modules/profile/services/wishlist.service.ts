@@ -15,12 +15,12 @@ import {
 export class WishlistService {
 
   endpoint= 'http://localhost:8080/api/Wishlist/';
-  endpoint_delete = 'http://localhost:8080/api/Wishlist/deleteItem/';
-
+  endpoint_deleteItem = 'http://localhost:8080/api/Wishlist/deleteItem/';
+  endpoint_updateGoal ='http://localhost:8080/api/Wishlist/updateGoal/';
   constructor(private http: HttpClient, public auth: AuthService) { }
 
-  //Obtener los productos de una wishlist
-  getWishlistProducts(auth_user_id:string):Observable<any>{
+  //Obtener una wishlist
+  getWishlist(auth_user_id:string):Observable<any>{
 
     var headerDict = {
       'Content-Type': 'application/json',
@@ -56,7 +56,29 @@ export class WishlistService {
       
     };
 
-    return this.http.delete(this.endpoint_delete+auth_user_id, requestOptions);
+    return this.http.delete(this.endpoint_deleteItem+auth_user_id, requestOptions);
+  }
+
+  //Borrar un producto de la wishlist
+  updateGoal(auth_user_id:string, product:WishlistProductData):Observable<any>{
+
+    var headerDict = {
+      'Content-Type': 'application/json',
+      Accept: '*/*',
+      'Access-Control-Allow-Origin': '*',
+    };
+
+    const requestOptions = {
+      //Se agregan los headers
+      headers: new HttpHeaders(headerDict),
+
+      titulo: product.titulo,
+      foto: product.foto,
+      precio: product.precio,
+      
+    };
+
+    return this.http.put(this.endpoint_updateGoal+auth_user_id, requestOptions);
   }
 
   handleError(error: HttpErrorResponse) {

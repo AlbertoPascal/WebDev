@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { GoalService } from '../../services/goal.service';
+import { WishlistService } from '../../services/wishlist.service';
+import { AuthService} from 'src/app/services/auth.service';
+import { WishlistProductData } from '../../models/wishlist-product-data.model';
+
 //import { GoalData} from '../..'
 @Component({
   selector: 'app-ahorros-obj',
@@ -8,15 +11,36 @@ import { GoalService } from '../../services/goal.service';
 })
 export class AhorrosObjComponent implements OnInit {
 
-  constructor( public currentObj:GoalService) { 
-    currentObj.getObj();
-    
+  goal: WishlistProductData;
+  isThereGoal: boolean = false;
+
+  constructor(public wishlistService:WishlistService, public auth:AuthService) { 
   }
-
-
-
 
   ngOnInit(): void {
+    this.getGoal();
   }
 
+  getGoal(){
+    let subscription = this.auth.getUser$().subscribe((data)=>{
+
+      if(data){
+
+        this.wishlistService.getWishlist(data.sub).subscribe((wishlist)=>{
+
+          if(wishlist[0].Goal!=null){
+            this.goal = new WishlistProductData(wishlist[0].Goal.titulo, wishlist[0].Goal.foto, wishlist[0].Goal.precio);
+            this.isThereGoal = true;
+          }
+        }) 
+
+      }
+      else{
+        alert("Error 403");
+        window.location.href = "/home";
+      }
+
+      subscription.unsubscribe();
+    });
+  }
 }
