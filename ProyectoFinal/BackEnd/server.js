@@ -195,6 +195,7 @@ router.route("/Wishlist").post(checkJwt, async function (req, res) {
     var user_wishlist = new Wishlist();
     user_wishlist.wishlist_id = req.body.wishlist_id;
     user_wishlist.Objects = [];
+    user_wishlist.Goal = null;
     
     console.log(user_wishlist);
     try {
@@ -299,6 +300,39 @@ router.route("/Wishlist/deleteItem/:wishlist_id").delete(function (request, resp
       response.status(500).send({ error: error });
     }
 
+  });
+});
+
+//Actualizar meta de la wishlist
+router.route("/Wishlist/updateGoal/:wishlist_id").put( function (request, response) {
+
+  Wishlist.find({wishlist_id: request.params.wishlist_id}, function(error, wishlist){
+  
+    if(error)
+    {
+        response.status(404).send({message:"not found"});
+        return
+    }
+    else if(wishlist === null) //ayuda porque si pongo un id de algo que no es objeto, existe y no es error arriba pero entra aquí porque no es alumno
+    {
+        res.status(404).send({wishlist:"not found"});
+        return
+    }
+    try {  
+      
+      new_product = new Product();
+      new_product.titulo = request.body.titulo;
+      new_product.foto = request.body.foto;
+      new_product.precio = request.body.precio;
+
+      wishlist[0].Goal = new_product;
+      wishlist[0].save();
+
+      response.status(202).json({ mensaje: "Meta actualizada" });
+    }
+    catch (error) {
+      response.status(500).send({ error: error });
+    }
   });
 });
 

@@ -88,4 +88,33 @@ export class ProfileWishlishtComponent implements OnInit {
     });
   }
 
+  async addGoal(prod:WishlistProductData){
+    var addedItem = true;
+
+    let snackBarRef = this.snackBar.open("Producto agregado exitosamente!", "Deshacer", {duration: 1000});
+    
+    //Cuando el usuario de click en la acción de "deshacer" del snackbar
+    snackBarRef.onAction().subscribe(()=> {
+      console.log("Acción cancelada con éxito");
+      addedItem=false;
+      return;
+    })
+
+    snackBarRef.afterDismissed().subscribe(()=>{
+      if(addedItem){
+
+        let subscription = this.auth.getUser$().subscribe((data)=>{
+
+          if(data){
+            
+          }
+          else{
+            alert("Error: Los datos del usuario no fueron encontrados")
+          }
+
+          subscription.unsubscribe();
+        });
+      }
+    });
+  }
 }

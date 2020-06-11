@@ -6,7 +6,8 @@ var WishlistSchema = new Schema({
         type:String,
         required:true,
     },
-    Objects: [],    
+    Objects: [],   
+    Goal: {},
 });
 
 //Aquí extendemos el módulo que hicimos a un modelo que sea de mongoose. 
