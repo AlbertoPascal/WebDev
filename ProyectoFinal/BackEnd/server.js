@@ -289,7 +289,8 @@ router.route("/Wishlist/deleteItem/:wishlist_id").delete(function (request, resp
     }
     
     try{
-      posicion = request.body.posicion;
+      let posicion = request.body.posicion;
+      console.log("Producto a borrar: "+ posicion)
       wishlist[0].Objects.splice(posicion,1);
       wishlist[0].save();
       response.status(200).send({mensaje: "Producto borrado con exito"});

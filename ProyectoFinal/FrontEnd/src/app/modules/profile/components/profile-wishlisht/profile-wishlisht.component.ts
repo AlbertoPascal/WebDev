@@ -70,6 +70,20 @@ export class ProfileWishlishtComponent implements OnInit {
     snackBarRef.afterDismissed().subscribe(()=>{
       if(deleteItem){
 
+        let subscription = this.auth.getUser$().subscribe((data)=>{
+
+          if(data){
+            this.wishlistService.deleteItem(data.sub, prod.posicion).subscribe((wishlist)=>{
+              console.log(wishlist);
+              window.location.href = window.location.href;
+            }) 
+          }
+          else{
+            alert("Error: Los datos del usuario no fueron encontrados")
+          }
+
+          subscription.unsubscribe();
+        });
       }
     });
   }
