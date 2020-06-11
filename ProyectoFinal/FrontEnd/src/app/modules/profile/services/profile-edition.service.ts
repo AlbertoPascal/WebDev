@@ -61,6 +61,7 @@ export class ProfileEditionService {
       apellido: lastname,
       job:job,
       email:email,      
+      username:username,
     };
     console.log(requestOptions);
     this.http.post(this.update_endpoint, requestOptions).subscribe({
