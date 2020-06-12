@@ -6,7 +6,7 @@ import {UserInfoService} from  '../../services/user-info.service'
 import { SelectMultipleControlValueAccessor } from '@angular/forms';
 
 @Component({
- 
+
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
@@ -55,6 +55,11 @@ export class HeaderComponent implements OnInit {
       if(data){
         let subscription2 = this.db_user.getUser(data.sub).subscribe((data2)=>{
           this.isAdmin = data2[0].isAdmin;
+
+          if(this.isAdmin == false && (this.router.url === '/profile/admin' || this.router.url === '/profile/edit-admin')){
+            alert("Error 403")
+            window.location.href = "/home";
+          }
           subscription2.unsubscribe();
         })
       }
