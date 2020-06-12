@@ -29,6 +29,7 @@ export class DataFormComponent implements OnInit {
   editprofileForm = new FormGroup({
     name: new FormControl(''),
     lastName: new FormControl(''),
+    salario: new FormControl(''),
     email: new FormControl(''),
     username: new FormControl(''),
     job: new FormControl(''),
@@ -54,12 +55,14 @@ export class DataFormComponent implements OnInit {
         profile_user.username = data.username;
         profile_user.job = data.job;
         profile_user.email = data.email;
+        profile_user.salario = data.salario;
       })
       this.editprofileForm.get('name').setValue(profile_user.name);
       this.editprofileForm.get('lastName').setValue(profile_user.lastName);
       this.editprofileForm.get('email').setValue(profile_user.email);
       this.editprofileForm.get('job').setValue(profile_user.job);
       this.editprofileForm.get('username').setValue(profile_user.username);
+      this.editprofileForm.get('salario').setValue(profile_user.salario);
 
     });
     
@@ -105,10 +108,11 @@ export class DataFormComponent implements OnInit {
     let email = this.editprofileForm.get('email').value;
     let username = this.editprofileForm.get('username').value;
     let job=this.editprofileForm.get('job').value;
+    let salario = this.editprofileForm.get('salario').value;
     //let password= this.editprofileForm.get('pass').get('password').value;
     //let picture = '' //picture will be defined with the observable by the time they select a different picture (if any)
     //alert("Información de perfil para mandar a la base: \n" + this.ProfileInfo.name + '\n' + this.ProfileInfo.lastName + '\n' + this.ProfileInfo.email + '\n' + this.ProfileInfo.password + '\n' + this.ProfileInfo.job);
-    await this.ProfileInfo.uploadToDatabase(name, lastname, email, username, job);
+    await this.ProfileInfo.uploadToDatabase(name, lastname, email, username, job, salario);
     /*this.ProfileInfo.uploadToDatabase(name, lastname, email, username, job, password, picture).subscribe((data)=>{
       console.log(data);
       this.DefaultData= data;  

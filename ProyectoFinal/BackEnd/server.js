@@ -111,6 +111,7 @@ router.route("/user").post(checkJwt, async function (req, res) {
   new_user.expenses = req.body.expenses;
   new_user.username = req.body.username;
   new_user.Creation_date = de;
+  new_user.salario = 0;
   console.log(de);
   console.log(new_user);
   try {
@@ -384,6 +385,7 @@ router.route("/updateUser")
   updated_user.wishlist_id = request.body.wishlist_id;
   updated_user.Family_ids = request.body.Family_ids;
   updated_user.username = request.body.username;
+  updated_user.salario = request.body.salario;
 
   console.log("Ill update to " + JSON.stringify(updated_user));
   User.findOne(params, async function(error, usuario){
@@ -451,6 +453,11 @@ router.route("/updateUser")
         {
           usuario.username = updated_user.username;
           console.log("about to update username");
+        }
+        if(updated_user.salario != usuario.salario && updated_user.salario != undefined && updated_user.salario >=0)
+        {
+          usuario.salario = updated_user.salario;
+          console.log("about to update salario");
         }
         
         usuario.save();

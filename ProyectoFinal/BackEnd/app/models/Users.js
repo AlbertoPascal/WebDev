@@ -51,6 +51,7 @@ var UsersSchema = new Schema({
         required:true,
 
     },
+    salario: Number,
 });
 
 //Aquí extendemos el módulo que hicimos a un modelo que sea de mongoose. 

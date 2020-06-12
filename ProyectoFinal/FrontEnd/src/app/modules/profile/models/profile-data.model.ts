@@ -7,6 +7,7 @@ export class ProfileData {
     job:string;
     password:string;
     foto:string;
+    salario:number;
 
     constructor(){
         

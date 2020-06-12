@@ -40,7 +40,7 @@ export class ProfileEditionService {
     console.log("Mi request es " + this.member_endpoint + "/" + user_email);
     return this.http.get(this.member_endpoint + "/" + user_email);
   }
-  public async uploadToDatabase(name:string, lastname:string, email:string, username:string, job:string){
+  public async uploadToDatabase(name:string, lastname:string, email:string, username:string, job:string, salario:number){
     
     
     let curr_user_sub:string;
@@ -71,6 +71,7 @@ export class ProfileEditionService {
       job:job,
       email:email,      
       username:username,
+      salario:salario,
     };
     console.log(requestOptions);
     this.http.post(this.update_endpoint, requestOptions).subscribe({
@@ -102,6 +103,7 @@ export class ProfileEditionService {
             assignable_user.email = data[0].email;
             assignable_user.job = data[0].job;
             assignable_user.username = data[0].username;
+            assignable_user.salario = data[0].salario;
             console.log("My assignable user is");
             console.log(assignable_user);
             resolve(assignable_user);
