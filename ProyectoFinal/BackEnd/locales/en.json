@@ -1,0 +1,9 @@
+{
+    "userCreated": "User created successfully",
+    "notFound": "Not found",
+    "registeredTransaction" : "Registered transaction",
+    "wishlistCreated" : "Wishlist created",
+    "productAdded" : "Product added to the wishlist",
+    "productDeleted" : "Product deleted successfully from wishlist",
+    "goalUpdated" : "Goal updated"
+}

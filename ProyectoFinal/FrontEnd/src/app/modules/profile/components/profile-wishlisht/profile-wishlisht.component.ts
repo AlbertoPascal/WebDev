@@ -97,7 +97,6 @@ export class ProfileWishlishtComponent implements OnInit {
               console.log(message);
 
                 setTimeout(() => {
-                  console.log("bienvenido");
                   this.wishlistProducts = []
                   this.ngOnInit();
 

@@ -8,6 +8,17 @@ const cors = require("cors");
 //Librerias de JWT
 const jwt = require("express-jwt");
 const jwksRsa = require("jwks-rsa");
+//i18n
+var i18n = require("i18n");
+
+//Configuración de i18n
+i18n.configure({
+  locales:['es', 'en'],
+  directory: __dirname + '/locales'
+});
+app.use(i18n.init);
+
+
 
 //Configuración de cors
 var corsOptions = {
@@ -68,12 +79,12 @@ router.use(function(req,res,next){
 // Ruta base
 router.get('/', function(req, res){
     res.json({
-        mensaje: "Keep alive",
+        message: "Keep alive",
     });
 });
 router.post('/', function(req, res){
     res.json({
-        mensaje: "Keep alive",
+        message: "Keep alive",
     });
 });
 
@@ -129,7 +140,7 @@ router.route("/user").post(checkJwt, async function (req, res) {
         res.send(err);
       }
     });
-    res.json({ mensaje: "Usuario creado" });
+    res.json({ message: res.__('userCreated') });
   } catch (error) {
     res.status(500).send({ error: error });
   }
@@ -152,12 +163,12 @@ router.route('/user/:user_auth_id')
       console.log(request.params);
       if(error)
       {
-          response.status(404).send({message:"not found"});
+          response.status(404).send({message: response.__('notFound')});
           return
       }
       if(usuario === null) //ayuda porque si pongo un id de algo que no es objeto, existe y no es error arriba pero entra aquí porque no es alumno
       {
-          response.status(404).send({usuario:"not found"});
+          response.status(404).send({usuario: response.__('notFound')});
           return
       }
       response.status(200).send(usuario);
@@ -172,12 +183,12 @@ router.route('/finduser/:email')
       console.log(request.params);
       if(error)
       {
-          response.status(404).send({message:"not found"});
+          response.status(404).send({message: response.__('notFound')});
           return
       }
       if(usuario === null) //ayuda porque si pongo un id de algo que no es objeto, existe y no es error arriba pero entra aquí porque no es alumno
       {
-          response.status(404).send({usuario:"not found"});
+          response.status(404).send({usuario: response.__('notFound')});
           return
       }
       response.status(200).send(usuario);
@@ -207,7 +218,7 @@ router.route("/Transaction").post(checkJwt, async function (req, res) {
           res.send(err);
         }
       });
-      res.json({ mensaje: "Transacción registrada" });
+      res.json({ message: res.__('registeredTransaction') });
     } catch (error) {
       res.status(500).send({ error: error });
     }
@@ -235,7 +246,7 @@ router.route("/Wishlist").post(checkJwt, async function (req, res) {
           res.send(err);
         }
       });
-      res.json({ mensaje: "Wishlist creada" });
+      res.json({ message: res.__("wishlistCreated") });
     } catch (error) {
       res.status(500).send({ error: error });
     }
@@ -256,12 +267,12 @@ router.route("/Wishlist/addItem/:wishlist_id").post(checkJwt, function (request,
   
     if(error)
     {
-        response.status(404).send({message:"not found"});
+        response.status(404).send({message: response.__('notFound')});
         return
     }
     else if(wishlist === null) //ayuda porque si pongo un id de algo que no es objeto, existe y no es error arriba pero entra aquí porque no es alumno
     {
-        res.status(404).send({wishlist:"not found"});
+        res.status(404).send({wishlist: response.__('notFound')});
         return
     }
     try {  
@@ -274,7 +285,7 @@ router.route("/Wishlist/addItem/:wishlist_id").post(checkJwt, function (request,
       wishlist[0].Objects.push(new_product);
       wishlist[0].save();
 
-      response.status(200).json({ mensaje: "Producto agregado" });
+      response.status(200).json({ message: response.__('productAdded') });
     }
     catch (error) {
       response.status(500).send({ error: error });
@@ -289,12 +300,12 @@ router.route("/Wishlist/:wishlist_id").get(checkJwt, function (request, response
   
     if(error)
     {
-        response.status(404).send({message:"not found"});
+        response.status(404).send({message: response.__('notFound')});
         return
     }
     else if(wishlist === null) //ayuda porque si pongo un id de algo que no es objeto, existe y no es error arriba pero entra aquí porque no es alumno
     {
-        response.status(404).send({wishlist:"not found"});
+        response.status(404).send({wishlist: response.__('notFound')});
         return
     }
 
@@ -310,21 +321,20 @@ router.route("/Wishlist/deleteItem/:wishlist_id").delete(checkJwt, function (req
   
     if(error)
     {
-        response.status(404).send({message:"not found"});
+        response.status(404).send({message: response.__('notFound')});
         return
     }
     else if(wishlist === null) //ayuda porque si pongo un id de algo que no es objeto, existe y no es error arriba pero entra aquí porque no es alumno
     {
-        response.status(404).send({wishlist:"not found"});
+        response.status(404).send({wishlist: response.__('notFound')});
         return
     }
     
     try{
       let posicion = request.body.posicion;
-      console.log("Producto a borrar: "+ posicion)
       wishlist[0].Objects.splice(posicion,1);
       wishlist[0].save();
-      response.status(200).send({mensaje: "Producto borrado con exito"});
+      response.status(200).send({message: response.__('productDeleted')});
     }
     catch (error) {
       response.status(500).send({ error: error });
@@ -340,12 +350,12 @@ router.route("/Wishlist/updateGoal/:wishlist_id").put(checkJwt, function (reques
   
     if(error)
     {
-        response.status(404).send({message:"not found"});
+        response.status(404).send({message: response.__('notFound')});
         return
     }
     else if(wishlist === null) //ayuda porque si pongo un id de algo que no es objeto, existe y no es error arriba pero entra aquí porque no es alumno
     {
-        res.status(404).send({wishlist:"not found"});
+        res.status(404).send({wishlist: response.__('notFound')});
         return
     }
     try {  
@@ -358,7 +368,7 @@ router.route("/Wishlist/updateGoal/:wishlist_id").put(checkJwt, function (reques
       wishlist[0].Goal = new_product;
       wishlist[0].save();
 
-      response.status(202).json({ mensaje: "Meta actualizada" });
+      response.status(202).json({ message: response.__('goalUpdated') });
     }
     catch (error) {
       response.status(500).send({ error: error });
@@ -397,12 +407,12 @@ router.route("/updateUser")
         console.log(usuario);
         if(error)
         {
-            response.status(404).send({message:"not found"});
+            response.status(404).send({message: response.__('notFound')});
             return
         }
         if(usuario === null) //ayuda porque si pongo un id de algo que no es objeto, existe y no es error arriba pero entra aquí porque no es alumno
         {
-            response.status(404).send({usuario:"not found"});
+            response.status(404).send({usuario: response.__('notFound')});
             return
         }
         if(updated_user.user_auth_id != usuario.user_auth_id && updated_user.user_auth_id != undefined && updated_user.user_auth_id != ""){

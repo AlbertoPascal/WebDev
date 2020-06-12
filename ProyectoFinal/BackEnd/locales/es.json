@@ -1,0 +1,9 @@
+{
+    "userCreated": "Usuario creado exitosamente",
+    "notFound": "No fue encontrado",
+    "registeredTransaction" : "Transacción registrada",
+    "wishlistCreated" : "Wishlist creada",
+    "productAdded" : "Producto agregado a la wishlist",
+    "productDeleted" : "Producto borrado con exito",
+    "goalUpdated" : "Meta actualizada"
+}
