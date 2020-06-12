@@ -1,5 +1,5 @@
 <div class="panel-body">
-    <table id="example" class="table table-striped dt-responsive table table-hover table-dark" style="width:100%">
+    <table id="example" style = "text-align:center;" class="justify-content-center table table-striped dt-responsive table table-hover table-light" style="width:100%">
         <thead>
             <tr>
                 <th scope="col" i18n>Perfil</th>
@@ -12,16 +12,20 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let member of Members">
+            <tr *ngFor="let member of Members" style = "text-align: center;">
                 <td>
                     <app-flip-card [memb]=member></app-flip-card>
                  </td>
                   <td>$ {{member.saldo}}</td>
-                  <td>$ {{member.limite_gastos}}</td>
+                  <td>
+                      <form [formGroup] = "salario">
+                        <input type="text" formControlName = "max" placeholder = "$ {{member.limite_gastos}}">
+                        
+                        </form>
+                    </td>
                   <td>{{member.productos}}</td>
                   <td>
-                      <a href="PerfilesU.html" data-toggle="control-sidebar"><i class="fa fa-eye"></i></a>
-                      <a href="#" data-toggle="control-sidebar"><i class="fa fa-trash"></i></a>
+                      <button (click)="EraseMember()" class = "btn-danger btn-rounded" data-toggle="control-sidebar"><i class="fa fa-trash"></i></button>
                   </td>                                                 
             </tr>
             

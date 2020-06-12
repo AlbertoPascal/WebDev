@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MemberTableData } from '../../models/member-table-data.model';
 import { MemberTableServiceService } from '../../services/member-table-service.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-profileadmin-member-table',
@@ -10,7 +11,9 @@ import { MemberTableServiceService } from '../../services/member-table-service.s
 export class ProfileadminMemberTableComponent implements OnInit {
   
   Members: MemberTableData[] = [];
-
+  salario = new FormGroup({
+    max: new FormControl('')
+  })
   constructor(public membersService: MemberTableServiceService) { }
 
   ngOnInit(): void {
@@ -28,5 +31,10 @@ export class ProfileadminMemberTableComponent implements OnInit {
       console.log(data);
       this.Members= data;  
     }) 
+  }
+
+  async RemoveMember()
+  {
+
   }
 }
