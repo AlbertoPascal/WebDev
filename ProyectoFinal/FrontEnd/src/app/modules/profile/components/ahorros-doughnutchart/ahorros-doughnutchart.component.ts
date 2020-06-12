@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartType } from 'chart.js';
 import { MultiDataSet, Label, Colors } from 'ng2-charts';
-import {DonutchartService} from '../../services/donutchart.service';
+import { AuthService} from 'src/app/services/auth.service';
+import { UserInfoService} from 'src/app/services/user-info.service';
+import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
   selector: 'app-ahorros-doughnutchart',
@@ -10,23 +12,42 @@ import {DonutchartService} from '../../services/donutchart.service';
 })
 export class AhorrosDoughnutchartComponent implements OnInit {
 
-  constructor(private donutchartService:DonutchartService) { }
+  @ViewChild(BaseChartDirective) 
+  chart: BaseChartDirective;
+
+  constructor(public auth:AuthService, public userInfoService:UserInfoService) { }
 
   ngOnInit(): void {
+
     this.getDonutChartData();
+    
   }
 
+  public doughnutChartLabels: Label[] = ['Ahorros', 'Gastos'];
+  public doughnutChartData: number[]= [1,1];
 
-
-  public doughnutChartLabels: Label[] = ['Ingresos', 'Gastos'];
-  public doughnutChartData: number[]= [10,10];
 
   getDonutChartData(){
-    this.donutchartService.getDonutChartData().subscribe((data)=>{
-      console.log(data);
-      this.doughnutChartData[0]=data.ingresos;  
-      this.doughnutChartData[1]=data.gastos;  
-   }) 
+    let subscription = this.auth.getUser$().subscribe((data)=>{
+
+      if(data){
+
+        let subscription2 =this.userInfoService.getUser(data.sub).subscribe((user)=>{
+    
+          this.doughnutChartData[0] = user[0].savings;
+          this.doughnutChartData[1]= user[0].expenses;  
+          this.chart.chart.update();
+          subscription2.unsubscribe();
+        }) 
+      }
+
+      else{
+        alert("Error 403");
+        window.location.href = "/home";
+      }
+
+      subscription.unsubscribe();
+    });
   }
 
   /*public doughnutChartColors = [
