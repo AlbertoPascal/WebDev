@@ -6,6 +6,7 @@ import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuar
 import { EditarPerfilUsrComponent } from './components/editar-perfil-usr/editar-perfil-usr.component';
 import { EditarPerfilAdminComponent } from './components/editar-perfil-admin/editar-perfil-admin.component';
 import { AhorrosComponent } from './components/ahorros/ahorros.component';
+import {AdminGuard} from 'src/app/guards/admin.guard';
 
 const routes: Routes = [
   {path: 'admin', component : PerfilAdminComponent},

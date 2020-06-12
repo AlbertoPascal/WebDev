@@ -36,16 +36,17 @@ export class ProfileRecentActivityComponent implements OnInit {
     
           this.wishlistService.getWishlist(data.sub).subscribe((wishlist)=>{
             
-            this.meta = wishlist[0].Goal.precio;
-    
+            if(wishlist[0].Goal){
+              this.meta = 0;
+            }
+            else{
+              this.meta = wishlist[0].Goal.precio;
+            }
+          
           })
-    
         });
-      }
-
-        
+      } 
     });
- 
   }
 
 }
