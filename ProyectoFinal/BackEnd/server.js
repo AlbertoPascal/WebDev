@@ -365,8 +365,14 @@ router.route("/Wishlist/updateGoal/:wishlist_id").put(checkJwt, function (reques
       new_product.foto = request.body.foto;
       new_product.precio = request.body.precio;
 
-      wishlist[0].Goal = new_product;
-      wishlist[0].save();
+      if(new_product.titulo==undefined || new_product.foto==undefined || new_product.foto==undefined){
+        wishlist[0].Goal = null;
+        wishlist[0].save();
+      }
+      else{
+        wishlist[0].Goal = new_product;
+        wishlist[0].save();
+      }
 
       response.status(202).json({ message: response.__('goalUpdated') });
     }

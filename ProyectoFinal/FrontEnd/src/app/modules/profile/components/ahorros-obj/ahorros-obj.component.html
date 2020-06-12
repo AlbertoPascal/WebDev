@@ -1,12 +1,16 @@
 <br>
 
 <div *ngIf="isThereGoal">
-    <div class="polaroid">
+
+    <div class="polaroid" >
         <img src="{{goal.foto}}" class="polaroidImage" alt="Objetivo" style="width:auto; height:auto">
-    <div class="container">
-        <h3>${{goal.precio}}</h3>
+        <div class="container">
+            <h3>${{goal.precio}}</h3>
+        </div>
     </div>
-    </div>
+
+    <br>
+    <button class="btn btn-primary" style="width: auto;" (click)="deleteGoal()">Eliminar meta actual</button>
 </div>
 
 <div *ngIf="!isThereGoal">

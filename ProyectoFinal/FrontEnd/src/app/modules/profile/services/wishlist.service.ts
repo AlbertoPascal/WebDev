@@ -81,6 +81,28 @@ export class WishlistService {
     return this.http.put(this.endpoint_updateGoal+auth_user_id, requestOptions);
   }
 
+  //Borrar meta de la wishlist
+  deleteGoal(auth_user_id:string):Observable<any>{
+
+    var headerDict = {
+      'Content-Type': 'application/json',
+      Accept: '*/*',
+      'Access-Control-Allow-Origin': '*',
+    };
+
+    const requestOptions = {
+      //Se agregan los headers
+      headers: new HttpHeaders(headerDict),
+
+      titulo: undefined,
+      foto: undefined,
+      precio: undefined,
+      
+    };
+
+    return this.http.put(this.endpoint_updateGoal+auth_user_id, requestOptions);
+  }
+
   handleError(error: HttpErrorResponse) {
     let errorMessage = 'Unknown error!';
     if (error.error instanceof ErrorEvent) {

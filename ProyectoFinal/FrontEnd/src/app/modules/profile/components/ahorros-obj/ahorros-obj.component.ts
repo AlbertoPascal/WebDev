@@ -43,4 +43,27 @@ export class AhorrosObjComponent implements OnInit {
       subscription.unsubscribe();
     });
   }
+
+  deleteGoal(){
+    let subscription = this.auth.getUser$().subscribe((data)=>{
+
+      if(data){
+
+        this.wishlistService.deleteGoal(data.sub).subscribe((wishlist)=>{
+          console.log(wishlist);
+
+          setTimeout(() => {
+            this.goal = null;
+            this.isThereGoal = false;
+            this.ngOnInit();
+
+          }, 250);
+        }) 
+
+      }
+
+      subscription.unsubscribe();
+    });
+  
+  }
 }
