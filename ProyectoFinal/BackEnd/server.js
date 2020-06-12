@@ -222,8 +222,18 @@ router.route("/Transaction").post(checkJwt, async function (req, res) {
     } catch (error) {
       res.status(500).send({ error: error });
     }
-  }).get(checkJwt, function(request,response){
+  }).get(checkJwt,function(request,response){
       Transaction.find(function(err,lista){
+          if(err){
+              response.send(err);
+          }
+          response.status(200).send(lista);
+      });
+  });
+
+  router.route("/Transaction/:user_auth_id").get(function(request,response){
+    console.log("got user id of : " + request.params.user_auth_id);
+      Transaction.find({user_sid: request.params.user_auth_id}, function(err,lista){
           if(err){
               response.send(err);
           }
