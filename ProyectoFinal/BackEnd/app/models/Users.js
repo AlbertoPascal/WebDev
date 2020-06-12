@@ -45,7 +45,12 @@ var UsersSchema = new Schema({
     wishlist_id:{
         type:String,
         required:true,
-    }
+    },
+    Creation_date :  {
+        type:String,
+        required:true,
+
+    },
 });
 
 //Aquí extendemos el módulo que hicimos a un modelo que sea de mongoose. 

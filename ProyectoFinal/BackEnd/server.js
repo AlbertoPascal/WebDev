@@ -92,7 +92,12 @@ const { response } = require('express');
 //Crear un usuario
 router.route("/user").post(checkJwt, async function (req, res) {
   var new_user = new User();
+  var date = new Date();
+  var de = date.toLocaleDateString('es-ES');
   
+  /*const ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d)
+  const mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(d)
+  const da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d)*/
   new_user.nombre = req.body.nombre;
   new_user.apellido = req.body.apellido;
   new_user.profilePic = req.body.profilePic;
@@ -105,7 +110,8 @@ router.route("/user").post(checkJwt, async function (req, res) {
   new_user.savings = req.body.savings;
   new_user.expenses = req.body.expenses;
   new_user.username = req.body.username;
-
+  new_user.Creation_date = de;
+  console.log(de);
   console.log(new_user);
   try {
     if(new_user.job = undefined)

@@ -65,7 +65,7 @@ export class MemberTableServiceService {
                     name = data3[0].nombre + " " + data3[0].apellido;
                     img = data3[0].profilePic;
                     job = data3[0].job;
-                    ingreso = "27/03/2020";
+                    ingreso = data3[0].Creation_date;
                     saldo = data3[0].savings - data3[0].expenses;
                     limite = 5000;
                     count = data4[0].Objects.length;
