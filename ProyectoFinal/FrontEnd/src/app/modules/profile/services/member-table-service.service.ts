@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of} from 'rxjs';
 import { MemberTableData } from '../models/member-table-data.model';
 import { AuthService} from 'src/app/services/auth.service';
-
+import {WishlistService} from '../services/wishlist.service';
 import {
   HttpClient,
   HttpHeaders,
@@ -17,15 +17,16 @@ import { rejects } from 'assert';
 })
 export class MemberTableServiceService {
 
-  constructor(private http: HttpClient, public auth: AuthService) { }
+  constructor(private http: HttpClient, public auth: AuthService, public wishlistInfo: WishlistService) { }
   endpoint = 'http://localhost:8080/api/user';
   wishlist_endpoint = 'http://localhost:8080/api/Wishlist';
   transaction_endpoint = 'http://localhost:8080/api/Transaction';
   update_endpoint = 'http://localhost:8080/api/updateUser';
   Curr_user = new SessionData();
+
   getUser(user_auth_id:string): Observable<any> {
     console.log("Mi request es " + this.endpoint + "/" + user_auth_id);
-    return this.http.get(this.endpoint + "/" + user_auth_id );
+    return this.http.get(this.endpoint + "/" + user_auth_id );  
   }
   
   public async getMembers(){
@@ -48,34 +49,33 @@ export class MemberTableServiceService {
       
       this.getUser(curr_user_sub).subscribe(data2=>{
         this.Curr_user = data2[0];
-        
           this.Curr_user.Family_ids.forEach((member)=>{
             console.log("I am on member" + member);
-
+            console.log(this.Curr_user);
+            
             this.getUser(member.valueOf()).subscribe(data3=>{
-                console.log("My user is : ");
-                console.log(data3[0]);
-                Fam_Array.push(data3[0]);  
-
-                
-
-                var name;
-                var img,job,ingreso,saldo,limite,count;
-                var new_member;
-                console.log("My family array has " + Fam_Array.length);
-                Fam_Array.forEach((member)=>{
-                  name = member.nombre + " " + member.apellido;
-                  img = member.profilePic;
-                  job = member.job;
-                  ingreso = "27/03/2020";
-                  saldo = member.savings;
-                  limite = 5000;
-                  count = 3;
-                  new_member = new MemberTableData(name, img, job, ingreso, saldo, limite, count);
-                  members.push(new_member);
-                  console.log("Members now has: " );
-                  console.log(members);
-            }); 
+              this.wishlistInfo.getWishlist(data3[0].user_auth_id).subscribe(data4=>
+                {
+                  console.log("My user is : ");
+                  console.log(data3[0]);
+                  var name;
+                  var img,job,ingreso,saldo,limite,count;
+                  var new_member;
+                  console.log("My family array has " + Fam_Array.length);
+                    name = data3[0].nombre + " " + data3[0].apellido;
+                    img = data3[0].profilePic;
+                    job = data3[0].job;
+                    ingreso = "27/03/2020";
+                    saldo = data3[0].savings - data3[0].expenses;
+                    limite = 5000;
+                    count = data4[0].Objects.length;
+                    new_member = new MemberTableData(name, img, job, ingreso, saldo, limite, count);
+                    members.push(new_member);
+                    console.log("Members now has: " );
+                    console.log(members);
+                })
+              
+               
           });
 
         });
