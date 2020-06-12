@@ -31,6 +31,9 @@ export class ProfileadminAddMemberComponent implements OnInit {
   Current_user = new SessionData();
   ngOnInit(): void {
   }
+  ngOnLoad(){
+    
+  }
   handleError(error: HttpErrorResponse) {
     let errorMessage = 'Unknown error!';
     if (error.error instanceof ErrorEvent) {
@@ -47,4 +50,5 @@ export class ProfileadminAddMemberComponent implements OnInit {
   public addMember(){
     this.ProfileInfo.addMember(this.MemberEmail.get('email').value);
   }
+
 }
