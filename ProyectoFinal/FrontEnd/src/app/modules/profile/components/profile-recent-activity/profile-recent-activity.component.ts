@@ -33,10 +33,11 @@ export class ProfileRecentActivityComponent implements OnInit {
         this.userInfoService.getUser(data.sub).subscribe((user)=>{
 
           this.balance = user[0].savings - user[0].expenses;
-    
+          this.salario = user[0].salario;
+          this.limiteGasto = user[0].salario * 0.5;
           this.wishlistService.getWishlist(data.sub).subscribe((wishlist)=>{
             
-            if(wishlist[0].Goal){
+            if(wishlist[0].Goal == null){
               this.meta = 0;
             }
             else{

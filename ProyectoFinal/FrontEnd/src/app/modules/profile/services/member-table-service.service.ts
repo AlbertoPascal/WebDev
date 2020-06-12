@@ -69,7 +69,12 @@ export class MemberTableServiceService {
                     job = data3[0].job;
                     ingreso = data3[0].Creation_date;
                     saldo = data3[0].savings - data3[0].expenses;
-                    limite = 5000;
+                    if(data3[0].salario == undefined || data3[0].salario == null || data3[0].salario == 0)
+                    {
+                      limite = (this.Curr_user.salario / (this.Curr_user.Family_ids.length +1)) * 0.5;
+                    }
+                    else
+                      limite = data3[0].salario * 0.5;
                     count = data4[0].Objects.length;
                     new_member = new MemberTableData(authid,name, img, job, ingreso, saldo, limite, count);
                     members.push(new_member);
