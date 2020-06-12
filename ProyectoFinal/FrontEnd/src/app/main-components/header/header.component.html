@@ -46,8 +46,8 @@
               <!--If the user is in any of the profile page-->
               <div class="navbar-nav ml-auto navbar-light" *ngIf = "auth.loggedIn">
                 <!--Cambiar if para administrador-->
-                <a href="/profile/user" class="nav-item nav-link navbar-custom-button" *ngIf = "!isAdmin"><i class="fa fa-cog"></i>&nbsp;Ajustes</a>
-                <a href="/profile/admin" class="nav-item nav-link navbar-custom-button" *ngIf = "isAdmin"><i class="fa fa-cog"></i>&nbsp;Ajustes</a>
+                <a href="/profile/user" class="nav-item nav-link navbar-custom-button" *ngIf = "!isAdmin"><i class="fa fa-cog"></i>&nbsp;<span i18n="@@buttonPerf">Perfil</span></a>
+                <a href="/profile/admin" class="nav-item nav-link navbar-custom-button" *ngIf = "isAdmin"><i class="fa fa-cog"></i>&nbsp;<span i18n="@@buttonPerf">Perfil</span></a>
                 <a class="nav-item nav-link navbar-custom-button" (click)="auth.logout()"><i class="fa fa-info-circle"></i>&nbsp;Log out</a>
                 
               </div>

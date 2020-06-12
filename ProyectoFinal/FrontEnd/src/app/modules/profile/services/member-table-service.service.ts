@@ -13,7 +13,6 @@ import {
 import { SessionData } from 'src/app/main-components/models/session-data.model';
 import { rejects } from 'assert';
 import { ProfileData } from '../models/profile-data.model';
-import { resolve } from 'dns';
 
 @Injectable({
   providedIn: 'root'

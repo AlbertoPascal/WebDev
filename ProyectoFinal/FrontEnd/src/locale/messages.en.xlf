@@ -721,6 +721,39 @@
         <source>Añadir gastos</source>
         <target>Add expenses</target>
       </trans-unit>
+      <trans-unit id="buscaProd" datatype="html">
+        <source>Busca algún producto</source>
+        <target>Search a Product</target>
+      </trans-unit>
+      <trans-unit id="metaActual" datatype="html">
+        <source>Meta Actual</source>
+        <target>Current Goal</target>
+      </trans-unit>
+      <trans-unit id="Salario" datatype="html">
+        <source>Salario</source>
+        <target>Wage</target>
+      </trans-unit>
+      <trans-unit id="buttonPerf" datatype="html">
+        <source>Perfil</source>
+        <target>Profile</target>
+      </trans-unit>
+      <trans-unit id="Transacciones" datatype="html">
+        <source>Transacciones</source>
+        <target>Transactions</target>
+      </trans-unit>
+      <trans-unit id="TipoT" datatype="html">
+        <source>Tipo de Transacci&oacute;n </source>
+        <target>Type of Transaction</target>
+      </trans-unit>
+      <trans-unit id="dinero" datatype="html">
+        <source>Monto</source>
+        <target>Amount</target>
+      </trans-unit>
+      <trans-unit id="Mot" datatype="html">
+        <source>Motivo</source>
+        <target>Reason</target>
+      </trans-unit>
+      
     </body>
   </file>
 </xliff>
