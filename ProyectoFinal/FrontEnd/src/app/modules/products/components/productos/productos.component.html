@@ -11,8 +11,8 @@
 </div>
 <br>
 
-<app-product-card *ngFor="let producto of productos" [curr_prod]=producto></app-product-card>
-
+<app-product-card *ngFor="let producto of productos | paginate: config" [curr_prod]=producto></app-product-card>
+<pagination-controls id="product_pag" (pageChange)="pageChanged($event)"></pagination-controls>
 <hr>
 
 <br>

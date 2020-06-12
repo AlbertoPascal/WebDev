@@ -19,8 +19,16 @@ export class ProductosComponent implements OnInit {
   isSearched: boolean = false;
   loading:boolean = true;
 
-  constructor(public productosService:ProductosService, private activatedRoute: ActivatedRoute) { 
+  config: any;
+  collection = 0
 
+  constructor(public productosService:ProductosService, private activatedRoute: ActivatedRoute) { 
+    this.config = {
+      id: "product_pag",
+      itemsPerPage: 5,
+      currentPage: 1,
+      totalItems: this.productos.length
+    };
   }
 
   ngOnInit(): void {
@@ -37,6 +45,9 @@ export class ProductosComponent implements OnInit {
         this.loading = false;
       }
     });
+  }
+  pageChanged(event){
+    this.config.currentPage = event;
   }
 
   async getProductos(search: string){
@@ -57,8 +68,12 @@ export class ProductosComponent implements OnInit {
 
       this.loading = false;
 
-   }) 
+   })
+    this.config = {
+      id: "product_pag",
+      itemsPerPage: 10,
+      currentPage: 1,
+      totalItems: this.productos.length
+    }; 
   }
-
-
 }

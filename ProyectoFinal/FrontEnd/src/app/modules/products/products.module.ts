@@ -10,11 +10,12 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 //import { SearchbarComponent } from '../home/components/searchbar/searchbar.component';
 import { HomeModule } from '../home/home.module';
 import { HttpClientModule} from '@angular/common/http';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [ProductosComponent, ProductCardComponent, SpinnerComponent],
   imports: [
+    NgxPaginationModule,
     CommonModule,
     ProductsRoutingModule,
     HomeModule,
