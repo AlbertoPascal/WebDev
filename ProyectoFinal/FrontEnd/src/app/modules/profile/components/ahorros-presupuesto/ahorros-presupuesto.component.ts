@@ -46,6 +46,7 @@ export class AhorrosPresupuestoComponent implements OnInit {
   
 
     this.addCosts.reset();
+    window.location.reload();
   }
 
 }

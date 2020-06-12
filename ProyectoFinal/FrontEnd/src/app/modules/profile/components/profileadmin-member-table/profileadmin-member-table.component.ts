@@ -22,33 +22,11 @@ export class ProfileadminMemberTableComponent implements OnInit {
 
   async getMembers(){
     let memberinfo = await this.membersService.getMembers();
-    let fam_arr;
-    let promesa = new Promise((resolve,reject)=>
-    {
-      
-      memberinfo.subscribe((data)=>{
-        console.log("component family data: ");
-        console.log(data);
-        
-        fam_arr = data;
-        resolve(fam_arr);
-      });
-    });
-    let resp = await promesa;
-    console.log("resp value is ");
-    console.log(fam_arr);
 
-    await fam_arr.array.forEach(element => {
-      console.log("My user found was ");
-      console.log(element);
-    });
-
-    console.log("Out of suscribe");
-    console.log(this.Members);
     
-   /* this.membersService.getMembers().subscribe((data)=>{
+    memberinfo.subscribe((data)=>{
       console.log(data);
       this.Members= data;  
-  }) */
-}
+    }) 
+  }
 }
