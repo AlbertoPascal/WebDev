@@ -69,6 +69,8 @@ export class ProfileWishlishtComponent implements OnInit {
       return;
     })
 
+
+
     snackBarRef.afterDismissed().subscribe(()=>{
       if(deleteItem){
 
@@ -77,11 +79,19 @@ export class ProfileWishlishtComponent implements OnInit {
           if(data){
             this.wishlistService.deleteItem(data.sub, prod.posicion).subscribe((message)=>{
               console.log(message);
-              window.location.href = window.location.href;
+
+                setTimeout(() => {
+                  console.log("bienvenido");
+                  this.wishlistProducts = []
+                  this.ngOnInit();
+
+                }, 500);
+              
+              
             }) 
           }
           else{
-            alert("Error: Los datos del usuario no fueron encontrados")
+            alert("Error 404: Los datos del usuario no fueron encontrados")
           }
 
           subscription.unsubscribe();
