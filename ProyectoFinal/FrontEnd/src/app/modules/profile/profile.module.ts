@@ -28,6 +28,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { FlipCardComponent } from './components/flip-card/flip-card.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { TransactionsTableComponent } from './components/transactions-table/transactions-table.component';
 @NgModule({
   declarations: [
     PerfilUsuarioComponent,
@@ -46,7 +47,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AhorrosObjComponent,
     AhorrosPresupuestoComponent,
     AhorrosDoughnutchartComponent,
-    FlipCardComponent
+    FlipCardComponent,
+    TransactionsTableComponent
   ],
   imports: [
     NgxPaginationModule,

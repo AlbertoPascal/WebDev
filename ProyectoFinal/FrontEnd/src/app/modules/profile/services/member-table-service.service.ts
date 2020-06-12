@@ -3,6 +3,7 @@ import { Observable, of} from 'rxjs';
 import { MemberTableData } from '../models/member-table-data.model';
 import { AuthService} from 'src/app/services/auth.service';
 import {WishlistService} from '../services/wishlist.service';
+import { TransactionInfo } from '../models/transaction-info.model';
 import {
   HttpClient,
   HttpHeaders,
@@ -12,6 +13,7 @@ import {
 import { SessionData } from 'src/app/main-components/models/session-data.model';
 import { rejects } from 'assert';
 import { ProfileData } from '../models/profile-data.model';
+import { resolve } from 'dns';
 
 @Injectable({
   providedIn: 'root'
@@ -44,7 +46,7 @@ export class MemberTableServiceService {
     let curr_user_sub:string;
     let Fam_Array: SessionData[] = [];
     let members:MemberTableData[] = [];
-
+    
     await this.auth.getUser$().subscribe(data=>{
       curr_user_sub = data.sub;
       
@@ -215,4 +217,45 @@ export class MemberTableServiceService {
 
 
   }
+
+  public async getTransInfo()
+  {
+    let transInfo:TransactionInfo[] = [];
+    let curr_user_sub;
+    //let Curr_user = new ProfileData();
+    let promise  = new Promise((resolve,reject)=>
+    {
+        this.auth.getUser$().subscribe(data=>{
+        curr_user_sub = data.sub;
+          this.http.get<any[]>(this.transaction_endpoint + "/" + curr_user_sub).subscribe((data)=>
+          {
+            console.log("Im getting the following transactions: ");
+            console.log(data);
+            data.forEach((element)=>
+            {
+              console.log("My trans es : ");
+              console.log(element);
+              let temp_trans = new TransactionInfo();
+              temp_trans.monto = element.quantity;
+              temp_trans.tipo = element.direction;
+              temp_trans.comentario = element.comment;
+              transInfo.push(temp_trans);
+            })
+            resolve(transInfo);
+          });
+        
+        /*this.getUser(curr_user_sub).subscribe(data2 =>
+          {
+            this.Curr_user = data2[0];
+            
+          }); */
+          
+      });
+    });
+    let res = await promise;
+    return of(transInfo);
+
+   }
+
+
 }
