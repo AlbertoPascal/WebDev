@@ -47,8 +47,16 @@ export class ProfileadminAddMemberComponent implements OnInit {
     return throwError(errorMessage);
   }
   
-  public addMember(){
+  public async addMember(){
     this.ProfileInfo.addMember(this.MemberEmail.get('email').value);
+    let promise = new Promise((resolve, reject) =>
+    {
+      setTimeout(() => {
+        console.log("bienvenido");
+        window.location.reload();
+      }, 500);
+    });
+    await promise;
   }
 
 }

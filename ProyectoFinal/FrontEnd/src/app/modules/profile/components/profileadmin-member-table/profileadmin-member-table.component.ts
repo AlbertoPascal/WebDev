@@ -33,8 +33,17 @@ export class ProfileadminMemberTableComponent implements OnInit {
     }) 
   }
 
-  async RemoveMember()
+  async RemoveMember(erase_id:String)
   {
-
+    console.log("I need to erase " + erase_id);
+    this.membersService.EraseMember(erase_id);
+    let promise = new Promise((resolve, reject) =>
+    {
+      setTimeout(() => {
+        console.log("bienvenido");
+        this.ngOnInit();
+      }, 500);
+    });
+    await promise;
   }
 }

@@ -11,6 +11,7 @@ import {
 } from '@angular/common/http';
 import { SessionData } from 'src/app/main-components/models/session-data.model';
 import { rejects } from 'assert';
+import { ProfileData } from '../models/profile-data.model';
 
 @Injectable({
   providedIn: 'root'
@@ -59,9 +60,10 @@ export class MemberTableServiceService {
                   console.log("My user is : ");
                   console.log(data3[0]);
                   var name;
-                  var img,job,ingreso,saldo,limite,count;
+                  var img,job,ingreso,saldo,limite,count,authid;
                   var new_member;
                   console.log("My family array has " + Fam_Array.length);
+                    authid = data3[0].user_auth_id;
                     name = data3[0].nombre + " " + data3[0].apellido;
                     img = data3[0].profilePic;
                     job = data3[0].job;
@@ -69,7 +71,7 @@ export class MemberTableServiceService {
                     saldo = data3[0].savings - data3[0].expenses;
                     limite = 5000;
                     count = data4[0].Objects.length;
-                    new_member = new MemberTableData(name, img, job, ingreso, saldo, limite, count);
+                    new_member = new MemberTableData(authid,name, img, job, ingreso, saldo, limite, count);
                     members.push(new_member);
                     console.log("Members now has: " );
                     console.log(members);
@@ -106,5 +108,54 @@ export class MemberTableServiceService {
 
     
   }
-  
+  public async EraseMember(erase_user_auth_id:String)
+  {
+    let curr_user_sub;
+    //let Curr_user = new ProfileData();
+    await this.auth.getUser$().subscribe(data=>{
+      curr_user_sub = data.sub;
+      this.getUser(curr_user_sub).subscribe(data2 =>
+        {
+          this.Curr_user = data2[0];
+          console.log("My Family members were");
+          console.log(this.Curr_user.Family_ids);
+          let iterator = 0;
+          let id_position = 0;
+          this.Curr_user.Family_ids.forEach((id)=>{
+              if(id == erase_user_auth_id)
+              {
+                id_position = iterator
+              }
+              else{
+                iterator = iterator +1;
+              }
+          });
+          this.Curr_user.Family_ids.splice(id_position);
+          console.log("My Family members are now ");
+          console.log(this.Curr_user.Family_ids);
+          var headerDict = {
+            'Content-Type': 'application/json',
+            Accept: '*/*',
+            'Access-Control-Allow-Origin': '*',
+          }
+          const requestOptions = {
+      
+            //Se agregan los headers
+            headers: new HttpHeaders(headerDict),
+            
+            //Se agregan los datos del usuario al body para hace el post
+            user_auth_id:curr_user_sub,
+            Family_ids: this.Curr_user.Family_ids,
+          }; 
+          this.http.post(this.update_endpoint,requestOptions).subscribe(data3=>
+            {
+              console.log("Updated my user. New info is : ");
+              console.log(data3);
+            })
+        });
+    });
+
+
+
+  }
 }
