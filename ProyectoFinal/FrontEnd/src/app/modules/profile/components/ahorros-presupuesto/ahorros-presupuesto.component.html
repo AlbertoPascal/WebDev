@@ -15,13 +15,18 @@
               </mat-form-field>
             
             <label class="colPresupuesto form-control-label" i18n="@@Cantidad">Cantidad</label>
-            <input type="number" formControlName="quantity" required><br>
+            <div class="error" style="color: red;" *ngIf="addCosts.get('quantity').hasError('required') && addCosts.get('quantity').touched">
+                Cantidad requerida
+            </div>
+            <input type="number" formControlName="quantity" required min="0"><br>
 
-        
             <label class="colPresupuesto form-control-label" i18n="@@Motivo">Motivo</label>
-            <input type="text" formControlName="description" required><br>
+            <div class="error" style="color: red;" *ngIf="addCosts.get('description').hasError('required') && addCosts.get('description').touched">
+                Motivo requerido
+            </div>
+            <input type="text" formControlName="description" required minlength="1"><br>
             <div class="botton-change mt-3">
-                <button class="btn btn-primary" (click)="onCost()" mat-button (click)="openSnackBar('Agregado exitosamente!', 'Deshacer')" i18n="@@AnadirGastos">Añadir gastos</button>
+                <button class="btn btn-primary" [disabled]="addCosts.invalid" (click)="onCost()" mat-button i18n="@@AnadirGastos">Añadir gastos</button>
             </div>
         </form>
 </div>

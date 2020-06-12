@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import { MatSnackBar} from '@angular/material/snack-bar';
 import { ProfileEditionService } from '../../services/profile-edition.service';
 import { ProfileData } from '../../models/profile-data.model';
@@ -27,11 +27,23 @@ export class DataFormComponent implements OnInit {
 
   //ProfileInfo = new ProfileEditionService();//{name:"Pedro", lastName:"Hernández", email:"pedrohdz@gmail.com", username:"PedroHdz", job:"Carpintero", password:"1234"}
   editprofileForm = new FormGroup({
-    name: new FormControl(''),
-    lastName: new FormControl(''),
+    name: new FormControl('',[
+      Validators.required,
+      Validators.minLength(1)
+    ]),
+    lastName: new FormControl('',[
+      Validators.required,
+      Validators.minLength(1)
+    ]),
     salario: new FormControl(''),
-    email: new FormControl(''),
-    username: new FormControl(''),
+    email: new FormControl('',[
+      Validators.required,
+      Validators.minLength(1)
+    ]),
+    username: new FormControl('',[
+      Validators.required,
+      Validators.minLength(1)
+    ]),
     job: new FormControl(''),
   });
   ngOnInit(): void {
@@ -109,10 +121,27 @@ export class DataFormComponent implements OnInit {
     let username = this.editprofileForm.get('username').value;
     let job=this.editprofileForm.get('job').value;
     let salario = this.editprofileForm.get('salario').value;
+
+    if(name==""){
+      alert("Ingresa un nombre!");
+    }
+    else if(lastname==""){
+      alert("Ingresa un apellido!");
+    }
+    else if(email==""){
+      alert("Ingresa un email!");
+    }
+    else if(username==""){
+      alert("Ingresa un nombre de usuario!");
+    }
+
+    else{
+      await this.ProfileInfo.uploadToDatabase(name, lastname, email, username, job, salario);
+      window.location.reload();
+    }
     //let password= this.editprofileForm.get('pass').get('password').value;
     //let picture = '' //picture will be defined with the observable by the time they select a different picture (if any)
     //alert("Información de perfil para mandar a la base: \n" + this.ProfileInfo.name + '\n' + this.ProfileInfo.lastName + '\n' + this.ProfileInfo.email + '\n' + this.ProfileInfo.password + '\n' + this.ProfileInfo.job);
-    await this.ProfileInfo.uploadToDatabase(name, lastname, email, username, job, salario);
     /*this.ProfileInfo.uploadToDatabase(name, lastname, email, username, job, password, picture).subscribe((data)=>{
       console.log(data);
       this.DefaultData= data;  
