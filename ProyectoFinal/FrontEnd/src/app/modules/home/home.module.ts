@@ -8,6 +8,7 @@ import { IntroBlockComponent } from './components/intro-block/intro-block.compon
 import { SearchbarComponent } from '../../main-components/searchbar/searchbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 //import { SearchbarComponent } from '../../main-components/searchbar/searchbar.component';
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     HomeRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CarouselModule.forRoot()
   ],
   exports:[SearchbarComponent]
 })

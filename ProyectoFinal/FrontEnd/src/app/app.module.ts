@@ -19,7 +19,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { SignupModalComponent } from './main-components/signup-modal/signup-modal.component';
 import { LoginModalComponent } from './main-components/login-modal/login-modal.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 registerLocaleData(localeEs, 'es');
 
 @NgModule({
@@ -42,6 +42,7 @@ registerLocaleData(localeEs, 'es');
     ReactiveFormsModule,
     HttpClientModule,
     NgxPaginationModule,
+    CarouselModule.forRoot(),
     ModalModule.forRoot()
     
   ],
