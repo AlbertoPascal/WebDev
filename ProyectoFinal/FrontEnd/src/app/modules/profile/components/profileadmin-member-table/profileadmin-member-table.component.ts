@@ -50,7 +50,21 @@ export class ProfileadminMemberTableComponent implements OnInit {
       totalItems: this.Members.length
     };
   }
-
+  async SaveLimitChanges(update_id:String)
+  {
+    console.log("I need to erase " + update_id);
+    let new_salary = this.salario.get('max').value;
+    this.membersService.updateMember(update_id,new_salary);
+    let promise = new Promise((resolve, reject) =>
+    {
+      setTimeout(() => {
+        console.log("De regreso a save limit changes");
+        this.salario.get('max').reset();
+        this.ngOnInit();
+      }, 500);
+    });
+    await promise;
+  }
   async RemoveMember(erase_id:String)
   {
     console.log("I need to erase " + erase_id);

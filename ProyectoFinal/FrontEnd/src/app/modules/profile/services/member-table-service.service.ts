@@ -163,4 +163,56 @@ export class MemberTableServiceService {
 
 
   }
+
+  public async updateMember(update_user_auth_id:String, new_salary:number)
+  {
+    let curr_user_sub;
+    //let Curr_user = new ProfileData();
+    await this.auth.getUser$().subscribe(data=>{
+      curr_user_sub = data.sub;
+      this.getUser(curr_user_sub).subscribe(data2 =>
+        {
+          this.Curr_user = data2[0];
+          console.log("My Family members were");
+          console.log(this.Curr_user.Family_ids);
+          let iterator = 0;
+          let id_position = 0;
+          this.Curr_user.Family_ids.forEach((id)=>{
+              if(id == update_user_auth_id)
+              {
+                id_position = iterator
+              }
+              else{
+                iterator = iterator +1;
+              }
+          });
+          //this.Curr_user.Family_ids.splice(id_position);
+          //console.log("My Family members are now ");
+          //console.log(this.Curr_user.Family_ids);
+          var headerDict = {
+            'Content-Type': 'application/json',
+            Accept: '*/*',
+            'Access-Control-Allow-Origin': '*',
+          }
+          const requestOptions = {
+      
+            //Se agregan los headers
+            headers: new HttpHeaders(headerDict),
+            
+            //Se agregan los datos del usuario al body para hace el post
+            user_auth_id:update_user_auth_id,
+            salario: new_salary * 2,
+           
+          }; 
+          this.http.post(this.update_endpoint,requestOptions).subscribe(data3=>
+            {
+              console.log("Updated my user. New info is : ");
+              console.log(data3);
+            })
+        });
+    });
+
+
+
+  }
 }
