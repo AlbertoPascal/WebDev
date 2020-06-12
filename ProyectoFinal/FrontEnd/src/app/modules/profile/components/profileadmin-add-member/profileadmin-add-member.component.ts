@@ -9,7 +9,7 @@ import {
   HttpResponse,
   HttpErrorResponse,
 }from '@angular/common/http';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-profileadmin-add-member',
@@ -26,7 +26,7 @@ export class ProfileadminAddMemberComponent implements OnInit {
   
 
   MemberEmail  = new FormGroup({
-    email: new FormControl(''),
+    email: new FormControl('', [Validators.required, Validators.email, Validators.minLength(4)]),
   });
   Current_user = new SessionData();
   ngOnInit(): void {
@@ -48,12 +48,12 @@ export class ProfileadminAddMemberComponent implements OnInit {
   }
   
   public async addMember(){
-    this.ProfileInfo.addMember(this.MemberEmail.get('email').value);
+    this.ProfileInfo.addMember(this.MemberEmail.get('email').value)
     let promise = new Promise((resolve, reject) =>
     {
       setTimeout(() => {
         console.log("bienvenido");
-        window.location.reload();
+        //window.location.reload();
       }, 500);
     });
     await promise;
