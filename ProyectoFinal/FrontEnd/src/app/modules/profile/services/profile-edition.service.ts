@@ -169,15 +169,64 @@ export class ProfileEditionService {
     let picture = 'default picture';
     return of(this.UserEditData); */
   }
-  public degradeUser(){
-    Object.assign(this.Curr_User, this.active_user_info);
-    this.UserEditData.username  =this.Curr_User.user_auth_id;
-    let user_info = 'update users set user_type = "regular" where user_name = ' +  this.UserEditData.username + '";';
+  public async degradeUser(){
+    let curr_user_sub:string;
+
+      await this.auth.getUser$().subscribe(data=>{
+        curr_user_sub = data.sub;
+        console.log("Logged User Sub: " + curr_user_sub);
+      });
+
+      var headerDict = {
+        'Content-Type': 'application/json',
+        Accept: '*/*',
+        'Access-Control-Allow-Origin': '*',
+      }
+      const requestOptions = {
+  
+        //Se agregan los headers
+        headers: new HttpHeaders(headerDict),
+        
+        //Se agregan los datos del usuario al body para hace el post
+        user_auth_id:curr_user_sub,
+        isAdmin: false,
+      }; 
+      await this.http.post(this.update_endpoint,requestOptions).subscribe(data=>
+        {
+          console.log("Updated my user. New info is : ");
+          console.log(data);
+        })
   }
-  public upgradeUser(){
-    Object.assign(this.Curr_User, this.active_user_info);
-    this.UserEditData.username  =this.Curr_User.user_auth_id;
-    let user_info = 'update users set user_type = "admin" where user_name = ' +  this.UserEditData.username + '";';
+  public async upgradeUser(){
+    let curr_user_sub:string;
+
+      await this.auth.getUser$().subscribe(data=>{
+        curr_user_sub = data.sub;
+        console.log("Logged User Sub: " + curr_user_sub);
+      });
+
+      var headerDict = {
+        'Content-Type': 'application/json',
+        Accept: '*/*',
+        'Access-Control-Allow-Origin': '*',
+      }
+      const requestOptions = {
+  
+        //Se agregan los headers
+        headers: new HttpHeaders(headerDict),
+        
+        //Se agregan los datos del usuario al body para hace el post
+        user_auth_id:curr_user_sub,
+        isAdmin:true,
+      }; 
+      await this.http.post(this.update_endpoint,requestOptions).subscribe(data=>
+        {
+          console.log("Updated my user. New info is : ");
+          console.log(data);
+        })
+    //Object.assign(this.Curr_User, this.active_user_info);
+    //this.UserEditData.username  =this.Curr_User.user_auth_id;
+    //let user_info = 'update users set user_type = "admin" where user_name = ' +  this.UserEditData.username + '";';
   }
   public async addMember(user_email:string){
     let curr_user_sub:string;

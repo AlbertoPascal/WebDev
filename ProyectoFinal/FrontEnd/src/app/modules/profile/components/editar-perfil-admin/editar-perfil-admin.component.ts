@@ -8,18 +8,20 @@ import { ProfileEditionService } from '../../services/profile-edition.service';
   styleUrls: ['./editar-perfil-admin.component.scss']
 })
 export class EditarPerfilAdminComponent implements OnInit {
-  public defaultService:ProfileEditionService;
-  constructor(public router: Router) { }
+  //public defaultService:ProfileEditionService;
+  constructor(public router: Router, public profileEdition:ProfileEditionService) { }
 
   ngOnInit(): void {
   }
   resetForms(){
     
   }
-  giveupAdmin(){
-    localStorage.setItem('user_type','regular');
+  public async giveupAdmin(){
+    //localStorage.setItem('user_type','regular');
+    await this.profileEdition.degradeUser();
+    alert("You are no longer an Admin");
     this.router.navigateByUrl('profile/user');
-    this.defaultService.degradeUser();
+    //this.defaultService.degradeUser();
   }
   showSnackbar() {
     // Get the snackbar DIV

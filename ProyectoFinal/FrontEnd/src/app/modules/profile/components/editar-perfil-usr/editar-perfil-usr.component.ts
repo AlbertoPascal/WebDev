@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {ProfileEditionService} from '../../services/profile-edition.service';
 @Component({
   selector: 'app-editar-perfil-usr',
   templateUrl: './editar-perfil-usr.component.html',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarPerfilUsrComponent implements OnInit {
 
-  constructor() { }
+  constructor(public profileEdition:ProfileEditionService) { }
 
   ngOnInit(): void {
+  }
+
+  public async BecomeAdmin()
+  { 
+    await this.profileEdition.upgradeUser();
+    alert("You are now an Admin!");
+    window.location.href ="/profile/admin";
   }
 
 }

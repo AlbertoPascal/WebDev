@@ -391,6 +391,7 @@ router.route("/updateUser")
       
       console.log("Finding user_auth_id of " + request.body.user_auth_id);
         console.log("Antes de update: ");
+        console.log(params);
         console.log(usuario);
         if(error)
         {
@@ -434,7 +435,7 @@ router.route("/updateUser")
           usuario.expenses = usuario.expenses + updated_user.expenses ;
           console.log("about to update savings");
         }
-        if(updated_user.isAdmin != usuario.isAdmin && updated_user.isAdmin != undefined && updated_user.isAdmin != ""){
+        if(updated_user.isAdmin != usuario.isAdmin && (updated_user.isAdmin == false || updated_user.isAdmin ==true)){
           usuario.isAdmin = updated_user.isAdmin ;
           console.log("about to update admin status");
         }
