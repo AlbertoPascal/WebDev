@@ -13,8 +13,17 @@ export class ProfileadminMemberTableComponent implements OnInit {
   Members: MemberTableData[] = [];
   salario = new FormGroup({
     max: new FormControl('')
-  })
-  constructor(public membersService: MemberTableServiceService) { }
+  });
+  config: any;
+  collection = 0
+  constructor(public membersService: MemberTableServiceService) { 
+    this.config = {
+      id: "member_pag",
+      itemsPerPage: 5,
+      currentPage: 1,
+      totalItems: this.Members.length
+    };
+   }
 
   ngOnInit(): void {
     this.getMembers();
@@ -22,15 +31,24 @@ export class ProfileadminMemberTableComponent implements OnInit {
   ngOnLoad():void{
     this.getMembers();
   }
-
+  pageChanged(event){
+    this.config.currentPage = event;
+  }
   async getMembers(){
     let memberinfo = await this.membersService.getMembers();
 
     
-    memberinfo.subscribe((data)=>{
+   await memberinfo.subscribe((data)=>{
       console.log(data);
       this.Members= data;  
-    }) 
+
+    });
+    this.config = {
+      id: "member_pag",
+      itemsPerPage: 5,
+      currentPage: 1,
+      totalItems: this.Members.length
+    };
   }
 
   async RemoveMember(erase_id:String)

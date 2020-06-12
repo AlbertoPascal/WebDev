@@ -1,6 +1,6 @@
 <table class="table table-hover table-striped estilowish">
     <tbody>                      
-        <tr *ngFor="let product of wishlistProducts">
+        <tr *ngFor="let product of wishlistProducts | paginate: config">
             <td>
                 <div class="row">
                     
@@ -37,4 +37,5 @@
         </tr>
 
     </tbody> 
+    <pagination-controls id = "wishlist_pag" (pageChange)="pageChanged($event)"></pagination-controls>
 </table>

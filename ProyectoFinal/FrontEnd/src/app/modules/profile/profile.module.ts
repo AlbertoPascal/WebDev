@@ -27,7 +27,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { FlipCardComponent } from './components/flip-card/flip-card.component';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     PerfilUsuarioComponent,
@@ -49,6 +49,7 @@ import { FlipCardComponent } from './components/flip-card/flip-card.component';
     FlipCardComponent
   ],
   imports: [
+    NgxPaginationModule,
     CommonModule,
     ProfileRoutingModule,
     ReactiveFormsModule,

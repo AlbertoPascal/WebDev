@@ -18,7 +18,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { SignupModalComponent } from './main-components/signup-modal/signup-modal.component';
 import { LoginModalComponent } from './main-components/login-modal/login-modal.component';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 
 registerLocaleData(localeEs, 'es');
 
@@ -28,7 +28,7 @@ registerLocaleData(localeEs, 'es');
     HeaderComponent,
     FooterComponent,
     SignupModalComponent,
-    LoginModalComponent
+    LoginModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +41,7 @@ registerLocaleData(localeEs, 'es');
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgxPaginationModule,
     ModalModule.forRoot()
     
   ],

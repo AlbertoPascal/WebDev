@@ -12,7 +12,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let member of Members" style = "text-align: center;">
+            <tr *ngFor="let member of Members | paginate: config" style = "text-align: center;">
                 <td>
                     <app-flip-card [memb]=member></app-flip-card>
                  </td>
@@ -31,4 +31,6 @@
             
         </tbody>
     </table>
+    
+    <pagination-controls id="member_pag" (pageChange)="pageChanged($event)"></pagination-controls>
 </div>

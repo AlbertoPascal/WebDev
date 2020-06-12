@@ -14,13 +14,23 @@ export class ProfileWishlishtComponent implements OnInit {
   wishlistProducts: WishlistProductData[] = [];
   product: WishlistProductData;
   empty=false;
+  config: any;
+  collection = 0
 
-  constructor(public wishlistService:WishlistService, public auth: AuthService, public snackBar: MatSnackBar) { }
+  constructor(public wishlistService:WishlistService, public auth: AuthService, public snackBar: MatSnackBar) { 
+    this.config = {
+    id: "wishlist_pag",
+    itemsPerPage: 3,
+    currentPage: 1,
+    totalItems: this.wishlistProducts.length
+  };}
 
   ngOnInit(): void {
     this.getProductos();
   }
-
+  pageChanged(event){
+    this.config.currentPage = event;
+  }
   //Obtener los productos de la wishlist del usuario
   getProductos(){
 
@@ -42,7 +52,13 @@ export class ProfileWishlishtComponent implements OnInit {
             this.product = new WishlistProductData(wishlist[0].Objects[i].titulo, wishlist[0].Objects[i].foto, wishlist[0].Objects[i].precio, i);
             this.wishlistProducts.push(this.product);
           }
-
+          this.config = {
+            id: "wishlist_pag",
+            itemsPerPage: 3,
+            currentPage: 1,
+            totalItems: this.wishlistProducts.length
+          };
+          console.log("length : " + this.wishlistProducts.length);
         }) 
 
       }
