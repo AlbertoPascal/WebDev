@@ -2,10 +2,21 @@
     <div class="bg-white p-5 rounded h1-title"> 
       <h1 i18n>Artículos Populares</h1>
     </div>
-    <carousel class="carousel img-fluid" >
-      <slide *ngFor = "let img of allImages">
-        <img class="img-fluid d-block rounded- imgCarousel pBlack" src="{{img.url}}" alt="first slide" height ="35%" width="35%">
-      </slide>
-    </carousel>
+    <div class="row">
+      <div class="col-12">
+        <carousel class="carousel img-fluid" [interval]="myInterval" [(activeSlide)]="activeSlideIndex">
+          <slide *ngFor = "let img of allImages">
+            <img class="img-fluid d-block imgCarousel" src="{{img.url}}" alt="first slide" style="display: block;" height ="35%" width="75%">
+          </slide>
+          <!--div class="indicators">
+            <button *ngFor="let item of allImages; let i = index" type="button" class="indicator"
+                    [class.active]="i === activeSlideIndex" [attr.aria-pressed]="i === activeSlideIndex"
+                    (click)="switchSlide(i)"></button>
+          </div-->
+        </carousel>
+        
+      </div>
+    </div>
+
     
 </div>

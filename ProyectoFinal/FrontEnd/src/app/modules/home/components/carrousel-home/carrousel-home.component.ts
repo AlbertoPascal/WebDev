@@ -10,6 +10,9 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class CarrouselHomeComponent  implements OnInit  {
 
+  myInterval = 2000;
+  activeSlideIndex = 0;
+
   //randImg: Observable<any>;
   //imgInfo: any;
   //imgHis:any[];
@@ -20,10 +23,15 @@ export class CarrouselHomeComponent  implements OnInit  {
   constructor(private carruselService: CarruselService) {    
     //this.allImages = this.carruselService.getImages();    
   }    
+  switchSlide(i:number){
+    this.activeSlideIndex=i;
+  }
+
   ngOnInit() {    
     this.getImages();
     //this.allImages = this.carruselService.getImages();    
   } 
+
   getImages(){
     this.carruselService.getImages().subscribe((data)=> {
       this.allImages=data;

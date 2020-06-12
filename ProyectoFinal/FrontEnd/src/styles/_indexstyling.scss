@@ -28,10 +28,10 @@ h4{
 .imgCarousel{
   @include set_carousel_maxes($carousel-max-size-h, $carousel-max-size-w);
   margin:$default-margins;
-  opacity:$carousel-img-def-opacity;
+  opacity:$carousel-img-def-opacity-hover;
 }
 .imgCarousel:hover{
-  opacity:$carousel-img-def-opacity-hover;
+  opacity:$carousel-img-def-opacity;
 }
 html {
     scroll-behavior: $default-scroll;
