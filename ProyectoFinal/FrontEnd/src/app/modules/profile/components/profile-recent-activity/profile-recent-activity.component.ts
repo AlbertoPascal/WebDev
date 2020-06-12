@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { RecentactivityData } from '../../models/recentactivity-data.model';
 import { RecentactivityService } from '../../services/recentactivity.service';
+import { AuthService} from 'src/app/services/auth.service';
+import { WishlistService } from '../../services/wishlist.service';
+import {UserInfoService} from '../../../../services/user-info.service';
 
 @Component({
   selector: 'app-profile-recent-activity',
@@ -9,19 +12,40 @@ import { RecentactivityService } from '../../services/recentactivity.service';
 })
 export class ProfileRecentActivityComponent implements OnInit {
 
-  recentActivity: RecentactivityData;
+  recentActivity: RecentactivityData = {};
 
-  constructor(public recentActivityService:RecentactivityService) { }
+  constructor(public wishlistService:WishlistService, public auth:AuthService, public userInfoService: UserInfoService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {  
     this.getProductos();
   }
 
-  getProductos(){
-    this.recentActivityService.getRecentActivity().subscribe((data)=>{
-      console.log(data);
-      this.recentActivity= data;
-   }) 
+  balance=0;
+  meta=0;
+  salario=0;
+  limiteGasto=0;
+
+  async getProductos(){
+    
+    this.auth.getUser$().subscribe((data)=>{
+      
+      if(data){
+        this.userInfoService.getUser(data.sub).subscribe((user)=>{
+
+          this.balance = user[0].savings - user[0].expenses;
+    
+          this.wishlistService.getWishlist(data.sub).subscribe((wishlist)=>{
+            
+            this.meta = wishlist[0].Goal.precio;
+    
+          })
+    
+        });
+      }
+
+        
+    });
+ 
   }
 
 }

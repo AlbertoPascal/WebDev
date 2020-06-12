@@ -67,7 +67,7 @@ export class AhorrosPresupuestoComponent implements OnInit {
       //this.prep_savings.Operation.addCosts(this.addCosts.get('costs').value);
       //this.prep_savings.Operation.motif = this.addCosts.get('description').value;
       console.log("Sent " + this.addCosts.get('quantity').value + " to add to costs with reason: \n" + this.addCosts.get('description').value);
-    
+      window.location.reload();
     }
     
   }
