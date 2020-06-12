@@ -70,7 +70,7 @@ export class MoneyManagerService {
         error: error => this.handleError(error),
       });
 
-      if(oper_type=="1: Expense"){
+      if(oper_type=="gasto"){
         const requestOptions2 = {
 
           //Se agregan los headers
@@ -87,7 +87,7 @@ export class MoneyManagerService {
         });
       }
 
-      else if(oper_type=="2: Saving"){
+      else if(oper_type=="ahorro"){
         const requestOptions2 = {
 
           //Se agregan los headers

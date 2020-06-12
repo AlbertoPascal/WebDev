@@ -3,17 +3,23 @@
     <h3 i18n="@@Gastos">Transacci&oacute;n:</h3> <!--ESTE SE MODIFICÓ. NECESITAMOS CORREGIR SU TRADUCCIÓN-->
         <form [formGroup] = "addCosts">
             <!--ESTE SE MODIFICÓ. NECESITAMOS CORREGIR SU TRADUCCIÓN-->
-            <label class="colPresupuesto form-control-label">Tipo de transacci&oacute;n</label>
+            
             <!--ESTE SE MODIFICÓ. NECESITAMOS CORREGIR SU TRADUCCIÓN-->
-            <select class = 'colPresupuesto custom-select' (change) = "changeTransaction($event)" formControlName = "transaction_type">
-                <option CLASS = "colPresupuesto" value = "" disabled>Seleccionar Tipo</option>
-                <option  class = "colPresupuesto" *ngFor="let trans of transactions" [ngValue]="trans">{{trans}}</option>
-            </select>
+            <mat-form-field>
+                <mat-label>Tipo de transacción</mat-label>
+                <mat-select (selectionChange)="selected($event)">
+                  <mat-option *ngFor="let opcion of opciones" [value]="opcion.value">
+                    {{opcion.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
             
             <label class="colPresupuesto form-control-label" i18n="@@Cantidad">Cantidad</label>
-            <input type="number" formControlName="quantity"><br>
+            <input type="number" formControlName="quantity" required><br>
+
+        
             <label class="colPresupuesto form-control-label" i18n="@@Motivo">Motivo</label>
-            <input type="text" formControlName="description"><br>
+            <input type="text" formControlName="description" required><br>
             <div class="botton-change mt-3">
                 <button class="btn btn-primary" (click)="onCost()" mat-button (click)="openSnackBar('Agregado exitosamente!', 'Deshacer')" i18n="@@AnadirGastos">Añadir gastos</button>
             </div>

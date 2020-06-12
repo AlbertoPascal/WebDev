@@ -22,6 +22,7 @@ import { DataFormComponent } from './components/data-form/data-form.component';
 import { AhorrosObjComponent } from './components/ahorros-obj/ahorros-obj.component';
 import { AhorrosPresupuestoComponent } from './components/ahorros-presupuesto/ahorros-presupuesto.component';
 import { AhorrosDoughnutchartComponent } from './components/ahorros-doughnutchart/ahorros-doughnutchart.component';
+import {MatSelectModule} from '@angular/material/select';
 
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
@@ -54,7 +55,8 @@ import { FlipCardComponent } from './components/flip-card/flip-card.component';
     FormsModule,
     MatButtonModule,
     MatSnackBarModule,
-    ChartsModule
+    ChartsModule,
+    MatSelectModule
   ]
 })
 export class ProfileModule { }
