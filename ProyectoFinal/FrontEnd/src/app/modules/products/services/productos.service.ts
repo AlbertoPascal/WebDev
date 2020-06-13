@@ -41,7 +41,7 @@ export class ProductosService {
   getProductos(search_term:string):Observable<any>{
 
     const params = {
-      api_key: "11B43D7286984C879C3EA2EE498F50E0",
+      api_key: "114CF9DDF0C044B5829405F77535EA62",
       type: "search",
       language: "es_ES",
       customer_location: "mx",
